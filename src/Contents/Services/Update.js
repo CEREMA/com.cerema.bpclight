@@ -82,6 +82,7 @@ Update = {
 				if (r0.length>0) {
 					if (age.indexOf(r0[0].Kpst)>-1) {
 						selectCHANGEMENT.push(r0[0].Kage);
+						console.log('UPDATE agents SET kets='+r0[0].Ketsnew+', kuni='+r0[0].Kuninew+', ksub='+r0[0].Ksubnew+' WHERE kage='+r0[0].Kage);
 						db.query('bpclight','UPDATE agents SET kets='+r0[0].Ketsnew+', kuni='+r0[0].Kuninew+', ksub='+r0[0].Ksubnew+' WHERE kage='+r0[0].Kage,function(e,a) {
 							if (i+1<total) setChangementService(response,i+1,cb); else {
 								cb(selectCHANGEMENT);
