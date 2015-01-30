@@ -84,14 +84,15 @@ App.controller.define('CAgent', {
 	},
 	situation_record: function(p)
 	{
+		console.log(App.get('datefield#datEta').getValue());
 		var o={
 			Kpst: App.get('textfield#Situation_Kpst').getValue(),
-			datEta: App.get('datefield#datEta').getValue(),
+			DatEta: App.get('datefield#datEta').getValue(),
 			Kage: p.up('TForm1').agent.Kage
 		};
 		if ((o.Kpst==1) || (o.Kpst==3)) {
-			if (o.data.Kpst==1) 
-			o.Arrivee=App.get('combo#MotifCBO').getRawValue();
+			if (o.Kpst==1) 
+			o.Arrivee=App.get('combo#MotifCBO').getValue();
 			else
 			o.Arrivee=App.get('textarea#VMotif').getValue();
 			
@@ -114,6 +115,8 @@ App.controller.define('CAgent', {
 	},
 	situation_add: function()
 	{
+		App.get('combo#position').setValue('');
+		App.get('datefield#datEta').setValue('');
 		App.get('panel#situation_header').show();
 		App.get('grid#gridPositions').hide();		
 	},
@@ -329,6 +332,7 @@ App.controller.define('CAgent', {
 	},
 	TForm1_onshow: function(p)
 	{	
+		var _p=this;
 		if (p.agent==-1) {
 			p.INSERT=true;
 			return;
@@ -430,7 +434,7 @@ App.controller.define('CAgent', {
 	},
 	TIDepartement_onchange: function(p,record)
 	{
-		App.get(p.up('window'),'combo#TService').setValue('');
+		App.get(p.up('window'),'combo#TIService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TIService');
 		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
 		cbo.getStore().load();
