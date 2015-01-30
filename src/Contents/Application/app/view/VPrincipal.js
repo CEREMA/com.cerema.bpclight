@@ -147,7 +147,8 @@ App.view.define('VPrincipal',{
 				{
 					xtype: "button",
 					text: "Recherche vocale",
-					itemId: "speechget"
+					itemId: "speechget",
+					disabled: true
 				},
 				'->',
 				{
