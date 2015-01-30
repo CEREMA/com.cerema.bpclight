@@ -196,7 +196,7 @@ App = {
 			} else {
 				if (req.body.node.indexOf('Kets')>-1) {
 					var kets=req.body.node.split('Kets')[1];
-					var sql='select * from unites where archive=0 and Kets='+kets+' order by libuni';
+					var sql='select * from unites where archive=0 and Kets='+kets+' order by libunic';
 					db.query('bpclight',sql,function(err,o) {	
 					for (var i=0;i<o.length;i++)
 					{
@@ -211,7 +211,7 @@ App = {
 				};
 				if (req.body.node.indexOf('Kuni')>-1) {
 					var kuni=req.body.node.split('Kuni')[1];
-					var sql='select * from subdis where archive=0 and Kuni='+kuni+' order by libsub';
+					var sql='select * from subdis where archive=0 and Kuni='+kuni+' order by libsubc';
 					db.query('bpclight',sql,function(err,o) {	
 					for (var i=0;i<o.length;i++)
 					{

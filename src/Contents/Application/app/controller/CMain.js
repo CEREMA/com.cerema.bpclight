@@ -127,10 +127,7 @@ App.controller.define('CMain', {
 			success: function(response){
 				var response = JSON.parse(response.responseText);
 				var r=[];
-				for (var i=0;i<response.data.length;i++)
-				{
-					r.push(response.data[i].LibRol);
-				};
+				for (var i=0;i<response.data.length;i++) r.push(response.data[i].LibRol);
 				$('#Poste').html(r.join('<br>'));
 			}
 		});		
