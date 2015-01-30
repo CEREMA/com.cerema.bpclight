@@ -4,6 +4,7 @@ Update = {
 		var select=[];
 		var selectPNA=[];
 		var selectPARTI=[];
+		var selectCHANGEMENT=[];
 		function get(response,i,cb)
 		{
 			var age=[2,4,5,10,9];
@@ -78,7 +79,25 @@ Update = {
 			var age=[1,3];
 			var total=response.length;
 			db.query('bpclight','select * from ageetat where ageetat.dateta<=NOW() and ageetat.Kage='+response[i].kage+' order by dateta desc limit 1',function(err,r0) {
-				console.log(r0);
+				if (r0.length>0) {
+					if (age.indexOf(r0[0].Kpst)>-1) {
+						selectCHANGEMENT.push(r0[0].Kage);
+						db.query('bpclight','UPDATE agents SET kets='+r0[0].Ketsnew+', kuni='+r0[0].Kuninew+', ksub='+r0[0].Ksubnew+' WHERE kage='+r0[0].Kage,function(e,a) {
+							if (i+1<total) setChangementService(response,i+1,cb); else {
+								cb(selectCHANGEMENT);
+								console.log('FOUNDIT --------');
+							}							
+						});
+					} else {
+							if (i+1<total) setChangementService(response,i+1,cb); else {
+								cb(selectCHANGEMENT);
+							}		
+					}
+				} else {
+					if (i+1<total) setChangementService(response,i+1,cb); else {
+						cb(selectCHANGEMENT);
+					}				
+				}
 			});
 		};
 		var db=Update.using('db');
