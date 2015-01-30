@@ -82,8 +82,31 @@ App.controller.define('CAgent', {
 			},
 			"TFormation" : {
 				show: "TFormation_onShow"
+			},
+			"TFormation grid#gridFormation": {
+				itemcontextmenu: "Formation_onContextMenu"
 			}
 		});
+	},
+	Formation_onContextMenu: function(view,rec,node,index,e) {
+		e.stopEvent();
+		var x=Ext.create('Ext.menu.Menu',{
+			items: [
+				{
+					itemId: 'ctx-gridForm-delete',
+					text: "Supprimer"
+				}				
+			]
+		});
+		x.on('click',function(p) {
+			if (p.itemId="ctx-gridForm-delete") {
+				App.Formation.del(rec.data.id_recapitulatif,function(err,response){
+					App.get('grid#gridFormation').getStore().load();
+				});
+			}
+		});
+		x.showAt(e.getXY());
+		return false;	
 	},
 	TFormation_onShow: function(p)
 	{

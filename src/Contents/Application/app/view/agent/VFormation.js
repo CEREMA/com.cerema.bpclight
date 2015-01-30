@@ -110,7 +110,7 @@ App.view.define('agent.VFormation', {
                             text: "Formations",
                             width: 250,
                             //columnWidth: 0.80,
-                            dataIndex: "Type" // c'est le nom qu'il y a dans la base.
+                            dataIndex: "Libelle" // c'est le nom qu'il y a dans la base.
                         }, {
                             text: "Date",
                             type: "date",
@@ -121,7 +121,7 @@ App.view.define('agent.VFormation', {
                             dataIndex: "Session"
                         }, {
                             text: "Fréquence",
-                            dataIndex: "Frequence"
+                            dataIndex: "frequence"
                         }, {
                             text: "Nom de l'organisme avec carte à ajouter",
                             dataIndex: "Nom_organisme",

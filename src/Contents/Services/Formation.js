@@ -6,12 +6,15 @@ Formation = {
 	
 	getAll2: function(o,cb) {
 		var db=Formation.using('db');
-		console.log('SELECT * FROM Recapitulatif, Type_formation WHERE Recapitulatif.type_formation=Type_formation.id_formation AND Recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ');
-		db.model('bpclight','SELECT * FROM Recapitulatif, Type_formation WHERE Recapitulatif.type_formation=Type_formation.id_formation AND Recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ',cb);
+		db.model('bpclight','SELECT * FROM Recapitulatif, Type_formation, frequence WHERE Recapitulatif.type_formation=Type_formation.id_formation AND Recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ',cb);
 		// AND Recapitulatif.Kage ="'+o.Kage+'"
 	},
-	
-	 test_insert: function(o,cb)
+	del: function(o,cb)
+	{
+		var db=Formation.using('db');
+		db.query('bpclight','delete from recapitulatif where id_recapitulatif='+o,cb);
+	},
+	test_insert: function(o,cb)
 	{
 		var db=Formation.using('db');
 		//console.log('insert into Recapitulatif(Kage,Formations,Date,Session,Frequence,Nom_organisme) values ("'+o.Kage+'","'+o.Formations+'","'+o.Date+'","'+"a"+'","'+"g"+'","'+o.Nom_organisme+'");
