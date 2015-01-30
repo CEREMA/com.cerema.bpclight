@@ -73,6 +73,15 @@ Update = {
 				}			
 			});
 		};		
+		function setChangementService(response,i,cb)
+		{
+			var age=[1,3];
+			var total=response.length;
+			db.query('bpclight','select * from ageetat where ageetat.dateta<=NOW() and ageetat.Kage='+response[i].kage+' order by dateta desc limit 1',function(err,r0) {
+				console.log(r0);
+			});
+		
+		};
 		var db=Update.using('db');
 		
 		db.query('bpclight','select distinct kage from agents where actif=1',function(err,response) {
@@ -82,12 +91,16 @@ Update = {
 					cbx(err,rx);
 				});			
 			});
-			console.log('SET PNA --------------------------------------------------------------');
+			console.log('SET PNA ---------------------------------------------------------------');
 			setPNA(response,0,function(s) {
 				console.log('finished');
 			});
 			console.log('SET PARTI --------------------------------------------------------------');
 			setParti(response,0,function(s) {
+				console.log('finished');
+			});			
+			console.log('SET CHANGEMENT ---------------------------------------------------------');
+			setChangementService(response,0,function(s) {
 				console.log('finished');
 			});			
 		});
