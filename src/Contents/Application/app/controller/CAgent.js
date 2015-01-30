@@ -79,8 +79,16 @@ App.controller.define('CAgent', {
 			},
 			"grid#gridPositions": {
 				itemcontextmenu: "Positions_onContextMenu"
+			},
+			"TFormation" : {
+				show: "TFormation_onShow"
 			}
 		});
+	},
+	TFormation_onShow: function(p)
+	{
+		App.get(p,'grid#grid1').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
+		App.get(p,'grid#grid1').getStore().load();
 	},
 	situation_record: function(p)
 	{

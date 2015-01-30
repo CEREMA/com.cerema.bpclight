@@ -14,6 +14,7 @@ App.view.define('agent.VFormation', {
 
                     {
                         xtype: "combo",
+						editable: false,
                         itemId: "cbo1",
                         margin: {
                             top: 10,
