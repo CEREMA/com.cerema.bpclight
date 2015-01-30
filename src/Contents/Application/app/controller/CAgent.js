@@ -1,5 +1,3 @@
-
-
 App.controller.define('CAgent', {
 
 	views: [
@@ -302,6 +300,7 @@ App.controller.define('CAgent', {
 		App.get(p,'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get(p,'grid#gridPositions').getStore().load();
 		App.Agents.getPosition(p.up('TForm1').agent.Kage,function(response) {
+			console.log(response);
 			if (response.length==0) 
 			App.get('panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
 			else
