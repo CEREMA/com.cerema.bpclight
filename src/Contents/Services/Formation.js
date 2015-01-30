@@ -6,6 +6,7 @@ Formation = {
 	
 	getAll2: function(o,cb) {
 		var db=Formation.using('db');
+		console.log('SELECT * FROM Recapitulatif, Type_formation WHERE Recapitulatif.type_formation=Type_formation.id_formation AND Recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ');
 		db.model('bpclight','SELECT * FROM Recapitulatif, Type_formation WHERE Recapitulatif.type_formation=Type_formation.id_formation AND Recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ',cb);
 		// AND Recapitulatif.Kage ="'+o.Kage+'"
 	},

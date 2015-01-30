@@ -87,8 +87,8 @@ App.controller.define('CAgent', {
 	},
 	TFormation_onShow: function(p)
 	{
-		App.get(p,'grid#grid1').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
-		App.get(p,'grid#grid1').getStore().load();
+		App.get(p,'grid#gridFormation').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
+		App.get(p,'grid#gridFormation').getStore().load();
 	},
 	situation_record: function(p)
 	{

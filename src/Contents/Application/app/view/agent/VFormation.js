@@ -99,7 +99,7 @@ App.view.define('agent.VFormation', {
             }, {
 
                         xtype: "grid",
-                        itemId: "grid1",
+                        itemId: "gridFormation",
                         margin: {
                             top: 10,
                             bottom: 0,
