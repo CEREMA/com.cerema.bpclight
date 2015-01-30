@@ -89,9 +89,21 @@ App.controller.define('CAgent', {
 			datEta: App.get('datefield#datEta').getValue(),
 			Kage: p.up('TForm1').agent.Kage
 		};
-		if (App.get('textfield#Situation_Kpst').getValue()=="") {
+		if ((o.Kpst==1) || (o.Kpst==3)) {
+			if (o.data.Kpst==1) 
+			o.Arrivee=App.get('combo#MotifCBO').getRawValue();
+			else
+			o.Arrivee=App.get('textarea#VMotif').getValue();
 			
+			o.Ketsnew=App.get('combo#TIEtablissement').getValue();
+			o.Kuninew=App.get('combo#TIDepartement').getValue();
+			o.Ksubnew=App.get('combo#TIService').getValue();
+			
+			o.Ketsex=App.get('combo#TEtablissement').getValue();
+			o.Kuniex=App.get('combo#TDepartement').getValue();
+			o.Ksubex=App.get('combo#TDepartement').getValue();
 		};
+		
 		App.Agents.saveSituation(o,function(err,response) {
 			App.get('panel#situation_header').hide();
 			App.get('panel#situation_cancel_ok').hide();
