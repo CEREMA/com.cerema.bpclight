@@ -91,6 +91,10 @@ Update = {
 					cbx(err,rx);
 				});			
 			});
+			console.log('SET CHANGEMENT ---------------------------------------------------------');
+			setChangementService(response,0,function(s) {
+				console.log('finished');
+			});				
 			console.log('SET PNA ---------------------------------------------------------------');
 			setPNA(response,0,function(s) {
 				console.log('finished');
@@ -98,11 +102,7 @@ Update = {
 			console.log('SET PARTI --------------------------------------------------------------');
 			setParti(response,0,function(s) {
 				console.log('finished');
-			});			
-			console.log('SET CHANGEMENT ---------------------------------------------------------');
-			setChangementService(response,0,function(s) {
-				console.log('finished');
-			});			
+			});					
 		});
 			
 	}
