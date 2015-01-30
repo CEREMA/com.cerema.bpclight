@@ -85,8 +85,23 @@ App.controller.define('CAgent', {
 			},
 			"TFormation grid#gridFormation": {
 				itemcontextmenu: "Formation_onContextMenu"
+			},
+			"TFormation button#ajouter": {
+				click: "ajouter_onclick"
 			}
 		});
+	},
+	ajouter_onclick: function(p)
+	{
+		var o = {
+			Kage: p.up('TForm1').agent.Kage,
+			type_formation: App.get('TFormation combo#cbo1').getValue(),
+			Date: App.get('TFormation datefield#date').getValue(),
+			Nom_organisme: App.get('TFormation textfield#organisme').getValue()
+		};
+		if (App.get('TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
+		else o.Session='Recyclage';
+		console.log(o);
 	},
 	Formation_onContextMenu: function(view,rec,node,index,e) {
 		e.stopEvent();
