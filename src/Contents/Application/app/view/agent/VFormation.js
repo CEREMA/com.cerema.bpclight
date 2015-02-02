@@ -79,6 +79,9 @@ App.view.define('agent.VFormation', {
 					itemId: "Formation_document"
 				},
 				{
+					flex: 1
+				},
+				{
                     xtype: "panel",
                     itemId: "organisme",
 					width: 50,
@@ -122,8 +125,7 @@ App.view.define('agent.VFormation', {
                         columns: [{
                             text: "Formations",
                             width: 250,
-                            //columnWidth: 0.80,
-                            dataIndex: "Libelle" // c'est le nom qu'il y a dans la base.
+                            dataIndex: "Libelle"
                         }, {
                             text: "Date",
                             type: "date",

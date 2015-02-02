@@ -94,12 +94,16 @@ App.controller.define('CAgent', {
 			},
 			"TFormation grid#gridFormation": {
 				itemcontextmenu: "Formation_onContextMenu",
-				dblclick: "Formation_download"
+				dblclick: "formation_download"
 			},
 			"TFormation button#ajouter": {
 				click: "ajouter_onclick"
 			}
 		});
+	},
+	formation_download: function(cmp,)
+	{
+	
 	},
 	formation_upload: function(cmp,e,file)
 	{
