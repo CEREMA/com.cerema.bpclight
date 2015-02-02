@@ -42,20 +42,20 @@ Agents = {
 		console.log('SELECT position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o+' and ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc');
 		db.query('bpclight','SELECT position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o+' and ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc',cb);
 	},
+	getFormations: function(o,cb) {
+		Agents.using('db').model('bpclight','SELECT id_recapitulatif,Kage,Date,Session,Nom_organisme,type_formation,Libelle,frequence FROM recapitulatif, type_formation WHERE recapitulatif.type_formation=type_formation.id_formation AND recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3',cb);
+	},	
 	delPosition: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.del('bpclight','ageetat',o,cb);
+		Agents.using('db').del('bpclight','ageetat',o,cb);
 	},
 	getPositions: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.model('bpclight','SELECT ageetat.Keta, position.Position,ageetat.dateta FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o.kage+') ORDER BY ageetat.DatEta desc',cb);
+		Agents.using('db').model('bpclight','SELECT ageetat.Keta, position.Position,ageetat.dateta FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o.kage+') ORDER BY ageetat.DatEta desc',cb);
 	},
 	setAdresse: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.post('bpclight','adresses',o,cb);
+		gents.using('db').post('bpclight','adresses',o,cb);
 	},
 	getAdresse: function(x,cb)
 	{
