@@ -7,6 +7,7 @@ App.view.define('agent.VSidePanel',{
 		this.height= "100%";
 		this.items = [
 			{
+				xtype: "panel",
 				html: "<div class=IPhoto></div>",
 				itemId: "PanelPhoto",
 				height: 140,

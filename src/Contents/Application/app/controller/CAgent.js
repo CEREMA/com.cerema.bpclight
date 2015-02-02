@@ -97,11 +97,14 @@ App.controller.define('CAgent', {
 	},
 	photo_test: function(cmp, file) {
 		var imageType = /image.*/;
-		return Ext.isArray(file.type.match(imageType));
+		console.log(file);
+		//return Ext.isArray(file.type.match(imageType));
 	},
 	photo_onload: function(cmp,e,file)
 	{
-		console.log(file);
+		App.readFile(file,function(result) {
+			console.log(result);
+		});
 	},
 	ajouter_onclick: function(p)
 	{
