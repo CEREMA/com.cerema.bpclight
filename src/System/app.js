@@ -27,6 +27,9 @@ App = {
 				res.end(JSON.stringify(o,null,4));
 			});
 		});
+		app.get('/formation',function(req,res) {
+			console.log(req.body);
+		});
 		app.post('/export',function(req,res) {
 			var excelbuilder=App.using('msexcel-builder');
 			if (req.body.kage) {

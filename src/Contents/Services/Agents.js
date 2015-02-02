@@ -39,7 +39,6 @@ Agents = {
 	getPosition: function(o,cb)
 	{
 		var db=Agents.using('db');
-		console.log('SELECT position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o+' and ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc');
 		db.query('bpclight','SELECT position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.Kage = '+o+' and ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc',cb);
 	},
 	getFormations: function(o,cb) {
@@ -48,6 +47,10 @@ Agents = {
 	delPosition: function(o,cb)
 	{
 		Agents.using('db').del('bpclight','ageetat',o,cb);
+	},
+	delFormation: function(o,cb)
+	{
+		Agents.using('db').del('bpclight','recapitulatif',o,cb);
 	},
 	getPositions: function(o,cb)
 	{

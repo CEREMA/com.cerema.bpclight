@@ -2,6 +2,7 @@ App.controller.define('CAgent', {
 
 	views: [
 		"VForm1",
+		"VShowFormation",
 		"agent.VSidePanel",
 		"agent.VAgent",
 		"agent.VSituation",
@@ -16,6 +17,12 @@ App.controller.define('CAgent', {
 	init: function()
 	{
 		this.control({
+			"TShowFormation": {
+				show: function()
+				{
+					alert('x');
+				}
+			},
 			"TForm1": {
 				show: "TForm1_onshow"
 			},
@@ -100,7 +107,10 @@ App.controller.define('CAgent', {
 	},
 	formation_download: function(p, record, item, index, e, eOpts)
 	{
-		console.log(record);
+		App.view.create('VShowFormation',{
+			id: record.data.id_recapitulatif,
+			modal: true
+		}).show();
 	},
 	formation_upload: function(cmp,e,file)
 	{
@@ -149,7 +159,7 @@ App.controller.define('CAgent', {
 		});
 		x.on('click',function(p) {
 			if (p.itemId="ctx-gridForm-delete") {
-				App.Formation.del(rec.data.id_recapitulatif,function(err,response){
+				App.Agents.delFormation(rec.data.id_recapitulatif,function(err,response){
 					App.get('grid#gridFormation').getStore().load();
 				});
 			}

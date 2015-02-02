@@ -79,7 +79,8 @@ App.view.define('agent.VFormation', {
 					itemId: "Formation_document"
 				},
 				{
-					flex: 1
+					flex: 1,
+					border: false
 				},
 				{
                     xtype: "panel",
@@ -136,11 +137,12 @@ App.view.define('agent.VFormation', {
                             dataIndex: "Session"
                         }, {
                             text: "Fréquence",
-                            dataIndex: "frequence"
-                        }, {
-                            text: "Nom de l'organisme avec carte à ajouter",
-                            dataIndex: "Nom_organisme",
-                            flex: 1
+                            dataIndex: "frequence",
+							renderer: function(r) {
+								if (r==-1) return "-"; else 
+								if (r==1) return r+' an'; else 
+								if (r>1) return r+' ans';
+							}
                         }],
                         width: "100%",
                         flex: 1,
