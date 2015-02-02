@@ -19,6 +19,10 @@ App.controller.define('CAgent', {
 			"TForm1": {
 				show: "TForm1_onshow"
 			},
+			"TSidePanel panel#PanelPhoto" : {
+				load: "photo_onload",
+				beforeload: "photo_test"
+			},
 			"TForm1 button#Record": {
 				click: "record_onclick"
 			},
@@ -90,6 +94,14 @@ App.controller.define('CAgent', {
 				click: "ajouter_onclick"
 			}
 		});
+	},
+	photo_test: function(cmp, file) {
+		var imageType = /image.*/;
+		return Ext.isArray(file.type.match(imageType));
+	},
+	photo_onload: function(cmp,e,file)
+	{
+		console.log(file);
 	},
 	ajouter_onclick: function(p)
 	{
