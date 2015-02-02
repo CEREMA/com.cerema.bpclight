@@ -27,8 +27,14 @@ App = {
 			});
 		});
 		app.get('/formation/*',function(req,res) {
-			console.log(req.body);
-			res.end('toto');
+			console.log(req.originalUrl.substr(req.originalUrl.lastIndexOf('/'),255));
+			App.using('db').query('bpclight','select upload from recapitulatif where id_recapitulatif='+req.originalUrl.substr(req.originalUrl.lastIndexOf('/'),255),function(err,response) {
+				if (response.length>0) {
+					var buf = new Buffer(response[0].upload, 'base64');
+					res.end(buf);
+				}
+			});
+			
 		});
 		app.post('/export',function(req,res) {
 			var excelbuilder=App.using('msexcel-builder');
