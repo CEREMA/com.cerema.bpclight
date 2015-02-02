@@ -20,8 +20,7 @@ App.controller.define('CAgent', {
 				show: "TForm1_onshow"
 			},
 			"TSidePanel panel#PanelPhoto" : {
-				load: "photo_onload",
-				beforeload: "photo_test"
+				load: "photo_onload"
 			},
 			"TForm1 button#Record": {
 				click: "record_onclick"
@@ -95,15 +94,18 @@ App.controller.define('CAgent', {
 			}
 		});
 	},
-	photo_test: function(cmp, file) {
-		var imageType = /image.*/;
-		console.log(file);
-		//return Ext.isArray(file.type.match(imageType));
-	},
 	photo_onload: function(cmp,e,file)
 	{
 		App.readFile(file,function(result) {
-			console.log(result);
+			$('.IPhoto').html('<img src="'+result+'" width=100 height=120></img>');
+			App.notify('Mise à jour de la photo');
+			var o={
+				kage: cmp.up('TForm1').agent.Kage,
+				trombi: result
+			};
+			App.Agents.setPhoto(o,function() {
+				App.notify('Mise à jour effectuée.');
+			});
 		});
 	},
 	ajouter_onclick: function(p)

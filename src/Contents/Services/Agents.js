@@ -8,6 +8,10 @@ Agents = {
 	{
 		Agents.using('db').query('bpclight','select trombi from trombi where kage='+o,cb);	
 	},
+	setPhoto: function(o,cb)
+	{
+		Agents.using('db').post('bpclight','trombi',o,cb);	
+	},	
 	getRole: function(o,cb)
 	{
 		var db=Agents.using('db');
