@@ -6,7 +6,8 @@ Formation = {
 	
 	getAll2: function(o,cb) {
 		var db=Formation.using('db');
-		db.model('bpclight','SELECT id_recapitulatif,Kage,Date,Session,Nom_organisme,type_formation FROM recapitulatif, type_formation WHERE recapitulatif.type_formation=type_formation.id_formation AND recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3 ',cb);		
+		console.log('SELECT id_recapitulatif,Kage,Date,Session,Nom_organisme,type_formation FROM recapitulatif, type_formation WHERE recapitulatif.type_formation=type_formation.id_formation AND recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3');
+		db.model('bpclight','SELECT id_recapitulatif,Kage,Date,Session,Nom_organisme,type_formation FROM recapitulatif, type_formation WHERE recapitulatif.type_formation=type_formation.id_formation AND recapitulatif.Kage ="'+o.Kage+'" ORDER BY 3',cb);
 	},
 	del: function(o,cb)
 	{
