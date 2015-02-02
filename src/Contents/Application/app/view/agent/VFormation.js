@@ -10,6 +10,8 @@ App.view.define('agent.VFormation', {
                 layout: "hbox",
                 border: false,
                 width: "100%",
+				xtype: "panel",
+				itemId: "UpFormation",			
                 items: [
 
                     {
@@ -70,17 +72,28 @@ App.view.define('agent.VFormation', {
                 border: false,
                 width: "100%",
                 items: [{
-                    xtype: "textfield",
+					xtype: "textarea",
+					width: 21,
+					height: 21,
+					hidden: true,
+					itemId: "Formation_document"
+				},
+				{
+                    xtype: "panel",
                     itemId: "organisme",
+					width: 50,
+					height: 50,
+					baseCls: "Upload",
                     margin: {
                         top: 10,
                         left: 10,
 						right: 10
                     },
-                    flex: 1,
-                    labelAlign: "top",
-                    fieldLabel: "Organisme avec carte à ajouter",
-                    labelWidth: 200
+					padding: 10,
+					plugins:[{
+						ptype: "filedrop",
+						readType: "DataURL"
+					}]
                 }, ]
             }, {
                 layout: "hbox",

@@ -22,6 +22,12 @@ App.controller.define('CAgent', {
 			"TSidePanel panel#PanelPhoto" : {
 				load: "photo_onload"
 			},
+			"panel#organisme": {
+				load: "formation_upload",
+				dragover : function(cmp, e) {
+					console.log("Dragging");
+				}			
+			},
 			"TForm1 button#Record": {
 				click: "record_onclick"
 			},
@@ -87,12 +93,21 @@ App.controller.define('CAgent', {
 				show: "TFormation_onShow"
 			},
 			"TFormation grid#gridFormation": {
-				itemcontextmenu: "Formation_onContextMenu"
+				itemcontextmenu: "Formation_onContextMenu",
+				dblclick: "Formation_download"
 			},
 			"TFormation button#ajouter": {
 				click: "ajouter_onclick"
 			}
 		});
+	},
+	formation_upload: function(cmp,e,file)
+	{
+		App.get('TFormation button#ajouter').setDisabled(true);
+		App.readFile(file,function(result) {
+			App.get('TFormation textarea#Formation_document').setValue(result);
+			App.get('TFormation button#ajouter').setDisabled(false);
+		});	
 	},
 	photo_onload: function(cmp,e,file)
 	{
@@ -113,11 +128,13 @@ App.controller.define('CAgent', {
 			Kage: p.up('TForm1').agent.Kage,
 			type_formation: App.get('TFormation combo#cbo1').getValue(),
 			Date: App.get('TFormation datefield#date').getValue(),
-			Nom_organisme: App.get('TFormation textfield#organisme').getValue()
+			upload: App.get('TFormation textarea#Formation_document').getValue()
 		};
 		if (App.get('TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
 		else o.Session='Recyclage';
-		console.log(o);
+		App.Agents.saveFormation(o,function() {
+			App.get('grid#gridFormation').getStore().load();
+		});
 	},
 	Formation_onContextMenu: function(view,rec,node,index,e) {
 		e.stopEvent();

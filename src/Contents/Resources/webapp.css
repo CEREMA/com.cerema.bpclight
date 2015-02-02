@@ -79,3 +79,13 @@
 	font-family: verdana;
 	font-size:14px;
 }
+
+.Upload
+{
+	border: 0px solid black;
+	background-image:url(webapp/upload.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;	
+	width:48px;
+	height:48px;
+}
