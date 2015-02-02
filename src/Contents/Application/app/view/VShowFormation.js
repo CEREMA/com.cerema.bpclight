@@ -24,6 +24,7 @@ App.view.define('VShowFormation', {
         this.items = [
 			{
 				html: '<iframe width=100% height=100% src="/formation/'+this.id+'"></iframe>',
+				border: false,
 				flex: 1
 			}
 		];
