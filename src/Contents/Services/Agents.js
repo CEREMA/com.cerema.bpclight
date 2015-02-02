@@ -4,6 +4,10 @@ Agents = {
 		var db=Agents.using('db');
 		db.post('bpclight','agents',o,cb);
 	},
+	saveFormation: function(o,cb)
+	{
+		Agents.using('db').post('bpclight','recapitulatif',o,cb);
+	},
 	getPhoto: function(o,cb)
 	{
 		Agents.using('db').query('bpclight','select trombi from trombi where kage='+o,cb);	

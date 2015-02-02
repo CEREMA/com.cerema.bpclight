@@ -98,13 +98,12 @@ App.controller.define('CAgent', {
 	{
 		App.readFile(file,function(result) {
 			$('.IPhoto').html('<img src="'+result+'" width=100 height=120></img>');
-			App.notify('Mise ‡ jour de la photo');
 			var o={
 				kage: cmp.up('TForm1').agent.Kage,
 				trombi: result
 			};
 			App.Agents.setPhoto(o,function() {
-				App.notify('Mise ‡ jour effectuÈe.');
+				App.notify('Mise √† jour effectu√©e.');
 			});
 		});
 	},
@@ -199,7 +198,7 @@ App.controller.define('CAgent', {
 		App.get('textarea#VMotif').hide();
 		App.get('panel#CPACFARetraite').hide();
 		App.get('textfield#Situation_Kpst').setValue(record[0].data.Kpst);
-		// Mutation arrivÈe		
+		// Mutation arriv√©e		
 		if ((record[0].data.Kpst==1) || (record[0].data.Kpst==3)) {
 			App.get('panel#mutation_arrivee').show();
 			if (record[0].data.Kpst==1) {
@@ -212,7 +211,7 @@ App.controller.define('CAgent', {
 				App.get('panel#situation_separator').hide();
 			}
 		};
-		// Mutation dÈpart & absence longue
+		// Mutation d√©part & absence longue
 		if ((record[0].data.Kpst==4) || (record[0].data.Kpst==5)) {
 			App.get('textarea#VMotif').show();
 		};
@@ -364,7 +363,7 @@ App.controller.define('CAgent', {
 			tb.push(App.get('grid#roles').getStore().data.items[i].data.CodRol);
 		};
 		if (tb.indexOf(o.krol)>-1) {
-			Ext.MessageBox.alert('BPCLight', 'Ce rÙle est dÈj‡ renseignÈ.');
+			Ext.MessageBox.alert('BPCLight', 'Ce r√¥le est d√©j√† renseign√©.');
 			p.setDisabled(false);
 		} else {		
 			App.Agents.addRole(o,function(response) {
