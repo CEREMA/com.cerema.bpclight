@@ -23,10 +23,7 @@ App.controller.define('CAgent', {
 				load: "photo_onload"
 			},
 			"panel#organisme": {
-				load: "formation_upload",
-				dragover : function(cmp, e) {
-					console.log("Dragging");
-				}			
+				load: "formation_upload"
 			},
 			"TForm1 button#Record": {
 				click: "record_onclick"
@@ -94,16 +91,16 @@ App.controller.define('CAgent', {
 			},
 			"TFormation grid#gridFormation": {
 				itemcontextmenu: "Formation_onContextMenu",
-				dblclick: "formation_download"
+				itemdblclick: "formation_download"
 			},
 			"TFormation button#ajouter": {
 				click: "ajouter_onclick"
 			}
 		});
 	},
-	formation_download: function(cmp,)
+	formation_download: function(p, record, item, index, e, eOpts)
 	{
-	
+		console.log(record);
 	},
 	formation_upload: function(cmp,e,file)
 	{
