@@ -18,8 +18,7 @@ Agents = {
 	},	
 	getRole: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.model('bpclight','select * from agerol, roles where agerol.krol=roles.krol and agerol.kage='+o.kage+' order by LibRol',cb);
+		Agents.using('db').model('bpclight','select * from agerol, roles where agerol.krol=roles.krol and agerol.kage='+o.kage+' order by LibRol',cb);
 	},
 	saveSituation: function(o,cb)
 	{
@@ -28,8 +27,7 @@ Agents = {
 	},
 	addRole: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.query('bpclight','insert into agerol (kage,krol) values ('+o.kage+','+o.krol+')',cb);
+		Agents.using('db').post('bpclight','agerol',o,cb);
 	},
 	delRole: function(krol,kage,cb)
 	{

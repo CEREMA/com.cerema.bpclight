@@ -375,8 +375,8 @@ App.controller.define('CAgent', {
 	{
 		p.setDisabled(true);
 		var o={
-			kage: p.up('TForm1').agent.Kage,
-			krol: App.get('combo#cboRoles').getValue()
+			Kage: p.up('TForm1').agent.Kage,
+			Krol: App.get('combo#cboRoles').getValue()
 		};
 		// exists already ?
 		var tb=[];
