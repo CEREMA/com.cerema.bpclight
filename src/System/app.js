@@ -30,14 +30,14 @@ App = {
 			App.using('db').query('bpclight','select upload from recapitulatif where id_recapitulatif='+req.originalUrl.substr(req.originalUrl.lastIndexOf('/')+1,255),function(err,response) {
 				if (response.length>0) {
 					if (response[0].upload=="") {
-						res.end('Aucun document lié.');
+						res.end('Aucun document liÃ©.');
 					} else {
 						var buf = new Buffer(response[0].upload.split(';base64,')[1], 'base64');
-						res.setHeader('Content-disposition', 'inline; filename="Doc.pdf"');
-						res.setHeader("Content-Type", response[0].upload.split(';base64')[0].split('data:')[1]);
+						res.set('Content-disposition', 'inline; filename="Doc.pdf"');
+						res.set("Content-Type", response[0].upload.split(';base64')[0].split('data:')[1]);
 						res.end(buf);
 					}
-				} else res.end('Aucun document lié.');
+				} else res.end('Aucun document liÃ©.');
 			});
 			
 		});
@@ -57,7 +57,7 @@ App = {
 						width: 50
 					},
 					{
-						caption: 'Prénom',
+						caption: 'PrÃ©nom',
 						type:'string',
 						width: 50
 					},
@@ -77,7 +77,7 @@ App = {
 						width: 50
 					},
 					{
-						caption: 'Département',
+						caption: 'DÃ©partement',
 						type:'string',
 						width: 100
 					},
@@ -87,7 +87,7 @@ App = {
 						width: 100
 					},
 					{
-						caption: 'Arrivée',
+						caption: 'ArrivÃ©e',
 						type:'string',
 						width: 100
 					},
@@ -123,8 +123,7 @@ App = {
 						};
 					};			
 					workbook.save(function(ok){
-						res.download(__dirname+require('path').sep+'tmp');
-						//res.end('/tmp/'+uid+'.xlsx');
+						res.end('/tmp/'+uid+'.xlsx');
 					});					
 					
 				});
