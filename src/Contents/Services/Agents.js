@@ -58,7 +58,7 @@ Agents = {
 	},
 	setAdresse: function(o,cb)
 	{
-		gents.using('db').post('bpclight','adresses',o,cb);
+		Agents.using('db').post('bpclight','adresses',o,cb);
 	},
 	getAdresse: function(x,cb)
 	{

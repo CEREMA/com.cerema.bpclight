@@ -16,13 +16,7 @@ App.controller.define('CAgent', {
 	
 	init: function()
 	{
-		this.control({
-			"TShowFormation": {
-				show: function()
-				{
-					alert('x');
-				}
-			},
+		this.control({			
 			"TForm1": {
 				show: "TForm1_onshow"
 			},
@@ -108,8 +102,8 @@ App.controller.define('CAgent', {
 	formation_download: function(p, record, item, index, e, eOpts)
 	{
 		App.view.create('VShowFormation',{
-			id: record.data.id_recapitulatif,
-			modal: true
+			title: record.data.Libelle+' ('+record.data.Session+')',
+			pid: record.data.id_recapitulatif
 		}).show();
 	},
 	formation_upload: function(cmp,e,file)
@@ -123,7 +117,7 @@ App.controller.define('CAgent', {
 	photo_onload: function(cmp,e,file)
 	{
 		App.readFile(file,function(result) {
-			$('.IPhoto').html('<img src="'+result+'" width=100 height=120></img>');
+			App.get(cmp,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+result+'" width=100 height=120></img></div>');
 			var o={
 				kage: cmp.up('TForm1').agent.Kage,
 				trombi: result
@@ -429,7 +423,7 @@ App.controller.define('CAgent', {
 		};
 		p.setTitle(p.agent.Prenom+" "+p.agent.Nom);
 		App.Agents.getPhoto(p.agent.Kage,function(o) {
-			if (o.length>0)	$('.IPhoto').html('<img src="'+o[0].trombi+'" width=100 height=120></img>');
+			if (o.length>0)	App.get(p,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+o[0].trombi+'" width=100 height=120></img></div>');
 		});
 		
 		App.get(p,'textfield#LAgentNom').setValue(p.agent.Nom);

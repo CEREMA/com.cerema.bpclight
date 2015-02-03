@@ -89,10 +89,6 @@ App.controller.define('CMain', {
 	},
 	NewAgent_onclick: function()
 	{
-		/*App.view.create('VForm1',{
-			agent: -1,
-			modal: true
-		}).show();*/
 		Ext.Msg.alert('BPCLight', 'Fonction non implémentée');
 	},
 	Menu_onClick: function(p)
@@ -155,8 +151,7 @@ App.controller.define('CMain', {
 	grid_ondblclick: function(p, record, item, index)
 	{
 		App.view.create('VForm1',{
-			agent: record.data,
-			modal: true
+			agent: record.data
 		}).show();
 	},
 	tree_onclick: function(p, record, item, index)

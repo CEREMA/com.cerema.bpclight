@@ -4,7 +4,6 @@ App.view.define('VShowFormation', {
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
-        this.title = "...";
 
         this.layout = {
             type: 'fit'
@@ -23,7 +22,7 @@ App.view.define('VShowFormation', {
 
         this.items = [
 			{
-				html: '<iframe width=100% height=100% src="/formation/'+this.id+'"></iframe>',
+				html: '<iframe width=100% height=100% src="/formation/'+this.pid+'"></iframe>',
 				border: false,
 				flex: 1
 			}
