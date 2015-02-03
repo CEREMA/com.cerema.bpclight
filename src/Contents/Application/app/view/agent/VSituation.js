@@ -188,6 +188,7 @@ App.view.define('agent.VSituation', {
 				layout: "hbox",
 				padding: 10,
 				width: "100%",
+				xtype: "panel",
 				itemId: "CPACFARetraite",
 				hidden: true,
 				border: false,

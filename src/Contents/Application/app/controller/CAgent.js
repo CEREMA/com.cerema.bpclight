@@ -81,6 +81,12 @@ App.controller.define('CAgent', {
 			"TSituation button#situation_ok": {
 				click: "situation_record"
 			},
+			"TSituation combo#TIEtablissement": {
+				select: "TIEtablissement_onchange"
+			},			
+			"TSituation combo#TIDepartement": {
+				select: "TIDepartement_onchange"
+			},
 			"TSituation grid#gridPositions": {
 				itemcontextmenu: "Positions_onContextMenu",
 				itemclick: "Positions_click"
@@ -94,12 +100,6 @@ App.controller.define('CAgent', {
 			"TFormation panel#organisme": {
 				load: "formation_upload"
 			},			
-			"TFormation combo#TIEtablissement": {
-				select: "TIEtablissement_onchange"
-			},			
-			"TFormation combo#TIDepartement": {
-				select: "TIDepartement_onchange"
-			},
 			"TFormation grid#gridFormation": {
 				itemcontextmenu: "Formation_onContextMenu",
 				itemdblclick: "formation_download"
@@ -194,12 +194,13 @@ App.controller.define('CAgent', {
 	},
 	situation_record: function(p)
 	{
-		console.log(App.get(p.up('TForm1'),'datefield#datEta').getValue());
+		
 		var o={
 			Kpst: App.get(p.up('TForm1'),'textfield#Situation_Kpst').getValue(),
 			DatEta: App.get(p.up('TForm1'),'datefield#datEta').getValue(),
 			Kage: p.up('TForm1').agent.Kage
 		};
+		
 		if ((o.Kpst==1) || (o.Kpst==3)) {
 			if (o.Kpst==1) 
 			o.Arrivee=App.get(p.up('TForm1'),'combo#MotifCBO').getValue();
@@ -215,13 +216,30 @@ App.controller.define('CAgent', {
 			o.Ksubex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
 		};
 		
+		if (o.Kpst=14) {
+			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
+			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
+			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+		};
+		if (o.Kpst=8) {
+			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
+			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+		};	
+		if (o.Kpst=8) {
+			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
+			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+		};		
+		o.Motif=App.get(p.up('TForm1'),'textarea#Motif').getValue();
+		
 		App.Agents.saveSituation(o,function(err,response) {
 			App.get(p.up('TForm1'),'panel#situation_header').hide();
 			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
 			App.get(p.up('TForm1'),'grid#gridPositions').show();
 			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
+			App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();			
 			App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
 		});
+		
 	},
 	situation_add: function(p)
 	{
@@ -232,44 +250,45 @@ App.controller.define('CAgent', {
 	},
 	situation_cancel_onclick: function(p)
 	{
-		App.get(p.up('TForm1'),'panel#situation_header').hide();
-		App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
-		App.get(p.up('TForm1'),'grid#gridPositions').show();
-		App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();
+		App.get(p.up('TSituation'),'panel#situation_header').hide();
+		App.get(p.up('TSituation'),'panel#situation_cancel_ok').hide();
+		App.get(p.up('TSituation'),'grid#gridPositions').show();
+		App.get(p.up('TSituation'),'panel#mutation_arrivee').hide();
+		App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();
 	},
 	position_onchange: function(p,record)
 	{
-		this.situation_cancel_onclick();
-		App.get(p.up('TForm1'),'grid#gridPositions').hide();
-		App.get(p.up('TForm1'),'panel#situation_header').show();
-		App.get(p.up('TForm1'),'panel#situation_cancel_ok').show();
-		App.get(p.up('TForm1'),'textarea#VMotif').hide();
-		App.get(p.up('TForm1'),'panel#CPACFARetraite').hide();
-		App.get(p.up('TForm1'),'textfield#Situation_Kpst').setValue(record[0].data.Kpst);
+		this.situation_cancel_onclick(p);
+		App.get(p.up('TSituation'),'grid#gridPositions').hide();
+		App.get(p.up('TSituation'),'panel#situation_header').show();
+		App.get(p.up('TSituation'),'panel#situation_cancel_ok').show();
+		App.get(p.up('TSituation'),'textarea#VMotif').hide();
+		App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();
+		App.get(p.up('TSituation'),'textfield#Situation_Kpst').setValue(record[0].data.Kpst);
 		// Mutation arrivée		
 		if ((record[0].data.Kpst==1) || (record[0].data.Kpst==3)) {
-			App.get(p,'panel#mutation_arrivee').show();
+			App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
 			if (record[0].data.Kpst==1) {
-				App.get(p.up('TForm1'),'combo#MotifCBO').show();
-				App.get(p.up('TForm1'),'textfield#Motif').hide();
-				App.get(p.up('TForm1'),'panel#situation_separator').show();
+				App.get(p.up('TSituation'),'combo#MotifCBO').show();
+				App.get(p.up('TSituation'),'textfield#Motif').hide();
+				App.get(p.up('TSituation'),'panel#situation_separator').show();
 			} else {
-				App.get(p.up('TForm1'),'combo#MotifCBO').hide();
-				App.get(p.up('TForm1'),'textfield#Motif').show();
-				App.get(p.up('TForm1'),'panel#situation_separator').hide();
+				App.get(p.up('TSituation'),'combo#MotifCBO').hide();
+				App.get(p.up('TSituation'),'textfield#Motif').show();
+				App.get(p.up('TSituation'),'panel#situation_separator').hide();
 			}
 		};
 		// Mutation départ & absence longue
 		if ((record[0].data.Kpst==4) || (record[0].data.Kpst==5)) {
-			App.get(p.up('TForm1'),'textarea#VMotif').show();
+			App.get(p.up('TSituation'),'textarea#VMotif').show();
 		};
 		// CPA + CFA + Retraite
 		if ((record[0].data.Kpst==8) || (record[0].data.Kpst==7) || (record[0].data.Kpst==14)) {
-			App.get(p.up('TForm1'),'panel#CPACFARetraite').show();
-			App.get(p.up('TForm1'),'datefield#TDateCFA').hide();
-			App.get(p.up('TForm1'),'datefield#TDateCPA').hide();
-			if (record[0].data.Kpst==8 || record[0].data.Kpst==14) App.get(p.up('TForm1'),'datefield#TDateCFA').show();
-			if (record[0].data.Kpst==7 || record[0].data.Kpst==14) App.get(p.up('TForm1'),'datefield#TDateCPA').show();
+			App.get(p.up('TSituation'),'panel#CPACFARetraite').show();
+			App.get(p.up('TSituation'),'datefield#TDateCFA').hide();
+			App.get(p.up('TSituation'),'datefield#TDateCPA').hide();
+			if (record[0].data.Kpst==8 || record[0].data.Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCFA').show();
+			if (record[0].data.Kpst==7 || record[0].data.Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCPA').show();
 		}
 	},
 	VilleCBO_onclick: function(p,record)
