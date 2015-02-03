@@ -29,10 +29,14 @@ App = {
 		app.get('/formation/*',function(req,res) {
 			App.using('db').query('bpclight','select upload from recapitulatif where id_recapitulatif='+req.originalUrl.substr(req.originalUrl.lastIndexOf('/')+1,255),function(err,response) {
 				if (response.length>0) {
-					var buf = new Buffer(response[0].upload.split(';base64,')[1], 'base64');
-					res.setHeader('Content-disposition', 'inline; filename="Doc.pdf"');
-					res.setHeader("Content-Type", response[0].upload.split(';base64')[0].split('data:')[1]);
-					res.end(buf);
+					if (response[0].upload=="") {
+						res.end('Aucun document lié.');
+					} else {
+						var buf = new Buffer(response[0].upload.split(';base64,')[1], 'base64');
+						res.setHeader('Content-disposition', 'inline; filename="Doc.pdf"');
+						res.setHeader("Content-Type", response[0].upload.split(';base64')[0].split('data:')[1]);
+						res.end(buf);
+					}
 				} else res.end('Aucun document lié.');
 			});
 			
