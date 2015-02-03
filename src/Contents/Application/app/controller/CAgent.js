@@ -16,79 +16,88 @@ App.controller.define('CAgent', {
 	
 	init: function()
 	{
-		this.control({			
+		this.control({		
+			"menu>menuitem": {
+				click: "Menu_onclick"
+			},
+			/*
+			TForm1
+			*/		
 			"TForm1": {
 				show: "TForm1_onshow"
-			},
-			"TSidePanel panel#PanelPhoto" : {
-				load: "photo_onload"
-			},
-			"panel#organisme": {
-				load: "formation_upload"
 			},
 			"TForm1 button#Record": {
 				click: "record_onclick"
 			},
-			"menu>menuitem": {
-				click: "Menu_onclick"
-			},
-			"combo#TEtablissement": {
-				select: "TEtablissement_onchange"
-			},
-			"combo#TDepartement": {
-				select: "TDepartement_onchange"
-			},
-			"combo#TIEtablissement": {
-				select: "TIEtablissement_onchange"
-			},
-			"combo#TIDepartement": {
-				select: "TIDepartement_onchange"
-			},
-			"combo#TCat": {
+			"TForm1 combo#TCat": {
 				select: "TCat_onchange"
 			},
-			"button#Exit": {
+			"TForm1 button#Exit": {
 				click: "close_agent"
 			},
-			"button#formationAdd": {
-				click: "formationAdd_click"
-			},
-			"button#RoleAdd": {
-				click: "RoleAdd_click"
-			},
-			"grid#roles": {
-				itemcontextmenu: "Roles_onContextMenu"
-			},
-			"TSituation": {
-				show: "TSituation_onshow"
-			},
-			"textfield#TMelA": {
+			"TForm1 textfield#TMelA": {
 				render: "TMelA_onclick"
 			},
-			"textfield#CodePostal": {
+			"TForm1 textfield#CodePostal": {
 				render: "TCodePostal_onclick",
 				keyup: "TCodePostal_onchange"
 			},
-			"combo#VilleCBO": {
+			"TForm1 combo#VilleCBO": {
 				select: "VilleCBO_onclick"
 			},
-			"combo#position": {
+			"TForm1 button#RoleAdd": {
+				click: "RoleAdd_click"
+			},
+			"TForm1 grid#roles": {
+				itemcontextmenu: "Roles_onContextMenu"
+			},
+			/*
+			TSidePanel
+			*/
+			"TSidePanel combo#TEtablissement": {
+				select: "TEtablissement_onchange"
+			},
+			"TSidePanel panel#PanelPhoto" : {
+				load: "photo_onload"
+			},
+			"TSidePanel combo#TDepartement": {
+				select: "TDepartement_onchange"
+			},
+			/*
+			TSituation
+			*/
+			"TSituation": {
+				show: "TSituation_onshow"
+			},
+			"TSituation combo#position": {
 				select: "position_onchange"
 			},
-			"button#situation_cancel": {
+			"TSituation button#situation_cancel": {
 				click: "situation_cancel_onclick"
 			},
-			"button#Add": {
+			"TSituation button#Add": {
 				click: "situation_add"
 			},
-			"button#situation_ok": {
+			"TSituation button#situation_ok": {
 				click: "situation_record"
 			},
-			"grid#gridPositions": {
+			"TSituation grid#gridPositions": {
 				itemcontextmenu: "Positions_onContextMenu"
 			},
+			/*
+			TFormation
+			*/
 			"TFormation" : {
 				show: "TFormation_onShow"
+			},
+			"TFormation panel#organisme": {
+				load: "formation_upload"
+			},			
+			"TFormation combo#TIEtablissement": {
+				select: "TIEtablissement_onchange"
+			},			
+			"TFormation combo#TIDepartement": {
+				select: "TIDepartement_onchange"
 			},
 			"TFormation grid#gridFormation": {
 				itemcontextmenu: "Formation_onContextMenu",
@@ -96,8 +105,15 @@ App.controller.define('CAgent', {
 			},
 			"TFormation button#ajouter": {
 				click: "ajouter_onclick"
+			},
+			"TFormation button#exit": {
+				click: "formation_exit"
 			}
 		});
+	},
+	formation_exit: function(p)
+	{
+		p.up('window').close();
 	},
 	formation_download: function(p, record, item, index, e, eOpts)
 	{
@@ -108,10 +124,10 @@ App.controller.define('CAgent', {
 	},
 	formation_upload: function(cmp,e,file)
 	{
-		App.get('TFormation button#ajouter').setDisabled(true);
+		App.get(cmp,'TFormation button#ajouter').setDisabled(true);
 		App.readFile(file,function(result) {
-			App.get('TFormation textarea#Formation_document').setValue(result);
-			App.get('TFormation button#ajouter').setDisabled(false);
+			App.get(cmp,'TFormation textarea#Formation_document').setValue(result);
+			App.get(cmp,'TFormation button#ajouter').setDisabled(false);
 		});	
 	},
 	photo_onload: function(cmp,e,file)
@@ -131,14 +147,14 @@ App.controller.define('CAgent', {
 	{
 		var o = {
 			Kage: p.up('TForm1').agent.Kage,
-			type_formation: App.get('TFormation combo#cbo1').getValue(),
-			Date: App.get('TFormation datefield#date').getValue(),
-			upload: App.get('TFormation textarea#Formation_document').getValue()
+			type_formation: App.get(p.up('TForm1'),'TFormation combo#cbo1').getValue(),
+			Date: App.get(p.up('TForm1'),'TFormation datefield#date').getValue(),
+			upload: App.get(p.up('TForm1'),'TFormation textarea#Formation_document').getValue()
 		};
-		if (App.get('TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
+		if (App.get(p.up('TForm1'),'TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
 		else o.Session='Recyclage';
 		App.Agents.saveFormation(o,function() {
-			App.get('grid#gridFormation').getStore().load();
+			App.get(p.up('TForm1'),'grid#gridFormation').getStore().load();
 		});
 	},
 	Formation_onContextMenu: function(view,rec,node,index,e) {
@@ -154,7 +170,7 @@ App.controller.define('CAgent', {
 		x.on('click',function(p) {
 			if (p.itemId="ctx-gridForm-delete") {
 				App.Agents.delFormation(rec.data.id_recapitulatif,function(err,response){
-					App.get('grid#gridFormation').getStore().load();
+					view.getStore().load();
 				});
 			}
 		});
@@ -163,111 +179,111 @@ App.controller.define('CAgent', {
 	},
 	TFormation_onShow: function(p)
 	{
-		App.get(p,'grid#gridFormation').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
-		App.get(p,'grid#gridFormation').getStore().load();
+		App.get(p.up('TForm1'),'grid#gridFormation').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
+		App.get(p.up('TForm1'),'grid#gridFormation').getStore().load();
 	},
 	situation_record: function(p)
 	{
-		console.log(App.get('datefield#datEta').getValue());
+		console.log(App.get(p.up('TForm1'),'datefield#datEta').getValue());
 		var o={
-			Kpst: App.get('textfield#Situation_Kpst').getValue(),
-			DatEta: App.get('datefield#datEta').getValue(),
+			Kpst: App.get(p.up('TForm1'),'textfield#Situation_Kpst').getValue(),
+			DatEta: App.get(p.up('TForm1'),'datefield#datEta').getValue(),
 			Kage: p.up('TForm1').agent.Kage
 		};
 		if ((o.Kpst==1) || (o.Kpst==3)) {
 			if (o.Kpst==1) 
-			o.Arrivee=App.get('combo#MotifCBO').getValue();
+			o.Arrivee=App.get(p.up('TForm1'),'combo#MotifCBO').getValue();
 			else
-			o.Arrivee=App.get('textarea#VMotif').getValue();
+			o.Arrivee=App.get(p.up('TForm1'),'textarea#VMotif').getValue();
 			
-			o.Ketsnew=App.get('combo#TIEtablissement').getValue();
-			o.Kuninew=App.get('combo#TIDepartement').getValue();
-			o.Ksubnew=App.get('combo#TIService').getValue();
+			o.Ketsnew=App.get(p.up('TForm1'),'combo#TIEtablissement').getValue();
+			o.Kuninew=App.get(p.up('TForm1'),'combo#TIDepartement').getValue();
+			o.Ksubnew=App.get(p.up('TForm1'),'combo#TIService').getValue();
 			
-			o.Ketsex=App.get('combo#TEtablissement').getValue();
-			o.Kuniex=App.get('combo#TDepartement').getValue();
-			o.Ksubex=App.get('combo#TDepartement').getValue();
+			o.Ketsex=App.get(p.up('TForm1'),'combo#TEtablissement').getValue();
+			o.Kuniex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
+			o.Ksubex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
 		};
 		
 		App.Agents.saveSituation(o,function(err,response) {
-			App.get('panel#situation_header').hide();
-			App.get('panel#situation_cancel_ok').hide();
-			App.get('grid#gridPositions').show();
-			App.get('panel#mutation_arrivee').hide();	
-			App.get('grid#gridPositions').getStore().load();
+			App.get(p.up('TForm1'),'panel#situation_header').hide();
+			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
+			App.get(p.up('TForm1'),'grid#gridPositions').show();
+			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
+			App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
 		});
 	},
-	situation_add: function()
+	situation_add: function(p)
 	{
-		App.get('combo#position').setValue('');
-		App.get('datefield#datEta').setValue('');
-		App.get('panel#situation_header').show();
-		App.get('grid#gridPositions').hide();		
+		App.get(p.up('TForm1'),'combo#position').setValue('');
+		App.get(p.up('TForm1'),'datefield#datEta').setValue('');
+		App.get(p.up('TForm1'),'panel#situation_header').show();
+		App.get(p.up('TForm1'),'grid#gridPositions').hide();		
 	},
 	situation_cancel_onclick: function(p)
 	{
-		App.get('panel#situation_header').hide();
-		App.get('panel#situation_cancel_ok').hide();
-		App.get('grid#gridPositions').show();
-		App.get('panel#mutation_arrivee').hide();
+		App.get(p.up('TForm1'),'panel#situation_header').hide();
+		App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
+		App.get(p.up('TForm1'),'grid#gridPositions').show();
+		App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();
 	},
 	position_onchange: function(p,record)
 	{
 		this.situation_cancel_onclick();
-		App.get('grid#gridPositions').hide();
-		App.get('panel#situation_header').show();
-		App.get('panel#situation_cancel_ok').show();
-		App.get('textarea#VMotif').hide();
-		App.get('panel#CPACFARetraite').hide();
-		App.get('textfield#Situation_Kpst').setValue(record[0].data.Kpst);
+		App.get(p.up('TForm1'),'grid#gridPositions').hide();
+		App.get(p.up('TForm1'),'panel#situation_header').show();
+		App.get(p.up('TForm1'),'panel#situation_cancel_ok').show();
+		App.get(p.up('TForm1'),'textarea#VMotif').hide();
+		App.get(p.up('TForm1'),'panel#CPACFARetraite').hide();
+		App.get(p.up('TForm1'),'textfield#Situation_Kpst').setValue(record[0].data.Kpst);
 		// Mutation arrivée		
 		if ((record[0].data.Kpst==1) || (record[0].data.Kpst==3)) {
-			App.get('panel#mutation_arrivee').show();
+			App.get(p,'panel#mutation_arrivee').show();
 			if (record[0].data.Kpst==1) {
-				App.get('combo#MotifCBO').show();
-				App.get('textfield#Motif').hide();
-				App.get('panel#situation_separator').show();
+				App.get(p.up('TForm1'),'combo#MotifCBO').show();
+				App.get(p.up('TForm1'),'textfield#Motif').hide();
+				App.get(p.up('TForm1'),'panel#situation_separator').show();
 			} else {
-				App.get('combo#MotifCBO').hide();
-				App.get('textfield#Motif').show();
-				App.get('panel#situation_separator').hide();
+				App.get(p.up('TForm1'),'combo#MotifCBO').hide();
+				App.get(p.up('TForm1'),'textfield#Motif').show();
+				App.get(p.up('TForm1'),'panel#situation_separator').hide();
 			}
 		};
 		// Mutation départ & absence longue
 		if ((record[0].data.Kpst==4) || (record[0].data.Kpst==5)) {
-			App.get('textarea#VMotif').show();
+			App.get(p.up('TForm1'),'textarea#VMotif').show();
 		};
 		// CPA + CFA + Retraite
 		if ((record[0].data.Kpst==8) || (record[0].data.Kpst==7) || (record[0].data.Kpst==14)) {
-			App.get('panel#CPACFARetraite').show();
-			App.get('datefield#TDateCFA').hide();
-			App.get('datefield#TDateCPA').hide();
-			if (record[0].data.Kpst==8 || record[0].data.Kpst==14) App.get('datefield#TDateCFA').show();
-			if (record[0].data.Kpst==7 || record[0].data.Kpst==14) App.get('datefield#TDateCPA').show();
+			App.get(p.up('TForm1'),'panel#CPACFARetraite').show();
+			App.get(p.up('TForm1'),'datefield#TDateCFA').hide();
+			App.get(p.up('TForm1'),'datefield#TDateCPA').hide();
+			if (record[0].data.Kpst==8 || record[0].data.Kpst==14) App.get(p.up('TForm1'),'datefield#TDateCFA').show();
+			if (record[0].data.Kpst==7 || record[0].data.Kpst==14) App.get(p.up('TForm1'),'datefield#TDateCPA').show();
 		}
 	},
 	VilleCBO_onclick: function(p,record)
 	{
 		p.hide();
-		App.get('textfield#CodePostal').setValue(p.getValue());
-		App.get('textfield#Ville').show();
-		App.get('textfield#Ville').setValue(p.getRawValue().split(' (')[0]);
-		App.get('textfield#AdrCode').setValue(record[0].data.Id);
+		App.get(p.up('TForm1'),'textfield#CodePostal').setValue(p.getValue());
+		App.get(p.up('TForm1'),'textfield#Ville').show();
+		App.get(p.up('TForm1'),'textfield#Ville').setValue(p.getRawValue().split(' (')[0]);
+		App.get(p.up('TForm1'),'textfield#AdrCode').setValue(record[0].data.Id);
 	},
 	TCodePostal_onchange: function(p)
 	{
-		App.get('combo#VilleCBO').getStore().getProxy().extraParams.Code=p.getValue();
-		App.get('combo#VilleCBO').getStore().load();
-		App.get('combo#VilleCBO').getStore().on('load',function(s) {
+		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().getProxy().extraParams.Code=p.getValue();
+		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().load();
+		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().on('load',function(s) {
 			if (s.data.items.length==1) {
-				App.get('combo#VilleCBO').hide();
-				App.get('textfield#AdrCode').setValue(s.data.items[0].data.Id);
-				App.get('textfield#Ville').setValue(s.data.items[0].data.Ville.split(' (')[0]);
-				App.get('textfield#CodePostal').setValue(s.data.items[0].data.Ville.split(' (')[1].split(')')[0]);
-				App.get('textfield#Ville').show();
+				App.get(p.up('TForm1'),'combo#VilleCBO').hide();
+				App.get(p.up('TForm1'),'textfield#AdrCode').setValue(s.data.items[0].data.Id);
+				App.get(p.up('TForm1'),'textfield#Ville').setValue(s.data.items[0].data.Ville.split(' (')[0]);
+				App.get(p.up('TForm1'),'textfield#CodePostal').setValue(s.data.items[0].data.Ville.split(' (')[1].split(')')[0]);
+				App.get(p.up('TForm1'),'textfield#Ville').show();
 			} else {
-				App.get('combo#VilleCBO').show();
-				App.get('textfield#Ville').hide();
+				App.get(p.up('TForm1'),'combo#VilleCBO').show();
+				App.get(p.up('TForm1'),'textfield#Ville').hide();
 			};
 		});
 	},
@@ -286,8 +302,8 @@ App.controller.define('CAgent', {
 	{
 		cmp.getEl().on('click', function() {	
 			cmp.setValue('');
-			App.get('textfield#Ville').hide(true);
-			App.get('combo#VilleCBO').show();
+			App.get(cmp.up('TForm1'),'textfield#Ville').hide(true);
+			App.get(cmp.up('TForm1'),'combo#VilleCBO').show();
 		});
 	},
 	record_onclick: function(p)
@@ -315,12 +331,12 @@ App.controller.define('CAgent', {
 		};
 		App.Agents.save(o,function(err,response) {
 			var o={
-				Kadr: App.get('textfield#AdrK').getValue(),
-				Kpos: App.get('textfield#AdrCode').getValue(),
-				Adresse: App.get('textarea#Adresse').getValue()
+				Kadr: App.get(p.up('TForm1'),'textfield#AdrK').getValue(),
+				Kpos: App.get(p.up('TForm1'),'textfield#AdrCode').getValue(),
+				Adresse: App.get(p.up('TForm1'),'textarea#Adresse').getValue()
 			};
 			App.Agents.setAdresse(o,function(err,response) {
-				App.get('grid#GridAgents').getStore().load();
+				App.get('TPrincipal grid#GridAgents').getStore().load();
 				p.up('window').close();
 			});
 		});
@@ -344,7 +360,7 @@ App.controller.define('CAgent', {
 		x.on('click',function(p) {
 			if (p.itemId="ctx-gridpos-delete") {
 				App.Agents.delPosition(rec.data.Keta,function(err,response){
-					App.get('grid#gridPositions').getStore().load();
+					view.getStore().load();
 				});
 			}
 		});
@@ -353,6 +369,7 @@ App.controller.define('CAgent', {
 	},
 	Roles_onContextMenu: function(view, rec, node, index, e) {
 		e.stopEvent();
+		console.log(view);
 		var x=Ext.create('Ext.menu.Menu',{
 			items: [
 				{
@@ -364,7 +381,7 @@ App.controller.define('CAgent', {
 		x.on('click',function(p) {
 			if (p.itemId="ctx-grid-delete") {
 				App.Agents.delRole(rec.data.CodRol,rec.data.Kage,function(err,response){
-					App.get('grid#roles').getStore().load();
+					view.getStore().load();
 				});
 			}
 		});
@@ -376,43 +393,39 @@ App.controller.define('CAgent', {
 		p.setDisabled(true);
 		var o={
 			Kage: p.up('TForm1').agent.Kage,
-			Krol: App.get('combo#cboRoles').getValue()
+			Krol: App.get(p.up('TForm1'),'combo#cboRoles').getValue()
 		};
 		// exists already ?
 		var tb=[];
-		for (var i=0;i<App.get('grid#roles').getStore().data.items.length;i++)
+		for (var i=0;i<App.get(p.up('TForm1'),'grid#roles').getStore().data.items.length;i++)
 		{
-			tb.push(App.get('grid#roles').getStore().data.items[i].data.CodRol);
+			tb.push(App.get(p.up('TForm1'),'grid#roles').getStore().data.items[i].data.CodRol);
 		};
 		if (tb.indexOf(o.krol)>-1) {
 			Ext.MessageBox.alert('BPCLight', 'Ce rôle est déjà renseigné.');
 			p.setDisabled(false);
 		} else {		
 			App.Agents.addRole(o,function(response) {
-				App.get('grid#roles').getStore().load();
+				App.get(p.up('TForm1'),'grid#roles').getStore().load();
 				p.setDisabled(false);				
 			});			
 		}
 	},
 	TSituation_onshow: function(p)
 	{
-		App.get(p,'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
-		App.get(p,'grid#gridPositions').getStore().load();
+		App.get(p.up('TForm1'),'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
+		App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
 		App.Agents.getPosition(p.up('TForm1').agent.Kage,function(response) {
 			console.log(response);
 			if (response.length==0) 
-			App.get('panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
+			App.get(p.up('TForm1'),'panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
 			else
-			App.get('panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
+			App.get(p.up('TForm1'),'panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
 		});
 	},
 	close_agent: function(p)
 	{
 		p.up('window').close();
-	},
-	formationAdd_click: function()
-	{
-		alert('x');
 	},
 	TForm1_onshow: function(p)
 	{	
@@ -426,64 +439,64 @@ App.controller.define('CAgent', {
 			if (o.length>0)	App.get(p,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+o[0].trombi+'" width=100 height=120></img></div>');
 		});
 		
-		App.get(p,'textfield#LAgentNom').setValue(p.agent.Nom);
-		App.get(p,'textfield#LAgentPrenom').setValue(p.agent.Prenom);
-		App.get(p,'textfield#LAgentMatri').setValue(p.agent.Matri);
+		App.get(p,'TSidePanel textfield#LAgentNom').setValue(p.agent.Nom);
+		App.get(p,'TSidePanel textfield#LAgentPrenom').setValue(p.agent.Prenom);
+		App.get(p,'TSidePanel textfield#LAgentMatri').setValue(p.agent.Matri);
 		try {
-			App.get(p,'textfield#TInsee').setValue(p.agent.INSEE.split(' ')[0]);
-			App.get(p,'textfield#TInseeKey').setValue(p.agent.INSEE.split(' ')[1]);
+			App.get(p,'TSidePanel textfield#TInsee').setValue(p.agent.INSEE.split(' ')[0]);
+			App.get(p,'TSidePanel textfield#TInseeKey').setValue(p.agent.INSEE.split(' ')[1]);
 		} catch(ex) {
-			App.get(p,'textfield#TInsee').setValue('');
-			App.get(p,'textfield#TInseeKey').setValue('');			
+			App.get(p,'TSidePanel textfield#TInsee').setValue('');
+			App.get(p,'TSidePanel textfield#TInseeKey').setValue('');			
 		};
-		App.get(p,'textfield#TRehucit').setValue(p.agent.REHUCIT);		
-		App.get(p,'combo#TDepartement').setValue(p.agent.Kuni);
+		App.get(p,'TSidePanel textfield#TRehucit').setValue(p.agent.REHUCIT);		
+		App.get(p,'TSidePanel combo#TDepartement').setValue(p.agent.Kuni);
 		App.Etablissements.getByUnite(p.agent.Kuni,function(err,r) {
-			App.get(p,'combo#TEtablissement').setValue(r.result.data[0].kets);
+			App.get(p,'TSidePanel combo#TEtablissement').setValue(r.result.data[0].kets);
 		});
-		App.get(p,'combo#TService').setValue(p.agent.Ksub);	
+		App.get(p,'TSidePanel combo#TService').setValue(p.agent.Ksub);	
 		App.get(p,'htmleditor').setValue(p.agent.libelle_poste);
 		App.get(p,'grid#roles').getStore().getProxy().extraParams.kage=p.agent.Kage;
 		App.get(p,'grid#roles').getStore().load();
-		App.get(p,'datefield#DatNai').setValue(new Date(p.agent.DatNai));
-		App.get(p,'textfield#DeptNai').setValue(p.agent.DepNai);
-		App.get(p,'textfield#VilleNai').setValue(p.agent.VilNai);
-		App.get(p,'textfield#PaysNai').setValue(p.agent.PaysNai);
-		App.get(p,'textfield#Phone').setValue(p.agent.Telephone);
-		App.get(p,'textfield#Cell').setValue(p.agent.Portable);
+		App.get(p,'TAgent datefield#DatNai').setValue(new Date(p.agent.DatNai));
+		App.get(p,'TAgent textfield#DeptNai').setValue(p.agent.DepNai);
+		App.get(p,'TAgent textfield#VilleNai').setValue(p.agent.VilNai);
+		App.get(p,'TAgent textfield#PaysNai').setValue(p.agent.PaysNai);
+		App.get(p,'TAgent textfield#Phone').setValue(p.agent.Telephone);
+		App.get(p,'TAgent textfield#Cell').setValue(p.agent.Portable);
 		// App.Agents.getAdresse
 		App.Agents.getAdresse(p.agent.Kage,function(response,x) {
 			if (response) 
 			{
-				App.get(p,'textfield#AdrK').setValue(response.kadr);
-				App.get(p,'textfield#AdrCode').setValue(response.id);
-				App.get(p,'textarea#Adresse').setValue(response.adresse);
-				App.get(p,'textfield#CodePostal').setValue(response.cpostal);
-				App.get(p,'textfield#Ville').setValue(response.ville);
+				App.get(p,'TAgent textfield#AdrK').setValue(response.kadr);
+				App.get(p,'TAgent textfield#AdrCode').setValue(response.id);
+				App.get(p,'TAgent textarea#Adresse').setValue(response.adresse);
+				App.get(p,'TAgent textfield#CodePostal').setValue(response.cpostal);
+				App.get(p,'TAgent textfield#Ville').setValue(response.ville);
 			};
 		});
-		App.get(p,'combo#batiment').setValue(p.agent.Kbat);
+		App.get(p,'TAgent combo#batiment').setValue(p.agent.Kbat);
 		// App.Agents.getCategory
 		App.Agents.getCategory(p.agent.Kgra,function(response,x) {
-			App.get(p,'combo#TCat').setValue(response.data[0].Kcgr);
-			var TGrade=App.get(p,'combo#TGrade').getStore();
+			App.get(p,'TAgent combo#TCat').setValue(response.data[0].Kcgr);
+			var TGrade=App.get(p,'TAgent combo#TGrade').getStore();
 			TGrade.getProxy().extraParams.catgrad=response.data[0].Kcgr;
 			TGrade.load();
 			TGrade.on('load',function() {
-				App.get(p,'combo#TGrade').setValue(p.agent.Kgra);
+				App.get(p,'TAgent combo#TGrade').setValue(p.agent.Kgra);
 			});			
 		});
 		App.Agents.getMail(p.agent.Kage,function(response,x) {
-			if (response.data.length>0) App.get(p,'textfield#TMelA').setValue(response.data[0].LibMelA);
+			if (response.data.length>0) App.get(p,'TAgent textfield#TMelA').setValue(response.data[0].LibMelA);
 		});
 		App.Agents.getHierarchie(p.agent.Kage,function(err,response) {
 			if (!response.result.chef) response.result.chef="";
 			if (!response.result.adjoint) response.result.adjoint="";
-			App.get(p,'panel#Hierarchie').update("<br>Chef de service<br><b>"+response.result.chef+"</b><br><br>Adjoint<br><b>"+response.result.adjoint+"</b>");
+			App.get(p,'TAgent panel#Hierarchie').update("<br>Chef de service<br><b>"+response.result.chef+"</b><br><br>Adjoint<br><b>"+response.result.adjoint+"</b>");
 		});
 		App.get(p,'combo#Sec1').getStore().on('load',function() {
-			App.get(p,'combo#Sec1').setValue(p.agent.Ksec);
-			App.get(p,'combo#Sec2').setValue(p.agent.Ksec2);
+			App.get(p,'TAgent combo#Sec1').setValue(p.agent.Ksec);
+			App.get(p,'TAgent combo#Sec2').setValue(p.agent.Ksec2);
 		});
 	},
 	TCat_onchange: function(p,record)
