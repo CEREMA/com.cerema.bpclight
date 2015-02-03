@@ -117,8 +117,8 @@ App.controller.define('CAgent', {
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
 	{
-		App.Agents.getPosition(record.data.Keta,function(err,response) {
-			
+		App.Agents.getMyPosition(record.data.Keta,function(err,response) {
+			console.log(response);
 		});
 	},
 	formation_exit: function(p)

@@ -3,7 +3,7 @@ Agents = {
 	{
 		Agents.using('db').post('bpclight','agents',o,cb);
 	},
-	getPosition: function(o,cb)
+	getMyPosition: function(o,cb)
 	{
 		Agents.using('db').query('bpclight','select * from ageetat where Keta='+o,cb);
 	},
