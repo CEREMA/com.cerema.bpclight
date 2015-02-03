@@ -1,8 +1,11 @@
 Agents = {
 	save: function(o,cb)
 	{
-		var db=Agents.using('db');
-		db.post('bpclight','agents',o,cb);
+		Agents.using('db').post('bpclight','agents',o,cb);
+	},
+	getPosition: function(o,cb)
+	{
+		Agents.using('db').query('bpclight','select * from ageetat where Keta='+o,cb);
 	},
 	saveFormation: function(o,cb)
 	{

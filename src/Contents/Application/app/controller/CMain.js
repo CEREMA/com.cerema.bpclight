@@ -26,6 +26,9 @@ App.controller.define('CMain', {
 	{
 
 		this.control({
+			/*
+			mainform
+			*/
 			"mainform menu>menuitem": {
 				click: "Menu_onClick"
 			},

@@ -82,7 +82,8 @@ App.controller.define('CAgent', {
 				click: "situation_record"
 			},
 			"TSituation grid#gridPositions": {
-				itemcontextmenu: "Positions_onContextMenu"
+				itemcontextmenu: "Positions_onContextMenu",
+				itemclick: "Positions_click"
 			},
 			/*
 			TFormation
@@ -106,9 +107,18 @@ App.controller.define('CAgent', {
 			"TFormation button#ajouter": {
 				click: "ajouter_onclick"
 			},
-			"TFormation button#exit": {
+			/*
+			TShowFormation
+			*/
+			"TShowFormation button#Exit": {
 				click: "formation_exit"
 			}
+		});
+	},
+	Positions_click: function(p, record, item, index, e, eOpts)
+	{
+		App.Agents.getPosition(record.data.Keta,function(err,response) {
+			
 		});
 	},
 	formation_exit: function(p)
@@ -416,7 +426,6 @@ App.controller.define('CAgent', {
 		App.get(p.up('TForm1'),'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
 		App.Agents.getPosition(p.up('TForm1').agent.Kage,function(response) {
-			console.log(response);
 			if (response.length==0) 
 			App.get(p.up('TForm1'),'panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
 			else
@@ -437,8 +446,7 @@ App.controller.define('CAgent', {
 		p.setTitle(p.agent.Prenom+" "+p.agent.Nom);
 		App.Agents.getPhoto(p.agent.Kage,function(o) {
 			if (o.length>0)	App.get(p,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+o[0].trombi+'" width=100 height=120></img></div>');
-		});
-		
+		});		
 		App.get(p,'TSidePanel textfield#LAgentNom').setValue(p.agent.Nom);
 		App.get(p,'TSidePanel textfield#LAgentPrenom').setValue(p.agent.Prenom);
 		App.get(p,'TSidePanel textfield#LAgentMatri').setValue(p.agent.Matri);
