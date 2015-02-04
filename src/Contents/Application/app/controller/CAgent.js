@@ -134,10 +134,10 @@ App.controller.define('CAgent', {
 	},
 	formation_upload: function(cmp,e,file)
 	{
-		App.get(cmp,'TFormation button#ajouter').setDisabled(true);
+		App.get(cmp.up('TFormation'),'button#ajouter').setDisabled(true);
 		App.readFile(file,function(result) {
-			App.get(cmp,'TFormation textarea#Formation_document').setValue(result);
-			App.get(cmp,'TFormation button#ajouter').setDisabled(false);
+			App.get(cmp.up('TFormation'),'textarea#Formation_document').setValue(result);
+			App.get(cmp.up('TFormation'),'button#ajouter').setDisabled(false);
 		});	
 	},
 	photo_onload: function(cmp,e,file)
