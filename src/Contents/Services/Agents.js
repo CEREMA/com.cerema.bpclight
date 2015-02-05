@@ -5,7 +5,7 @@ Agents = {
 	},
 	getMyPosition: function(o,cb)
 	{
-		Agents.using('db').query('bpclight','SELECT * FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE ageetat.Keta = '+o+' ORDER BY ageetat.DatEta desc',cb);
+		Agents.using('db').model('bpclight','SELECT * FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE ageetat.Keta = '+o+' ORDER BY ageetat.DatEta desc',cb);
 	},
 	saveFormation: function(o,cb)
 	{
