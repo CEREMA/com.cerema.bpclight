@@ -170,7 +170,7 @@ App.controller.define('CAgent', {
 	photo_onload: function(cmp,e,file)
 	{
 		App.readFile(file,function(result) {
-			App.get(cmp,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+result+'" width=100 height=120></img></div>');
+			App.get(cmp.up('TSidePanel'),'panel#PanelPhoto').update('<div class=IPhoto><img src="'+result+'" width=100 height=120></img></div>');
 			var o={
 				kage: cmp.up('TForm1').agent.Kage,
 				trombi: result
