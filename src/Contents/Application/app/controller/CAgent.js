@@ -132,8 +132,7 @@ App.controller.define('CAgent', {
 	{
 		App.Agents.getMyPosition(record.data.Keta,function(err,response) {		
 			console.log(response);
-			return;
-			var record=response.result;
+			var record=response.result.data;
 			// Mutation arrivée		
 			if ((record[0].Kpst==1) || (record[0].Kpst==3)) {
 				App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
@@ -156,9 +155,9 @@ App.controller.define('CAgent', {
 				App.get(p.up('TSituation'),'panel#CPACFARetraite').show();
 				App.get(p.up('TSituation'),'datefield#TDateCFA').hide();
 				App.get(p.up('TSituation'),'datefield#TDateCPA').hide();
-				App.get(p.up('TSituation'),'datefield#TDateCFA').setValue(record[0].DatCFA);
-				App.get(p.up('TSituation'),'datefield#TDateCPA').setValue(record[0].DatCPA);
-				App.get(p.up('TSituation'),'datefield#TDateRetraite').setValue(record[0].DatRet);
+				App.get(p.up('TSituation'),'datefield#TDateCFA').setValue(record[0].DatCFA.toDate());
+				App.get(p.up('TSituation'),'datefield#TDateCPA').setValue(record[0].DatCPA.toDate());
+				App.get(p.up('TSituation'),'datefield#TDateRetraite').setValue(record[0].DatRet.toDate());
 				
 				if (record[0].Kpst==8 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCFA').show();
 				if (record[0].Kpst==7 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCPA').show();
