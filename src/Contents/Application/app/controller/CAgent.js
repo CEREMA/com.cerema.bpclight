@@ -1,3 +1,16 @@
+function parseJsonDate(jsonDate) {
+    var offset = new Date().getTimezoneOffset() * 60000;
+    var parts = /\/Date\((-?\d+)([+-]\d{2})?(\d{2})?.*/.exec(jsonDate);
+    
+    if (parts[2] == undefined) 
+      parts[2] = 0;
+    
+    if (parts[3] == undefined) 
+      parts[3] = 0;
+    
+    return new Date(+parts[1] + offset + parts[2]*3600000 + parts[3]*60000);
+};
+
 App.controller.define('CAgent', {
 
 	views: [
@@ -118,34 +131,37 @@ App.controller.define('CAgent', {
 	Positions_click: function(p, record, item, index, e, eOpts)
 	{
 		App.Agents.getMyPosition(record.data.Keta,function(err,response) {		
-		var record=response.result;
-		// Mutation arrivée		
-		if ((record[0].Kpst==1) || (record[0].Kpst==3)) {
-			App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
-			if (record[0].Kpst==1) {
-				App.get(p.up('TSituation'),'combo#MotifCBO').show();
-				App.get(p.up('TSituation'),'textfield#Motif').hide();
-				App.get(p.up('TSituation'),'panel#situation_separator').show();
-			} else {
-				App.get(p.up('TSituation'),'combo#MotifCBO').hide();
-				App.get(p.up('TSituation'),'textfield#Motif').show();
-				App.get(p.up('TSituation'),'panel#situation_separator').hide();
+			var record=response.result;
+			// Mutation arrivée		
+			if ((record[0].Kpst==1) || (record[0].Kpst==3)) {
+				App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
+				if (record[0].Kpst==1) {
+					App.get(p.up('TSituation'),'combo#MotifCBO').show();
+					App.get(p.up('TSituation'),'textfield#Motif').hide();
+					App.get(p.up('TSituation'),'panel#situation_separator').show();
+				} else {
+					App.get(p.up('TSituation'),'combo#MotifCBO').hide();
+					App.get(p.up('TSituation'),'textfield#Motif').show();
+					App.get(p.up('TSituation'),'panel#situation_separator').hide();
+				}
+			};
+			// Mutation départ & absence longue
+			if ((record[0].Kpst==4) || (record[0].Kpst==5)) {
+				App.get(p.up('TSituation'),'textarea#VMotif').show();
+			};
+			// CPA + CFA + Retraite
+			if ((record[0].Kpst==8) || (record[0].Kpst==7) || (record[0].Kpst==14)) {
+				App.get(p.up('TSituation'),'panel#CPACFARetraite').show();
+				App.get(p.up('TSituation'),'datefield#TDateCFA').hide();
+				App.get(p.up('TSituation'),'datefield#TDateCPA').hide();
+				App.get(p.up('TSituation'),'datefield#TDateCFA').setValue(parseJsonDate(record[0].DatCFA));
+				App.get(p.up('TSituation'),'datefield#TDateCPA').setValue(parseJsonDate(record[0].DatCPA));
+				App.get(p.up('TSituation'),'datefield#TDateRetraite').setValue(parseJsonDate(record[0].DatRet));
+				
+				if (record[0].Kpst==8 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCFA').show();
+				if (record[0].Kpst==7 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCPA').show();
 			}
-		};
-		// Mutation départ & absence longue
-		if ((record[0].Kpst==4) || (record[0].Kpst==5)) {
-			App.get(p.up('TSituation'),'textarea#VMotif').show();
-		};
-		// CPA + CFA + Retraite
-		if ((record[0].Kpst==8) || (record[0].Kpst==7) || (record[0].Kpst==14)) {
-			App.get(p.up('TSituation'),'panel#CPACFARetraite').show();
-			App.get(p.up('TSituation'),'datefield#TDateCFA').hide();
-			App.get(p.up('TSituation'),'datefield#TDateCPA').hide();
-			if (record[0].Kpst==8 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCFA').show();
-			if (record[0].Kpst==7 || record[0].Kpst==14) App.get(p.up('TSituation'),'datefield#TDateCPA').show();
-		}
 		
-			console.log(response);
 		});
 	},
 	formation_exit: function(p)
