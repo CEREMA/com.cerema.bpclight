@@ -31,11 +31,10 @@
             "version": "4.2.1",
             "theme": "classic",
             "src": [
-                "http://cdn.sencha.com/ext/gpl/{version}/build/ext-all-debug.js",
-                "http://cdn.sencha.com/ext/gpl/{version}/build/packages/ext-theme-{theme}/build/ext-theme-{theme}-debug.js"
+                "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js"
             ],
             "res": [
-                "http://cdn.sencha.com/ext/gpl/{version}/build/packages/ext-theme-{theme}/build/resources/ext-theme-{theme}-all-debug.css"
+                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}-all.css"
             ]
         },
         {
