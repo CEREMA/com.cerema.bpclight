@@ -28,7 +28,7 @@
     "frameworks": [
         {
             "name": "ext",
-            "version": "5.0.0",
+            "version": "4.2.1",
             "theme": "classic",
             "src": [
                 "http://cdn.sencha.com/ext/gpl/{version}/build/ext-all-debug.js",
