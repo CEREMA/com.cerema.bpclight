@@ -220,13 +220,16 @@
 		</script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+		var bootstraploader=function(tab,i,cb) {
+			if (i<=tab.length) require([tab[i]],function(){
+				bootstraploader(tab,i+1,cb);
+			}); else cb();
+		};
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
-				require(Settings.FRAMEWORKS, function(){
-					require(Settings.LIBRARIES,function() {
-						require(["Contents/Application/app"], function() {					
-							
-						});			
+				bootstraploader(Settings.FRAMEWORKS,0, function(){
+					require(["Contents/Application/app"], function() {					
+						
 					});
 				});		
 			});
