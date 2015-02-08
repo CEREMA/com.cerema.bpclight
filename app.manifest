@@ -9,7 +9,7 @@
     ],
     "uid": "4020cde1-023a-4374-bd84-d079b0f77a83",
     "version": "1.00",
-    "build": 75,
+    "build": 76,
     "copyright": "Copyright (c) 2014 By CEREMA",
     "license": "BSD",
     "author": {
@@ -28,9 +28,15 @@
     "frameworks": [
         {
             "name": "ext",
-            "version": "4.2.1",
-            "src": "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js",
-            "res": "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-classic/ext-theme-classic-all.css"
+            "version": "5.1.0",
+            "theme": "classic",
+            "src": [
+                "http://cdn.sencha.com/ext/gpl/{version}/build/ext-all-debug.js",
+                "http://cdn.sencha.com/ext/gpl/{version}/build/packages/ext-theme-{theme}/build/ext-theme-{theme}-debug.js"
+            ],
+            "res": [
+                "http://cdn.sencha.com/ext/gpl/{version}/build/packages/ext-theme-{theme}/build/resources/ext-theme-{theme}-all-debug.css"
+            ]
         },
         {
             "name": "jquery",
