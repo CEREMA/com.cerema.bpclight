@@ -34,7 +34,7 @@
                 "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js"
             ],
             "res": [
-                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}-all.css"
+                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}/ext-theme-{theme}-all.css"
             ]
         },
         {
