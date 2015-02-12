@@ -119,13 +119,6 @@ App.view.define('agent.VSituation', {
 						valueField: "kmof"	
 					},
 					{
-						xtype: "textarea",
-						itemId: "Motif",
-						fieldLabel: "Motif",
-						flex: 1,
-						labelAlign: "top"
-					},
-					{
 						flex: 1,
 						itemId: "situation_separator",
 						hidden: true,
@@ -134,6 +127,8 @@ App.view.define('agent.VSituation', {
 					{
 						layout: "vbox",
 						border: false,
+						xtype: "panel",
+						itemId: "TPanelI",
 						items: [
 						{
 							xtype: "combo",
@@ -227,7 +222,7 @@ App.view.define('agent.VSituation', {
 			*/
 			{
 				xtype: "textarea",
-				itemId: "VMotif",
+				itemId: "Motif",
 				padding: 10,
 				width: "100%",
 				fieldLabel: "Motif",

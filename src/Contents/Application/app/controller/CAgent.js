@@ -131,24 +131,69 @@ App.controller.define('CAgent', {
 	Positions_click: function(p, record, item, index, e, eOpts)
 	{
 		App.Agents.getMyPosition(record.data.Keta,function(err,response) {		
+			// on reset les panels
+			App.get(p.up('TForm1'),'panel#situation_header').hide();
+			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
+			App.get(p.up('TForm1'),'grid#gridPositions').show();
+			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
+			App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();			
+			App.get(p.up('TForm1'),'textarea#Motif').hide();	
+			App.get(p.up('TForm1'),'panel#TPanelI').hide();
+			App.get(p.up('TSituation'),'textfield#Motif').setValue('');
+			
+			
+			App.get(p.up('TForm1'),'combo#position').setValue('');
+			App.get(p.up('TForm1'),'datefield#datEta').setValue('');
+			App.get(p.up('TForm1'),'textarea#Motif').setValue('');
+			App.get(p.up('TForm1'),'combo#MotifCBO').setValue('');
+			App.get(p.up('TForm1'),'combo#TIEtablissement').setValue('');
+			App.get(p.up('TForm1'),'combo#TIDepartement').setValue('');
+			App.get(p.up('TForm1'),'combo#TIService').setValue('');
+			App.get(p.up('TForm1'),'panel#TPanelI').hide();
+			App.get(p.up('TForm1'),'datefield#TDateCFA').setValue('');
+			App.get(p.up('TForm1'),'datefield#TDateCPA').setValue('');
+			App.get(p.up('TForm1'),'datefield#TDateRetraite').setValue('');		
+			
+			App.get(p.up('TForm1'),'combo#position').setReadOnly(true);
+			App.get(p.up('TForm1'),'datefield#datEta').setReadOnly(true);
+			App.get(p.up('TForm1'),'textarea#Motif').setReadOnly(true);
+			App.get(p.up('TForm1'),'combo#MotifCBO').setReadOnly(true);
+			App.get(p.up('TForm1'),'combo#TIEtablissement').setReadOnly(true);
+			App.get(p.up('TForm1'),'combo#TIDepartement').setReadOnly(true);
+			App.get(p.up('TForm1'),'combo#TIService').setReadOnly(true);
+			App.get(p.up('TForm1'),'datefield#TDateCFA').setReadOnly(true);
+			App.get(p.up('TForm1'),'datefield#TDateCPA').setReadOnly(true);
+			App.get(p.up('TForm1'),'datefield#TDateRetraite').setReadOnly(true);		
+			
+			
 			console.log(response);
 			var record=response.result.data;
 			// Mutation arrivée		
 			if ((record[0].Kpst==1) || (record[0].Kpst==3)) {
 				App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
+				App.get(p.up('TForm1'),'panel#TPanelI').show();
 				if (record[0].Kpst==1) {
 					App.get(p.up('TSituation'),'combo#MotifCBO').show();
+					App.get(p.up('TSituation'),'combo#MotifCBO').setValue(response.result.data[0].Arrivee*1);
+					App.get(p.up('TSituation'),'combo#TIEtablissement').setValue(response.result.data[0].Ketsnew);
+					App.get(p.up('TSituation'),'combo#TIDepartement').setValue(response.result.data[0].Kuninew);
+					App.get(p.up('TSituation'),'combo#TIService').setValue(response.result.data[0].Ksubnew);
 					App.get(p.up('TSituation'),'textfield#Motif').hide();
 					App.get(p.up('TSituation'),'panel#situation_separator').show();
 				} else {
 					App.get(p.up('TSituation'),'combo#MotifCBO').hide();
+					App.get(p.up('TSituation'),'combo#TIEtablissement').setValue(response.result.data[0].Ketsnew);
+					App.get(p.up('TSituation'),'combo#TIDepartement').setValue(response.result.data[0].Kuninew);
+					App.get(p.up('TSituation'),'combo#TIService').setValue(response.result.data[0].Ksubnew);
 					App.get(p.up('TSituation'),'textfield#Motif').show();
+					App.get(p.up('TSituation'),'textfield#Motif').setValue(response.result.data[0].Arrivee);
 					App.get(p.up('TSituation'),'panel#situation_separator').hide();
 				}
 			};
 			// Mutation départ & absence longue
 			if ((record[0].Kpst==4) || (record[0].Kpst==5)) {
-				App.get(p.up('TSituation'),'textarea#VMotif').show();
+				App.get(p.up('TSituation'),'textarea#Motif').show();
+				App.get(p.up('TSituation'),'textarea#Motif').setValue(response.result.data[0].Motif);
 			};
 			// CPA + CFA + Retraite
 			if ((record[0].Kpst==8) || (record[0].Kpst==7) || (record[0].Kpst==14)) {
@@ -249,7 +294,7 @@ App.controller.define('CAgent', {
 			if (o.Kpst==1) 
 			o.Arrivee=App.get(p.up('TForm1'),'combo#MotifCBO').getValue();
 			else
-			o.Arrivee=App.get(p.up('TForm1'),'textarea#VMotif').getValue();
+			o.Arrivee=App.get(p.up('TForm1'),'textarea#Motif').getValue();
 			
 			o.Ketsnew=App.get(p.up('TForm1'),'combo#TIEtablissement').getValue();
 			o.Kuninew=App.get(p.up('TForm1'),'combo#TIDepartement').getValue();
@@ -260,37 +305,59 @@ App.controller.define('CAgent', {
 			o.Ksubex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
 		};
 		
-		if (o.Kpst=14) {
+		if (o.Kpst==14) {
 			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
 			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
 			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
 		};
-		if (o.Kpst=8) {
+		if (o.Kpst==8) {
 			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
 			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
 		};	
-		if (o.Kpst=8) {
+		if (o.Kpst==7) {
 			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
 			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
 		};		
 		o.Motif=App.get(p.up('TForm1'),'textarea#Motif').getValue();
 		
-		App.Agents.saveSituation(o,function(err,response) {
+		App.Agents.saveSituation(o,function(err,response) {			
 			App.get(p.up('TForm1'),'panel#situation_header').hide();
 			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
 			App.get(p.up('TForm1'),'grid#gridPositions').show();
 			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
 			App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();			
+			App.get(p.up('TForm1'),'textarea#Motif').hide();			
 			App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
 		});
 		
 	},
 	situation_add: function(p)
 	{
+		App.get(p.up('TForm1'),'combo#position').setReadOnly(false);
+		App.get(p.up('TForm1'),'datefield#datEta').setReadOnly(false);
+		App.get(p.up('TForm1'),'textarea#Motif').setReadOnly(false);
+		App.get(p.up('TForm1'),'combo#MotifCBO').setReadOnly(false);
+		App.get(p.up('TForm1'),'combo#TIEtablissement').setReadOnly(false);
+		App.get(p.up('TForm1'),'combo#TIDepartement').setReadOnly(false);
+		App.get(p.up('TForm1'),'combo#TIService').setReadOnly(false);
+		App.get(p.up('TForm1'),'datefield#TDateCFA').setReadOnly(false);
+		App.get(p.up('TForm1'),'datefield#TDateCPA').setReadOnly(false);
+		App.get(p.up('TForm1'),'datefield#TDateRetraite').setReadOnly(false);		
+		App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
 		App.get(p.up('TForm1'),'combo#position').setValue('');
 		App.get(p.up('TForm1'),'datefield#datEta').setValue('');
 		App.get(p.up('TForm1'),'panel#situation_header').show();
+		App.get(p.up('TForm1'),'textarea#Motif').setValue('');
+		App.get(p.up('TForm1'),'combo#MotifCBO').setValue('');
+		App.get(p.up('TForm1'),'combo#TIEtablissement').setValue('');
+		App.get(p.up('TForm1'),'combo#TIDepartement').setValue('');
+		App.get(p.up('TForm1'),'combo#TIService').setValue('');
+		App.get(p.up('TForm1'),'panel#TPanelI').hide();
+		App.get(p.up('TForm1'),'datefield#TDateCFA').setValue('');
+		App.get(p.up('TForm1'),'datefield#TDateCPA').setValue('');
+		App.get(p.up('TForm1'),'datefield#TDateRetraite').setValue('');		
 		App.get(p.up('TForm1'),'grid#gridPositions').hide();		
+		App.get(p.up('TForm1'),'textarea#Motif').hide();
 	},
 	situation_cancel_onclick: function(p)
 	{
@@ -298,6 +365,7 @@ App.controller.define('CAgent', {
 		App.get(p.up('TSituation'),'panel#situation_cancel_ok').hide();
 		App.get(p.up('TSituation'),'grid#gridPositions').show();
 		App.get(p.up('TSituation'),'panel#mutation_arrivee').hide();
+		App.get(p.up('TSituation'),'panel#TPanelI').hide();
 		App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();
 	},
 	position_onchange: function(p,record)
@@ -306,12 +374,13 @@ App.controller.define('CAgent', {
 		App.get(p.up('TSituation'),'grid#gridPositions').hide();
 		App.get(p.up('TSituation'),'panel#situation_header').show();
 		App.get(p.up('TSituation'),'panel#situation_cancel_ok').show();
-		App.get(p.up('TSituation'),'textarea#VMotif').hide();
+		App.get(p.up('TSituation'),'textarea#Motif').hide();
 		App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();
 		App.get(p.up('TSituation'),'textfield#Situation_Kpst').setValue(record[0].data.Kpst);
 		// Mutation arrivée		
 		if ((record[0].data.Kpst==1) || (record[0].data.Kpst==3)) {
 			App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
+			App.get(p.up('TSituation'),'panel#TPanelI').show();
 			if (record[0].data.Kpst==1) {
 				App.get(p.up('TSituation'),'combo#MotifCBO').show();
 				App.get(p.up('TSituation'),'textfield#Motif').hide();
@@ -324,7 +393,7 @@ App.controller.define('CAgent', {
 		};
 		// Mutation départ & absence longue
 		if ((record[0].data.Kpst==4) || (record[0].data.Kpst==5)) {
-			App.get(p.up('TSituation'),'textarea#VMotif').show();
+			App.get(p.up('TSituation'),'textarea#Motif').show();
 		};
 		// CPA + CFA + Retraite
 		if ((record[0].data.Kpst==8) || (record[0].data.Kpst==7) || (record[0].data.Kpst==14)) {
