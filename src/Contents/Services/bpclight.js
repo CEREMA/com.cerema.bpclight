@@ -40,7 +40,7 @@ bpclight = {
 	{
 		var db=bpclight.using('db');
 		db.model('bpclight','select * from catgrad order by LibCgr',cb);		
-	},
+	}/*,
 	exportXLS: function(o,cb)
 	{
 		var db=bpclight.using('db');
@@ -51,7 +51,7 @@ bpclight = {
 		db.query('bpclight',db.sql("export",{
 			kage: o
 		}),cb);
-	}
+	}*/
 };
 
 module.exports = bpclight;
