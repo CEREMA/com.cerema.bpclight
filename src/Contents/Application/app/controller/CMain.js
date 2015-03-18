@@ -20,6 +20,13 @@ App.controller.define('CMain', {
 	],
 	
 	models: [
+		"mFonctions",
+		"mGrades",
+		"mBatiments",
+		"mEtablissements",
+		"mDepartements",
+		"mServices",
+		"mCategories"	
 	],
 	
 	init: function()
