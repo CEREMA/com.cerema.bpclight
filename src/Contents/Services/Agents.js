@@ -74,7 +74,7 @@ Agents = {
 		delete o.Kage;
 		Agents.using('db').post('bpclight','adresses',o,function(e,o) {			
 			console.log(o);
-			if (o.insertId!=0) Agents.using('db').query('bpclight','update agents set kres='+o.inserId+' where kage='+kage,function(err,r) {
+			if (o.insertId!=0) Agents.using('db').query('bpclight','update agents set kres='+o.insertId+' where kage='+kage,function(err,r) {
 				cb();
 			});	else cb();
 		});
