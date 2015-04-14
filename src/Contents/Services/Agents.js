@@ -72,10 +72,11 @@ Agents = {
 		} else */
 		var kage=o.Kage;
 		delete o.Kage;
-		Agents.using('db').post('bpclight','adresses',o,function(e,o) {
-			console.log(e);
+		Agents.using('db').post('bpclight','adresses',o,function(e,o) {			
 			console.log(o);
-			cb();
+			if (o.insertId!=0) Agents.using('db').query('bpclight','update agents set kres='+o.inserId+' where kage='+kage,function(err,r) {
+				cb();
+			});	else cb();
 		});
 	},
 	getAdresse: function(x,cb)
