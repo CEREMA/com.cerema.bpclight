@@ -60,7 +60,7 @@ Agents = {
 	setAdresse: function(o,cb)
 	{
 		if (!o.Kadr) {
-			Agents.using('db').query('bpclight','selext max(kres)+1 REZ from agents',function(err,r) {
+			Agents.using('db').query('bpclight','select max(kres)+1 REZ from agents',function(err,r) {
 				var REZ=r[0].REZ;
 				Agents.using('db').query('bpclight','update agents set kres='+REZ+' where kage='+o.Kage,function(err,r) {
 					o.Kadr=REZ;
