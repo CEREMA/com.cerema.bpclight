@@ -59,7 +59,7 @@ Agents = {
 	},
 	setAdresse: function(o,cb)
 	{
-		console.log(o.Kadr);
+		/*console.log(o.Kadr);
 		if (!o.Kadr) {
 			Agents.using('db').query('bpclight','select max(kres)+1 REZ from agents',function(err,r) {
 				var REZ=r[0].REZ;
@@ -69,7 +69,12 @@ Agents = {
 					Agents.using('db').post('bpclight','adresses',o,cb);
 				});
 			});
-		} else Agents.using('db').post('bpclight','adresses',o,cb);
+		} else */
+		Agents.using('db').post('bpclight','adresses',o,function(e,o) {
+			console.log(e);
+			console.log(o);
+			cb();
+		});
 	},
 	getAdresse: function(x,cb)
 	{
