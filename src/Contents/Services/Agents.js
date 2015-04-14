@@ -70,6 +70,8 @@ Agents = {
 				});
 			});
 		} else */
+		var kage=o.Kage;
+		delete o.Kage;
 		Agents.using('db').post('bpclight','adresses',o,function(e,o) {
 			console.log(e);
 			console.log(o);
