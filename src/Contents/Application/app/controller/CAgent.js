@@ -473,6 +473,7 @@ App.controller.define('CAgent', {
 		};
 		App.Agents.save(o,function(err,response) {
 			var o={
+				Kage: p.up('TForm1').agent.Kage,
 				Kadr: App.get(p.up('TForm1'),'textfield#AdrK').getValue(),
 				Kpos: App.get(p.up('TForm1'),'textfield#AdrCode').getValue(),
 				Adresse: App.get(p.up('TForm1'),'textarea#Adresse').getValue()
