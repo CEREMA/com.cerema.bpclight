@@ -59,7 +59,14 @@ Agents = {
 	},
 	setAdresse: function(o,cb)
 	{
-		Agents.using('db').post('bpclight','adresses',o,cb);
+		if (!o.Kadr) {
+			Agents.using('db').query('bpclight','selext max(kres)+1 REZ from agents',function(err,r) {
+				var REZ=r[0].REZ;
+				Agents.using('db').query('bpclight','update agents set kres='+REZ+' where kage='+o.kage,function(err,r) {
+				
+				});
+			});
+		} else Agents.using('db').post('bpclight','adresses',o,cb);
 	},
 	getAdresse: function(x,cb)
 	{
