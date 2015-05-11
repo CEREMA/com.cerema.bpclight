@@ -225,6 +225,8 @@ App.controller.define('CAgent', {
 	{
 		App.get(cmp.up('TFormation'),'button#ajouter').setDisabled(true);
 		App.readFile(file,function(result) {
+			alert('xxxxxx');
+			console.log(result);
 			App.get(cmp.up('TFormation'),'textarea#Formation_document').setValue(result);
 			App.get(cmp.up('TFormation'),'button#ajouter').setDisabled(false);
 		});	
