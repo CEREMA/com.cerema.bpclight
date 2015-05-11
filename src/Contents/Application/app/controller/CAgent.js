@@ -250,6 +250,7 @@ App.controller.define('CAgent', {
 			Date: App.get(p.up('TForm1'),'TFormation datefield#date').getValue(),
 			upload: App.get(p.up('TForm1'),'TFormation textarea#Formation_document').getValue()
 		};
+		console.log(o);
 		if (App.get(p.up('TForm1'),'TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
 		else o.Session='Recyclage';
 		App.Agents.saveFormation(o,function() {
