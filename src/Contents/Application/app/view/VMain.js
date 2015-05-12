@@ -16,7 +16,15 @@ App.view.define('VMain', {
 			xtype: "Menu",
 			itemId: "MenuPanel",
 			menu: [
-			
+				{
+					text: "Agent",
+					menu: [
+						{
+							text: "Nouveau",
+							id: "MNU_AGENT_NEW"
+						}
+					]
+				}
 			]		
 		},
 		{
