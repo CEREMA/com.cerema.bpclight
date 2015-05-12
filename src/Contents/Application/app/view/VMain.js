@@ -21,7 +21,7 @@ App.view.define('VMain', {
 					menu: [
 						{
 							text: "Nouveau",
-							id: "MNU_AGENT_NEW"
+							itemId: "MNU_AGENT_NEW"
 						}
 					]
 				}
