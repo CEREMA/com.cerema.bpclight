@@ -145,7 +145,6 @@ App.view.define('VCreateAgent', {
 			},
 			{
 				layout: "hbox",
-				padding: 3,
 				border: false,
 				items: [
 					{
@@ -160,7 +159,7 @@ App.view.define('VCreateAgent', {
 							top: 10,
 							left: 40
 						},
-						width: 150
+						width: 110
 					},
 					{
 						xtype: "combo",
@@ -174,7 +173,7 @@ App.view.define('VCreateAgent', {
 							top: 10,
 							left: 40
 						},
-						width: 150
+						width: 170
 					}				
 				]
 			}
