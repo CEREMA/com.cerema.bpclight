@@ -101,6 +101,11 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Etablissement",
 				labelAlign: "top",
 				padding: 5,
+				store: App.store.create('App.Etablissements.getAll',{
+					autoLoad: true
+				}),
+				displayField: "LibEtsC",
+				valueField: "Kets",				
 				margin: {
 					top: 10,
 					left: 40
