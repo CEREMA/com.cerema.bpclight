@@ -84,6 +84,7 @@ App.controller.define('CMain', {
 	},
 	TCADepartement_create: function() 
 	{
+		var err=[];
 		var o={
 			kets: App.get("combo#TCAEtablissement").getValue(),
 			kuni: App.get("combo#TCADepartement").getValue(),
@@ -97,7 +98,18 @@ App.controller.define('CMain', {
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
 			o.kgra=67;
 		};
-		console.log(o);
+		if (o.kets=="") err.push("l'établissement");
+		if (o.kuni=="") err.push("le département");
+		if (o.ksub=="") err.push("le service");
+		if (err.length>0) {
+			Ext.MessageBox.show({
+			   title: 'BPCLight',
+			   msg: 'Vous avez oublié de renseigner les champs suivants : '+err.join('\n'),
+			   buttons: Ext.MessageBox.OK
+			});
+		} else {
+			console.log(o);
+		}
 	},
 	TCACat_onchange: function(p,record)
 	{
