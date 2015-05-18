@@ -108,7 +108,7 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
-			if (p.itemId=="MNU_AGENT_NEW") NewAgent_onclick();
+			if (p.itemId=="MNU_AGENT_NEW") this.NewAgent_onclick();
 		};			
 	},
 	grid_onclick: function(p, record, item, index)
