@@ -111,7 +111,7 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.agents.save(o,function(e,o) {
-			
+				alert('x');
 			});
 		}
 	},
