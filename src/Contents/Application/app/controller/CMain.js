@@ -98,9 +98,9 @@ App.controller.define('CMain', {
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
 			o.kgra=67;
 		};
-		if (o.kets=="") err.push("l'établissement");
-		if (o.kuni=="") err.push("le département");
-		if (o.ksub=="") err.push("le service");
+		if (!o.kets) err.push("l'établissement");
+		if (!o.kuni) err.push("le département");
+		if (!o.ksub) err.push("le service");
 		if (err.length>0) {
 			Ext.MessageBox.show({
 			   title: 'BPCLight',
