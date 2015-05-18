@@ -48,7 +48,7 @@ App.view.define('VCreateAgent', {
 				},
 				width: "100%",
 				items: [
-					{boxLabel: 'Stagiaire', name: 'rb', inputValue: '1'},
+					{boxLabel: 'Stagiaire', name: 'rb', inputValue: '1', checked: true},
 					{boxLabel: 'Vacataire', name: 'rb', inputValue: '2'},
 					{boxLabel: 'Titulaire', name: 'rb', inputValue: '3'}
 				]
