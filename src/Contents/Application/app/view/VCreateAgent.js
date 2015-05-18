@@ -1,36 +1,41 @@
-App.view.define('VMain', {
+App.view.define('VCreateAgent', {
 
-    extend: 'Ext.Panel',
-	alias : 'widget.mainform',
-	border: false,
-	
-	layout: "border",
-	
-	items: [
-		{
-			region: 'north',
-			height: 25,
-			minHeight: 25,
-			border:false,
-			baseCls: 'cls-header',
-			xtype: "Menu",
-			itemId: "MenuPanel",
-			menu: [
-				{
-					text: "Agent",
-					menu: [
-						{
-							text: "Nouveau",
-							itemId: "MNU_AGENT_NEW"
-						}
-					]
-				}
-			]		
-		},
-		{
-			region: "center",
-			xtype: "TPrincipal"
-		}
-	]
+    extend: 'Ext.Window.window',
+	alias : 'widget.createAgent',
+	extend: "Ext.window.Window",
+    alias: 'widget.createAgent',
+    initComponent: function() {
+		
+		this.width = 1024;
+        this.height = 660;
+        this.title = "...";
+
+        this.layout = {
+            type: 'border'
+        };
+
+        this.bbar = [
+            '->', {
+                text: 'Enregistrer',
+				itemId: "Record"
+            }, {
+                text: 'Quitter',
+				itemId: "Exit"
+            }
+        ];		
+        
+		this.defaults = {
+            split: true
+        };	
+		
+		this.items = [
+		
+		];
+		
+		this.callParent();	
+	}
 	
 });
+
+        
+
