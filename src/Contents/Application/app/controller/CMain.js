@@ -88,7 +88,9 @@ App.controller.define('CMain', {
 			nom: App.get("textfield#TCANom").getValue(),
 			prenom: App.get("textfield#TCAPrenom").getValue()
 		};
-		console.log(App.get('createAgent radiogroup#rdiona'));
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
+			
+		};
 		console.log(o);
 	},
 	TCAEtablissement_onchange: function(p,record)
