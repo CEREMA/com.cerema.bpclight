@@ -31,16 +31,6 @@ App.view.define('VCreateAgent', {
 		
 		this.items = [
 			{
-				html: '<div style="padding:5px;font-weight: bold">Veuillez renseigner ce formulaire afin d\'enregistrer le nouvel agent</div>',
-				border: true,
-				height: 50,
-				width: "100%",
-				padding: 5
-			},		
-			{
-				height: 20
-			},
-			{
 				html: '<div style="padding:5px">1. Typologie du nouvel agent</div>',
 				border: false,
 				height: 50,
@@ -52,7 +42,7 @@ App.view.define('VCreateAgent', {
 				vertical: true,
 				columns: 1,
 				height: 50,
-				padding: 5,
+				padding: 10,
 				width: "100%",
 				items: [
 					{boxLabel: 'Stagiaire', name: 'rb', inputValue: '1'},
