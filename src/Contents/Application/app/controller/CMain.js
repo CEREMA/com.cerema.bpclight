@@ -98,13 +98,14 @@ App.controller.define('CMain', {
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
 			o.kgra=67;
 		};
+		
 		if (!o.kets) err.push("<li>L'établissement");
 		if (!o.kuni) err.push("<li>Le département");
 		if (!o.ksub) err.push("<li>Le service");
 		if (err.length>0) {
 			Ext.MessageBox.show({
 			   title: 'BPCLight',
-			   msg: 'Vous avez oublié de renseigner les champs suivants : <br>'+err.join('<br>'),
+			   msg: 'Vous avez oublié de renseigner les champs suivants : <br><ul>'+err.join('<br>')+'</ul>',
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
