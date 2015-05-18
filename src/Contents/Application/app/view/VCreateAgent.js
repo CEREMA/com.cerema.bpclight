@@ -33,7 +33,7 @@ App.view.define('VCreateAgent', {
 			{
 				html: '<div style="padding:5px">1. Typologie du nouvel agent</div>',
 				border: false,
-				height: 50,
+				height: 40,
 				width: "100%",
 				padding: 5
 			},
