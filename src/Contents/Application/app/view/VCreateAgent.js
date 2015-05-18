@@ -42,7 +42,7 @@ App.view.define('VCreateAgent', {
 				vertical: true,
 				columns: 1,
 				height: 80,
-				padding: 5,
+				padding: 0,
 				margin: {
 					left: 40
 				},
@@ -54,10 +54,11 @@ App.view.define('VCreateAgent', {
 				]
 			},
 			{
-				xtype: 'ux-searchtpt',
+				xtype: 'ux-searchbox',
+				width: 200,
 				triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
 				itemId: 'searchtpt',
-				padding:5,
+				padding:4,
 				width: 250
 			},
 			{
