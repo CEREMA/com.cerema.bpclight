@@ -119,6 +119,7 @@ App.view.define('VCreateAgent', {
 				itemId: "TCADepartement",
 				labelAlign: "top",
 				padding: 5,
+				store: App.store.create('App.Departements.getAll'),			
 				margin: {
 					top: 10,
 					left: 40
@@ -130,6 +131,7 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Service",
 				labelAlign: "top",
 				itemId: "TCAService",
+				tore: App.store.create('App.Services.getAll'),
 				padding: 5,
 				margin: {
 					top: 10,
