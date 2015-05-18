@@ -155,7 +155,6 @@ App.view.define('VCreateAgent', {
 						store: App.store.create('App.Categories.getAll'),
 						displayField: "LibCgr",
 						valueField: "Kcgr",
-						padding: 5,
 						margin: {
 							top: 10,
 							left: 40
@@ -170,7 +169,6 @@ App.view.define('VCreateAgent', {
 						displayField: "LibGra",
 						valueField: "Kgra",
 						store: App.store.create('App.Categories.getGrades'),
-						padding: 5,
 						margin: {
 							top: 10,
 							left: 40
