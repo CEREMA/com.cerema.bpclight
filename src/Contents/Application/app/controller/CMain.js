@@ -101,9 +101,7 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
-			if (p.itemId=="MNU_AGENT_NEW") App.view.create('VCreateAgent',{
-				modal: true
-			}).show();
+			if (p.itemId=="MNU_AGENT_NEW") NewAgent_onclick();
 		};			
 	},
 	grid_onclick: function(p, record, item, index)
@@ -177,6 +175,12 @@ App.controller.define('CMain', {
 			kets: id.split('Kets')[1]
 		};
 		grid.getStore().load();	
+	},
+	NewAgent_onclick: function()
+	{
+		App.view.create('VCreateAgent',{
+			modal: true
+		}).show();	
 	},
 	onLoad: function()
 	{
