@@ -84,8 +84,11 @@ App.controller.define('CMain', {
 		var o={
 			kets: App.get("combo#TCAEtablissement").getValue(),
 			kuni: App.get("combo#TCADepartement").getValue(),
-			ksub: App.get("combo#TCAService").getValue()
+			ksub: App.get("combo#TCAService").getValue(),
+			nom: App.get("textfield#TCANom").getValue(),
+			prenom: App.get("textfield#TCAPrenom").getValue()
 		};
+		console.log(App.get('createAgent radiogroup#rdiona'));
 		console.log(o);
 	},
 	TCAEtablissement_onchange: function(p,record)
