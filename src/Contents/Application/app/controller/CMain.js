@@ -88,8 +88,11 @@ App.controller.define('CMain', {
 			nom: App.get("textfield#TCANom").getValue(),
 			prenom: App.get("textfield#TCAPrenom").getValue()
 		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
+			o.kgra=66;
+		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
-			
+			o.kgra=67;
 		};
 		console.log(o);
 	},
