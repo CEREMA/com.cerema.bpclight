@@ -73,6 +73,9 @@ App.controller.define('CMain', {
 			},
 			"createAgent button#Record": {
 				click: "TCADepartement_create"
+			},
+			"createAgent combo#TCACadGrad": {
+				change: "TCACat_onchange"
 			}
 		});
 		
@@ -96,6 +99,13 @@ App.controller.define('CMain', {
 		};
 		console.log(o);
 	},
+	TCACat_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCAGrade').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCAGrade');
+		cbo.getStore().getProxy().extraParams.catgrad=record[0].data.Kcgr;
+		cbo.getStore().load();		
+	},	
 	TCAEtablissement_onchange: function(p,record)
 	{
 		App.get(p.up('window'),'combo#TCADepartement').setValue('');
