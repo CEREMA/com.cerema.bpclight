@@ -110,7 +110,9 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			console.log(o);
+			App.agents.save(o,function(e,o) {
+			
+			});
 		}
 	},
 	TCACat_onchange: function(p,record)
