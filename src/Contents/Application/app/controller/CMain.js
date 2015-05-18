@@ -108,7 +108,6 @@ App.controller.define('CMain', {
 			if (p.itemId=="MNU_AGENT_NEW") App.view.create('VCreateAgent',{
 				modal: true
 			}).show();
-			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			
 	},
 	grid_onclick: function(p, record, item, index)
