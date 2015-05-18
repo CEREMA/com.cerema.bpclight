@@ -7,7 +7,7 @@ App.view.define('VCreateAgent', {
 		
 		this.width = 1024;
         this.height = 660;
-        this.title = "...";
+        this.title = "Nouvel agent";
 
         this.layout = {
             type: 'border'
