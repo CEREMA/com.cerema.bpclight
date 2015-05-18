@@ -152,8 +152,9 @@ App.view.define('VCreateAgent', {
 						fieldLabel: "CatGrad",
 						labelAlign: "top",
 						itemId: "TCACadGrad",
-						displayField: "LibSubC",
-						valueField: "Ksub",					
+						store: App.store.create('App.Categories.getAll'),
+						displayField: "LibCgr",
+						valueField: "Kcgr",
 						padding: 5,
 						margin: {
 							top: 10,
