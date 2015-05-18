@@ -139,6 +139,8 @@ App.view.define('VPrincipal',{
 				{
 					xtype: 'ux-searchbox',
 					width: 200,
+					labelAlign: "top",
+					fieldLabel: "Recherche Temptation",
 					triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
 					itemId: 'searchbox',
 					padding:4,
