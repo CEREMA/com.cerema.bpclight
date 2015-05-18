@@ -75,6 +75,7 @@ App.controller.define('CMain', {
 	},
 	TCAEtablissement_onchange: function(p,record)
 	{
+		alert('x');
 		App.get(p.up('window'),'combo#TCADepartement').setValue('');
 		App.get(p.up('window'),'combo#TCAService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TCADepartement');
