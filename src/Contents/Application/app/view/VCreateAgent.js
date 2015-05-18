@@ -102,9 +102,9 @@ App.view.define('VCreateAgent', {
 				labelAlign: "top",
 				itemId: "TCAEtablissement",
 				padding: 5,
-				store: App.store.create('App.Etablissements.getAll',{
+/*				store: App.store.create('App.Etablissements.getAll',{
 					autoLoad: true
-				}),
+				}),*/
 				displayField: "LibEtsC",
 				valueField: "Kets",				
 				margin: {
