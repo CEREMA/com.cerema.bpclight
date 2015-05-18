@@ -98,10 +98,6 @@ App.controller.define('CMain', {
 		else
 		App.get('FilterBox#FilterPanel').show();
 	},
-	NewAgent_onclick: function()
-	{
-		Ext.Msg.alert('BPCLight', 'Fonction non implémentée');
-	},
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
