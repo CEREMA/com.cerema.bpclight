@@ -64,7 +64,10 @@ App.view.define('VCreateAgent', {
 				xtype: "textfield",
 				fieldLabel: "N° Matricule",
 				labelAlign: "top",
-				padding: 5
+				padding: 5,
+				margin: {
+					left: 40
+				},
 			}
 		];
 		
