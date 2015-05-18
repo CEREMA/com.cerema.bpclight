@@ -101,8 +101,8 @@ App.controller.define('CMain', {
 	},
 	TCACat_onchange: function(p,record)
 	{
-		App.get(p.up('window'),'combo#TCAGrade').setValue('');
-		var cbo=App.get(p.up('window'),'combo#TCAGrade');
+		App.get(p.up('panel'),'combo#TCAGrade').setValue('');
+		var cbo=App.get(p.up('panel'),'combo#TCAGrade');
 		cbo.getStore().getProxy().extraParams.catgrad=record[0].data.Kcgr;
 		cbo.getStore().load();		
 	},	
