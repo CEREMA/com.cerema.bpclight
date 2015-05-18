@@ -42,7 +42,7 @@ App.view.define('VCreateAgent', {
 				vertical: true,
 				columns: 1,
 				height: 80,
-				padding: 0,
+				padding: 5,
 				margin: {
 					left: 40
 				},
@@ -54,26 +54,14 @@ App.view.define('VCreateAgent', {
 				]
 			},
 			{
-				html: '<div style="padding:5px">2. Affectation d\'un matricule</div>',
-				border: false,
-				hidden: true,
-				height: 40,
-				width: "100%",
-				padding: 5
+				xtype: 'ux-searchtpt',
+				triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
+				itemId: 'searchtpt',
+				padding:5,
+				width: 250
 			},
 			{
-				xtype: "textfield",
-				fieldLabel: "N° Matricule",
-				labelAlign: "top",
-				hidden: true,
-				padding: 5,
-				margin: {
-					left: 40
-				},
-				width: 350
-			},
-			{
-				html: '<div style="padding:5px">3. Renseignements</div>',
+				html: '<div style="padding:5px">2. Renseignements</div>',
 				border: false,
 				height: 40,
 				width: "100%",
