@@ -100,7 +100,7 @@ App.view.define('VCreateAgent', {
 				xtype: "combo",
 				fieldLabel: "Etablissement",
 				labelAlign: "top",
-				itemId: "TCADepartement",
+				itemId: "TCAEtablissement",
 				padding: 5,
 				store: App.store.create('App.Etablissements.getAll',{
 					autoLoad: true
