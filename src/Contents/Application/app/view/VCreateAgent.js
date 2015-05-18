@@ -52,7 +52,14 @@ App.view.define('VCreateAgent', {
 					{boxLabel: 'Vacataire', name: 'rb', inputValue: '2'},
 					{boxLabel: 'Titulaire', name: 'rb', inputValue: '3'}
 				]
-			}
+			},
+			{
+				html: '<div style="padding:5px">2. Affectation d\'un matricule</div>',
+				border: false,
+				height: 40,
+				width: "100%",
+				padding: 5
+			}		
 		];
 		
 		this.callParent();
