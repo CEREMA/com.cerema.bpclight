@@ -41,7 +41,7 @@ App.view.define('VCreateAgent', {
 				xtype: "radiogroup",
 				vertical: true,
 				columns: 1,
-				height: 50,
+				height: 80,
 				padding: 0,
 				margin: {
 					left: 40
