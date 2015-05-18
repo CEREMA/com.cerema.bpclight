@@ -103,6 +103,7 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Etablissement",
 				labelAlign: "top",
 				itemId: "TCAEtablissement",
+				editable: false,
 				padding: 5,
 				store: App.store.create('App.Etablissements.getAll'),
 				displayField: "LibEtsC",
@@ -118,6 +119,7 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Département",
 				itemId: "TCADepartement",
 				labelAlign: "top",
+				editable: false,
 				padding: 5,
 				store: App.store.create('App.Departements.getAll'),	
 				displayField: "LibUnic",
@@ -135,7 +137,8 @@ App.view.define('VCreateAgent', {
 				itemId: "TCAService",
 				store: App.store.create('App.Services.getAll'),
 				displayField: "LibSubC",
-				valueField: "Ksub",					
+				valueField: "Ksub",				
+				editable: false,				
 				padding: 5,
 				margin: {
 					top: 10,
@@ -155,6 +158,7 @@ App.view.define('VCreateAgent', {
 						labelAlign: "top",
 						itemId: "TCACadGrad",
 						store: App.store.create('App.Categories.getAllButOther'),
+						editable: false,
 						displayField: "LibCgr",
 						valueField: "Kcgr",
 						margin: {
@@ -170,6 +174,7 @@ App.view.define('VCreateAgent', {
 						itemId: "TCAGrade",
 						displayField: "LibGra",
 						valueField: "Kgra",
+						editable: false,
 						store: App.store.create('App.Categories.getGrades'),
 						margin: {
 							top: 10,
@@ -186,6 +191,3 @@ App.view.define('VCreateAgent', {
 	}
 	
 });
-
-        
-
