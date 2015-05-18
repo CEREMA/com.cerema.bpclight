@@ -67,7 +67,8 @@ App.view.define('VCreateAgent', {
 				padding: 5,
 				margin: {
 					left: 40
-				}
+				},
+				width: 350
 			},
 			{
 				html: '<div style="padding:5px">3. Renseignements</div>',
@@ -84,7 +85,7 @@ App.view.define('VCreateAgent', {
 				margin: {
 					left: 40
 				},
-				width: 150
+				width: 350
 			},
 			{
 				xtype: "textfield",
@@ -94,7 +95,7 @@ App.view.define('VCreateAgent', {
 				margin: {
 					left: 40
 				},
-				width: 150
+				width: 350
 			},
 			{
 				xtype: "combo",
@@ -104,7 +105,7 @@ App.view.define('VCreateAgent', {
 				margin: {
 					left: 40
 				},
-				width: 150
+				width: 350
 			},
 			{
 				xtype: "combo",
@@ -114,7 +115,7 @@ App.view.define('VCreateAgent', {
 				margin: {
 					left: 40
 				},
-				width: 150
+				width: 350
 			},
 			{
 				xtype: "combo",
