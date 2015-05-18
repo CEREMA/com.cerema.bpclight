@@ -5,7 +5,7 @@ App.view.define('VCreateAgent', {
     alias: 'widget.createAgent',
     initComponent: function() {
 		
-		this.width = 440;
+		this.width = 430;
         this.height = 660;
         this.title = "Nouvel agent";
 
