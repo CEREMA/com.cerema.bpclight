@@ -89,7 +89,8 @@ App.controller.define('CMain', {
 			kuni: App.get("combo#TCADepartement").getValue(),
 			ksub: App.get("combo#TCAService").getValue(),
 			nom: App.get("textfield#TCANom").getValue(),
-			prenom: App.get("textfield#TCAPrenom").getValue()
+			prenom: App.get("textfield#TCAPrenom").getValue(),
+			actif: 1
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
 			o.kgra=66;
