@@ -64,7 +64,7 @@ App.view.define('VCreateAgent', {
 				margin: {
 					left: 40
 				},
-				width: 250
+				width: 350
 			},
 			{
 				html: '<div style="padding:5px">2. Renseignements</div>',
