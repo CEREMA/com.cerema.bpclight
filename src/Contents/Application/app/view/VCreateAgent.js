@@ -29,6 +29,9 @@ App.view.define('VCreateAgent', {
 		
 		this.items = [
 			{
+				text: "Panel 1"
+			},
+			{
 				xtype: "radiogroup",
 				vertical: true,
 				columns: 1,
