@@ -152,7 +152,7 @@ App.view.define('VCreateAgent', {
 						fieldLabel: "CatGrad",
 						labelAlign: "top",
 						itemId: "TCACadGrad",
-						store: App.store.create('App.Categories.getAll'),
+						store: App.store.create('App.Categories.getAllButOther'),
 						displayField: "LibCgr",
 						valueField: "Kcgr",
 						margin: {
