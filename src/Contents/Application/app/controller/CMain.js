@@ -99,7 +99,6 @@ App.controller.define('CMain', {
 		};
 		if (o.nom=="") err.push("<li>Nom");
 		if (o.prenom=="") err.push("<li>Prénom");
-		if (!o.kets) err.push("<li>L'établissement");
 		if (!o.kuni) err.push("<li>Le département");
 		if (!o.ksub) err.push("<li>Le service");
 		if (err.length>0) {
