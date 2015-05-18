@@ -110,7 +110,7 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			App.agents.save(o,function(e,o) {
+			App.Agents.save(o,function(e,o) {
 				alert('x');
 			});
 		}
