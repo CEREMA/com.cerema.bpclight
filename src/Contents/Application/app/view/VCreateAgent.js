@@ -102,9 +102,7 @@ App.view.define('VCreateAgent', {
 				labelAlign: "top",
 				itemId: "TCAEtablissement",
 				padding: 5,
-/*				store: App.store.create('App.Etablissements.getAll',{
-					autoLoad: true
-				}),*/
+				store: App.store.create('App.Etablissements.getAll'),
 				displayField: "LibEtsC",
 				valueField: "Kets",				
 				margin: {
@@ -119,9 +117,7 @@ App.view.define('VCreateAgent', {
 				itemId: "TCADepartement",
 				labelAlign: "top",
 				padding: 5,
-				store: App.store.create('App.Departements.getAll',{
-					autoLoad: false
-				}),	
+				store: App.store.create('App.Departements.getAll'),	
 				displayField: "LibUnic",
 				valueField: "Kuni",				
 				margin: {
@@ -135,9 +131,7 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Service",
 				labelAlign: "top",
 				itemId: "TCAService",
-				store: App.store.create('App.Services.getAll',{
-					autoLoad: false
-				}),
+				store: App.store.create('App.Services.getAll'),
 				displayField: "LibSubC",
 				valueField: "Ksub",					
 				padding: 5,
