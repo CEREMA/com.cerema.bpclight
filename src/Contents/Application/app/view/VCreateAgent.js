@@ -32,6 +32,7 @@ App.view.define('VCreateAgent', {
 				xtype: "radiogroup",
 				vertical: true,
 				columns: 1,
+				width: "100%",
 				items: [
 					{boxLabel: 'Stagiaire', name: 'rb', inputValue: '1'},
 					{boxLabel: 'Vacataire', name: 'rb', inputValue: '2'},
