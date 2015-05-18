@@ -147,6 +147,7 @@ App.view.define('VCreateAgent', {
 				layout: "hbox",
 				border: false,
 				itemId: "TCaGRA",
+				hidden: true,
 				items: [
 					{
 						xtype: "combo",
