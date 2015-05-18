@@ -10,7 +10,7 @@ App.view.define('VCreateAgent', {
         this.title = "Nouvel agent";
 
         this.layout = {
-            type: 'border'
+            type: 'vbox'
         };
 
         this.bbar = [
@@ -28,9 +28,6 @@ App.view.define('VCreateAgent', {
         };	
 		
 		this.items = [
-			{
-				text: "Panel 1"
-			},
 			{
 				xtype: "radiogroup",
 				vertical: true,
