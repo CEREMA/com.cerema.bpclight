@@ -69,7 +69,7 @@ App.controller.define('CMain', {
 	},
 	rdiona_change: function(radiogroup, radio)
 	{
-		alert(radio.getValue());
+		console.log(radio);
 	},
 	onSearch: function(v)
 	{
