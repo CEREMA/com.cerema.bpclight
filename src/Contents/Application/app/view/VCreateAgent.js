@@ -119,7 +119,9 @@ App.view.define('VCreateAgent', {
 				itemId: "TCADepartement",
 				labelAlign: "top",
 				padding: 5,
-				store: App.store.create('App.Departements.getAll'),	
+				store: App.store.create('App.Departements.getAll',{
+					autoLoad: false
+				}),	
 				displayField: "LibUnic",
 				valueField: "Kuni",				
 				margin: {
@@ -133,7 +135,9 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Service",
 				labelAlign: "top",
 				itemId: "TCAService",
-				store: App.store.create('App.Services.getAll'),
+				store: App.store.create('App.Services.getAll'{
+					autoLoad: false
+				}),
 				displayField: "LibSubC",
 				valueField: "Ksub",					
 				padding: 5,
