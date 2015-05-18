@@ -6,7 +6,7 @@ App.view.define('VCreateAgent', {
     initComponent: function() {
 		
 		this.width = 430;
-        this.height = 660;
+        this.height = 560;
         this.title = "Nouvel agent";
 
         this.layout = {
