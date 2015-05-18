@@ -58,6 +58,8 @@ App.view.define('VCreateAgent', {
 				width: 200,
 				triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
 				itemId: 'searchtpt',
+				labelAlign: "top",
+				fieldLabel: "Recherche Temptation",				
 				padding:5,
 				margin: {
 					left: 40
