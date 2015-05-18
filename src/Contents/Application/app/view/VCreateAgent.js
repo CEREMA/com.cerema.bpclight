@@ -67,7 +67,59 @@ App.view.define('VCreateAgent', {
 				padding: 5,
 				margin: {
 					left: 40
-				},
+				}
+			},
+			{
+				html: '<div style="padding:5px">3. Renseignements</div>',
+				border: false,
+				height: 40,
+				width: "100%",
+				padding: 5
+			},
+			{
+				xtype: "textfield",
+				fieldLabel: "Nom",
+				labelAlign: "top",
+				padding: 5,
+				margin: {
+					left: 40
+				}			
+			},
+			{
+				xtype: "textfield",
+				fieldLabel: "Prénom",
+				labelAlign: "top",
+				padding: 5,
+				margin: {
+					left: 40
+				}			
+			},
+			{
+				xtype: "combo",
+				fieldLabel: "Etablissement",
+				labelAlign: "top",
+				padding: 5,
+				margin: {
+					left: 40
+				}			
+			},
+			{
+				xtype: "combo",
+				fieldLabel: "Département",
+				labelAlign: "top",
+				padding: 5,
+				margin: {
+					left: 40
+				}			
+			},
+			{
+				xtype: "combo",
+				fieldLabel: "Service",
+				labelAlign: "top",
+				padding: 5,
+				margin: {
+					left: 40
+				}			
 			}
 		];
 		
