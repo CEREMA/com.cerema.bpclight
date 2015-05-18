@@ -61,11 +61,32 @@ App.controller.define('CMain', {
 			},
 			"createAgent radiogroup#rdiona": {
 				change: "rdiona_change"
-			},			
+			},	
+			"createAgent combo#TEtablissement": {
+				select: "TCAEtablissement_onchange"
+			},
+			"createAgent combo#TDepartement": {
+				select: "TCADepartement_onchange"
+			}			
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	TCAEtablissement_onchange: function(p)
+	{
+		App.get(p.up('window'),'combo#TCADepartement').setValue('');
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCADepartement');
+		cbo.getStore().getProxy().extraParams.kets=record[0].data.Kets;
+		cbo.getStore().load();	
+	},
+	TCADepartement_onchange: function(p)
+	{
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCAService');
+		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
+		cbo.getStore().load();	
 	},
 	rdiona_change: function(radiogroup, radio)
 	{
