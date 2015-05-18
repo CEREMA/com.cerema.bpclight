@@ -62,7 +62,8 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Recherche Temptation",				
 				padding:5,
 				margin: {
-					left: 40
+					left: 40,
+					bottom: 10
 				},
 				width: 350
 			},
