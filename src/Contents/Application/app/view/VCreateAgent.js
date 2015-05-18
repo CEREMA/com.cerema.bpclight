@@ -100,6 +100,7 @@ App.view.define('VCreateAgent', {
 				labelAlign: "top",
 				padding: 5,
 				margin: {
+					top: 10,
 					left: 40
 				},
 				width: 350
@@ -110,6 +111,7 @@ App.view.define('VCreateAgent', {
 				labelAlign: "top",
 				padding: 5,
 				margin: {
+					top: 10,
 					left: 40
 				},
 				width: 350
@@ -120,6 +122,7 @@ App.view.define('VCreateAgent', {
 				labelAlign: "top",
 				padding: 5,
 				margin: {
+					top: 10,
 					left: 40
 				},
 				width: 350
