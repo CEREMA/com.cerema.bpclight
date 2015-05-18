@@ -100,6 +100,7 @@ App.view.define('VCreateAgent', {
 				xtype: "combo",
 				fieldLabel: "Etablissement",
 				labelAlign: "top",
+				itemId: "TCADepartement",
 				padding: 5,
 				store: App.store.create('App.Etablissements.getAll',{
 					autoLoad: true
@@ -115,6 +116,7 @@ App.view.define('VCreateAgent', {
 			{
 				xtype: "combo",
 				fieldLabel: "Département",
+				itemId: "TCADepartement",
 				labelAlign: "top",
 				padding: 5,
 				margin: {
@@ -127,6 +129,7 @@ App.view.define('VCreateAgent', {
 				xtype: "combo",
 				fieldLabel: "Service",
 				labelAlign: "top",
+				itemId: "TCAService",
 				padding: 5,
 				margin: {
 					top: 10,
