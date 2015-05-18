@@ -70,11 +70,23 @@ App.controller.define('CMain', {
 			},
 			"createAgent combo#TCADepartement": {
 				select: "TCADepartement_onchange"
-			}			
+			},
+			"createAgent button#Record": {
+				click: "TCADepartement_create"
+			}
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	TCADepartement_create: function() 
+	{
+		var o={
+			kets: App.get("combo#TCAEtablissement").getValue(),
+			kuni: App.get("combo#TCADepartement").getValue(),
+			ksub: App.get("combo#TCAService").getValue()
+		};
+		console.log(o);
 	},
 	TCAEtablissement_onchange: function(p,record)
 	{
