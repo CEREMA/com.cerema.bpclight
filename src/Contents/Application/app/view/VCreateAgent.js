@@ -31,7 +31,7 @@ App.view.define('VCreateAgent', {
 		
 		this.items = [
 			{
-				html: '<div style="padding:5px">1. Typologie du nouvel agent</div>',
+				html: '<div style="font-weight: bold;padding:5px">1. Typologie du nouvel agent</div>',
 				border: false,
 				height: 40,
 				width: "100%",
@@ -67,7 +67,7 @@ App.view.define('VCreateAgent', {
 				width: 350
 			},
 			{
-				html: '<div style="margin-top:10px;padding:5px">2. Renseignements</div>',
+				html: '<div style="font-weight: bold;margin-top:10px;padding:5px">2. Renseignements</div>',
 				border: false,
 				height: 40,
 				width: "100%",
