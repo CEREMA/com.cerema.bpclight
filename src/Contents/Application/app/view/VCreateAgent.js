@@ -142,6 +142,41 @@ App.view.define('VCreateAgent', {
 					left: 40
 				},
 				width: 350
+			},
+			{
+				layout: "hbox",
+				padding: 5,
+				items: [
+					{
+						xtype: "combo",
+						fieldLabel: "CatGrad",
+						labelAlign: "top",
+						itemId: "TCACadGrad",
+						displayField: "LibSubC",
+						valueField: "Ksub",					
+						padding: 5,
+						margin: {
+							top: 10,
+							left: 40
+						},
+						width: 150
+					},
+					{
+						xtype: "combo",
+						fieldLabel: "Grades",
+						labelAlign: "top",
+						itemId: "TCAGrade",
+						displayField: "LibGra",
+						valueField: "Kgra",
+						store: App.store.create('App.Categories.getGrades'),
+						padding: 5,
+						margin: {
+							top: 10,
+							left: 40
+						},
+						width: 350
+					}				
+				]
 			}
 		];
 		
