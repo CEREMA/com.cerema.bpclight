@@ -13,7 +13,7 @@ App.view.define('VCreateAgent', {
             type: 'vbox'
         };
 		
-		this.style="background-color: white";
+		this.bodyStyle="background-color: white";
 
         this.bbar = [
             '->', {
