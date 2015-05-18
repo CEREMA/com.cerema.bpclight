@@ -29,7 +29,7 @@ App.view.define('VCreateAgent', {
 		
 		this.items = [
 			{
-				text: "1. Typologie du nouvel agent",
+				html: "1. Typologie du nouvel agent",
 				height: 50,
 				width: "100%",
 				padding: 5
