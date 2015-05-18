@@ -28,7 +28,18 @@ App.view.define('VCreateAgent', {
         };	
 		
 		this.items = [
-		
+			{
+				xtype: "radio",
+				text: "Agent stagiaire"
+			},
+			{
+				xtype: "radio",
+				text: "Agent vacataire"
+			},
+			{
+				xtype: "radio",
+				text: "Agent titulaire"
+			}
 		];
 		
 		this.callParent();
