@@ -144,7 +144,7 @@ App.view.define('VCreateAgent', {
 				width: 350
 			},
 			{
-				layout: "hbox",
+				layout: "vbox",
 				border: false,
 				itemId: "TCaGRA",
 				hidden: true,
