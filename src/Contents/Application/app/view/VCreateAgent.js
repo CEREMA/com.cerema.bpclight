@@ -12,6 +12,8 @@ App.view.define('VCreateAgent', {
         this.layout = {
             type: 'vbox'
         };
+		
+		this.cls="background-color: white";
 
         this.bbar = [
             '->', {
