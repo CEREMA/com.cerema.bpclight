@@ -42,7 +42,10 @@ App.view.define('VCreateAgent', {
 				vertical: true,
 				columns: 1,
 				height: 50,
-				padding: 10,
+				padding: 5,
+				margin: {
+					left: 20
+				},
 				width: "100%",
 				items: [
 					{boxLabel: 'Stagiaire', name: 'rb', inputValue: '1'},
