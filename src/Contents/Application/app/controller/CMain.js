@@ -86,7 +86,6 @@ App.controller.define('CMain', {
 	{
 		var err=[];
 		var o={
-			kets: App.get("combo#TCAEtablissement").getValue(),
 			kuni: App.get("combo#TCADepartement").getValue(),
 			ksub: App.get("combo#TCAService").getValue(),
 			nom: App.get("textfield#TCANom").getValue(),
