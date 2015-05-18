@@ -1,7 +1,6 @@
 App.view.define('VCreateAgent', {
 
     extend: 'Ext.Window.window',
-	alias : 'widget.createAgent',
 	extend: "Ext.window.Window",
     alias: 'widget.createAgent',
     initComponent: function() {
