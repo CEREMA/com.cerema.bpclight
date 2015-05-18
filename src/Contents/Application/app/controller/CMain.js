@@ -105,6 +105,9 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
+			if (p.itemId=="MNU_AGENT_NEW") App.view.create('VCreateAgent',{
+				modal: true
+			}).show();
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			
 	},
