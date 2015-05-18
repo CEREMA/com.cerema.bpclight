@@ -5,7 +5,7 @@ App.view.define('VCreateAgent', {
     alias: 'widget.createAgent',
     initComponent: function() {
 		
-		this.width = 1024;
+		this.width = 800;
         this.height = 660;
         this.title = "Nouvel agent";
 
@@ -31,7 +31,8 @@ App.view.define('VCreateAgent', {
 		
 		];
 		
-		this.callParent();	
+		this.callParent();
+		
 	}
 	
 });
