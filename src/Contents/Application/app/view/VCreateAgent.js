@@ -146,10 +146,11 @@ App.view.define('VCreateAgent', {
 			{
 				layout: "hbox",
 				border: false,
+				itemId: "TCaGRA",
 				items: [
 					{
 						xtype: "combo",
-						fieldLabel: "CatGrad",
+						fieldLabel: "Catégorie",
 						labelAlign: "top",
 						itemId: "TCACadGrad",
 						store: App.store.create('App.Categories.getAllButOther'),
