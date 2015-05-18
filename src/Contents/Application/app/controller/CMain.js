@@ -40,9 +40,6 @@ App.controller.define('CMain', {
 			"mainform menu>menuitem": {
 				click: "Menu_onClick"
 			},
-			"mainform radiogroup#rdiona": {
-				change: "rdiona_change"
-			},			
 			"mainform treepanel#TreePanel": {
 				itemclick: "tree_onclick"
 			},
@@ -61,7 +58,10 @@ App.controller.define('CMain', {
 			},
 			"mainform ux-searchbox#searchbox" : {
 				click: "onSearch"
-			}
+			};
+			"createAgent radiogroup#rdiona": {
+				change: "rdiona_change"
+			},			
 		});
 		
 		App.init('VMain',this.onLoad);
