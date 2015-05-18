@@ -113,7 +113,13 @@ App.controller.define('CMain', {
 	},
 	rdiona_change: function(radiogroup, radio)
 	{
-		if (radio.rb==3) App.get('ux-searchbox#searchtpt').show(); else App.get('ux-searchbox#searchtpt').hide();
+		if (radio.rb==3) {
+			App.get('panel#TCaGRA').show();
+			App.get('ux-searchbox#searchtpt').show(); 
+		} else {
+			App.get('panel#TCaGRA').hide();
+			App.get('ux-searchbox#searchtpt').hide();
+		}
 	},
 	onSearch: function(v)
 	{
