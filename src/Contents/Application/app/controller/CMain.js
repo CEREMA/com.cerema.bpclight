@@ -104,7 +104,7 @@ App.controller.define('CMain', {
 		if (err.length>0) {
 			Ext.MessageBox.show({
 			   title: 'BPCLight',
-			   msg: 'Vous avez oublié de renseigner les champs suivants : '+err.join('\n'),
+			   msg: 'Vous avez oublié de renseigner les champs suivants : <br>'+err.join('<br>'),
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
