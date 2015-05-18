@@ -58,7 +58,7 @@ App.controller.define('CMain', {
 			},
 			"mainform ux-searchbox#searchbox" : {
 				click: "onSearch"
-			};
+			},
 			"createAgent radiogroup#rdiona": {
 				change: "rdiona_change"
 			},			
