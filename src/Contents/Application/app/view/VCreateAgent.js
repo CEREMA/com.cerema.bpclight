@@ -135,7 +135,7 @@ App.view.define('VCreateAgent', {
 				fieldLabel: "Service",
 				labelAlign: "top",
 				itemId: "TCAService",
-				store: App.store.create('App.Services.getAll'{
+				store: App.store.create('App.Services.getAll',{
 					autoLoad: false
 				}),
 				displayField: "LibSubC",
