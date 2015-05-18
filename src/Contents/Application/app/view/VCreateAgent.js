@@ -29,6 +29,9 @@ App.view.define('VCreateAgent', {
 		
 		this.items = [
 			{
+				text: "1. Typologie du nouvel agent"
+			},
+			{
 				xtype: "radiogroup",
 				vertical: true,
 				columns: 1,
