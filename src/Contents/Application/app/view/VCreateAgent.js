@@ -145,7 +145,7 @@ App.view.define('VCreateAgent', {
 			},
 			{
 				layout: "hbox",
-				padding: 5,
+				padding: 3,
 				border: false,
 				items: [
 					{
