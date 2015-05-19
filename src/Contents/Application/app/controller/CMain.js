@@ -139,10 +139,8 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			App.Agents.save(o,function(e,r) {
-				console.log(r.result.insertId);
+			App.Agents.insert(o,function(e,r) {
 				App.Agents.getOne(r.result.insertId,function(e,m) {
-					console.log(m.result[0]);
 					App.view.create('VForm1',{
 						agent: m.result[0]
 					}).show();					
