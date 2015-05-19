@@ -157,13 +157,8 @@ App.controller.define('CMain', {
 		};
 		grid.getStore().load();
 	},
-	CAonSearch: function(v)
-	{
-		/*var grid=App.get('grid#GridAgents');
-		grid.getStore().getProxy().extraParams={
-			nom: v+"%"
-		};
-		grid.getStore().load();*/
+	CA_onSearch: function(v)
+	{		
 		App.Temptation.search(v,function(e,o) {
 			console.log(e);
 			console.log(o);
