@@ -143,7 +143,7 @@ App.controller.define('CMain', {
 	{
 		if (radio.rb==3) {
 			App.get('panel#TCaGRA').show();
-			App.get('ux-searchbox#searchtpt').show(); 
+			App.get('ux-searchbox#searchtpt').show();			
 		} else {
 			App.get('panel#TCaGRA').hide();
 			App.get('ux-searchbox#searchtpt').hide();
