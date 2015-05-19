@@ -122,10 +122,8 @@ App.controller.define('CMain', {
 			o.kgra=67;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
-			console.log(App.get('createAgent grid#gridTPT').getSelectionModel());
-			/*var gridrecord = App.get('createAgent grid#gridTPT').getSelectionModel().getSelected();
-			console.log(gridrecord);
-			o.matri=67;*/
+			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
+			o.matri=t.matri;
 		};		
 		if (o.nom=="") err.push("<li>Nom");
 		if (o.prenom=="") err.push("<li>Prénom");
@@ -138,9 +136,9 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			/*App.Agents.save(o,function(e,o) {
+			App.Agents.save(o,function(e,o) {
 				alert('x');
-			});*/
+			});
 		}
 	},
 	TCACat_onchange: function(p,record)
