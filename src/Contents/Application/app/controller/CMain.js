@@ -122,10 +122,10 @@ App.controller.define('CMain', {
 			o.kgra=67;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
-			console.log(App.get('createAgent grid#gridTPT'));
-			var gridrecord = App.get('createAgent grid#gridTPT').getView().getSelectionModel().getSelected();
+			console.log(App.get('createAgent grid#gridTPT').getSelectionModel());
+			/*var gridrecord = App.get('createAgent grid#gridTPT').getSelectionModel().getSelected();
 			console.log(gridrecord);
-			o.matri=67;
+			o.matri=67;*/
 		};		
 		if (o.nom=="") err.push("<li>Nom");
 		if (o.prenom=="") err.push("<li>Prénom");
