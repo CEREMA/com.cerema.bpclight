@@ -73,7 +73,8 @@
         "Utils"
     ],
     "db": [
-        "bpclight"
+        "bpclight",
+        "temptation"
     ],
     "packages": [
         "msexcel-builder",
