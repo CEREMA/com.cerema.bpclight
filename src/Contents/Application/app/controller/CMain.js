@@ -94,6 +94,7 @@ App.controller.define('CMain', {
 	gridTPT_ondblclick: function(p, record, item, index)
 	{
 		console.log(record);
+		App.get('createAgent ux-searchbox#searchtpt').setValue(record.data.nompre);
 		p.up('grid').hide();
 	},
 	TPT_close: function(p)
