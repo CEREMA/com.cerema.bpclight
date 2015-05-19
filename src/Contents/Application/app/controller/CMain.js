@@ -97,8 +97,8 @@ App.controller.define('CMain', {
 		var prenom=record.data.nompre.substr(x+1,255);
 		var nom=record.data.nompre.substr(0,x);
 		App.get('createAgent ux-searchbox#searchtpt').setValue(prenom+' '+nom+' ('+record.data.matri+')');
-		App.get(p.up('window'),'button#TCANom').setValue(nom);
-		App.get(p.up('window'),'button#TCAPrenom').setValue(prenom);
+		App.get('createAgent button#TCANom').setValue(nom);
+		App.get('createAgent button#TCAPrenom').setValue(prenom);
 		p.up('grid').hide();
 	},
 	TPT_close: function(p)
