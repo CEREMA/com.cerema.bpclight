@@ -128,8 +128,7 @@ Agents = {
 		}),cb);	
 	},
 	getOne: function(id,cb) {
-		console.log('SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+id);
-		Agents.using('db').query('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+id,cb);
+		Agents.using('db').query('bpclight','SELECT batiments.LibBatC, batiments.GPS, agents.* FROM bpclight.agents agents LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat) WHERE kage='+id+' order by nom,prenom',cb);
 	}
 };
 
