@@ -125,7 +125,7 @@ App.controller.define('CMain', {
 			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
 			o.matri=t.matri;
 			alert('->'+App.get('createAgent combo#TCAGrade').getValue()+'->');
-			if (App.get('createAgent combo#TCAGrade').getValue()=="") err.push("<li>Le grade");
+			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
 			else
 			o.kgra=App.get('createAgent combo#TCAGrade').getValue();
 		};		
