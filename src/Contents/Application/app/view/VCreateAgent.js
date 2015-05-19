@@ -88,6 +88,7 @@ App.view.define('VCreateAgent', {
 					
 					]
 				}),
+				hidden: true,
 				width: 350,
 				height: 400
 			},
