@@ -93,12 +93,11 @@ App.controller.define('CMain', {
 	},
 	gridTPT_ondblclick: function(p, record, item, index)
 	{
-		console.log(record);
-		App.get('createAgent ux-searchbox#searchtpt').setValue(record.data.nompre);
+		console.log(record);		
 		var x=record.data.nompre.lastIndexOf(' ');
 		var prenom=record.data.nompre.substr(x+1,255);
 		var nom=record.data.nompre.substr(0,x-1);
-		alert('->'+prenom+'<-');
+		App.get('createAgent ux-searchbox#searchtpt').setValue(prenom+' '+nom+' ('+record.data.matri+')');
 		p.up('grid').hide();
 	},
 	TPT_close: function(p)
