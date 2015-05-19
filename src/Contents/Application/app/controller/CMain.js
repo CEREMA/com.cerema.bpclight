@@ -94,6 +94,7 @@ App.controller.define('CMain', {
 	gridTPT_ondblclick: function(p, record, item, index)
 	{
 		console.log(record);
+		p.hide();
 	},
 	TPT_close: function(p)
 	{
