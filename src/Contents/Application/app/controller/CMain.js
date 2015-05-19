@@ -137,7 +137,8 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.Agents.save(o,function(e,o) {
-				alert('x');
+				console.log(e);
+				console.log(o);
 			});
 		}
 	},
