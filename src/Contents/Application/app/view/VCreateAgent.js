@@ -70,6 +70,7 @@ App.view.define('VCreateAgent', {
 			},
 			{
 				xtype: "grid",
+				itemId: "gridTPT",
 				margin: {
 					left: 40
 				},
