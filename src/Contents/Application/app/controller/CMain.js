@@ -139,9 +139,12 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			App.Agents.save(o,function(e,o) {
-				console.log(e);
-				console.log(o);
+			App.Agents.save(o,function(e,r) {
+				App.Agents.getOne(r.insertId,function(e,m) {
+					App.view.create('VForm1',{
+						agent: m
+					}).show();					
+				});
 			});
 		}
 	},
