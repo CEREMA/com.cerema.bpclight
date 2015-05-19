@@ -5,7 +5,7 @@ Temptation = {
 		var matri=[];
 		db.query('bpclight','SELECT matri FROM agents',function(e,o) {
 			for (var i=0;i<o.length;i++) matri.push(o[i].matri);
-			db.query('temptation',"SELECT DISTINCT Hm.MATRI matri, Hm.NOMPRE nompre FROM HopeMpl Hm WHERE Hm.MATRI not in ("+matri.join(',')+")",cb);
+			db.query('temptation',"SELECT DISTINCT Hm.MATRI matri, Hm.NOMPRE nompre FROM HopeMpl Hm WHERE Hm.MATRI not in ('"+matri.join('\',\'')+"')",cb);
 		});		
 	}
 };
