@@ -6,8 +6,8 @@ Agents = {
 	insert: function(o,cb)
 	{
 		if (!o.matri) {
-			Agents.using('db').query('bpclight','select max(matri)+1 matricule from agents where kgra in (select kgra from catgrad where kcgr=5)',function(e,r) {
-				o.matri=r[0].matricule;
+			Agents.using('db').query('bpclight',"select max(matri)+1 matricule from agents where matri like '2%'",function(e,r) {
+				o.matri='0'+r[0].matricule;
 				Agents.using('db').post('bpclight','agents',o,cb);
 			});
 		} else Agents.using('db').post('bpclight','agents',o,cb);
