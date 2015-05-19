@@ -123,7 +123,7 @@ App.controller.define('CMain', {
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
 			console.log(App.get('createAgent grid#gridTPT'));
-			var gridrecord = App.get('createAgent grid#gridTPT').getSelectionModel().getSelected();
+			var gridrecord = App.get('createAgent grid#gridTPT').getView().getSelectionModel().getSelected();
 			console.log(gridrecord);
 			o.matri=67;
 		};		
