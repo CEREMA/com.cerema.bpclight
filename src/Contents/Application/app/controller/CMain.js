@@ -77,7 +77,7 @@ App.controller.define('CMain', {
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
 			},
-			"createAgent ux-searchbox#searchbox" : {
+			"createAgent ux-searchbox#searchtpt" : {
 				click: "CA_onSearch"
 			},
 		});
