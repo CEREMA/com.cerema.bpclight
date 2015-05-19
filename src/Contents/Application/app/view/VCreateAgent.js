@@ -87,8 +87,8 @@ App.view.define('VCreateAgent', {
 					
 					]
 				}),
-				width: 200,
-				height: 350
+				width: 350,
+				height: 400
 			},
 			{
 				html: '<div style="font-weight: bold;margin-top:10px;padding:5px">2. Renseignements</div>',
