@@ -92,12 +92,13 @@ App.controller.define('CMain', {
 		
 	},
 	gridTPT_ondblclick: function(p, record, item, index)
-	{
-		console.log(record);		
+	{		
 		var x=record.data.nompre.lastIndexOf(' ');
 		var prenom=record.data.nompre.substr(x+1,255);
 		var nom=record.data.nompre.substr(0,x);
 		App.get('createAgent ux-searchbox#searchtpt').setValue(prenom+' '+nom+' ('+record.data.matri+')');
+		App.get(p.up('window'),'button#TCANom').setValue(nom);
+		App.get(p.up('window'),'button#TCAPrenom').setValue(prenom);
 		p.up('grid').hide();
 	},
 	TPT_close: function(p)
@@ -120,6 +121,11 @@ App.controller.define('CMain', {
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
 			o.kgra=67;
 		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
+			var gridrecord = App.get('createAgent grid#gridTPT').getSelectionModel().getSelected();
+			console.log(gridrecord);
+			o.matri=67;
+		};		
 		if (o.nom=="") err.push("<li>Nom");
 		if (o.prenom=="") err.push("<li>Prénom");
 		if (!o.kuni) err.push("<li>Le département");
@@ -131,9 +137,9 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			App.Agents.save(o,function(e,o) {
+			/*App.Agents.save(o,function(e,o) {
 				alert('x');
-			});
+			});*/
 		}
 	},
 	TCACat_onchange: function(p,record)
