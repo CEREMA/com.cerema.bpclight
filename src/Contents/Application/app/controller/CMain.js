@@ -159,7 +159,7 @@ App.controller.define('CMain', {
 	},
 	CA_onSearch: function(v)
 	{		
-		App.Temptation.search(v,function(e,o) {
+		App.Temptation.search(v,function(o) {
 			console.log(e);
 			console.log(o);
 		});
