@@ -77,6 +77,9 @@ App.controller.define('CMain', {
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
 			}
+			"createAgent ux-searchbox#searchbox" : {
+				click: "CA_onSearch"
+			},
 		});
 		
 		App.init('VMain',this.onLoad);
@@ -153,6 +156,18 @@ App.controller.define('CMain', {
 			nom: v+"%"
 		};
 		grid.getStore().load();
+	},
+	CAonSearch: function(v)
+	{
+		/*var grid=App.get('grid#GridAgents');
+		grid.getStore().getProxy().extraParams={
+			nom: v+"%"
+		};
+		grid.getStore().load();*/
+		App.Temptation.search(v,function(e,o) {
+			console.log(e);
+			console.log(o);
+		});
 	},
 	btnExport_onclick: function()
 	{
