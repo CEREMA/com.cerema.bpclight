@@ -140,8 +140,8 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.Agents.save(o,function(e,r) {
-				console.log(r);
-				App.Agents.getOne(r.insertId,function(e,m) {
+				console.log(r.result.insertId);
+				App.Agents.getOne(r.result.insertId,function(e,m) {
 					console.log(m);
 					App.view.create('VForm1',{
 						agent: m
