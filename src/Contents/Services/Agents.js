@@ -126,6 +126,9 @@ Agents = {
 		db.query('bpclight',db.sql("export",{
 			kage: o
 		}),cb);	
+	},
+	getOne: function(id,cb) {
+		Agents.using('db').query('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+id,cb);
 	}
 };
 
