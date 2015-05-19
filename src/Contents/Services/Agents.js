@@ -3,6 +3,15 @@ Agents = {
 	{
 		Agents.using('db').post('bpclight','agents',o,cb);
 	},
+	insert: function(o,cb)
+	{
+		if (!o.matri) {
+			Agents.using('db').query('bpclight','select max(matri)+1 matricule from agents where kgra in (select kgra from catgrad where kcgr=5)',function(e,o) {
+				o.matri=o[0].matricule;
+				Agents.using('db').post('bpclight','agents',o,cb);
+			});
+		} else Agents.using('db').post('bpclight','agents',o,cb);
+	},
 	getMyPosition: function(o,cb)
 	{
 		Agents.using('db').model('bpclight','SELECT * FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE ageetat.Keta = '+o+' ORDER BY ageetat.DatEta desc',cb);
