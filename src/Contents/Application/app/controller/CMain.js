@@ -82,11 +82,18 @@ App.controller.define('CMain', {
 			},
 			"createAgent button#TPTClose" : {
 				click: "TPT_close"
+			},
+			"createAgent grid#gridTPT": {
+				itemdblclick: "gridTPT_ondblclick",
 			}
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	gridTPT_ondblclick: function(p, record, item, index)
+	{
+		console.log(record);
 	},
 	TPT_close: function(p)
 	{
