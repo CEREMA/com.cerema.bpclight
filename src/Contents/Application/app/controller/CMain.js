@@ -95,6 +95,9 @@ App.controller.define('CMain', {
 	{
 		console.log(record);
 		App.get('createAgent ux-searchbox#searchtpt').setValue(record.data.nompre);
+		var x=record.data.nompre.lastIndexOf(' ');
+		var prenom=record.data.nompre.substr(x,255);
+		alert('->'+prenom+'<-');
 		p.up('grid').hide();
 	},
 	TPT_close: function(p)
