@@ -124,7 +124,8 @@ App.controller.define('CMain', {
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
 			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
 			o.matri=t.matri;
-			if (!App.get('createAgent combo#TCAGrade')) err.push("<li>Le grade");
+			alert('->'+App.get('createAgent combo#TCAGrade').getValue()+'->');
+			if (App.get('createAgent combo#TCAGrade').getValue()=="") err.push("<li>Le grade");
 			else
 			o.kgra=App.get('createAgent combo#TCAGrade').getValue();
 		};		
