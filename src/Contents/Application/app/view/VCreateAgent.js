@@ -69,6 +69,24 @@ App.view.define('VCreateAgent', {
 				width: 350
 			},
 			{
+				xtype: "grid",
+				columns: [
+					{ text: 'Matricule',  dataIndex: 'matri' },
+					{ text: 'Agent', dataIndex: 'nompre', flex: 1 }
+				],
+				store: App.store.create({
+					fields: [
+						"matri",
+						"nompre"
+					],
+					data: [
+					
+					]
+				}),
+				width: 200,
+				height: 350
+			},
+			{
 				html: '<div style="font-weight: bold;margin-top:10px;padding:5px">2. Renseignements</div>',
 				border: false,
 				height: 40,
