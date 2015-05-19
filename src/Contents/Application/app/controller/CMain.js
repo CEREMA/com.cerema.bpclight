@@ -122,6 +122,7 @@ App.controller.define('CMain', {
 			o.kgra=67;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
+			console.log(App.get('createAgent grid#gridTPT'));
 			var gridrecord = App.get('createAgent grid#gridTPT').getSelectionModel().getSelected();
 			console.log(gridrecord);
 			o.matri=67;
