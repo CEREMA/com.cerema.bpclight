@@ -80,10 +80,17 @@ App.controller.define('CMain', {
 			"createAgent ux-searchbox#searchtpt" : {
 				click: "CA_onSearch"
 			},
+			"createAgent button#TPTClose" : {
+				click: "TPT_close"
+			}
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	TPT_close: function(p)
+	{
+		p.up('grid').hide();
 	},
 	TCADepartement_create: function() 
 	{
