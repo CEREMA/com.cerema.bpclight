@@ -168,7 +168,7 @@ App.controller.define('CMain', {
 	{		
 		App.Temptation.search(v,function(o) {
 			App.get('grid#gridTPT').show();
-			App.get('grid#gridTPT').getStore().load(o);
+			App.get('grid#gridTPT').getStore().loadData(o);
 		});
 	},
 	btnExport_onclick: function()
