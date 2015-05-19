@@ -7,7 +7,7 @@ Agents = {
 	{
 		if (!o.matri) {
 			Agents.using('db').query('bpclight',"select max(matri)+1 matricule from agents where matri like '2%'",function(e,r) {
-				o.matri='0'+r[0].matricule;
+				o.matri=r[0].matricule;
 				Agents.using('db').post('bpclight','agents',o,cb);
 			});
 		} else Agents.using('db').post('bpclight','agents',o,cb);
