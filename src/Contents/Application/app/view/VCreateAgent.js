@@ -55,20 +55,6 @@ App.view.define('VCreateAgent', {
 				]
 			},
 			{
-				xtype: 'ux-searchbox',
-				width: 200,
-				triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
-				itemId: 'searchtpt',
-				hidden: true,
-				labelAlign: "top",
-				fieldLabel: "Recherche Temptation",				
-				padding:5,
-				margin: {
-					left: 40
-				},
-				width: 350
-			},
-			{
 				xtype: "grid",
 				itemId: "gridTPT",
 				margin: {
