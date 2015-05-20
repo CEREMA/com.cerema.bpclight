@@ -140,6 +140,9 @@ App.view.define('VCreateAgent', {
 					layout: "vbox",
 					border: false,
 					flex: 1,
+					margin: {
+						top: 10
+					},
 					items: [
 						{
 							xtype: "combo",
