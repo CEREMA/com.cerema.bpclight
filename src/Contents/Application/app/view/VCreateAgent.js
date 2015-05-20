@@ -77,12 +77,14 @@ App.view.define('VCreateAgent', {
 				padding: 0,
 				columns: [
 					{ text: 'Matricule',  dataIndex: 'matri' },
-					{ text: 'Agent', dataIndex: 'nompre', flex: 1 }
+					{ text: 'Agent', dataIndex: 'nompre', flex: 1 },
+					{ text: 'Ouverture', dataIndex: 'datouv' }
 				],
 				store: App.store.create({
 					fields: [
 						"matri",
-						"nompre"
+						"nompre",
+						"datouv"
 					],
 					data: [
 					
