@@ -77,11 +77,8 @@ App.controller.define('CMain', {
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
 			},
-			"createAgent ux-searchbox#searchtpt" : {
+			"createAgent grid#gridTPT" : {
 				click: "CA_onSearch"
-			},
-			"createAgent button#TPTClose" : {
-				click: "TPT_close"
 			},
 			"createAgent grid#gridTPT": {
 				itemdblclick: "gridTPT_ondblclick",
@@ -101,10 +98,7 @@ App.controller.define('CMain', {
 		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
 		p.up('grid').hide();
 	},
-	TPT_close: function(p)
-	{
-		p.up('grid').hide();
-	},
+
 	TCADepartement_create: function() 
 	{
 		var err=[];
