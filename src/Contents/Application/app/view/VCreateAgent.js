@@ -64,7 +64,12 @@ App.view.define('VCreateAgent', {
 				columns: [
 					{ text: 'Matricule',  dataIndex: 'matri',width: 70 },
 					{ text: 'Agent', dataIndex: 'nompre', flex: 1 },
-					{ text: 'Ouverture', dataIndex: 'datouv' }
+					{ 	text: 'Ouverture', 
+						dataIndex: 'datouv',
+						renderer: function(value) {
+							return value.split('T')[0];
+						}					
+					}
 				],
 				store: App.store.create({
 					fields: [
