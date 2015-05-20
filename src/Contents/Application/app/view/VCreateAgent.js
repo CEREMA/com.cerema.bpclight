@@ -76,7 +76,7 @@ App.view.define('VCreateAgent', {
 				},
 				padding: 0,
 				columns: [
-					{ text: 'Matricule',  dataIndex: 'matri',width: 80 },
+					{ text: 'Matricule',  dataIndex: 'matri',width: 70 },
 					{ text: 'Agent', dataIndex: 'nompre', flex: 1 },
 					{ text: 'Ouverture', dataIndex: 'datouv' }
 				],
