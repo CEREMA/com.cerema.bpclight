@@ -134,15 +134,12 @@ App.view.define('VCreateAgent', {
 					store: App.store.create('App.Etablissements.getAll'),
 					displayField: "LibEtsC",
 					valueField: "Kets",				
-					margin: {
-						top: 10,
-						left: 40
-					},
-					width: 350
+					width: 80
 				},
 				{
 					layout: "vbox",
 					border: false,
+					flex: 1,
 					items: [
 						{
 							xtype: "combo",
