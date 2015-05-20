@@ -78,7 +78,7 @@ App.controller.define('CMain', {
 				change: "TCACat_onchange"
 			},
 			"createAgent grid#gridTPT": {
-				itemdblclick: "gridTPT_ondblclick",
+				itemclick: "gridTPT_ondblclick",
 			}
 		});
 		
@@ -90,10 +90,8 @@ App.controller.define('CMain', {
 		var x=record.data.nompre.lastIndexOf(' ');
 		var prenom=record.data.nompre.substr(x+1,255);
 		var nom=record.data.nompre.substr(0,x);
-		//App.get('createAgent grid#gridTPT').setValue(prenom+' '+nom+' ('+record.data.matri+')');
 		App.get('createAgent textfield#TCANom').setValue(nom);
 		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
-		p.up('grid').hide();
 	},
 
 	TCADepartement_create: function() 
