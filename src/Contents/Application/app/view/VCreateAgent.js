@@ -91,13 +91,13 @@ App.view.define('VCreateAgent', {
 				layout: "hbox",
 				border: false,
 				width: 350,
+				padding: 5,
 				items: [
 					{
 						xtype: "textfield",
 						fieldLabel: "Nom",
 						itemId: "TCANom",
-						labelAlign: "top",
-						padding: 5,
+						labelAlign: "top",						
 						margin: {
 							left: 40
 						},
@@ -108,7 +108,6 @@ App.view.define('VCreateAgent', {
 						fieldLabel: "Prénom",
 						itemId: "TCAPrenom",
 						labelAlign: "top",
-						padding: 5,
 						margin: {
 							top: 10,
 							left: 40
