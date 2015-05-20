@@ -90,13 +90,6 @@ App.view.define('VCreateAgent', {
 					
 					]
 				}),
-				tbar:[
-					'->',
-					{
-						text: "Fermer",
-						itemId: "TPTClose"
-					}
-				],
 				hidden: true,
 				width: 350,
 				height: 210
