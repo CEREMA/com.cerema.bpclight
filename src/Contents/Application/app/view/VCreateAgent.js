@@ -157,7 +157,7 @@ App.view.define('VCreateAgent', {
 							margin: {
 								left: 10
 							},
-							width: 240
+							width: 230
 						},
 						{
 							xtype: "combo",
@@ -172,7 +172,7 @@ App.view.define('VCreateAgent', {
 							margin: {
 								left: 10
 							},
-							width: 240
+							width: 230
 						}					
 					]
 				}				
