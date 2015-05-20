@@ -96,7 +96,7 @@ App.controller.define('CMain', {
 		var x=record.data.nompre.lastIndexOf(' ');
 		var prenom=record.data.nompre.substr(x+1,255);
 		var nom=record.data.nompre.substr(0,x);
-		App.get('createAgent ux-searchbox#searchtpt').setValue(prenom+' '+nom+' ('+record.data.matri+')');
+		//App.get('createAgent grid#gridTPT').setValue(prenom+' '+nom+' ('+record.data.matri+')');
 		App.get('createAgent textfield#TCANom').setValue(nom);
 		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
 		p.up('grid').hide();
@@ -174,10 +174,10 @@ App.controller.define('CMain', {
 	{
 		if (radio.rb==3) {
 			App.get('panel#TCaGRA').show();
-			App.get('ux-searchbox#searchtpt').show();			
+			App.get('grid#gridTPT').show();			
 		} else {
 			App.get('panel#TCaGRA').hide();
-			App.get('ux-searchbox#searchtpt').hide();
+			App.get('grid#gridTPT').hide();
 		}
 	},
 	onSearch: function(v)
