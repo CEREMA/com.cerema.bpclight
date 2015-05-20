@@ -78,7 +78,7 @@ App.controller.define('CMain', {
 				change: "TCACat_onchange"
 			},
 			"createAgent grid#gridTPT" : {
-				click: "CA_onSearch"
+				show: "CA_onSearch"
 			},
 			"createAgent grid#gridTPT": {
 				itemdblclick: "gridTPT_ondblclick",
