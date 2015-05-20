@@ -126,7 +126,7 @@ App.view.define('VCreateAgent', {
 				width: 360,
 				padding: 4,
 				margin: {
-					left: 35
+					left: 32
 				},				
 				items: [
 				{
