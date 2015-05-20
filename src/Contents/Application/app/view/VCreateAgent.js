@@ -141,7 +141,7 @@ App.view.define('VCreateAgent', {
 					border: false,
 					flex: 1,
 					margin: {
-						top: 10
+						top: 5
 					},
 					items: [
 						{
