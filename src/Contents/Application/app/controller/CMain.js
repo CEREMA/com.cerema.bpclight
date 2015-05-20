@@ -79,11 +79,18 @@ App.controller.define('CMain', {
 			},
 			"createAgent grid#gridTPT": {
 				itemclick: "gridTPT_ondblclick",
+			},
+			"createAgent button#Exit": {
+				click: "tpt_exit"
 			}
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	tpt_exit: function(p)
+	{
+		p.up('window').close();
 	},
 	gridTPT_ondblclick: function(p, record, item, index)
 	{		
@@ -94,7 +101,7 @@ App.controller.define('CMain', {
 		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
 	},
 
-	TCADepartement_create: function() 
+	TCADepartement_create: function(_p) 
 	{
 		var err=[];
 		var o={
@@ -132,7 +139,8 @@ App.controller.define('CMain', {
 				App.Agents.getOne(r.result.insertId,function(e,m) {
 					App.view.create('VForm1',{
 						agent: m.result[0]
-					}).show();					
+					}).show();
+					_p.close();
 				});
 			});
 		}
