@@ -134,7 +134,7 @@ App.view.define('VCreateAgent', {
 					store: App.store.create('App.Etablissements.getAll'),
 					displayField: "LibEtsC",
 					valueField: "Kets",				
-					width: 80
+					width: 100
 				},
 				{
 					layout: "vbox",
@@ -152,10 +152,9 @@ App.view.define('VCreateAgent', {
 							displayField: "LibUnic",
 							valueField: "Kuni",				
 							margin: {
-								top: 10,
-								left: 40
+								left: 10
 							},
-							width: 350
+							width: 200
 						},
 						{
 							xtype: "combo",
@@ -168,10 +167,9 @@ App.view.define('VCreateAgent', {
 							editable: false,				
 							padding: 5,
 							margin: {
-								top: 10,
-								left: 40
+								left: 10
 							},
-							width: 350
+							width: 200
 						}					
 					]
 				}				
