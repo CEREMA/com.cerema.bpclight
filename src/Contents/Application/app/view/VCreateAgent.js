@@ -89,6 +89,8 @@ App.view.define('VCreateAgent', {
 			},
 			{
 				layout: "hbox",
+				border: false,
+				width: 350,
 				items: [
 					{
 						xtype: "textfield",
@@ -99,7 +101,7 @@ App.view.define('VCreateAgent', {
 						margin: {
 							left: 40
 						},
-						width: 350
+						flex: 1
 					},
 					{
 						xtype: "textfield",
@@ -111,7 +113,7 @@ App.view.define('VCreateAgent', {
 							top: 10,
 							left: 40
 						},
-						width: 350
+						flex: 1
 					}				
 				]
 			},
