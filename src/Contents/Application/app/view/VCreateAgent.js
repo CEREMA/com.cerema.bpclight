@@ -109,7 +109,6 @@ App.view.define('VCreateAgent', {
 						itemId: "TCAPrenom",
 						labelAlign: "top",
 						margin: {
-							top: 10,
 							left: 40
 						},
 						flex: 1
