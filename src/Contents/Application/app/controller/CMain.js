@@ -77,9 +77,6 @@ App.controller.define('CMain', {
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
 			},
-			"createAgent grid#gridTPT" : {
-				show: "CA_onSearch"
-			},
 			"createAgent grid#gridTPT": {
 				itemdblclick: "gridTPT_ondblclick",
 			}
@@ -169,6 +166,7 @@ App.controller.define('CMain', {
 		if (radio.rb==3) {
 			App.get('panel#TCaGRA').show();
 			App.get('grid#gridTPT').show();			
+			this.CA_onSearch();
 		} else {
 			App.get('panel#TCaGRA').hide();
 			App.get('grid#gridTPT').hide();
