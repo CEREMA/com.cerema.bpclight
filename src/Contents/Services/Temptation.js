@@ -2,7 +2,7 @@ Temptation = {
 	search: function(str,cb)
 	{
 		var db=Temptation.using('db');
-		db.query('temptation',"SELECT DISTINCT Hm.MATRI matri, Hm.NOMPRE nompre FROM HopeMpl Hm WHERE Hm.NomPre LIKE '%"+str+"%'",cb);
+		db.query('temptation',"SELECT top 100 MATRI matri, NOMPRE nompre, datouv FROM HopeMpl Hm where YEAR(datouv)>=YEAR(GetDate()) and datclo='1900-01-01' order by datouv desc",cb);
 	}
 };
 
