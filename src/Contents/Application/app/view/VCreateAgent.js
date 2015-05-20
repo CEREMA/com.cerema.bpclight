@@ -116,52 +116,69 @@ App.view.define('VCreateAgent', {
 				]
 			},
 			{
-				xtype: "combo",
-				fieldLabel: "Etablissement",
-				labelAlign: "top",
-				itemId: "TCAEtablissement",
-				editable: false,
-				padding: 5,
-				store: App.store.create('App.Etablissements.getAll'),
-				displayField: "LibEtsC",
-				valueField: "Kets",				
-				margin: {
-					top: 10,
-					left: 40
-				},
-				width: 350
-			},
-			{
-				xtype: "combo",
-				fieldLabel: "Département",
-				itemId: "TCADepartement",
-				labelAlign: "top",
-				editable: false,
-				padding: 5,
-				store: App.store.create('App.Departements.getAll'),	
-				displayField: "LibUnic",
-				valueField: "Kuni",				
-				margin: {
-					top: 10,
-					left: 40
-				},
-				width: 350
-			},
-			{
-				xtype: "combo",
-				fieldLabel: "Service",
-				labelAlign: "top",
-				itemId: "TCAService",
-				store: App.store.create('App.Services.getAll'),
-				displayField: "LibSubC",
-				valueField: "Ksub",				
-				editable: false,				
+				layout: "hbox",
+				border: false,
+				width: 360,
 				padding: 5,
 				margin: {
-					top: 10,
-					left: 40
+					left: 35
+				},				
+				items: [
+				{
+					xtype: "combo",
+					fieldLabel: "Etablissement",
+					labelAlign: "top",
+					itemId: "TCAEtablissement",
+					editable: false,
+					padding: 5,
+					store: App.store.create('App.Etablissements.getAll'),
+					displayField: "LibEtsC",
+					valueField: "Kets",				
+					margin: {
+						top: 10,
+						left: 40
+					},
+					width: 350
 				},
-				width: 350
+				{
+					layout: "vbox",
+					border: false,
+					items: [
+						{
+							xtype: "combo",
+							fieldLabel: "Département",
+							itemId: "TCADepartement",
+							labelAlign: "top",
+							editable: false,
+							padding: 5,
+							store: App.store.create('App.Departements.getAll'),	
+							displayField: "LibUnic",
+							valueField: "Kuni",				
+							margin: {
+								top: 10,
+								left: 40
+							},
+							width: 350
+						},
+						{
+							xtype: "combo",
+							fieldLabel: "Service",
+							labelAlign: "top",
+							itemId: "TCAService",
+							store: App.store.create('App.Services.getAll'),
+							displayField: "LibSubC",
+							valueField: "Ksub",				
+							editable: false,				
+							padding: 5,
+							margin: {
+								top: 10,
+								left: 40
+							},
+							width: 350
+						}					
+					]
+				}				
+				]
 			},
 			{
 				layout: "vbox",
