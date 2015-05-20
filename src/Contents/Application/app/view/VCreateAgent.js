@@ -90,7 +90,7 @@ App.view.define('VCreateAgent', {
 			{
 				layout: "hbox",
 				border: false,
-				width: 350,
+				width: 360,
 				padding: 5,
 				margin: {
 					left: 35
