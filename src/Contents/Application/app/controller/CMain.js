@@ -140,7 +140,7 @@ App.controller.define('CMain', {
 					App.view.create('VForm1',{
 						agent: m.result[0]
 					}).show();
-					_p.close();
+					_p.up('window').close();
 				});
 			});
 		}
