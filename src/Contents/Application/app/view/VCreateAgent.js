@@ -67,7 +67,7 @@ App.view.define('VCreateAgent', {
 					{ 	text: 'Ouverture', 
 						dataIndex: 'datouv',
 						renderer: function(value) {
-							return value.split('T')[0];
+							return value.split('T')[0].split('-')[2]+'/'+value.split('T')[0].split('-')[1]+'/'+value.split('T')[0].split('-')[0];
 						}					
 					}
 				],
