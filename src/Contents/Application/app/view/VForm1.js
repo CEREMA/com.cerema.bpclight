@@ -47,13 +47,13 @@ App.view.define('VForm1', {
                     xtype: "TAgent"
                 }, {
                     xtype: "TSituation"
-                }/*, {
-                    xtype: "TAutorisation"
-                }, {
-                    title: 'Visites médicales'
-                }*/, {
+                },
+				{
                     xtype: "TFormation"
-                }]
+                },
+				{
+					xtype: "TVisit"
+				}]
             }			
 			]
 		},
