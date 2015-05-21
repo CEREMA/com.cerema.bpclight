@@ -1,5 +1,5 @@
-App.view.define('agent.VVist', {
-	alias: "widget.TVistes",
+App.view.define('agent.VVisit', {
+	alias: "widget.TVisit",
 	extend: "Ext.Panel",
 	initComponent: function()
 	{
