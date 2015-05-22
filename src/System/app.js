@@ -46,6 +46,8 @@ App = {
 			if (req.body.kage) {
 				var o=req.body.kage.split(',');
 				App.Agents.exportXLS(o,function(e,tabs) {
+					console.log(e);
+					console.log(tabs);
 					var uid=Math.uuid();
 					var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 					var sheet1 = workbook.createSheet('BPCLight', 500, 1500);
