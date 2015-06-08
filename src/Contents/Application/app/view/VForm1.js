@@ -66,6 +66,7 @@ App.view.define('VForm1', {
 			items: [
 				{
                     xtype: "htmleditor",
+					itemId: "metier",
                     width: "100%",
                     flex: 1
                 }, {
