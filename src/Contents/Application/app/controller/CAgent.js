@@ -461,7 +461,7 @@ App.controller.define('CAgent', {
 			Matri: App.get(p.up('TForm1'),'textfield#LAgentMatri').getValue(),
 			Kuni: App.get(p.up('TForm1'),'combo#TDepartement').getValue(),
 			Ksub: App.get(p.up('TForm1'),'combo#TService').getValue(),
-			libelle_poste: App.get(p.up('TForm1'),'htmleditor').getValue(),
+			libelle_poste: App.get(p.up('TForm1'),'htmleditor#metier').getValue(),
 			telephone: App.get(p.up('TForm1'),'textfield#Phone').getValue(),
 			portable: App.get(p.up('TForm1'),'textfield#Cell').getValue(),
 			DatNai: App.get(p.up('TForm1'),'datefield#DatNai').getValue(),
@@ -598,7 +598,7 @@ App.controller.define('CAgent', {
 			App.get(p,'TSidePanel combo#TEtablissement').setValue(r.result.data[0].kets);
 		});
 		App.get(p,'TSidePanel combo#TService').setValue(p.agent.Ksub);	
-		App.get(p,'htmleditor').setValue(p.agent.libelle_poste);
+		App.get(p,'htmleditor#metier').setValue(p.agent.libelle_poste);
 		App.get(p,'grid#roles').getStore().getProxy().extraParams.kage=p.agent.Kage;
 		App.get(p,'grid#roles').getStore().load();
 		App.get(p,'TAgent datefield#DatNai').setValue(new Date(p.agent.DatNai));
