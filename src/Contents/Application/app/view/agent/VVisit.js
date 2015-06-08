@@ -26,7 +26,8 @@ App.view.define('agent.VVisit', {
 			padding: 10,
 			tbar: [
 				{
-				
+					text: "Nouveau",
+					iconCls: "ico_new"
 				}
 			],
 			columns: [
