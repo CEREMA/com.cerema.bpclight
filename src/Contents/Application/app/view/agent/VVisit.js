@@ -20,8 +20,15 @@ App.view.define('agent.VVisit', {
 			xtype: "grid",
 			itemId: "grid_medic",
 			width: "100%",
+			fieldLabel: "Visites médicales",
+			labelAlign: "top",
 			flex: 1,
 			padding: 10,
+			tbar: [
+				{
+				
+				}
+			],
 			columns: [
 				{
 					text: "Date"
@@ -30,40 +37,7 @@ App.view.define('agent.VVisit', {
 					text: "Type"
 				},
 				{
-					text: "Cat."
-				},
-				{
-					text: "Taille"
-				},
-				{
-					text: "Poids"
-				},
-				{
-					text: "TA"
-				},
-				{
-					text: "Pouls"
-				},
-				{
-					text: "Tabac"
-				},
-				{
-					text: "Alcool"
-				},
-				{
-					text: "Sport"
-				},
-				{
-					text: "TV"
-				},
-				{
-					text: "TA"
-				},
-				{
-					text: "EFR"
-				},
-				{
-					text: "Test urinaire"
+					text: "Catégorie"
 				}
 			],
 			store: App.store.create({
