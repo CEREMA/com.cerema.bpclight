@@ -23,6 +23,21 @@ App.view.define('agent.VVisit.formulaire', {
 		
         this.items = [
 			{
+				xtype: "htmleditor",
+				fieldLabel: "Poste actuel",
+				width: "100%"
+			},
+			{
+				xtype: "htmleditor",
+				fieldLabel: "Pathologies en cours",
+				width: "100%"
+			},
+			{
+				xtype: "htmleditor",
+				fieldLabel: "Traitements actuels",
+				width: "100%"
+			},
+			{
 				layout: "hbox",
 				border: false,
 				width: "100%",
