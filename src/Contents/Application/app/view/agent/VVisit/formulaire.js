@@ -42,7 +42,25 @@ App.view.define('agent.VVisit.formulaire', {
 							left: 10
 						},
 						width: 100
-					}
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "Tension Artérielle",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "Pouls",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					}					
 				 ]
 			},
 			{
