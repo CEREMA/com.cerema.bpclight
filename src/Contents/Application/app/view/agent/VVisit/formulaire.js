@@ -31,23 +31,28 @@ App.view.define('agent.VVisit.formulaire', {
 				items: [
 					{
 						xtype: "textfield",
-						fieldLabel: "Taille"
+						fieldLabel: "Taille",
+						width: 100
 					},				
 					{
 						xtype: "textfield",
-						fieldLabel: "Poids"
+						fieldLabel: "Poids",
+						width: 100
 					},				
 					{
 						xtype: "checkbox",
-						fieldLabel: "Tabac"
+						fieldLabel: "Tabac",
+						width: 50
 					},				
 					{
 						xtype: "checkbox",
-						fieldLabel: "Alcool"
+						fieldLabel: "Alcool",
+						width: 50
 					},				
 					{
 						xtype: "checkbox",
-						fieldLabel: "Sport"
+						fieldLabel: "Sport",
+						width: 50
 					},
 					{
 						flex: 1
