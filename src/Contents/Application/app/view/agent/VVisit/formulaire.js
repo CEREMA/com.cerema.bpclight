@@ -2,7 +2,7 @@ App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
 	alias: "widget.TVisitData",
     initComponent: function() {
-		this.title="Visite médicale";
+		this.title="Visite mÃ©dicale";
         this.width = 800;
         this.height = 600;
 
@@ -26,6 +26,7 @@ App.view.define('agent.VVisit.formulaire', {
 				layout: "hbox",
 				padding: 10,
 				border: false,
+				bodyStyle: "background-color: transparent",
 				items: [
 					{
 						xtype: "textfield",
@@ -46,6 +47,9 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						xtype: "checkbox",
 						fieldLabel: "Sport"
+					},
+					{
+						flex: 1
 					}
 				]
 			},
