@@ -24,7 +24,6 @@ App.view.define('agent.VVisit.formulaire', {
         this.items = [
 			{
 				layout: "hbox",
-				padding: 10,
 				border: false,
 				width: "100%",
 				bodyStyle: "background-color: transparent",
