@@ -9,11 +9,12 @@ App.view.define('agent.VVisit', {
 		this.items = [
 		{
 			xtype: "htmleditor",
-			itemId: "",
+			itemId: "data_medic_gen",
 			width: "100%",
 			fieldLabel: "Données médicales générales",
 			labelAlign: "top",
-			height: 250
+			height: 250,
+			padding: 10
 		}
 		];
 		this.callParent();
