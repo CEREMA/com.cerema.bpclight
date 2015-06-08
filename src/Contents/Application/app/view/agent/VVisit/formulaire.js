@@ -4,7 +4,7 @@ App.view.define('agent.VVisit.formulaire', {
     initComponent: function() {
 		this.title="Visite médicale";
         this.width = 800;
-        this.height = 600;
+        this.height = 800;
 
         this.layout = {
             type: 'vbox'
@@ -23,17 +23,17 @@ App.view.define('agent.VVisit.formulaire', {
 		
         this.items = [
 			{
-				xtype: "htmleditor",
+				xtype: "textarea",
 				fieldLabel: "Poste actuel",
 				width: "100%"
 			},
 			{
-				xtype: "htmleditor",
+				xtype: "textarea",
 				fieldLabel: "Pathologies en cours",
 				width: "100%"
 			},
 			{
-				xtype: "htmleditor",
+				xtype: "textarea",
 				fieldLabel: "Traitements actuels",
 				width: "100%"
 			},
