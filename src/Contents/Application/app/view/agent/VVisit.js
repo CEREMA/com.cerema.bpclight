@@ -21,6 +21,7 @@ App.view.define('agent.VVisit', {
 			itemId: "grid_medic",
 			width: "100%",
 			flex: 1,
+			padding: 10,
 			columns: [
 				{
 					text: "Date"
