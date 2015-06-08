@@ -27,6 +27,7 @@ App.view.define('agent.VVisit', {
 			width: "100%",
 			height: 270,
 			padding: 10,
+			flex: 1,
 			tbar: [
 				{
 					text: "Nouveau",
