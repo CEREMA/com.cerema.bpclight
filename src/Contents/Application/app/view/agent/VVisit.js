@@ -11,7 +11,7 @@ App.view.define('agent.VVisit', {
 			xtype: "htmleditor",
 			itemId: "",
 			width: "100%",
-			fieldLabel: "Données médicales générales"
+			fieldLabel: "Données médicales générales",
 			labelAlign: "top",
 			height: 250
 		}
