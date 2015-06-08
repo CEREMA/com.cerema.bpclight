@@ -125,7 +125,7 @@ App.view.define('agent.VVisit.formulaire', {
 				]
 			},				
 			{
-				xtype: "htmleditor",
+				xtype: "textarea",
 				fieldLabel: "Orientations",
 				width: "100%"
 			},
