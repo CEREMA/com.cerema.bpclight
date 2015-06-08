@@ -4,7 +4,7 @@ App.view.define('agent.VVisit.formulaire', {
     initComponent: function() {
 		this.title="Visite médicale";
         this.width = 800;
-        this.height = 700;
+        this.height = 730;
 
         this.layout = {
             type: 'vbox'
