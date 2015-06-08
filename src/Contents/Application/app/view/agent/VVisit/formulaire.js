@@ -23,6 +23,51 @@ App.view.define('agent.VVisit.formulaire', {
 		
         this.items = [
 			{
+				layout: "hbox",
+				border: false,
+				width: "100%",
+				bodyStyle: "background-color: transparent",
+				items: [
+					{
+						xtype: "combo",
+						fieldLabel: "Type de visite",
+						labelAlign: "top",
+						width: 100,
+						displayField: "typ",
+						store: App.store.create({
+							fields: [
+								"typ"
+							],
+							data: [
+								{
+									typ: "Rappel"
+								}
+							]
+						})
+					},
+					{
+						xtype: "combo",
+						fieldLabel: "Catégorie",
+						labelAlign: "top",
+						width: 100,
+						displayField: "cat",
+						store: App.store.create({
+							fields: [
+								"cat"
+							],
+							data: [
+								{
+									cat: "SMS"
+								},
+								{
+									cat: "SMR"
+								}
+							]						
+						})
+					}					
+				]
+			},
+			{
 				xtype: "textarea",
 				fieldLabel: "Poste actuel",
 				width: "100%"
