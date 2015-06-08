@@ -31,29 +31,34 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						xtype: "textfield",
 						fieldLabel: "Taille",
+						labelAlign: "top",
 						width: 100
 					},				
 					{
 						xtype: "textfield",
 						fieldLabel: "Poids",
+						labelAlign: "top",
 						width: 100
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Tabac",
+						labelAlign: "top",
 						width: 50
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Alcool",
+						labelAlign: "top",
 						width: 50
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Sport",
+						labelAlign: "top",
 						width: 50
 					}
-				]
+				// ]
 			},
 			{
 				xtype: "htmleditor",
