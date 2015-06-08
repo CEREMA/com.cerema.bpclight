@@ -32,7 +32,7 @@ App.view.define('agent.VVisit.formulaire', {
 						xtype: "combo",
 						fieldLabel: "Type de visite",
 						labelAlign: "top",
-						width: 100,
+						width: 200,
 						displayField: "typ",
 						store: App.store.create({
 							fields: [
@@ -66,6 +66,9 @@ App.view.define('agent.VVisit.formulaire', {
 						labelAlign: "top",
 						width: 100,
 						displayField: "cat",
+						margin: {
+							left: 10
+						},
 						store: App.store.create({
 							fields: [
 								"cat"
