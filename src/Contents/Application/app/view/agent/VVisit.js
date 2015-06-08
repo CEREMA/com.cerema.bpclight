@@ -22,7 +22,7 @@ App.view.define('agent.VVisit', {
 			width: "100%",
 			fieldLabel: "Visites médicales",
 			labelAlign: "top",
-			height: 250,
+			height: 280,
 			padding: 10,
 			tbar: [
 				{
