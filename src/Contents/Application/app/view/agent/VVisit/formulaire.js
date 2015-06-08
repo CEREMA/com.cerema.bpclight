@@ -60,7 +60,43 @@ App.view.define('agent.VVisit.formulaire', {
 							left: 10
 						},
 						width: 100
-					}					
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "Test visuel",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "Test auditif",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "EFR",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					},
+					{
+						xtype: "textfield",
+						fieldLabel: "Test urinaire",
+						labelAlign: "top",
+						margin: {
+							left: 10
+						},
+						width: 100
+					}
 				 ]
 			},
 			{
