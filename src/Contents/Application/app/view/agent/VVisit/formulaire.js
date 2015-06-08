@@ -110,7 +110,7 @@ App.view.define('agent.VVisit.formulaire', {
 						xtype: "textfield",
 						fieldLabel: "Taille",
 						labelAlign: "top",
-						width: 90
+						width: 80
 					},				
 					{
 						xtype: "textfield",
@@ -119,7 +119,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 90
+						width: 80
 					},
 					{
 						xtype: "textfield",
