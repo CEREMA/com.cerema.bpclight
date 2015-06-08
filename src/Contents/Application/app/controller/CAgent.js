@@ -127,6 +127,14 @@ App.controller.define('CAgent', {
 			"TShowFormation button#Exit": {
 				click: "formation_exit"
 			}
+			/*
+			TVisit
+			*/
+			"TVisit button#medic_new": {
+				click: function() {
+					alert('x');
+				}
+			}
 		});
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
