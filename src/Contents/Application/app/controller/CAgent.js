@@ -126,7 +126,7 @@ App.controller.define('CAgent', {
 			*/
 			"TShowFormation button#Exit": {
 				click: "formation_exit"
-			}
+			},
 			/*
 			TVisit
 			*/
