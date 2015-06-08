@@ -7,7 +7,7 @@ App.view.define('agent.VVisit.formulaire', {
         this.height = 600;
 
         this.layout = {
-            type: 'vbpx'
+            type: 'vbox'
         };
 
         this.bbar = [
