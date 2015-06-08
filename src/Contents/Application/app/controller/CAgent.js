@@ -142,7 +142,7 @@ App.controller.define('CAgent', {
 	VisitDataOpen: function()
 	{
 		alert('x');
-		App.view.create('TVisitData',{
+		App.view.create('agent.VVisit.formulaire',{
 
 		}).show();
 	},
