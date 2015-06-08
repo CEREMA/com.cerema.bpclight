@@ -38,25 +38,37 @@ App.view.define('agent.VVisit.formulaire', {
 						xtype: "textfield",
 						fieldLabel: "Poids",
 						labelAlign: "top",
+						margin: {
+							left: 10
+						},
 						width: 100
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Tabac",
 						labelAlign: "top",
+						margin: {
+							left: 10
+						},
 						width: 50
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Alcool",
 						labelAlign: "top",
+						margin: {
+							left: 10
+						},
 						width: 50
 					},				
 					{
 						xtype: "checkbox",
 						fieldLabel: "Sport",
 						labelAlign: "top",
-						width: 50
+						width: 50,
+						margin: {
+							left: 10
+						}
 					}
 				 ]
 			},
