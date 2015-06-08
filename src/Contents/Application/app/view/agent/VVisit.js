@@ -20,7 +20,55 @@ App.view.define('agent.VVisit', {
 			xtype: "grid",
 			itemId: "grid_medic",
 			width: "100%",
-			flex: 1
+			flex: 1,
+			columns: [
+				{
+					text: "Date"
+				},
+				{
+					text: "Type"
+				},
+				{
+					text: "Cat."
+				},
+				{
+					text: "Taille"
+				},
+				{
+					text: "Poids"
+				},
+				{
+					text: "TA"
+				},
+				{
+					text: "Pouls"
+				},
+				{
+					text: "Tabac"
+				},
+				{
+					text: "Alcool"
+				},
+				{
+					text: "Sport"
+				},
+				{
+					text: "TV"
+				},
+				{
+					text: "TA"
+				},
+				{
+					text: "EFR"
+				},
+				{
+					text: "Test urinaire"
+				}
+			],
+			store: App.store.create({
+				fields: [],
+				data: []
+			})
 		}
 		];
 		this.callParent();
