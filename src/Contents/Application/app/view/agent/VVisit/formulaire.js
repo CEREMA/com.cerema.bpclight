@@ -58,7 +58,7 @@ App.view.define('agent.VVisit.formulaire', {
 						labelAlign: "top",
 						width: 50
 					}
-				// ]
+				 ]
 			},
 			{
 				xtype: "htmleditor",
