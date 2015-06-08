@@ -123,7 +123,7 @@ App.view.define('agent.VVisit.formulaire', {
 					},
 					{
 						xtype: "textfield",
-						fieldLabel: "Tension Artérielle",
+						fieldLabel: "TA",
 						labelAlign: "top",
 						margin: {
 							left: 10
