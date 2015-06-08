@@ -110,7 +110,7 @@ App.view.define('agent.VVisit.formulaire', {
 						xtype: "textfield",
 						fieldLabel: "Taille",
 						labelAlign: "top",
-						width: 80
+						width: 90
 					},				
 					{
 						xtype: "textfield",
@@ -119,7 +119,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -128,7 +128,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -137,7 +137,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -146,7 +146,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -155,7 +155,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -164,7 +164,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					},
 					{
 						xtype: "textfield",
@@ -173,7 +173,7 @@ App.view.define('agent.VVisit.formulaire', {
 						margin: {
 							left: 10
 						},
-						width: 80
+						width: 90
 					}
 				 ]
 			},
