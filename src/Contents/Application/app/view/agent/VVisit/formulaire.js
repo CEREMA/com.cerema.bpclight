@@ -40,7 +40,22 @@ App.view.define('agent.VVisit.formulaire', {
 							],
 							data: [
 								{
-									typ: "Rappel"
+									typ: "Périodique"
+								},
+								{
+									typ: "Reprise"
+								},
+								{
+									typ: "Demande du service"
+								},
+								{
+									typ: "Demande du médecin"
+								},
+								{
+									typ: "Visite quinquennale"
+								},
+								{
+									typ: "Annuelle"								
 								}
 							]
 						})
