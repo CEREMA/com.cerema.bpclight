@@ -17,11 +17,13 @@ App.view.define('agent.VVisit', {
 			padding: 10
 		},
 		{
+			padding: 10,
+			html: "Visites médicales"
+		},
+		{
 			xtype: "grid",
 			itemId: "grid_medic",
 			width: "100%",
-			fieldLabel: "Visites médicales",
-			labelAlign: "top",
 			height: 280,
 			padding: 10,
 			tbar: [
