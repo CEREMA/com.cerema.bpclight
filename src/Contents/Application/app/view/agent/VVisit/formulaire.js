@@ -53,9 +53,6 @@ App.view.define('agent.VVisit.formulaire', {
 						xtype: "checkbox",
 						fieldLabel: "Sport",
 						width: 50
-					},
-					{
-						flex: 1
 					}
 				]
 			},
