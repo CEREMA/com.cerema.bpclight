@@ -48,7 +48,7 @@ App.view.define('agent.VVisit.formulaire', {
 			{
 				xtype: "checkboxgroup",
 				fieldLabel: "Divers",
-				width: 200,
+				width: 600,
 				items: [
 					{boxLabel: 'Tabac', name: 'rb', inputValue: '1'},
 					{boxLabel: 'Alcool', name: 'rb', inputValue: '1'},
