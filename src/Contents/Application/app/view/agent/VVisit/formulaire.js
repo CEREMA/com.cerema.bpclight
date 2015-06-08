@@ -46,7 +46,7 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						xtype: "checkbox",
 						fieldLabel: "Tabac",
-						labelAlign: "left",
+						labelAlign: "top",
 						margin: {
 							left: 10
 						},
