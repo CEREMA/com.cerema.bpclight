@@ -21,7 +21,8 @@ App.controller.define('CAgent', {
 		"agent.VSituation",
 		"agent.VAutorisation",
 		"agent.VFormation",
-		"agent.VVisit"
+		"agent.VVisit",
+		"agent.VVisit.formulaire"
 	],
 	
 	models: [
@@ -131,11 +132,18 @@ App.controller.define('CAgent', {
 			TVisit
 			*/
 			"TVisit button#medic_new": {
-				click: function() {
-					alert('x');
-				}
+				click: "VisitDataOpen"
 			}
+			/*
+			TVisitData
+			*/
 		});
+	},
+	VisitDataOpen: function()
+	{
+		App.view.create('agent.VVisit.formulaire',{
+			modal: true
+		}).show();
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
 	{
