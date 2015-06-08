@@ -31,7 +31,8 @@ App.view.define('agent.VVisit', {
 			tbar: [
 				{
 					text: "Nouveau",
-					iconCls: "ico_new"
+					iconCls: "ico_new",
+					itemId: "medic_new"
 				}
 			],
 			columns: [
