@@ -142,7 +142,7 @@ App.controller.define('CAgent', {
 	VisitDataOpen: function()
 	{
 		App.view.create('agent.VVisit.formulaire',{
-			modal: true
+
 		}).show();
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
