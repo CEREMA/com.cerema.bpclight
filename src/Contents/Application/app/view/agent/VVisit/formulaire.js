@@ -114,7 +114,14 @@ App.view.define('agent.VVisit.formulaire', {
 				height: 100,
 				width: "100%",
 				columns: [
-				
+					{
+						text: "Type",
+						dataIndex: "type"
+					},
+					{
+						text: "Résultat",
+						dataIndex: "value"
+					}
 				],
 				store: App.store.create({
 					fields: ["type","value"],
