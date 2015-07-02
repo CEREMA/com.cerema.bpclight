@@ -2,7 +2,7 @@ App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
 	alias: "widget.TVisitData",
     initComponent: function() {
-		this.title="Visite médicale";
+		this.title="Dossier médical";
         this.width = 800;
         this.height = 780;
 
