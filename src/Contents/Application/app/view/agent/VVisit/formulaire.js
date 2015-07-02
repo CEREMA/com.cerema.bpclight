@@ -110,6 +110,27 @@ App.view.define('agent.VVisit.formulaire', {
 				width: "100%"
 			},
 			{
+				xtype: "grid",
+				height: "100",
+				width: "100%",
+				columns: [
+				
+				],
+				store: App.store.create({
+					fields: ["type","value"],
+					data: [
+					{
+						type: "Taille",
+						value: ""
+					},
+					{
+						type: "Poids",
+						value: ""
+					}
+					]
+				})
+			}/*,
+			{
 				layout: "hbox",
 				border: false,
 				width: "100%",
@@ -185,7 +206,7 @@ App.view.define('agent.VVisit.formulaire', {
 						width: 90
 					}
 				 ]
-			},
+			}*/,
 			{
 				xtype: "checkboxgroup",
 				fieldLabel: "Divers",
