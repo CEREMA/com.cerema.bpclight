@@ -86,6 +86,9 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						xtype: "datefield",
 						fieldLabel: "Date",
+						margin: {
+							left: 10
+						// },						
 						labelAlign: "top",
 						width: 100
 					}					
