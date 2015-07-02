@@ -82,6 +82,12 @@ App.view.define('agent.VVisit.formulaire', {
 								}
 							]						
 						})
+					},
+					{
+						xtype: "datefield",
+						fieldLabel: "Date",
+						labelAlign: "top",
+						width: 100
 					}					
 				]
 			},
