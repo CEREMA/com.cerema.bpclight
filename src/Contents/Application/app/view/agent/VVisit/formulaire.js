@@ -88,7 +88,7 @@ App.view.define('agent.VVisit.formulaire', {
 						fieldLabel: "Date",
 						margin: {
 							left: 10
-						// },						
+						},						
 						labelAlign: "top",
 						width: 100
 					}					
