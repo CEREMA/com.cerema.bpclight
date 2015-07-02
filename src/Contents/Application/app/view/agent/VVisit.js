@@ -3,7 +3,7 @@ App.view.define('agent.VVisit', {
 	extend: "Ext.Panel",
 	initComponent: function()
 	{
-		this.title="Visites médicales";
+		this.title="Dossier médical";
 		this.layout="vbox";
 		this.border=false;
 		this.items = [
