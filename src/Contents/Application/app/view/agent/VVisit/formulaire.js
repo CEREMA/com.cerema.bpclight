@@ -149,11 +149,14 @@ App.view.define('agent.VVisit.formulaire', {
 						height: "100%",
 						items: [
 							{
+								html: "Renseignement généraux",
+								padding: 5							
+							},
+							{
 								xtype: "propertygrid",
 								border: false,
 								height: 250,
 								width: "100%",
-								fieldLabel: "Renseignements",
 								source: {
 									"Taille": 0,
 									"Poids": 0,
@@ -163,6 +166,22 @@ App.view.define('agent.VVisit.formulaire', {
 									"Test visuel OD": 0,
 									"Test visuel OG": 0,
 									"Test urinaire": true
+								}						
+							},
+							{
+								html: "Test EFR",
+								padding: 5
+							},
+							{
+								xtype: "propertygrid",
+								border: false,
+								height: 250,
+								width: "100%",
+								source: {
+									"CVF": 0,
+									"VEMS": 0,
+									"VEMS/CVF": 0,
+									"DEMM": 0
 								}						
 							}						
 						]
