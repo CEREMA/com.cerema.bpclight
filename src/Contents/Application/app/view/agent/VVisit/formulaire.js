@@ -172,6 +172,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								html: "Test EFR",
+								border: false,
 								padding: 5
 							},
 							{
@@ -188,6 +189,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								html: "Test urinaire",
+								border: false,
 								padding: 5
 							},
 							{
@@ -199,12 +201,12 @@ App.view.define('agent.VVisit.formulaire', {
 										store: {
 											fields: ['display', 'value'],
 											data: [
-												{ 'display': 'négatif', 'value': 1 },
-												{ 'display': 'traces', 'value': 2 },
-												{ 'display': '1+', 'value': 3 },
-												{ 'display': '2+', 'value': 4 },
-												{ 'display': '3+', 'value': 5 },
-												{ 'display': '4+', 'value': 6 }
+												{ 'display': 'négatif', 'value': négatif'' },
+												{ 'display': 'traces', 'value': 'traces' },
+												{ 'display': '1+', 'value': '1+' },
+												{ 'display': '2+', 'value': '2+' },
+												{ 'display': '3+', 'value': '3+' },
+												{ 'display': '4+', 'value': '4+' }
 											]
 										},
 										queryMode: 'local',
@@ -217,6 +219,21 @@ App.view.define('agent.VVisit.formulaire', {
 								width: "100%",
 								source: {
 									"TU": 0
+								}						
+							},
+							{
+								html: "Test visuel",
+								border: false,
+								padding: 5
+							},
+							{
+								xtype: "propertygrid",
+								border: false,
+								height: 250,
+								width: "100%",
+								source: {
+									"Oeil droit": 0,
+									"Oeil gauche": 0
 								}						
 							}							
 						]
