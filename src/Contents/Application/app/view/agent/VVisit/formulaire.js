@@ -143,29 +143,21 @@ App.view.define('agent.VVisit.formulaire', {
 						flex: 1
 					},
 					{
-						layout: "vbox",
+						xtype: "propertygrid",
 						border: false,
-						width: 205,
 						height: "100%",
-						items: [
-							{
-								xtype: "propertygrid",
-								border: false,
-								height: "100%",
-								width: 205,
-								fieldLabel: "Renseignements",
-								source: {
-									"Taille": 0,
-									"Poids": 0,
-									"TA": 0,
-									"Pouls": 0,
-									"Test EFR": 0,
-									"Test visuel OD": 0,
-									"Test visuel OG": 0,
-									"Test urinaire": true
-								}						
-							}
-						]
+						width: 205,
+						fieldLabel: "Renseignements",
+						source: {
+							"Taille": 0,
+							"Poids": 0,
+							"TA": 0,
+							"Pouls": 0,
+							"Test EFR": 0,
+							"Test visuel OD": 0,
+							"Test visuel OG": 0,
+							"Test urinaire": true
+						}						
 					}
 				]
 			}
