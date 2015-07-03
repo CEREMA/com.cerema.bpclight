@@ -199,9 +199,12 @@ App.view.define('agent.VVisit.formulaire', {
 										store: {
 											fields: ['display', 'value'],
 											data: [
-												{ 'display': 'Value1', 'value': 1 },
-												{ 'display': 'Value2', 'value': 2 },
-												{ 'display': 'Value3', 'value': 3 }
+												{ 'display': 'négatif', 'value': 1 },
+												{ 'display': 'traces', 'value': 2 },
+												{ 'display': '1+', 'value': 3 },
+												{ 'display': '2+', 'value': 4 },
+												{ 'display': '3+', 'value': 5 },
+												{ 'display': '4+', 'value': 6 }
 											]
 										},
 										queryMode: 'local',
