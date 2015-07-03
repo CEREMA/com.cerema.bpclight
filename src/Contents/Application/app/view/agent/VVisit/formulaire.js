@@ -46,31 +46,7 @@ App.view.define('agent.VVisit.formulaire', {
 									labelAlign: "top",
 									width: 200,
 									displayField: "typ",
-									store: App.store.create({
-										fields: [
-											"typ"
-										],
-										data: [
-											{
-												typ: "Périodique"
-											},
-											{
-												typ: "Reprise"
-											},
-											{
-												typ: "Demande du service"
-											},
-											{
-												typ: "Demande du médecin"
-											},
-											{
-												typ: "Visite quinquennale"
-											},
-											{
-												typ: "Annuelle"								
-											}
-										]
-									})
+									store: App.store.create("bpclight://medic_type")
 								},
 								{
 									xtype: "combo",
