@@ -1,7 +1,7 @@
 var customEditors = {},customRenderers = {};
     
 // create custom editor & renderer for property "Visibility"
-customEditors['TU'] = Ext.create('PropertyGridComboBoxEditor', {
+customEditors.TU = Ext.create('PropertyGridComboBoxEditor', {
 	data: [
 		{ 'type': 'Show',        'value': '0' },
 		{ 'type': 'Hide',        'value': '1' },
