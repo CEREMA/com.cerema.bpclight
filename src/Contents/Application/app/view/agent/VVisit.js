@@ -37,19 +37,19 @@ App.view.define('agent.VVisit', {
 			],
 			columns: [
 				{
-					text: "Date"
+					text: "Date",
+					dataIndex: "date"
 				},
 				{
-					text: "Type"
+					text: "Type",
+					dataIndex: "typ"
 				},
 				{
-					text: "Catégorie"
+					text: "Catégorie",
+					dataIndex: "cat"
 				}
 			],
-			store: App.store.create({
-				fields: [],
-				data: []
-			})
+			store: App.store.create("App.Medical.getAll")
 		}
 		];
 		this.callParent();
