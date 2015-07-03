@@ -1,4 +1,4 @@
-var customEditors = {},customRenderers = {};
+/*var customEditors = {},customRenderers = {};
     
 // create custom editor & renderer for property "Visibility"
 customEditors.TU = Ext.create('PropertyGridComboBoxEditor', {
@@ -10,7 +10,7 @@ customEditors.TU = Ext.create('PropertyGridComboBoxEditor', {
 	]
 });
 customRenderers.TU = customEditors.TU.renderer;
-
+*/
 App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
 	alias: "widget.TVisitData",
@@ -204,8 +204,8 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "propertygrid",
 								border: false,
-								customEditors: customEditors,
-								customRenderers: customRenderers,
+/*								customEditors: customEditors,
+								customRenderers: customRenderers,*/
 								height: 250,
 								width: "100%",
 								source: {
