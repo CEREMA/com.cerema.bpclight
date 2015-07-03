@@ -38,7 +38,8 @@ App.view.define('agent.VVisit', {
 			columns: [
 				{
 					text: "Date",
-					dataIndex: "date"
+					dataIndex: "date",
+					renderer: Ext.util.Format.dateRenderer('d/m/Y')
 				},
 				{
 					text: "Type",
