@@ -51,7 +51,7 @@ App.view.define('agent.VVisit.formulaire', {
 									displayField: "type",
 									valueField: "id",
 									itemId: "TMedicTypeVisite",
-									store: App.store.create("bpclight://medic_type")
+									store: App.store.create("bpclight://medic_type",{autoLoad: true})
 								},
 								{
 									xtype: "combo",
@@ -64,7 +64,7 @@ App.view.define('agent.VVisit.formulaire', {
 									margin: {
 										left: 10
 									},
-									store: App.store.create("bpclight://medic_cat")
+									store: App.store.create("bpclight://medic_cat",{autoLoad: true})
 								},
 								{
 									xtype: "datefield",
