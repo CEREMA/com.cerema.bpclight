@@ -10,7 +10,11 @@ Medical={
 	setLibelle: function(o,cb)
 	{
 		Medical.using('db').post('bpclight','medic_gen',o,cb);
-	}	
+	},
+	getDossierById: function(o,cb)
+	{
+		Medical.using('db').query('bpclight','select * from medic_dossiers where id='+o._id,cb);
+	}
 };
 
 module.exports=Medical;
