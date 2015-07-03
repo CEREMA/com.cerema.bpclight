@@ -166,7 +166,7 @@ App.controller.define('CAgent', {
 			libelle: App.get('TVisit htmleditor#data_medic_gen').getValue()
 		};
 		App.Medical.setLibelle(o,function(response) {
-			console.log(response);
+			App.notify('Changement enregistré');
 		});
 	},
 	Visit_onShow: function(p)
