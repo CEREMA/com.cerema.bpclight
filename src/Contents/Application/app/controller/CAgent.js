@@ -137,10 +137,10 @@ App.controller.define('CAgent', {
 			"TVisit button#medic_new": {
 				click: "VisitDataOpen"
 			},
-			"TVisit button#Exit": {
+			"TVisit toolbar#Exit": {
 				click: "Visit_onExit"
 			},
-			"TVisit button#RecordMe": {
+			"TVisit toolbar#RecordMe": {
 				click: "Visit_onRecordMe"
 			}			
 			/*
