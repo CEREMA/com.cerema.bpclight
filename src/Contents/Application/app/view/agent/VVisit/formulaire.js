@@ -18,7 +18,7 @@ App.view.define('agent.VVisit.formulaire', {
         ];
 		
 		this.defaults={
-			
+			border: false
 		};
 		
         this.items = [
@@ -26,11 +26,16 @@ App.view.define('agent.VVisit.formulaire', {
 				layout: "hbox",
 				items: [
 					{
-						html: "yes",
+						layout: "vbox",
+						border: false,
+						items: [
+						
+						],
 						flex: 1
 					},
 					{
 						xtype: "grid",
+						border: false,
 						height: "100%",
 						width: 205,
 						fieldLabel: "Renseignements",
