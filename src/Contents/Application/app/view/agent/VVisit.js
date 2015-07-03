@@ -17,6 +17,21 @@ App.view.define('agent.VVisit', {
 			padding: 10
 		},
 		{
+			layout: "hbox",
+			width: "100%",
+			items: [
+				{
+					flex: 1
+				},
+				{
+					xtype: "button",
+					itemId: "btn_record",
+					text: "Enregistrer",
+					width: 150
+				}
+			]
+		},
+		{
 			padding: 10,
 			html: "Visites médicales",
 			border: false
