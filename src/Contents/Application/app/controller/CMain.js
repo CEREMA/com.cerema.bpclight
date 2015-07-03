@@ -91,6 +91,10 @@ App.controller.define('CMain', {
 		App.init('VMain',this.onLoad);
 		
 	},
+	mainform_onshow: function(p)
+	{
+		alert('x');
+	},
 	tpt_exit: function(p)
 	{
 		p.up('window').close();
