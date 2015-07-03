@@ -50,7 +50,7 @@ App.view.define('agent.VVisit', {
 					dataIndex: "cat"
 				}
 			],
-			store: App.store.create("App.Medical.getAll",{autoLoad: true})
+			store: App.store.create("App.Medical.getAll")
 		}
 		];
 		this.callParent();
