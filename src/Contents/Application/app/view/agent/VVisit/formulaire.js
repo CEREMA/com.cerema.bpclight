@@ -34,12 +34,25 @@ App.view.define('agent.VVisit.formulaire', {
 						flex: 1
 					},
 					{
-						xtype: "grid",
+						xtype: "propertygrid",
 						border: false,
 						height: "100%",
 						width: 205,
 						fieldLabel: "Renseignements",
-						columns: [
+source: {
+                    "Name": "Properties Grid",
+                    "(ID)": 'id',
+                    "Type": true,
+                    "SubGroup": false,
+                    "PeriodType": Ext.Date.parse('10/15/2006', 'm/d/Y'),
+                    "Balance": false,
+                    "abstract": 0.01,
+                    "Nullable": 1,
+                    "Unit": 'USD',
+                    "Scale":'actual'
+
+                }						
+				/*		columns: [
 							{
 								text: "Type",
 								dataIndex: "type"
@@ -61,7 +74,7 @@ App.view.define('agent.VVisit.formulaire', {
 								value: ""
 							}
 							]
-						})
+						})*/
 					}
 				]
 			}
