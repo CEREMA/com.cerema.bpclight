@@ -165,10 +165,10 @@ App.view.define('agent.VVisit.formulaire', {
 								}
 							}
 						]
+					}
 				]
-			}
 		];
-
+		};
         this.callParent();
     }
 });
