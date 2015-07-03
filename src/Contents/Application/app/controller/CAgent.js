@@ -165,6 +165,7 @@ App.controller.define('CAgent', {
 				console.log(App.get('TVisitData combo#TMedicTypeVisite'));
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
+				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date);
 			});
 		} else alert('creation');
 	},
