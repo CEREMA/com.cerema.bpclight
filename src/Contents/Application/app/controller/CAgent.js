@@ -160,8 +160,9 @@ App.controller.define('CAgent', {
 	visitdata_onshow: function(p)
 	{
 		if (p._id) {
-			App.Medical.getDossierById(p._id,function(e) {
+			App.Medical.getDossierById(p._id,function(e,f) {
 				console.log(e);
+				console.log(f);
 			});
 		} else alert('creation');
 	},
