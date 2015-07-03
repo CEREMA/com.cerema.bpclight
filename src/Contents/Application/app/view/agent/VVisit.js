@@ -23,7 +23,8 @@ App.view.define('agent.VVisit', {
 			border: false,
 			items: [
 				{
-					flex: 1
+					flex: 1,
+					border: false
 				},
 				{
 					xtype: "button",
@@ -42,7 +43,7 @@ App.view.define('agent.VVisit', {
 			xtype: "grid",
 			itemId: "grid_medic",
 			width: "100%",
-			height: 260,
+			height: 200,
 			padding: 10,
 			flex: 1,
 			tbar: [
