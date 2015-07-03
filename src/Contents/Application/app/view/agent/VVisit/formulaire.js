@@ -152,22 +152,19 @@ App.view.define('agent.VVisit.formulaire', {
 						items: [
 							{
 								html: "Renseignement généraux",
+								border: false,
 								padding: 5							
 							},
 							{
 								xtype: "propertygrid",
 								border: false,
-								height: 250,
+								height: 150,
 								width: "100%",
 								source: {
 									"Taille": 0,
 									"Poids": 0,
 									"TA": 0,
-									"Pouls": 0,
-									"Test EFR": 0,
-									"Test visuel OD": 0,
-									"Test visuel OG": 0,
-									"Test urinaire": true
+									"Pouls": 0
 								}						
 							},
 							{
@@ -178,7 +175,7 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "propertygrid",
 								border: false,
-								height: 250,
+								height: 150,
 								width: "100%",
 								source: {
 									"CVF": 0,
@@ -215,7 +212,7 @@ App.view.define('agent.VVisit.formulaire', {
 										editable: false
 									}
 								},
-								height: 250,
+								height: 60,
 								width: "100%",
 								source: {
 									"TU": 0
@@ -229,7 +226,7 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "propertygrid",
 								border: false,
-								height: 250,
+								height: 100,
 								width: "100%",
 								source: {
 									"Oeil droit": 0,
