@@ -29,7 +29,78 @@ App.view.define('agent.VVisit.formulaire', {
 						layout: "vbox",
 						border: false,
 						items: [
-						
+						{
+							layout: "hbox",
+							border: false,
+							width: "100%",
+							bodyStyle: "background-color: transparent",
+							items: [
+								{
+									xtype: "combo",
+									fieldLabel: "Type de visite",
+									labelAlign: "top",
+									width: 200,
+									displayField: "typ",
+									store: App.store.create({
+										fields: [
+											"typ"
+										],
+										data: [
+											{
+												typ: "Périodique"
+											},
+											{
+												typ: "Reprise"
+											},
+											{
+												typ: "Demande du service"
+											},
+											{
+												typ: "Demande du médecin"
+											},
+											{
+												typ: "Visite quinquennale"
+											},
+											{
+												typ: "Annuelle"								
+											}
+										]
+									})
+								},
+								{
+									xtype: "combo",
+									fieldLabel: "Catégorie",
+									labelAlign: "top",
+									width: 100,
+									displayField: "cat",
+									margin: {
+										left: 10
+									},
+									store: App.store.create({
+										fields: [
+											"cat"
+										],
+										data: [
+											{
+												cat: "SMS"
+											},
+											{
+												cat: "SMR"
+											}
+										]						
+									})
+								},
+								{
+									xtype: "datefield",
+									fieldLabel: "Date",
+									margin: {
+										left: 10
+									},						
+									labelAlign: "top",
+									width: 100
+								}					
+							]
+						}						
 						],
 						flex: 1
 					},
