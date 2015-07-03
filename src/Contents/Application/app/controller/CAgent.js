@@ -159,7 +159,7 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
-		console.log(p);
+		if (p.id) alert('modif'); else alert('creation');
 	},
 	grid_medic_click: function(me,s)
 	{
