@@ -137,6 +137,9 @@ App.controller.define('CAgent', {
 			"TVisit button#medic_new": {
 				click: "VisitDataOpen"
 			},
+			"TVisit button#btn_record": {
+				click: "Visit_recordgen"
+			},
 			/*
 			TVisitData
 			*/
@@ -155,6 +158,15 @@ App.controller.define('CAgent', {
 	Visit_onExit: function(p)
 	{
 		p.up('TVisitData').close();
+	},
+	Visit_recordgen: function(p)
+	{
+		var o={
+			reader: App.get('TVisit htmleditor#data_medic_gen').getValue()
+		};
+		App.Medical.setLibelle(o,function(response) {
+			
+		});
 	},
 	Visit_onShow: function(p)
 	{
