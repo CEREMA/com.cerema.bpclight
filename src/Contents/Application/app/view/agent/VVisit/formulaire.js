@@ -39,17 +39,16 @@ App.view.define('agent.VVisit.formulaire', {
 						height: "100%",
 						width: 205,
 						fieldLabel: "Renseignements",
-source: {
-                    "Name": "Properties Grid",
-                    "(ID)": 'id',
-                    "Type": true,
-                    "SubGroup": false,
-                    "PeriodType": Ext.Date.parse('10/15/2006', 'm/d/Y'),
-                    "Balance": false,
-                    "abstract": 0.01,
-                    "Nullable": 1
-
-                }						
+						source: {
+							/*"Name": "Properties Grid",
+							"(ID)": 'id',
+							"Type": true,
+							"SubGroup": false,
+							"PeriodType": Ext.Date.parse('10/15/2006', 'm/d/Y'),
+							"Balance": false,*/
+							"Taille": 0.01,
+							"Poids": 1
+						}						
 				/*		columns: [
 							{
 								text: "Type",
