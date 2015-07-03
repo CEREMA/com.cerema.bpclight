@@ -45,7 +45,8 @@ App.view.define('agent.VVisit.formulaire', {
 									fieldLabel: "Type de visite",
 									labelAlign: "top",
 									width: 200,
-									displayField: "typ",
+									displayField: "type",
+									fieldValue: "id",
 									store: App.store.create("bpclight://medic_type")
 								},
 								{
@@ -54,22 +55,11 @@ App.view.define('agent.VVisit.formulaire', {
 									labelAlign: "top",
 									width: 100,
 									displayField: "cat",
+									valueField: "id",
 									margin: {
 										left: 10
 									},
-									store: App.store.create({
-										fields: [
-											"cat"
-										],
-										data: [
-											{
-												cat: "SMS"
-											},
-											{
-												cat: "SMR"
-											}
-										]						
-									})
+									store: App.store.create("bpclight://medic_cat")
 								},
 								{
 									xtype: "datefield",
