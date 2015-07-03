@@ -161,6 +161,7 @@ App.controller.define('CAgent', {
 	{
 		if (p._id) {
 			App.Medical.getDossierById(p._id,function(o) {
+				console.log(o);
 				console.log(App.get('TVisitData combo#TMedicTypeVisite'));
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o.cat);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o.type);
