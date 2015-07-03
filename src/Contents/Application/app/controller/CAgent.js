@@ -144,6 +144,10 @@ App.controller.define('CAgent', {
 	},
 	Visit_onShow: function(p)
 	{
+		App.Medical.getLibelle(p.up('TForm1').agent.Kage,function(response) {
+			console.log(response);
+			App.get('TVisit htmleditor#data_medic_gen').setValue(response);
+		});
 		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get('TVisit grid#grid_medic').getStore().load();
 	},
