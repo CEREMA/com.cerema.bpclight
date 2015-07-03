@@ -7,7 +7,7 @@ App.view.define('agent.VVisit.formulaire', {
         this.height = 780;
 
         this.layout = {
-            type: 'vbox'
+            type: 'fit'
         };
 
         this.bbar = [
@@ -18,7 +18,7 @@ App.view.define('agent.VVisit.formulaire', {
         ];
 		
 		this.defaults={
-			padding: 10
+			
 		};
 		
         this.items = [
