@@ -140,10 +140,10 @@ App.controller.define('CAgent', {
 			/*
 			TVisitData
 			*/
-			"TVisitData toolbar#Exit": {
+			"TVisitData toolbar #Exit": {
 				click: "Visit_onExit"
 			},
-			"TVisitData toolbar#RecordMe": {
+			"TVisitData toolbar #RecordMe": {
 				click: "Visit_onRecordMe"
 			}			
 		});
