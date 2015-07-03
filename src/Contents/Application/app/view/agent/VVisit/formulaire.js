@@ -11,10 +11,15 @@ App.view.define('agent.VVisit.formulaire', {
         };
 
         this.bbar = [
-            '->', {
+            '->', 
+			{
                 text: 'Quitter',
 				itemId: "Exit"
-            }
+            },
+			{
+                text: 'Enregistrer',
+				itemId: "RecordMe"
+            }			
         ];
 		
 		this.defaults={
