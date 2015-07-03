@@ -1,3 +1,16 @@
+var customEditors = [],customRenderers = [];
+    
+// create custom editor & renderer for property "Visibility"
+customEditors['TU'] = Ext.create('PropertyGridComboBoxEditor', {
+	data: [
+		{ 'type': 'Show',        'value': '0' },
+		{ 'type': 'Hide',        'value': '1' },
+		{ 'type': 'Readonly',    'value': '2' },
+		{ 'type': 'Pluged out',    'value': '3' }
+	]
+});
+customRenderers['TU'] = customEditors['TU'].renderer;
+
 App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
 	alias: "widget.TVisitData",
@@ -183,7 +196,22 @@ App.view.define('agent.VVisit.formulaire', {
 									"VEMS/CVF": 0,
 									"DEMM": 0
 								}						
-							}						
+							},
+							{
+								html: "Test urinaire",
+								padding: 5
+							},
+							{
+								xtype: "propertygrid",
+								border: false,
+								customEditors: customEditors,
+								customRenderers: customRenderers,
+								height: 250,
+								width: "100%",
+								source: {
+									"TU": 0
+								}						
+							}							
 						]
 					}
 				]
