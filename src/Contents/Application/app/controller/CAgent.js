@@ -159,7 +159,11 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
-		if (p._id) alert('modif'); else alert('creation');
+		if (p._id) {
+			App.Medical.getDossierById(p._id,function(e) {
+			
+			});
+		} else alert('creation');
 	},
 	grid_medic_click: function(me,s)
 	{
