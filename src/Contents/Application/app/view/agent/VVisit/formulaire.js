@@ -32,7 +32,7 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						xtype: "grid",
 						height: "100%",
-						width: 250,
+						width: 200,
 						fieldLabel: "Renseignements",
 						columns: [
 							{
