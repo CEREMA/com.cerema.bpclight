@@ -161,7 +161,7 @@ App.controller.define('CAgent', {
 	{
 		if (p._id) {
 			App.Medical.getDossierById(p._id,function(e) {
-			
+				console.log(e);
 			});
 		} else alert('creation');
 	},
