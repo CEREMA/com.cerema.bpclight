@@ -143,21 +143,12 @@ App.view.define('agent.VVisit.formulaire', {
 						flex: 1
 					},
 					{
-						xtype: "propertygrid",
-						border: false,
-						height: "100%",
+						layout: "vbox",
 						width: 205,
-						fieldLabel: "Renseignements",
-						source: {
-							"Taille": 0,
-							"Poids": 0,
-							"TA": 0,
-							"Pouls": 0,
-							"Test EFR": 0,
-							"Test visuel OD": 0,
-							"Test visuel OG": 0,
-							"Test urinaire": true
-						}						
+						height: "100%",
+						items: [
+						
+						]
 					}
 				]
 			}
