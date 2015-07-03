@@ -131,6 +131,9 @@ App.controller.define('CAgent', {
 			/*
 			TVisit
 			*/
+			"TVisit": {
+				show: "Visit_onShow"
+			},
 			"TVisit button#medic_new": {
 				click: "VisitDataOpen"
 			}
@@ -138,6 +141,10 @@ App.controller.define('CAgent', {
 			TVisitData
 			*/
 		});
+	},
+	Visit_onShow: function(p)
+	{
+		//p.up('TForm1').
 	},
 	VisitDataOpen: function()
 	{
