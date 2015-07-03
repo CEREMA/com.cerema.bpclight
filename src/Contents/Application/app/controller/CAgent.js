@@ -156,7 +156,9 @@ App.controller.define('CAgent', {
 	},
 	grid_medic_click: function(me,s)
 	{
-		console.log(s);
+		App.view.create('agent.VVisit.formulaire',{
+			id: s.data.id 
+		}).show();
 	},
 	Visit_onRecordMe: function(p)
 	{
