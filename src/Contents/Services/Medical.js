@@ -5,7 +5,7 @@ Medical={
 	},
 	getLibelle: function(o,cb)
 	{
-		Medical.using('db').model('bpclight','select libelle from medic_gen where kage='+o.kage,cb);
+		Medical.using('db').model('bpclight','select libelle from medic_gen where kage='+o,cb);
 	}
 };
 
