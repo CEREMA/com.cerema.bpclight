@@ -37,9 +37,6 @@ App.controller.define('CMain', {
 			/*
 			mainform
 			*/
-			"mainform": {
-				show: "mainform_onshow"
-			},
 			"mainform menu>menuitem": {
 				click: "Menu_onClick"
 			},
@@ -90,10 +87,6 @@ App.controller.define('CMain', {
 		
 		App.init('VMain',this.onLoad);
 		
-	},
-	mainform_onshow: function()
-	{
-		alert('x');
 	},
 	tpt_exit: function(p)
 	{
