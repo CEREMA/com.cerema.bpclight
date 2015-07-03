@@ -47,9 +47,7 @@ source: {
                     "PeriodType": Ext.Date.parse('10/15/2006', 'm/d/Y'),
                     "Balance": false,
                     "abstract": 0.01,
-                    "Nullable": 1,
-                    "Unit": 'USD',
-                    "Scale":'actual'
+                    "Nullable": 1
 
                 }						
 				/*		columns: [
