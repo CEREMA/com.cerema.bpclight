@@ -19,6 +19,8 @@ App.view.define('agent.VVisit', {
 		{
 			layout: "hbox",
 			width: "100%",
+			padding: 10,
+			border: false,
 			items: [
 				{
 					flex: 1
