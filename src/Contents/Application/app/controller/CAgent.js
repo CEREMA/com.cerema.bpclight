@@ -162,10 +162,11 @@ App.controller.define('CAgent', {
 	Visit_recordgen: function(p)
 	{
 		var o={
-			reader: App.get('TVisit htmleditor#data_medic_gen').getValue()
+			kage: App.get('TForm1').agent.Kage,
+			libelle: App.get('TVisit htmleditor#data_medic_gen').getValue()
 		};
 		App.Medical.setLibelle(o,function(response) {
-			
+			console.log(response);
 		});
 	},
 	Visit_onShow: function(p)
