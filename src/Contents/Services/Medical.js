@@ -6,7 +6,11 @@ Medical={
 	getLibelle: function(o,cb)
 	{
 		Medical.using('db').model('bpclight','select libelle from medic_gen where kage='+o,cb);
-	}
+	},
+	setLibelle: function(o,cb)
+	{
+		Medical.using('db').post('bpclight','medic_gen',o,cb);
+	}	
 };
 
 module.exports=Medical;
