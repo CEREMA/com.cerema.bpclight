@@ -201,7 +201,7 @@ App.view.define('agent.VVisit.formulaire', {
 										store: {
 											fields: ['display', 'value'],
 											data: [
-												{ 'display': 'négatif', 'value': négatif'' },
+												{ 'display': 'négatif', 'value': 'négatif' },
 												{ 'display': 'traces', 'value': 'traces' },
 												{ 'display': '1+', 'value': '1+' },
 												{ 'display': '2+', 'value': '2+' },
