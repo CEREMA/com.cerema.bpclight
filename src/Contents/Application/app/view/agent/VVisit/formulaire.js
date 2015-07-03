@@ -103,6 +103,41 @@ App.view.define('agent.VVisit.formulaire', {
 									width: 100
 								}					
 							]
+						},
+						{
+							xtype: "textarea",
+							fieldLabel: "Poste actuel",
+							width: "100%"
+						},
+						{
+							xtype: "textarea",
+							fieldLabel: "Pathologies en cours",
+							width: "100%"
+						},
+						{
+							xtype: "textarea",
+							fieldLabel: "Traitements actuels",
+							width: "100%"
+						},
+						{
+							xtype: "checkboxgroup",
+							fieldLabel: "Divers",
+							width: 400,
+							items: [
+								{boxLabel: 'Tabac', name: 'rb', inputValue: '1'},
+								{boxLabel: 'Alcool', name: 'rb', inputValue: '1'},
+								{boxLabel: 'Sport', name: 'rb', inputValue: '1'}
+							]
+						},				
+						{
+							xtype: "textarea",
+							fieldLabel: "Orientations",
+							width: "100%"
+						},
+						{
+							xtype: "htmleditor",
+							fieldLabel: "Conclusion",
+							width: "100%"
 						}						
 						],
 						flex: 1
