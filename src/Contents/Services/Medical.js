@@ -13,6 +13,7 @@ Medical={
 	},
 	getDossierById: function(o,cb)
 	{
+		console.log('select * from medic_dossiers where id='+o._id);
 		Medical.using('db').query('bpclight','select * from medic_dossiers where id='+o._id,cb);
 	}
 };
