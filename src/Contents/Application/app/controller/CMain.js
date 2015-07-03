@@ -37,6 +37,9 @@ App.controller.define('CMain', {
 			/*
 			mainform
 			*/
+			"mainform": {
+				activate: "mainform_onshow"
+			},
 			"mainform menu>menuitem": {
 				click: "Menu_onClick"
 			},
