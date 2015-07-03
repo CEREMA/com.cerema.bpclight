@@ -140,6 +140,9 @@ App.controller.define('CAgent', {
 			"TVisit button#btn_record": {
 				click: "Visit_recordgen"
 			},
+			"TVisit grid#grid_medic": {
+				itemdblclick: "grid_medic_click"
+			},
 			/*
 			TVisitData
 			*/
@@ -150,6 +153,10 @@ App.controller.define('CAgent', {
 				click: "Visit_onRecordMe"
 			}			
 		});
+	},
+	grid_medic_click: function(me,s)
+	{
+		console.log(s);
 	},
 	Visit_onRecordMe: function(p)
 	{
