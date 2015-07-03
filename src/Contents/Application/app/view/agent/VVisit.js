@@ -42,7 +42,7 @@ App.view.define('agent.VVisit', {
 				},
 				{
 					text: "Type",
-					dataIndex: "typ"
+					dataIndex: "type"
 				},
 				{
 					text: "Catégorie",
