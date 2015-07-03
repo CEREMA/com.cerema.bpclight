@@ -154,7 +154,7 @@ App.controller.define('CAgent', {
 	},	
 	Visit_onExit: function(p)
 	{
-		p.up('TVisit').close();
+		p.up('TVisitData').close();
 	},
 	Visit_onShow: function(p)
 	{
