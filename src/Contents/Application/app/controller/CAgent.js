@@ -159,12 +159,12 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
-		if (p.id) alert('modif'); else alert('creation');
+		if (p._id) alert('modif'); else alert('creation');
 	},
 	grid_medic_click: function(me,s)
 	{
 		App.view.create('agent.VVisit.formulaire',{
-			id: s.data.id 
+			_id: s.data.id 
 		}).show();
 	},
 	Visit_onRecordMe: function(p)
