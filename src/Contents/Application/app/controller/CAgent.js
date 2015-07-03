@@ -146,6 +146,9 @@ App.controller.define('CAgent', {
 			/*
 			TVisitData
 			*/
+			"TVisitData": {
+				show: "visitdata_onshow"
+			},
 			"TVisitData toolbar #Exit": {
 				click: "Visit_onExit"
 			},
@@ -153,6 +156,10 @@ App.controller.define('CAgent', {
 				click: "Visit_onRecordMe"
 			}			
 		});
+	},
+	visitdata_onshow: function(p)
+	{
+		console.log(p);
 	},
 	grid_medic_click: function(me,s)
 	{
