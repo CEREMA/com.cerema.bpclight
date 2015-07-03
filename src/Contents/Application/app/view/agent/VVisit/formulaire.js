@@ -50,6 +50,7 @@ App.view.define('agent.VVisit.formulaire', {
 									width: 200,
 									displayField: "type",
 									fieldValue: "id",
+									itemId: "TMedicTypeVisite",
 									store: App.store.create("bpclight://medic_type")
 								},
 								{
@@ -59,6 +60,7 @@ App.view.define('agent.VVisit.formulaire', {
 									width: 100,
 									displayField: "cat",
 									valueField: "id",
+									itemId: "TMedicCategorie",
 									margin: {
 										left: 10
 									},

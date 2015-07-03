@@ -160,9 +160,9 @@ App.controller.define('CAgent', {
 	visitdata_onshow: function(p)
 	{
 		if (p._id) {
-			App.Medical.getDossierById(p._id,function(e,f) {
-				console.log(e);
-				console.log(f);
+			App.Medical.getDossierById(p._id,function(o) {
+				App.get('TVisitData combo#TMedicTypeVisite').setValue(o.cat);
+				App.get('TVisitData combo#TMedicCategorie').setValue(o.type);
 			});
 		} else alert('creation');
 	},
