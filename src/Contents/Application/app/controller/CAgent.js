@@ -136,7 +136,7 @@ App.controller.define('CAgent', {
 			},
 			"TVisit button#medic_new": {
 				click: "VisitDataOpen"
-			}
+			}			
 			/*
 			TVisitData
 			*/
