@@ -136,11 +136,25 @@ App.controller.define('CAgent', {
 			},
 			"TVisit button#medic_new": {
 				click: "VisitDataOpen"
+			},
+			"TVisit button#Exit": {
+				click: "Visit_onExit"
+			},
+			"TVisit button#RecordMe": {
+				click: "Visit_onRecordMe"
 			}			
 			/*
 			TVisitData
 			*/
 		});
+	},
+	Visit_onRecordMe: function(p)
+	{
+
+	},	
+	Visit_onExit: function(p)
+	{
+		p.up('TVisit').close();
 	},
 	Visit_onShow: function(p)
 	{
