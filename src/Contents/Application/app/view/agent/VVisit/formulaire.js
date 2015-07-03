@@ -68,6 +68,7 @@ App.view.define('agent.VVisit.formulaire', {
 								},
 								{
 									xtype: "datefield",
+									itemId: "TMedicDate",
 									fieldLabel: "Date",
 									margin: {
 										left: 10
