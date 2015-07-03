@@ -28,6 +28,9 @@ App.view.define('agent.VVisit.formulaire', {
 					{
 						layout: "vbox",
 						border: false,
+						defaults: {
+							padding: 15
+						},
 						items: [
 						{
 							layout: "hbox",
