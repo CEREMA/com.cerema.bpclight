@@ -1,16 +1,4 @@
-var customEditors = {};
-var customRenderers = {};
-    
-// create custom editor & renderer for property "Visibility"
-customEditors.TU = Ext.create('PropertyGridComboBoxEditor', {
-	data: [
-		{ 'type': 'Show',        'value': '0' },
-		{ 'type': 'Hide',        'value': '1' },
-		{ 'type': 'Readonly',    'value': '2' },
-		{ 'type': 'Pluged out',    'value': '3' }
-	]
-});
-customRenderers.TU = customEditors.TU.renderer;
+
 
 App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
@@ -205,8 +193,23 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "propertygrid",
 								border: false,
-/*								customEditors: customEditors,
-								customRenderers: customRenderers,*/
+								customEditors: {
+									TU: {
+										xtype: 'combo',
+										store: {
+											fields: ['display', 'value'],
+											data: [
+												{ 'display': 'Value1', 'value': 1 },
+												{ 'display': 'Value2', 'value': 2 },
+												{ 'display': 'Value3', 'value': 3 }
+											]
+										},
+										queryMode: 'local',
+										displayField: 'display',
+										valueField: 'value',
+										editable: false
+									}
+								},
 								height: 250,
 								width: "100%",
 								source: {
