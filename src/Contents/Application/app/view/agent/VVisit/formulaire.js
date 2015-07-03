@@ -149,38 +149,15 @@ App.view.define('agent.VVisit.formulaire', {
 						width: 205,
 						fieldLabel: "Renseignements",
 						source: {
-							/*"Name": "Properties Grid",
-							"(ID)": 'id',
-							"Type": true,
-							"SubGroup": false,
-							"PeriodType": Ext.Date.parse('10/15/2006', 'm/d/Y'),
-							"Balance": false,*/
-							"Taille": 0.01,
-							"Poids": 1
+							"Taille": 0,
+							"Poids": 0,
+							"TA": 0,
+							"Pouls": 0,
+							"EFR": 0,
+							"Test visuel OD": 0,
+							"Test visuel OG": 0,
+							"Test urinaire": true
 						}						
-				/*		columns: [
-							{
-								text: "Type",
-								dataIndex: "type"
-							},
-							{
-								text: "Résultat",
-								dataIndex: "value"
-							}
-						],
-						store: App.store.create({
-							fields: ["type","value"],
-							data: [
-							{
-								type: "Taille",
-								value: ""
-							},
-							{
-								type: "Poids",
-								value: ""
-							}
-							]
-						})*/
 					}
 				]
 			}
