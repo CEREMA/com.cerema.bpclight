@@ -49,7 +49,7 @@ App.view.define('agent.VVisit.formulaire', {
 									labelAlign: "top",
 									width: 200,
 									displayField: "type",
-									fieldValue: "id",
+									valueField: "id",
 									itemId: "TMedicTypeVisite",
 									store: App.store.create("bpclight://medic_type")
 								},
