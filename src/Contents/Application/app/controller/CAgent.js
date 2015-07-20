@@ -173,7 +173,7 @@ App.controller.define('CAgent', {
 			Poids: RG.Poids
 		};
 		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id;
-		console.log(App.DB.post);
+		console.log(App.DB);
 		App.DB.post('bpclight://medic_results',DB_RG,function() {
 			alert('c fait');
 		});
