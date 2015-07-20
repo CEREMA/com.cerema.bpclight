@@ -175,7 +175,7 @@ App.controller.define('CAgent', {
 		};
 		if (p.up('window')._id) RG.id=p.up('window')._id;
 		console.log(RG);
-		App.DB.post('bpclight://medic_results',RG,function() {
+		App.DB.post('bpclight://medic_dossiers',RG,function() {
 			App.notify("Le dossier a bien été enregistré.");
 		});
 	},
