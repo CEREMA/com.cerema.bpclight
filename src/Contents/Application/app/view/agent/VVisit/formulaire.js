@@ -129,6 +129,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "propertygrid",
+								itemId: "RG",
 								border: false,
 								height: 150,
 								width: "100%",
