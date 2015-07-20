@@ -159,7 +159,7 @@ App.controller.define('CAgent', {
 	},
 	Visit_onRecord: function(p)
 	{
-		alert(p._id);
+		alert(p.up('window')._id);
 		var RG = App.get( 'TVisitData propertygrid#RG' ).getSource();
 		var EFR = App.get( 'TVisitData propertygrid#EFR' ).getSource();
 		var TU = App.get( 'TVisitData propertygrid#TU' ).getSource();
