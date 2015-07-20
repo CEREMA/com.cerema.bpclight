@@ -226,9 +226,9 @@ App.controller.define('CAgent', {
 				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
 				App.get('TVisitData textarea#TOrientations').setValue(o[0].orientations);
 				App.get('TVisitData htmleditor#TConclusions').setValue(o[0].conclusions);
-				if (o[0].tabac==1) App.get('TVisitData checkboxgroup#CBG').items.items[0].setChecked(true);
-				if (o[0].alcool==1) App.get('TVisitData checkboxgroup#CBG').items.items[1].setChecked(true);
-				if (o[0].sport==1) App.get('TVisitData checkboxgroup#CBG').items.items[2].setChecked(true);
+				if (o[0].tabac==1) App.get('TVisitData checkboxgroup#CBG').items.items[0].setValue(true);
+				if (o[0].alcool==1) App.get('TVisitData checkboxgroup#CBG').items.items[1].setValue(true);
+				if (o[0].sport==1) App.get('TVisitData checkboxgroup#CBG').items.items[2].setValue(true);
 			});
 		}
 	},
