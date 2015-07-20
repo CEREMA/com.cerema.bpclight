@@ -169,6 +169,7 @@ App.controller.define('CAgent', {
 		var RG={
 			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
 			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
+			date: App.get('TVisitData datefield#TMedicDate').getValue(),
 			kage: p.up('window')._dossier,
 			Taille: RG.Taille,
 			Pouls: RG.Pouls,
