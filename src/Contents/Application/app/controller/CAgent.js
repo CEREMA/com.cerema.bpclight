@@ -159,6 +159,7 @@ App.controller.define('CAgent', {
 	},
 	Visit_onRecord: function(p)
 	{
+		alert(p._id);
 		var RG = App.get( 'TVisitData propertygrid#RG' ).getSource();
 		var EFR = App.get( 'TVisitData propertygrid#EFR' ).getSource();
 		var TU = App.get( 'TVisitData propertygrid#TU' ).getSource();
@@ -167,8 +168,11 @@ App.controller.define('CAgent', {
 		console.log(EFR);
 		console.log(TU);		
 		console.log(TV);		
-		var doss={
-		
+		var DB_RG={
+			Taille: RG.Taille,
+			Pouls: RG.Pouls,
+			TA: RG.TA,
+			Poids: RG.Poids
 		};
 	},
 	visitdata_onshow: function(p)
@@ -181,7 +185,9 @@ App.controller.define('CAgent', {
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
 			});
-		} else alert('creation');
+		} else {
+			
+		}
 	},
 	grid_medic_click: function(me,s)
 	{
