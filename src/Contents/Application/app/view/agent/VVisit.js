@@ -61,7 +61,8 @@ App.view.define('agent.VVisit', {
 				},
 				{
 					text: "Type",
-					dataIndex: "type"
+					dataIndex: "type",
+					flex: 1
 				},
 				{
 					text: "Catégorie",
