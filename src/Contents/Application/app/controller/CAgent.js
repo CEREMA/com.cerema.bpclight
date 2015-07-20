@@ -179,10 +179,9 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
+		alert(p._dossier);
 		if (p._id) {
 			App.Medical.getDossierById(p._id,function(o) {
-				console.log(o);
-				console.log(App.get('TVisitData combo#TMedicTypeVisite'));
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
@@ -220,10 +219,10 @@ App.controller.define('CAgent', {
 		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get('TVisit grid#grid_medic').getStore().load();
 	},
-	VisitDataOpen: function()
+	VisitDataOpen: function(p)
 	{
 		App.view.create('agent.VVisit.formulaire',{
-		
+			_dossier: p.up('panel')._id
 		}).show();
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
