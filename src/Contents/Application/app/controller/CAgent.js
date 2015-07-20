@@ -167,13 +167,14 @@ App.controller.define('CAgent', {
 		console.log(TU);		
 		console.log(TV);		
 		var RG={
-			dossiers_id: p.up('window')._dossier,
+			kage: p.up('window')._dossier,
 			Taille: RG.Taille,
 			Pouls: RG.Pouls,
 			TA: RG.TA,
 			Poids: RG.Poids
 		};
 		if (p.up('window')._id) RG.id=p.up('window')._id;
+		console.log(RG);
 		App.DB.post('bpclight://medic_results',RG,function() {
 			App.notify("Le dossier a bien été enregistré.");
 		});
