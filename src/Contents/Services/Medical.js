@@ -2,7 +2,7 @@ Medical={
 	getAll: function(o,cb)
 	{
 		console.log('select medic_dossiers.id,date,medic_type.type,medic_cat.cat from medic_dossiers where medic_dossiers.kage='+o.kage);
-		Medical.using('db').model('bpclight','select * from medic_results where dossiers_id='+o.kage,cb);
+		Medical.using('db').model('bpclight','select * from medic_dossiers where kage='+o.kage,cb);
 	},
 	getLibelle: function(o,cb)
 	{
