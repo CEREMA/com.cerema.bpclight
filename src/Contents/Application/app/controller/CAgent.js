@@ -167,6 +167,7 @@ App.controller.define('CAgent', {
 		console.log(TU);		
 		console.log(TV);		
 		var RG={
+			dossiers_id: p.up('window')._dossier,
 			Taille: RG.Taille,
 			Pouls: RG.Pouls,
 			TA: RG.TA,
@@ -179,7 +180,6 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
-		alert(p._dossier);
 		if (p._id) {
 			App.Medical.getDossierById(p._id,function(o) {
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
