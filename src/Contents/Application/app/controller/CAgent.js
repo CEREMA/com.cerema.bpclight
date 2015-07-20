@@ -164,7 +164,6 @@ App.controller.define('CAgent', {
 		var EFR = App.get( 'TVisitData propertygrid#EFR' ).getSource();
 		var TU = App.get( 'TVisitData propertygrid#TU' ).getSource();
 		var TV = App.get( 'TVisitData propertygrid#TV' ).getSource();
-		console.log(RG);
 		console.log(EFR);
 		console.log(TU);		
 		console.log(TV);		
@@ -174,6 +173,10 @@ App.controller.define('CAgent', {
 			TA: RG.TA,
 			Poids: RG.Poids
 		};
+		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id;
+		App.DB.post('bpclight://medic_results',DB_RG,function() {
+			alert('c fait');
+		});
 	},
 	visitdata_onshow: function(p)
 	{
