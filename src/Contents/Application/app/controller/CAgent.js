@@ -196,8 +196,6 @@ App.controller.define('CAgent', {
 				var grid=App.get('TVisitData propertygrid#RG');
 				grid.getSelectionModel().getSelection()[0].set('Taille', o[0].Taille);
 			});
-		} else {
-			
 		}
 	},
 	grid_medic_click: function(me,s)
