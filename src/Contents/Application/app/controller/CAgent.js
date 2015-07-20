@@ -185,6 +185,8 @@ App.controller.define('CAgent', {
 			orientations: App.get('TVisitData textarea#TOrientations').getValue(),
 			conclusions: App.get('TVisitData htmleditor#TConclusions').getValue()
 		};
+		console.log(App.get('TVisitData checkboxgroup#CBG'));
+		return;
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
 			App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('window')._dossier;
