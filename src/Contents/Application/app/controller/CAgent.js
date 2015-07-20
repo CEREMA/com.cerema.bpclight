@@ -159,14 +159,16 @@ App.controller.define('CAgent', {
 	},
 	Visit_onRecord: function(p)
 	{
-		var RG = App.get( 'TVisitData propertygrid#RG' ).getSource();
-		var EFR = App.get( 'TVisitData propertygrid#EFR' ).getSource();
-		var TU = App.get( 'TVisitData propertygrid#TU' ).getSource();
-		var TV = App.get( 'TVisitData propertygrid#TV' ).getSource();
+		var RG = App.get('TVisitData propertygrid#RG').getSource();
+		var EFR = App.get('TVisitData propertygrid#EFR').getSource();
+		var TU = App.get('TVisitData propertygrid#TU').getSource();
+		var TV = App.get('TVisitData propertygrid#TV').getSource();
 		console.log(EFR);
 		console.log(TU);		
 		console.log(TV);		
 		var RG={
+			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
+			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
 			kage: p.up('window')._dossier,
 			Taille: RG.Taille,
 			Pouls: RG.Pouls,
