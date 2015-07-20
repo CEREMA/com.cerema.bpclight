@@ -193,6 +193,8 @@ App.controller.define('CAgent', {
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
+				var grid=App.get('TVisitData propertygrid#RG');
+				grid.getSelectionModel().getSelection()[0].set('Taille', o[0].Taille);
 			});
 		} else {
 			
