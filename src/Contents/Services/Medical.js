@@ -1,7 +1,7 @@
 Medical={
 	getAll: function(o,cb)
 	{
-		Medical.using('db').model('bpclight','select * from medic_dossiers where kage='+o.kage,cb);
+		Medical.using('db').model('bpclight','select * from medic_dossiers where kage='+o.kage+' order by date desc',cb);
 	},
 	getLibelle: function(o,cb)
 	{
