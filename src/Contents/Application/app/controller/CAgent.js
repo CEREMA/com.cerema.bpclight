@@ -221,9 +221,8 @@ App.controller.define('CAgent', {
 	},
 	VisitDataOpen: function(p)
 	{		
-		console.log(p.up('window'));
 		App.view.create('agent.VVisit.formulaire',{
-			_dossier: p.up('window')._id
+			_dossier: p.up('window').agent.Kage
 		}).show();
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
