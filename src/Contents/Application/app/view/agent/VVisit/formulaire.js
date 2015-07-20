@@ -80,16 +80,19 @@ App.view.define('agent.VVisit.formulaire', {
 						},
 						{
 							xtype: "textarea",
+							itemId: "TPosteActuel",
 							fieldLabel: "Poste actuel",
 							width: "100%"
 						},
 						{
 							xtype: "textarea",
+							itemId: "TPathologies",
 							fieldLabel: "Pathologies en cours",
 							width: "100%"
 						},
 						{
 							xtype: "textarea",
+							itemId: "TTraitements",
 							fieldLabel: "Traitements actuels",
 							width: "100%"
 						},
@@ -106,11 +109,13 @@ App.view.define('agent.VVisit.formulaire', {
 						{
 							xtype: "textarea",
 							fieldLabel: "Orientations",
+							itemId: "TOrientations",
 							width: "100%"
 						},
 						{
 							xtype: "htmleditor",
 							fieldLabel: "Conclusion",
+							itemId: "TConclusions",
 							width: "100%"
 						}						
 						],
