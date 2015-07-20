@@ -152,11 +152,8 @@ App.controller.define('CAgent', {
 			"TVisitData toolbar #Exit": {
 				click: "Visit_onExit"
 			},
-			"TVisitData toolbar #RecordMe": {
+			"TVisitData toolbar #Record": {
 				click: "Visit_onRecord"
-			},
-			"TVisitData toolbar #RecordMe": {
-				click: "Visit_onRecordMe"
 			}			
 		});
 	},
@@ -186,10 +183,6 @@ App.controller.define('CAgent', {
 			_id: s.data.id 
 		}).show();
 	},
-	Visit_onRecordMe: function(p)
-	{
-
-	},	
 	Visit_onExit: function(p)
 	{
 		p.up('TVisitData').close();
