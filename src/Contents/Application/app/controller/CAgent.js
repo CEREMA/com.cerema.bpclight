@@ -173,7 +173,7 @@ App.controller.define('CAgent', {
 			TA: RG.TA,
 			Poids: RG.Poids
 		};
-		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id; else DB_RG.dossiers_id="#";
+		if (p.up('window')._id) RG.id=p.up('window')._id;
 		App.DB.post('bpclight://medic_results',RG,function() {
 			App.notify("Le dossier a bien été enregistré.");
 		});
