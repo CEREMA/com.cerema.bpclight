@@ -162,10 +162,7 @@ App.controller.define('CAgent', {
 		var RG = App.get('TVisitData propertygrid#RG').getSource();
 		var EFR = App.get('TVisitData propertygrid#EFR').getSource();
 		var TU = App.get('TVisitData propertygrid#TU').getSource();
-		var TV = App.get('TVisitData propertygrid#TV').getSource();
-		console.log(EFR);
-		console.log(TU);		
-		console.log(TV);		
+		var TV = App.get('TVisitData propertygrid#TV').getSource();	
 		var DATA={
 			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
 			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
@@ -183,8 +180,8 @@ App.controller.define('CAgent', {
 			OD: TV['Oeil droit'],
 			OG: TV['Oeil gauche']
 		};
-		if (p.up('window')._id) RG.id=p.up('window')._id;
-		console.log(RG);
+		if (p.up('window')._id) DATA.id=p.up('window')._id;
+		console.log(DATA);
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
 			App.notify("Le dossier a bien été enregistré.");
 		});
