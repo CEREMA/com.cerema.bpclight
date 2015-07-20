@@ -194,7 +194,25 @@ App.controller.define('CAgent', {
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
 				var grid=App.get('TVisitData propertygrid#RG');
-				grid.setProperty('Taille', o[0].Taille);
+					grid.setProperty('Taille', o[0].Taille);
+					grid.setProperty('Poids', o[0].Poids);
+					grid.setProperty('Pouls', o[0].Pouls);
+					grid.setProperty('TA', o[0].TA);
+				var grid=App.get('TVisitData propertygrid#EFR');
+					grid.setProperty('CVF', o[0].CVF);
+					grid.setProperty('DEMM', o[0].DEMM);
+					grid.setProperty('VEMS', o[0].VEMS);
+					grid.setProperty('VEMS/CVF', o[0].VEMS_CVF);
+				var grid=App.get('TVisitData propertygrid#TU');
+					grid.setProperty('TU', o[0].TU);
+				var grid=App.get('TVisitData propertygrid#TV');
+					grid.setProperty('Oeil droit', o[0].OD);
+					grid.setProperty('Oeil gauche', o[0].OG);
+				App.get('TVisitData textarea#TPosteActuel').setValue(o[0].poste_actuel);
+				App.get('TVisitData textarea#TPathologies').setValue(o[0].pathologies);
+				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
+				App.get('TVisitData textarea#TOrientations').setValue(o[0].orientations);
+				App.get('TVisitData htmleditor#TConclusions').setValue(o[0].conclusions);
 			});
 		}
 	},
