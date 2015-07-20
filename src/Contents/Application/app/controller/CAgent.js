@@ -221,6 +221,7 @@ App.controller.define('CAgent', {
 	},
 	VisitDataOpen: function(p)
 	{
+		alert(p.up('panel')._id);
 		App.view.create('agent.VVisit.formulaire',{
 			_dossier: p.up('panel')._id
 		}).show();
