@@ -159,7 +159,7 @@ App.controller.define('CAgent', {
 	},
 	Visit_onRecord: function(p)
 	{
-		var gridvalues = App.get('propertygrid#RG');
+		var gridValues = App.get( 'TVisitData propertygrid#RG' ).getSource();
 		console.log(gridValues);
 		var doss={
 		
