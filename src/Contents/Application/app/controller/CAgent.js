@@ -220,10 +220,9 @@ App.controller.define('CAgent', {
 		App.get('TVisit grid#grid_medic').getStore().load();
 	},
 	VisitDataOpen: function(p)
-	{
-		alert(p.up('panel')._id);
+	{		
 		App.view.create('agent.VVisit.formulaire',{
-			_dossier: p.up('panel')._id
+			_dossier: p.up('window')._id
 		}).show();
 	},
 	Positions_click: function(p, record, item, index, e, eOpts)
