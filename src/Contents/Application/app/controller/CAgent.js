@@ -178,11 +178,16 @@ App.controller.define('CAgent', {
 			DEMM: EFR.DEMM,
 			TU: TU.TU,
 			OD: TV['Oeil droit'],
-			OG: TV['Oeil gauche']
+			OG: TV['Oeil gauche'],
+			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
+			pathologies: App.get('TVisitData textarea#TPathologies').getValue(),
+			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
+			orientations: App.get('TVisitData textarea#TOrientations').getValue(),
+			conclusions: App.get('TVisitData textarea#TConclusions').getValue()
 		};
-		if (p.up('window')._id) DATA.id=p.up('window')._id;
-		console.log(DATA);
+		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
+			p.up('window').close();
 			App.notify("Le dossier a bien été enregistré.");
 		});
 	},
