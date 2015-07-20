@@ -183,7 +183,7 @@ App.controller.define('CAgent', {
 			pathologies: App.get('TVisitData textarea#TPathologies').getValue(),
 			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
 			orientations: App.get('TVisitData textarea#TOrientations').getValue(),
-			conclusions: App.get('TVisitData textarea#TConclusions').getValue()
+			conclusions: App.get('TVisitData htmleditor#TConclusions').getValue()
 		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
