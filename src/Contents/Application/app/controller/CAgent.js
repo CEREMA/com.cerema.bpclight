@@ -166,16 +166,15 @@ App.controller.define('CAgent', {
 		console.log(EFR);
 		console.log(TU);		
 		console.log(TV);		
-		var DB_RG={
+		var RG={
 			Taille: RG.Taille,
 			Pouls: RG.Pouls,
 			TA: RG.TA,
 			Poids: RG.Poids
 		};
 		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id;
-		console.log(App.DB);
-		App.DB.post('bpclight://medic_results',DB_RG,function() {
-			alert('c fait');
+		App.DB.post('bpclight://medic_results',RG,function() {
+			App.notify("Le dossier a bien été enregistré.");
 		});
 	},
 	visitdata_onshow: function(p)
