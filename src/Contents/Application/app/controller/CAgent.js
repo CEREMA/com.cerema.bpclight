@@ -185,8 +185,12 @@ App.controller.define('CAgent', {
 			orientations: App.get('TVisitData textarea#TOrientations').getValue(),
 			conclusions: App.get('TVisitData htmleditor#TConclusions').getValue()
 		};
-		console.log(App.get('TVisitData checkboxgroup#CBG'));
-		return;
+		var checks=App.get('TVisitData checkboxgroup#CBG').items.items;
+		for (var i=0;i<checks.length;i++) {
+			if (checks[0].checked) DATA.tabac=1; else DATA.tabac=0;
+			if (checks[1].checked) DATA.alcool=1; else DATA.alcool=0;
+			if (checks[2].checked) DATA.sport=1; else DATA.sport=0;
+		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
 			App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('window')._dossier;
@@ -222,6 +226,9 @@ App.controller.define('CAgent', {
 				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
 				App.get('TVisitData textarea#TOrientations').setValue(o[0].orientations);
 				App.get('TVisitData htmleditor#TConclusions').setValue(o[0].conclusions);
+				if (o[0].tabac==1) App.get('TVisitData checkboxgroup#CBG').items.items[0].checked=true;
+				if (o[0].alcool==1) App.get('TVisitData checkboxgroup#CBG').items.items[1].checked=true;
+				if (o[0].sport==1) App.get('TVisitData checkboxgroup#CBG').items.items[2].checked=true;
 			});
 		}
 	},
