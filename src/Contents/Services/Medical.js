@@ -14,7 +14,7 @@ Medical={
 	getDossierById: function(o,cb)
 	{
 		console.log('select * from medic_dossiers where id='+o);
-		Medical.using('db').query('bpclight','select * from medic_dossiers where id='+o,cb);
+		Medical.using('db').query('bpclight','select * from medic_dossiers where dossiers_id='+o,cb);
 	}
 };
 
