@@ -172,7 +172,7 @@ App.controller.define('CAgent', {
 			TA: RG.TA,
 			Poids: RG.Poids
 		};
-		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id;
+		if (p.up('window')._id) DB_RG.dossiers_id=p.up('window')._id; else DB_RG.dossiers_id="#";
 		App.DB.post('bpclight://medic_results',RG,function() {
 			App.notify("Le dossier a bien été enregistré.");
 		});
@@ -238,7 +238,6 @@ App.controller.define('CAgent', {
 			App.get(p.up('TForm1'),'textarea#Motif').hide();	
 			App.get(p.up('TForm1'),'panel#TPanelI').hide();
 			App.get(p.up('TSituation'),'textfield#Motif').setValue('');
-			
 			
 			App.get(p.up('TForm1'),'combo#position').setValue('');
 			App.get(p.up('TForm1'),'datefield#datEta').setValue('');
