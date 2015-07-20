@@ -160,8 +160,13 @@ App.controller.define('CAgent', {
 	Visit_onRecord: function(p)
 	{
 		var RG = App.get( 'TVisitData propertygrid#RG' ).getSource();
-		var EFR = App.get( 'TVisitData propertygrid#RG' ).getSource();
+		var EFR = App.get( 'TVisitData propertygrid#EFR' ).getSource();
+		var TU = App.get( 'TVisitData propertygrid#TU' ).getSource();
+		var TV = App.get( 'TVisitData propertygrid#TV' ).getSource();
 		console.log(RG);
+		console.log(EFR);
+		console.log(TU);		
+		console.log(TV);		
 		var doss={
 		
 		};
