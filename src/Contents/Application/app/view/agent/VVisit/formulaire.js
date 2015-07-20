@@ -147,6 +147,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "propertygrid",
+								itemId: "EFR",
 								border: false,
 								height: 150,
 								width: "100%",
@@ -164,6 +165,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "propertygrid",
+								itemId: "TU",
 								border: false,
 								customEditors: {
 									TU: {
@@ -198,6 +200,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "propertygrid",
+								itemId: "TV",
 								border: false,
 								height: 100,
 								width: "100%",
