@@ -246,6 +246,9 @@ App.view.define('agent.VVisit.formulaire', {
 				{
 					title: "Détails",
 					layout: "vbox",
+					defaults: {
+						padding: 15
+					},
 					items: [
 						{
 							xtype: "checkboxgroup",
