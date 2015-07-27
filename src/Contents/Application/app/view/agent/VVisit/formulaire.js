@@ -254,29 +254,44 @@ App.view.define('agent.VVisit.formulaire', {
 							xtype: "checkboxgroup",
 							fieldLabel: "Tabac",
 							itemId: "TABAC",
-							width: 400,
+							width: "100%",
 							items: [
 								{boxLabel: '', name: 'rb0', inputValue: '1'}
 							]
-						},				
+						},
+						{
+							xtype: "textarea",
+							width: "100%",
+							height: 100
+						},
 						{
 							xtype: "checkboxgroup",
 							fieldLabel: "Alcool",
 							itemId: "ALCOOL",
-							width: 400,
+							width: "100%",
 							items: [
 								{boxLabel: '', name: 'rb1', inputValue: '1'}
 							]
 						},				
 						{
+							xtype: "textarea",
+							width: "100%",
+							height: 100
+						},
+						{
 							xtype: "checkboxgroup",
 							fieldLabel: "Sport",
 							itemId: "SPORT",
-							width: 400,
+							width: "100%",
 							items: [
 								{boxLabel: '', name: 'rb2', inputValue: '1'}
 							]
 						},				
+						{
+							xtype: "textarea",
+							width: "100%",
+							height: 100
+						},
 						{
 							xtype: "textarea",
 							fieldLabel: "Orientations",
