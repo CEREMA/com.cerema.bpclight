@@ -272,8 +272,8 @@ App.view.define('agent.VVisit.formulaire', {
 									height: 140,
 									width: "100%",
 									source: {
-										"OD": '',
-										"OG": '',
+										"ORD": '',
+										"ORG": '',
 										"Correction": false,
 										"Rq": ""
 									}						
