@@ -300,6 +300,7 @@ App.view.define('agent.VVisit.formulaire', {
 						},
 						{
 							xtype: "textarea",
+							itemId: "Tabac_comments",
 							width: "100%",
 							fieldLabel: "Commentaires",
 							height: 100
@@ -315,6 +316,7 @@ App.view.define('agent.VVisit.formulaire', {
 						},				
 						{
 							xtype: "textarea",
+							itemId: "",
 							width: "100%",
 							fieldLabel: "Commentaires",
 							height: 100
