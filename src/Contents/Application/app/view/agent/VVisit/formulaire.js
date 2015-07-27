@@ -193,7 +193,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TV",
 									border: false,
-									height: 140,
+									height: 150,
 									width: "100%",
 									customEditors: {
 										Anomalie: {
