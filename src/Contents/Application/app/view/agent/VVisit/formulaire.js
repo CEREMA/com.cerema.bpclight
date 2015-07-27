@@ -102,23 +102,6 @@ App.view.define('agent.VVisit.formulaire', {
 								width: "100%"
 							},
 							{
-								xtype: "checkboxgroup",
-								fieldLabel: "Divers",
-								itemId: "CBG",
-								width: 400,
-								items: [
-									{boxLabel: 'Tabac', name: 'rb', inputValue: '1'},
-									{boxLabel: 'Alcool', name: 'rb', inputValue: '1'},
-									{boxLabel: 'Sport', name: 'rb', inputValue: '1'}
-								]
-							},				
-							{
-								xtype: "textarea",
-								fieldLabel: "Orientations",
-								itemId: "TOrientations",
-								width: "100%"
-							},
-							{
 								xtype: "htmleditor",
 								fieldLabel: "Conclusion",
 								itemId: "TConclusions",
@@ -264,7 +247,23 @@ App.view.define('agent.VVisit.formulaire', {
 					title: "Détails",
 					layout: "vbox",
 					items: [
-					
+						{
+							xtype: "checkboxgroup",
+							fieldLabel: "Divers",
+							itemId: "CBG",
+							width: 400,
+							items: [
+								{boxLabel: 'Tabac', name: 'rb', inputValue: '1'},
+								{boxLabel: 'Alcool', name: 'rb', inputValue: '1'},
+								{boxLabel: 'Sport', name: 'rb', inputValue: '1'}
+							]
+						},				
+						{
+							xtype: "textarea",
+							fieldLabel: "Orientations",
+							itemId: "TOrientations",
+							width: "100%"
+						}					
 					]
 				}
 				]
