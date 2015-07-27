@@ -114,9 +114,36 @@ App.view.define('agent.VVisit.formulaire', {
 								width: "100%"
 							},
 							{
-								xtype: "htmleditor",
+								xtype: "combo",
 								fieldLabel: "Conclusion",
 								itemId: "TConclusions",
+								width: "100%",
+								store: App.store.create({
+									fields: [
+										"value",
+										"display"
+									],
+									data: [
+									{
+										value: "1",
+										display: "Compatible"
+									},
+									{
+										value: "2",
+										display: "Incompatibilité temporaire"
+									},
+									{
+										value: "3",
+										display: "Incompatibilité au poste"
+									},
+									{
+										value: "4",
+										display: "Incompatibilité à tous les postes"
+									}
+									]
+								}),
+								displayField: "display",
+								valueField: "value",
 								width: "100%"
 							}						
 							],
