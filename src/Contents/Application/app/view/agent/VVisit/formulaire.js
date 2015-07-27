@@ -97,6 +97,18 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "textarea",
+								itemId: "TAntecedentsPerso",
+								fieldLabel: "Antécédents personnels",
+								width: "100%"
+							},
+							{
+								xtype: "textarea",
+								itemId: "TAntecedentsFamille",
+								fieldLabel: "Antécédents familiaux",
+								width: "100%"
+							},
+							{
+								xtype: "textarea",
 								itemId: "TTraitements",
 								fieldLabel: "Traitements actuels",
 								width: "100%"
