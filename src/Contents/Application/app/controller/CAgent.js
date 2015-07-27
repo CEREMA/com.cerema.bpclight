@@ -163,7 +163,7 @@ App.controller.define('CAgent', {
 		var EFR = App.get('TVisitData propertygrid#EFR').getSource();
 		var TU = App.get('TVisitData propertygrid#TU').getSource();
 		var TV = App.get('TVisitData propertygrid#TV').getSource();	
-		var TV = App.get('TVisitData propertygrid#TA').getSource();
+		var TA = App.get('TVisitData propertygrid#TA').getSource();
 		var DATA={
 			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
 			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
