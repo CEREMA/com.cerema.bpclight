@@ -142,7 +142,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "RG",
 									border: false,
-									height: 150,
+									height: 140,
 									width: "100%",
 									source: {
 										"Taille": 0,
@@ -160,7 +160,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "EFR",
 									border: false,
-									height: 150,
+									height: 140,
 									width: "100%",
 									source: {
 										"CVF": 0,
@@ -194,7 +194,7 @@ App.view.define('agent.VVisit.formulaire', {
 											editable: false
 										}
 									},
-									height: 130,
+									height: 100,
 									width: "100%",
 									source: {
 										"Résultat": 'négatif',
@@ -210,7 +210,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TV",
 									border: false,
-									height: 130,
+									height: 150,
 									width: "100%",
 									customEditors: {
 										Anomalie: {
@@ -247,7 +247,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TA",
 									border: false,
-									height: 160,
+									height: 120,
 									width: "100%",
 									source: {
 										"Résultat": 'négatif',
