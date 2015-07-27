@@ -212,9 +212,30 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 100,
 									width: "100%",
+									customEditors: {
+										Anomalie: {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': '-', 'value': '0' },
+													{ 'display': 'presbytie', 'value': '1' },
+													{ 'display': 'myopie', 'value': '2' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false
+										}
+									},									
 									source: {
 										"Oeil droit": 0,
-										"Oeil gauche": 0
+										"Oeil gauche": 0,
+										"Correction": false,
+										"Rq": "",
+										"Anomalie": 0,
+										"Astigmatie": false
 									}						
 								}							
 							]
