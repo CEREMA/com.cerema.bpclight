@@ -262,7 +262,7 @@ App.view.define('agent.VVisit.formulaire', {
 						{
 							xtype: "textarea",
 							width: "100%",
-							fieldLabel: "Commentaires"
+							fieldLabel: "Commentaires",
 							height: 100
 						},
 						{
