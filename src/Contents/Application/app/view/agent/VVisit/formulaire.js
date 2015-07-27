@@ -247,22 +247,6 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TA",
 									border: false,
-									customEditors: {
-										TU: {
-											xtype: 'combo',
-											store: {
-												fields: ['display', 'value'],
-												data: [
-													{ 'display': 'négatif', 'value': '0' },
-													{ 'display': 'positif', 'value': '1' }
-												]
-											},
-											queryMode: 'local',
-											displayField: 'display',
-											valueField: 'value',
-											editable: false
-										}
-									},
 									height: 160,
 									width: "100%",
 									source: {
