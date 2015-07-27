@@ -184,12 +184,8 @@ App.view.define('agent.VVisit.formulaire', {
 											store: {
 												fields: ['display', 'value'],
 												data: [
-													{ 'display': 'négatif', 'value': 'négatif' },
-													{ 'display': 'traces', 'value': 'traces' },
-													{ 'display': '1+', 'value': '1+' },
-													{ 'display': '2+', 'value': '2+' },
-													{ 'display': '3+', 'value': '3+' },
-													{ 'display': '4+', 'value': '4+' }
+													{ 'display': 'négatif', 'value': '0' },
+													{ 'display': 'positif', 'value': '1' }
 												]
 											},
 											queryMode: 'local',
@@ -201,7 +197,8 @@ App.view.define('agent.VVisit.formulaire', {
 									height: 60,
 									width: "100%",
 									source: {
-										"TU": 0
+										"TU": 0,
+										"Rq": ""
 									}						
 								},
 								{
@@ -222,6 +219,13 @@ App.view.define('agent.VVisit.formulaire', {
 								}							
 							]
 						}
+					]
+				},
+				{
+					title: "Détails",
+					layout: "vbox",
+					items: [
+					
 					]
 				}
 				]
