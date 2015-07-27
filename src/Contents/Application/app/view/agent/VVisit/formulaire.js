@@ -194,10 +194,10 @@ App.view.define('agent.VVisit.formulaire', {
 											editable: false
 										}
 									},
-									height: 160,
+									height: 130,
 									width: "100%",
 									source: {
-										"TU": 0,
+										"Résultat": 'négatif',
 										"Rq": ""
 									}						
 								},
@@ -210,7 +210,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TV",
 									border: false,
-									height: 100,
+									height: 130,
 									width: "100%",
 									customEditors: {
 										Anomalie: {
@@ -234,10 +234,42 @@ App.view.define('agent.VVisit.formulaire', {
 										"Oeil gauche": 0,
 										"Correction": false,
 										"Rq": "",
-										"Anomalie": 0,
+										"Anomalie": '-',
 										"Astigmatie": false
 									}						
-								}							
+								},
+								{
+									html: "Test auditif",
+									border: false,
+									padding: 5
+								},	
+								{
+									xtype: "propertygrid",
+									itemId: "TA",
+									border: false,
+									customEditors: {
+										TU: {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': 'négatif', 'value': '0' },
+													{ 'display': 'positif', 'value': '1' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false
+										}
+									},
+									height: 160,
+									width: "100%",
+									source: {
+										"Résultat": 'négatif',
+										"Rq": ""
+									}						
+								}								
 							]
 						}
 					]
