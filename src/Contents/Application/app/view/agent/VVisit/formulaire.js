@@ -117,7 +117,7 @@ App.view.define('agent.VVisit.formulaire', {
 								xtype: "combo",
 								fieldLabel: "Conclusion",
 								itemId: "TConclusions",
-								width: "100%",
+								width: "100%",	
 								store: App.store.create({
 									fields: [
 										"value",
