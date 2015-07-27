@@ -250,7 +250,9 @@ App.view.define('agent.VVisit.formulaire', {
 									height: 140,
 									width: "100%",
 									source: {
-										"Résultat": 'négatif',
+										"OD": '',
+										"OG": '',
+										"Correction": false,
 										"Rq": ""
 									}						
 								}								
