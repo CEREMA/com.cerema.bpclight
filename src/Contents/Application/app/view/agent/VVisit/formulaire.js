@@ -194,7 +194,7 @@ App.view.define('agent.VVisit.formulaire', {
 											editable: false
 										}
 									},
-									height: 60,
+									height: 160,
 									width: "100%",
 									source: {
 										"TU": 0,
