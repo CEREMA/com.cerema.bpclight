@@ -235,14 +235,15 @@
 					setInterval(function() {
 						$.ajax({
 							url: "/session"
-						}).done(function( data ) {							
+						}).done(function( data ) {	
+							App.unblur();
 							if (__SESSION__==-1) __SESSION__=data.session;
 							if (__SESSION__!=data.session) {
 								App.blur();
 								location.reload();
 							}
 						}).fail(function() {
-							App.blur();							
+							App.blur();			
 						});
 					},1000);
 					require(["Contents/Application/app"], function() {					
