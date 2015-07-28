@@ -1,4 +1,3 @@
-
 App.view.define('agent.VVisit.formulaire', {
     extend: "Ext.window.Window",
 	alias: "widget.TVisitData",
