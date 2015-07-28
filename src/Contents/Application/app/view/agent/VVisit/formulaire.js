@@ -143,6 +143,7 @@ App.view.define('agent.VVisit.formulaire', {
 									]
 								}),
 								displayField: "display",
+								editable: false,
 								valueField: "value",
 								width: "100%"
 							}						
