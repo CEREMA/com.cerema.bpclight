@@ -240,18 +240,7 @@
 							if (__SESSION__==-1) __SESSION__=data.session;
 							if (__SESSION__!=data.session) location.reload();
 						}).fail(function() {
-							//$('.omneedia-overlay').show();
-							var vague = $('Body').Vague({
-								intensity:      4,      // Blur Intensity
-								forceSVGUrl:    false,   // Force absolute path to the SVG filter,
-								// default animation options
-								animationOptions: {
-								  duration: 1000,
-								  easing: 'linear' // here you can use also custom jQuery easing functions
-								}
-							});
-
-							vague.blur();							
+							App.blur();							
 						});
 					},1000);				
 					require(["Contents/Application/app"], function() {					
