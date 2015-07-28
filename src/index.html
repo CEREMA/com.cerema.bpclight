@@ -232,17 +232,7 @@
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					setInterval(function() {
-						$.ajax({
-							url: "/session"
-						}).done(function( data ) {
-							//$('.omneedia-overlay').hide();
-							if (__SESSION__==-1) __SESSION__=data.session;
-							if (__SESSION__!=data.session) location.reload();
-						}).fail(function() {
-							App.blur();							
-						});
-					},1000);				
+					App.liveReload();
 					require(["Contents/Application/app"], function() {					
 						
 					});
