@@ -236,13 +236,13 @@
 						$.ajax({
 							url: "/session"
 						}).done(function( data ) {
-							$('.omneedia-overlay').hide();
+							//$('.omneedia-overlay').hide();
 							if (__SESSION__==-1) __SESSION__=data.session;
 							if (__SESSION__!=data.session) location.reload();
 						}).fail(function() {
 							//$('.omneedia-overlay').show();
 							var vague = $('Body').Vague({
-								intensity:      3,      // Blur Intensity
+								intensity:      4,      // Blur Intensity
 								forceSVGUrl:    false,   // Force absolute path to the SVG filter,
 								// default animation options
 								animationOptions: {
