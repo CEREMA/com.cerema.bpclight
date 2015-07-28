@@ -232,9 +232,21 @@
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					//App.liveReload();
+					setInterval(function() {
+						$.ajax({
+							url: "/session"
+						}).done(function( data ) {							
+							if (__SESSION__==-1) __SESSION__=data.session;
+							if (__SESSION__!=data.session) {
+								App.blur();
+								location.reload();
+							}
+						}).fail(function() {
+							App.blur();							
+						});
+					},1000);
 					require(["Contents/Application/app"], function() {					
-						App.liveReload();
+
 					});
 				});		
 			});
