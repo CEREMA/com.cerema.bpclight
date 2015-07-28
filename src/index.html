@@ -232,9 +232,9 @@
 		setTimeout(function(){
 			require(["Contents/Settings"], function() {
 				bootstraploader(Settings.FRAMEWORKS,0, function(){
-					App.liveReload();
+					//App.liveReload();
 					require(["Contents/Application/app"], function() {					
-						
+						App.liveReload();
 					});
 				});		
 			});
