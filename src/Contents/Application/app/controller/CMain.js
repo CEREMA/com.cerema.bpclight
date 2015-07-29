@@ -228,6 +228,7 @@ App.controller.define('CMain', {
 		Ext.Ajax.request({
 			url: '/export',
 			params: {
+				name: "civility",
 				kage: kage.join(',')
 			},
 			success: function(response){
