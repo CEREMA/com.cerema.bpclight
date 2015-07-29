@@ -47,7 +47,7 @@ App = {
 				var o=req.body.kage.split(',');
 				if (req.body.name=="Civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
-						
+						console.log(tabs);
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('BPCLight', 1500, 1500);
