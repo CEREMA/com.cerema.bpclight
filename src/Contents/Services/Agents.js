@@ -132,7 +132,7 @@ Agents = {
 			cb(true,null);
 			return;
 		};
-		db.query('bpclight',db.sql("export",{
+		db.query('bpclight',db.sql("export_civ",{
 			kage: o
 		}),cb);	
 	},
