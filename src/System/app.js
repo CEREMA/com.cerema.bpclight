@@ -69,12 +69,42 @@ App = {
 							width: 30
 						},
 						{
-							caption: 'Date position',
-							type:'date',
+							caption: 'Téléphone',
+							type:'string',
 							width: 30
 						},
 						{
-							caption: 'Grade',
+							caption: 'Portable',
+							type:'string',
+							width: 30
+						},
+						{
+							caption: 'Ville Naissance',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Département Naissance',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Pays naissance',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Adresse',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Code Postal',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Ville',
 							type:'string',
 							width: 50
 						},

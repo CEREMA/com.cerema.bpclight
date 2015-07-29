@@ -9,15 +9,15 @@ SELECT agents.Nom,
 	   adresses.Adresse,
 	   postal.code CodePostal,
 	   postal.ville Ville,
+	   etablissements.LibEts,
 	   unites.libUni Departement,
-	   subdis.libSub Service,
-	   etablissements.LibEts
+	   subdis.libSub Service
 FROM 
 	agents
-	join adresses on agents.kres = adresses.kadr
-	join postal on adresses.kpos = postal.id
-	join unites on unites.kuni = agents.kuni
-	join subdis on subdis.ksub = agents.ksub
-	join etablissements on etablissements.kets = unites.kets
+	left join adresses on agents.kres = adresses.kadr
+	left join postal on adresses.kpos = postal.id
+	left join unites on unites.kuni = agents.kuni
+	left join subdis on subdis.ksub = agents.ksub
+	left join etablissements on etablissements.kets = unites.kets
 WHERE
 	agents.kage in ({kage})
