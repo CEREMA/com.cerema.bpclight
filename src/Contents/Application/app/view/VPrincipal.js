@@ -158,10 +158,14 @@ App.view.define('VPrincipal',{
 					itemId: "BtnFilter"
 				},
 				{
+					xtype: "splitbutton",
 					text: "Exporter",
 					iconCls: "ico_export",
 					iconAlign: 'left',
-					itemId: "BtnExport"
+					itemId: "BtnExport",
+					menu: [
+					
+					]
 				}
 			],
 			columns:[
