@@ -223,6 +223,7 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
+			alert(p.itemId);
 			if (p.itemId=="MNU_AGENT_NEW") this.NewAgent_onclick();
 		};			
 	},
