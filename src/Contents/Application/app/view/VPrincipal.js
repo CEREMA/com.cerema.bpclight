@@ -154,11 +154,13 @@ App.view.define('VPrincipal',{
 				{
 					text: "Filtrer",
 					iconCls: "ico_filter",
+					iconAlign: 'left',			
 					itemId: "BtnFilter"
 				},
 				{
 					text: "Exporter",
 					iconCls: "ico_export",
+					iconAlign: 'left',
 					itemId: "BtnExport"
 				}
 			],
