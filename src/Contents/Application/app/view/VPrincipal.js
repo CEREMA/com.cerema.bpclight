@@ -165,7 +165,10 @@ App.view.define('VPrincipal',{
 					iconAlign: 'left',
 					itemId: "BtnExport",
 					menu: [
-					
+						{
+							text: "Civilité",
+							itemId: "MNU_EXPORT_CIV"
+						}
 					]
 				}
 			],
