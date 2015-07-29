@@ -307,6 +307,8 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+		var vague=$('.x-panel').Vague();
+		vague.blur();
 		// update
 		App.Update.position(-1,function(err,response) {
 			/*console.log(err);
