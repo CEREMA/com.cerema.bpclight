@@ -184,7 +184,7 @@
 	.omneedia-overlay{z-index: 9999999999;position:absolute;left:0px;top:0px;width:100%;height:100%;display:none;}
 	</style>
 	</head>
-	<body class="animated2 fadeIn">
+	<body class="animated2 fadeIn">	
 		<div class="omneedia-overlay"></div>
 		<div id="bootstrap" class="animated2 fadeIn">
 			<div class="SystemScreen front face">
@@ -235,19 +235,17 @@
 					setInterval(function() {
 						$.ajax({
 							url: "/session"
-						}).done(function( data ) {	
-							App.unblur();
+						}).done(function( data ) {
+							$('.omneedia-overlay').hide();
 							if (__SESSION__==-1) __SESSION__=data.session;
-							if (__SESSION__!=data.session) {
-								App.blur();
-								location.reload();
-							}
+							if (__SESSION__!=data.session) location.reload();
 						}).fail(function() {
-							App.blur();			
+							$('.omneedia-overlay').show();
+							App.blur();
 						});
-					},1000);
+					},1000);				
 					require(["Contents/Application/app"], function() {					
-
+						
 					});
 				});		
 			});
