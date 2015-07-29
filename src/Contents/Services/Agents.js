@@ -125,7 +125,7 @@ Agents = {
 	{
 		Agents.using('db').model('bpclight',"select kage, concat_ws(' ',nom,prenom) nomprenom from agents where actif=1 and kage in (select kage from agerol where krol=1) order by nomprenom",cb);
 	},
-	exportXLS: function(o,cb)
+	exportCiv: function(o,cb)
 	{
 		var db=Agents.using('db');
 		if (o.length==0) {
