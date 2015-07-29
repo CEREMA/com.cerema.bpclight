@@ -220,6 +220,25 @@ App.controller.define('CMain', {
 		else
 		App.get('FilterBox#FilterPanel').show();
 	},
+	export_civ: function() {
+		App.get('TPrincipal splitbutton#BtnExport').disable(true);
+		var items=App.get('TPrincipal grid#GridAgents').getStore().data.items;
+		var kage=[];
+		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
+		Ext.Ajax.request({
+			url: '/export',
+			params: {
+				kage: kage.join(',')
+			},
+			success: function(response){
+				App.get('TPrincipal splitbutton#BtnExport').disable(false);
+				var url=response.responseText;
+				var iframe=document.createElement('iframe');
+				iframe.src=url;
+				document.getElementsByTagName('body')[0].appendChild(iframe);
+			}
+		});	
+	},
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
@@ -228,7 +247,7 @@ App.controller.define('CMain', {
 					this.NewAgent_onclick();
 					break;
 				case "MNU_EXPORT_CIV":
-					alert('x');
+					this.export_civ();
 					break;
 				default:
 					break;
