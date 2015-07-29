@@ -222,6 +222,7 @@ App.controller.define('CMain', {
 	},
 	export_civ: function() {
 		App.get('TPrincipal splitbutton#BtnExport').disable(true);
+		App.notify('Votre document est en cours de préparation');
 		var items=App.get('TPrincipal grid#GridAgents').getStore().data.items;
 		var kage=[];
 		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
@@ -232,7 +233,6 @@ App.controller.define('CMain', {
 				kage: kage.join(',')
 			},
 			success: function(response){
-				App.notify('Votre document est en cours de préparation');
 				App.get('TPrincipal splitbutton#BtnExport').enable();
 				var url=response.responseText;
 				var iframe=document.createElement('iframe');
