@@ -134,7 +134,7 @@ App = {
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
-								if (k<12) {
+								if (k<14) {
 									sheet1.set(k, ii, element[el]);								
 								};
 								k++;
