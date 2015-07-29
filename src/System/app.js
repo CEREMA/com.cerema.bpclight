@@ -109,32 +109,17 @@ App = {
 							width: 50
 						},
 						{
+							caption: 'Etablissement',
+							type:'string',
+							width: 100
+						},
+						{
 							caption: 'Département',
 							type:'string',
 							width: 100
 						},
 						{
 							caption: 'Service',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Arrivée',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Motif',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Position',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Service destination',
 							type:'string',
 							width: 100
 						}
