@@ -231,7 +231,7 @@ App.controller.define('CMain', {
 				kage: kage.join(',')
 			},
 			success: function(response){
-				App.get('TPrincipal splitbutton#BtnExport').disable(false);
+				App.get('TPrincipal splitbutton#BtnExport').enable();
 				var url=response.responseText;
 				var iframe=document.createElement('iframe');
 				iframe.src=url;
