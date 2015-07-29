@@ -90,7 +90,7 @@ App.view.define('agent.VVisit.formulaire', {
 								fieldLabel: "Poste actuel",
 								width: "100%"
 							},
-							{
+							/*{
 								xtype: "textarea",
 								itemId: "TPathologies",
 								fieldLabel: "Pathologies en cours",
@@ -107,6 +107,18 @@ App.view.define('agent.VVisit.formulaire', {
 								itemId: "TAntecedentsFamille",
 								fieldLabel: "Antécédents familiaux",
 								width: "100%"
+							},*/
+							{
+								xtype: "combo",
+								fieldLabel: "Tabac"
+							},
+							{
+								xtype: "combo",
+								fieldLabel: "Alcool"
+							},
+							{
+								xtype: "combo",
+								fieldLabel: "Sport"
 							},
 							{
 								xtype: "textarea",
@@ -131,15 +143,27 @@ App.view.define('agent.VVisit.formulaire', {
 									},
 									{
 										value: "2",
-										display: "Incompatibilité temporaire"
+										display: "Compatible"
 									},
 									{
 										value: "3",
-										display: "Incompatibilité au poste"
+										display: "Compatible"
 									},
 									{
 										value: "4",
+										display: "Incompatibilité temporaire"
+									},
+									{
+										value: "5",
+										display: "Incompatibilité au poste"
+									},
+									{
+										value: "6",
 										display: "Incompatibilité à tous les postes"
+									},
+									{
+										value: "7",
+										display: "Pas d'avis ce jour"
 									}
 									]
 								}),
