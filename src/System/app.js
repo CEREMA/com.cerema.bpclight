@@ -45,7 +45,7 @@ App = {
 			var excelbuilder=App.using('msexcel-builder');
 			if (req.body.kage) {
 				var o=req.body.kage.split(',');
-				if (req.body.name=="Civility") {
+				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
 						console.log(tabs);
 						var uid=Math.uuid();
