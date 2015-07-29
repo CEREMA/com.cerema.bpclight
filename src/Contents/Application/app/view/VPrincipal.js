@@ -153,10 +153,12 @@ App.view.define('VPrincipal',{
 				'->',
 				{
 					text: "Filtrer",
+					iconCls: "ico_filter",
 					itemId: "BtnFilter"
 				},
 				{
 					text: "Exporter",
+					iconCls: "ico_export",
 					itemId: "BtnExport"
 				}
 			],
