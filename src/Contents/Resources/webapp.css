@@ -96,3 +96,17 @@
 	width: 16px;
 	height: 16px;
 }
+
+.ico_filter
+{
+	background-image: url(webapp/filter.png);
+	width: 16px;
+	height: 16px;
+}
+
+.ico_export
+{
+	background-image: url(webapp/export.png);
+	width: 16px;
+	height: 16px;
+}
