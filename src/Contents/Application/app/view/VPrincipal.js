@@ -155,7 +155,8 @@ App.view.define('VPrincipal',{
 					text: "Filtrer",
 					iconCls: "ico_filter",
 					iconAlign: 'left',			
-					itemId: "BtnFilter"
+					itemId: "BtnFilter",
+					enableToggle: true
 				},
 				{
 					xtype: "splitbutton",
