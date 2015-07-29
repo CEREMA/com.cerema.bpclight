@@ -223,8 +223,16 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
-			alert(p.itemId);
-			if (p.itemId=="MNU_AGENT_NEW") this.NewAgent_onclick();
+			switch(p.itemId) {
+				case "MNU_AGENT_NEW":
+					this.NewAgent_onclick();
+					break;
+				case "MNU_EXPORT_CIV":
+					alert('x');
+					break;
+				default:
+					break;
+			}
 		};			
 	},
 	grid_onclick: function(p, record, item, index)
