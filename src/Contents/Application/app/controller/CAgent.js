@@ -713,7 +713,7 @@ App.controller.define('CAgent', {
 	},
 	TForm1_onshow: function(p)
 	{	
-		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TForm1 tabpanel#tabs').getTabBar().items.get(0).show(); else App.get('TForm1 tabpanel#tabs').getTabBar().items.get(0).hide();
+		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TForm1 tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TForm1 tabpanel#tabs').getTabBar().items.get(3).hide();
 		var _p=this;
 		if (p.agent==-1) {
 			p.INSERT=true;
