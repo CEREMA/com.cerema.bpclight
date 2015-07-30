@@ -19,7 +19,7 @@ Officer = {
 						/*for (var el in profiler.profile) {
 							var p=profiler.profile[el];
 							if (p.indexOf(mail)>-1) response.profiles.push(el);
-						};
+						};*/
 					};
 					cb(response);			
 				} else cb(err);
