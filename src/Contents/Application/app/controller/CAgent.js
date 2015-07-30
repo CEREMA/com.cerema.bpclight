@@ -713,6 +713,7 @@ App.controller.define('CAgent', {
 	},
 	TForm1_onshow: function(p)
 	{	
+		console.log(Auth.user);
 		var _p=this;
 		if (p.agent==-1) {
 			p.INSERT=true;
