@@ -294,7 +294,7 @@ App.view.define('agent.VVisit.formulaire', {
 					title: "Commentaires",
 					layout: "fit",
 					defaults: {
-						padding: 15
+						padding: 0
 					},
 					items: [
 						{
