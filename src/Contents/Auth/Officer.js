@@ -15,11 +15,10 @@ Officer = {
 					};
 					if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
 						var profiler=JSON.parse(require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json','utf-8'));
-						console.log(profiler);
-						/*for (var el in profiler.profile) {
+						for (var el in profiler.profile) {
 							var p=profiler.profile[el];
 							if (p.indexOf(mail)>-1) response.profiles.push(el);
-						};*/
+						};
 					};
 					cb(response);			
 				} else cb(err);
