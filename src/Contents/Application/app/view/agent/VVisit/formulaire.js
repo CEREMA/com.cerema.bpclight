@@ -156,7 +156,7 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "combo",
-								fieldLabel: "Sport"
+								fieldLabel: "Sport",
 								fieldValue: "item",
 								displayField: "value",
 								store: App.store.create({
