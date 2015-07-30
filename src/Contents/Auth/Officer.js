@@ -14,7 +14,7 @@ Officer = {
 						profiles: []
 					};
 					if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
-						var profiler=JSON.parse(require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json'),'utf-8');
+						var profiler=JSON.parse(require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json','utf-8'));
 						for (var el in profiler.profile) {
 							var p=profiler.profile[el];
 							if (p.indexOf(mail)>-1) response.profiles.push(el);
