@@ -249,9 +249,10 @@ App.controller.define('CAgent', {
 	{
 		var o={
 			kage: App.get('TForm1').agent.Kage,
-			libelle: App.get('TVisit htmleditor#data_medic_gen').getValue()
+			gen_perso: App.get('TVisit htmleditor#data_medic_perso').getValue(),
+			gen_family: App.get('TVisit htmleditor#data_medic_family').getValue()
 		};
-		App.Medical.setLibelle(o,function(response) {
+		App.DB.post('bpclight://medic_gen',o,function(response) {
 			App.notify('Changement enregistré');
 		});
 	},
