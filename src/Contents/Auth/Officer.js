@@ -10,7 +10,15 @@ Officer = {
 						lastname: result.data[0].nom,
 						firstname: result.data[0].prenom,
 						uid: result.data[0].kage,
-						mail: mail
+						mail: mail,
+						profiles: []
+					};
+					if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
+						var profiler=JSON.parse(response.profile=require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json'));
+						for (var el in profiler.profile) {
+							var p=profiler.profile[el];
+							if (p.indexOf(mail)) response.profiles.push(el);
+						};
 					};
 					cb(response);			
 				} else cb(err);
