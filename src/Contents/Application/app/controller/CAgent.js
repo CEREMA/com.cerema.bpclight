@@ -713,7 +713,9 @@ App.controller.define('CAgent', {
 	},
 	TForm1_onshow: function(p)
 	{	
-		console.log(Auth.user);
+		if (Auth.User.profiles.indexOf('MEDECIN')>-1) {
+			App.get('TVisit').show();
+		};
 		var _p=this;
 		if (p.agent==-1) {
 			p.INSERT=true;
