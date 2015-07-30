@@ -11,15 +11,7 @@ Officer = {
 						firstname: result.data[0].prenom,
 						uid: result.data[0].kage,
 						mail: mail,
-						profiles: []
-					};
-					if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
-						var profiler=JSON.parse(require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json','utf-8'));
-						for (var el in profiler.profile) {
-							var p=profiler.profile[el];
-							console.log(p);
-							if (p.indexOf(mail.split('@')[0])>-1) response.profiles.push(el);
-						};
+						profiles: Officer.getProfile(mail.split('@')[0])
 					};
 					cb(response);			
 				} else cb(err);
