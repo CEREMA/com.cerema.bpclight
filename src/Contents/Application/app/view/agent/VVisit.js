@@ -6,7 +6,6 @@ App.view.define('agent.VVisit', {
 		this.title="Dossier médical";
 		this.layout="vbox";
 		this.border=false;
-		this.hidden=true;
 		this.items = [
 		{
 			xtype: "htmleditor",
