@@ -11,9 +11,18 @@ App.view.define('agent.VVisit', {
 			xtype: "htmleditor",
 			itemId: "data_medic_gen",
 			width: "100%",
-			fieldLabel: "Données médicales générales",
+			fieldLabel: "Antécédents personnels",
 			labelAlign: "top",
-			height: 250,
+			height: 150,
+			padding: 10
+		},
+		{
+			xtype: "htmleditor",
+			itemId: "data_medic_gen",
+			width: "100%",
+			fieldLabel: "Antécédents familiaux",
+			labelAlign: "top",
+			height: 150,
 			padding: 10
 		},
 		{
@@ -30,7 +39,7 @@ App.view.define('agent.VVisit', {
 					xtype: "button",
 					itemId: "btn_record",
 					text: "Enregistrer",
-					width: 150
+					width: 100
 				}
 			]
 		},
