@@ -92,15 +92,102 @@ App.view.define('agent.VVisit.formulaire', {
 							},
 							{
 								xtype: "combo",
-								fieldLabel: "Tabac"
+								fieldLabel: "Tabac",
+								fieldValue: "item",
+								displayField: "value",
+								store: App.store.create({
+									fields: [
+										"item",
+										"value"
+									],
+									data: [
+										{
+											item: "0",
+											value: "Non fumeur"
+										},
+										{
+											item: "1",
+											value: "< 10 cigarettes/jour"
+										},
+										{
+											item: "2",
+											value: "> 10 cigarettes/jour"
+										},
+										{
+											item: "3",
+											value: "> 1 paquet/jour"
+										},
+										{
+											item: "4",
+											value: "Fumeur repenti"
+										}
+									]
+								})
 							},
 							{
 								xtype: "combo",
 								fieldLabel: "Alcool"
+								fieldValue: "item",
+								displayField: "value",
+								store: App.store.create({
+									fields: [
+										"item",
+										"value"
+									],
+									data: [
+										{
+											item: "0",
+											value: "Pas d'alcool"
+										},
+										{
+											item: "1",
+											value: "Occasionnel"
+										},
+										{
+											item: "2",
+											value: "1 à 2 verres/jour"
+										},
+										{
+											item: "3",
+											value: "> 2 verres/jour"
+										}
+									]
+								})
 							},
 							{
 								xtype: "combo",
 								fieldLabel: "Sport"
+								fieldValue: "item",
+								displayField: "value",
+								store: App.store.create({
+									fields: [
+										"item",
+										"value"
+									],
+									data: [
+										{
+											item: "0",
+											value: "Pas de sport"
+										},
+										{
+											item: "1",
+											value: "Occasionnel"
+										},
+										{
+											item: "2",
+											value: "Régulier"
+										},
+										{
+											item: "3",
+											value: "Compétition"
+										}
+									]
+								})
+							},
+							{
+								xtype: "boxselect",
+								width: "100%",
+								itemId: "orientations"
 							},
 							{
 								xtype: "textarea",

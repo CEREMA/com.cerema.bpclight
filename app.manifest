@@ -54,7 +54,9 @@
     "modules": [
         "Ext.ux.FilterBox",
         "Ext.ux.form.SearchBox",
-        "Ext.plugin.FileDrop"
+        "Ext.plugin.FileDrop",
+        "Ext.ux.form.field.BoxSelect",
+        "Ext.ux.upload"
     ],
     "plugins": [],
     "api": [
