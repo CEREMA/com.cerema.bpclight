@@ -18,7 +18,7 @@ Officer = {
 						for (var el in profiler.profile) {
 							var p=profiler.profile[el];
 							console.log(p);
-							if (p.indexOf(mail)>-1) response.profiles.push(el);
+							if (p.indexOf(mail.split('@')[0])>-1) response.profiles.push(el);
 						};
 					};
 					cb(response);			
