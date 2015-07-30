@@ -714,6 +714,7 @@ App.controller.define('CAgent', {
 	TForm1_onshow: function(p)
 	{	
 		if (Auth.User.profiles.indexOf('MEDECIN')>-1) {
+			alert('x');
 			App.get('TVisit').show();
 		};
 		var _p=this;
