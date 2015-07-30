@@ -43,6 +43,7 @@ App.view.define('VForm1', {
 			{
                 border: false,
                 xtype: "tabpanel",
+				itemId: "tabs",
                 items: [{
                     xtype: "TAgent"
                 }, {
