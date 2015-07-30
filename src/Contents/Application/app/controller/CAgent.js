@@ -715,6 +715,7 @@ App.controller.define('CAgent', {
 	{	
 		if (Auth.User.profiles.indexOf('MEDECIN')>-1) {
 			alert('x');
+			console.log(App.get(p,'TVisit'));
 			App.get(p,'TVisit').show();
 		};
 		var _p=this;
