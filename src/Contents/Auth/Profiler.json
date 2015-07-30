@@ -1,10 +1,10 @@
 {
-	profiles: [
+	"profiles": [
 		"SRH",
 		"MEDECIN",
 		"SII"
 	],
-	profile: {
+	"profile": {
 		"MEDECIN": [
 			"stephane.zucatti",
 			"sylviane.gorjux-casu"
