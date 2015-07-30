@@ -13,13 +13,13 @@ Officer = {
 						mail: mail,
 						profiles: []
 					};
-					if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
+					/*if (require('fs').existsSync(__dirname+require('path').sep+'Profiler.json')) {
 						var profiler=JSON.parse(response.profile=require('fs').readFileSync(__dirname+require('path').sep+'Profiler.json'));
 						for (var el in profiler.profile) {
 							var p=profiler.profile[el];
 							if (p.indexOf(mail)) response.profiles.push(el);
 						};
-					};
+					};*/
 					cb(response);			
 				} else cb(err);
 			});
