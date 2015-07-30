@@ -258,7 +258,7 @@ App.controller.define('CAgent', {
 	},
 	Visit_onShow: function(p)
 	{
-		App.Medical.getLibelle(p.up('TForm1').agent.Kage,function(response) {
+		App.DB.get('bpclight://medic_gen?kage='+p.up('TForm1').agent.Kage,function(response) {
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_perso').setValue(response.data[0].gen_perso);
 			else App.get('TVisit htmleditor#data_medic_perso').setValue('');
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_family').setValue(response.data[0].gen_family);
