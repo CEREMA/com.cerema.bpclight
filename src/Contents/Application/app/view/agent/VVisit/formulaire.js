@@ -300,6 +300,7 @@ App.view.define('agent.VVisit.formulaire', {
 						{
 							xtype: "htmleditor",
 							itemId: "comments",
+							border: false,
 							width: "100%"
 						}					
 					]
