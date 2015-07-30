@@ -52,7 +52,7 @@ App.view.define('agent.VVisit', {
 			xtype: "grid",
 			itemId: "grid_medic",
 			width: "100%",
-			height: 140,
+			height: 145,
 			padding: 10,
 			flex: 1,
 			tbar: [
