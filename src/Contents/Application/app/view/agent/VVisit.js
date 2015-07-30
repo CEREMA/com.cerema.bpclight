@@ -9,7 +9,7 @@ App.view.define('agent.VVisit', {
 		this.items = [
 		{
 			xtype: "htmleditor",
-			itemId: "data_medic_gen",
+			itemId: "data_medic_perso",
 			width: "100%",
 			fieldLabel: "Antécédents personnels",
 			labelAlign: "top",
@@ -18,7 +18,7 @@ App.view.define('agent.VVisit', {
 		},
 		{
 			xtype: "htmleditor",
-			itemId: "data_medic_gen",
+			itemId: "data_medic_family",
 			width: "100%",
 			fieldLabel: "Antécédents familiaux",
 			labelAlign: "top",
