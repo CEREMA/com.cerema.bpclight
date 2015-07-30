@@ -90,24 +90,6 @@ App.view.define('agent.VVisit.formulaire', {
 								fieldLabel: "Poste actuel",
 								width: "100%"
 							},
-							/*{
-								xtype: "textarea",
-								itemId: "TPathologies",
-								fieldLabel: "Pathologies en cours",
-								width: "100%"
-							},
-							{
-								xtype: "textarea",
-								itemId: "TAntecedentsPerso",
-								fieldLabel: "Antécédents personnels",
-								width: "100%"
-							},
-							{
-								xtype: "textarea",
-								itemId: "TAntecedentsFamille",
-								fieldLabel: "Antécédents familiaux",
-								width: "100%"
-							},*/
 							{
 								xtype: "combo",
 								fieldLabel: "Tabac"
@@ -309,63 +291,15 @@ App.view.define('agent.VVisit.formulaire', {
 					]
 				},
 				{
-					title: "Détails",
-					layout: "vbox",
+					title: "Commentaires",
+					layout: "fit",
 					defaults: {
 						padding: 15
 					},
 					items: [
 						{
-							xtype: "checkboxgroup",
-							fieldLabel: "Tabac",
-							itemId: "TABAC",
-							width: "100%",
-							items: [
-								{boxLabel: '', name: 'rb0', inputValue: '1'}
-							]
-						},
-						{
-							xtype: "textarea",
-							itemId: "Tabac_comments",
-							width: "100%",
-							fieldLabel: "Commentaires",
-							height: 100
-						},
-						{
-							xtype: "checkboxgroup",
-							fieldLabel: "Alcool",
-							itemId: "ALCOOL",
-							width: "100%",
-							items: [
-								{boxLabel: '', name: 'rb1', inputValue: '1'}
-							]
-						},				
-						{
-							xtype: "textarea",
-							itemId: "",
-							width: "100%",
-							fieldLabel: "Commentaires",
-							height: 100
-						},
-						{
-							xtype: "checkboxgroup",
-							fieldLabel: "Sport",
-							itemId: "SPORT",
-							width: "100%",
-							items: [
-								{boxLabel: '', name: 'rb2', inputValue: '1'}
-							]
-						},				
-						{
-							xtype: "textarea",
-							width: "100%",
-							height: 100,
-							fieldLabel: "Commentaires"
-						},
-						{
-							xtype: "textarea",
-							fieldLabel: "Orientations",
-							itemId: "TOrientations",
+							xtype: "htmleditor",
+							itemId: "comments",
 							width: "100%"
 						}					
 					]
