@@ -1,5 +1,7 @@
 SELECT agents.Nom,
        agents.Prenom,
+	   grades.catFP,
+	   grades.libgra,
 	   DATE_FORMAT(agents.DatNai,'%d/%m/%Y'),
 	   agents.Telephone,
 	   agents.Portable,
@@ -19,5 +21,6 @@ FROM
 	left join unites on unites.kuni = agents.kuni
 	left join subdis on subdis.ksub = agents.ksub
 	left join etablissements on etablissements.kets = unites.kets
+	left join grades on grades.kgra=agents.kgra
 WHERE
 	agents.kage in ({kage})

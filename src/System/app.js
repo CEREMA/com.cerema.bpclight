@@ -64,6 +64,16 @@ App = {
 							width: 50
 						},
 						{
+							caption: 'Catégorie FP',
+							type:'string',
+							width: 50
+						},
+						{
+							caption: 'Grades',
+							type:'string',
+							width: 50
+						},
+						{
 							caption: 'Date naissance',
 							type:'date',
 							width: 30
@@ -134,7 +144,7 @@ App = {
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
-								if (k<15) {
+								if (k<18) {
 									sheet1.set(k, ii, element[el]);								
 								};
 								k++;
