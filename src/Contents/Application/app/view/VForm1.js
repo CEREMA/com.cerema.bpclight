@@ -53,7 +53,8 @@ App.view.define('VForm1', {
                     xtype: "TFormation"
                 },
 				{
-					xtype: "TVisit"
+					xtype: "TVisit",
+					itemId: "tab_medic"
 				}]
             }			
 			]
