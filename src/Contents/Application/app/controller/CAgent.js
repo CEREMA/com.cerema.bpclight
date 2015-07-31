@@ -179,8 +179,12 @@ App.controller.define('CAgent', {
 			DEMM: EFR.DEMM,
 			TU: TU['Rq'],
 			TU_RESULT: TU['Resultat'],
-			OD: TV['Oeil droit'],
-			OG: TV['Oeil gauche'],
+			TV_OD: TV['Oeil droit'],
+			TV_OG: TV['Oeil gauche'],
+			TV_CORRECTION: TV['Correction'],
+			TV_RQ: TV['Rq'],
+			TV_ANOMALIE: TV['Anomalie'],
+			TV_STIGM: TV['Astigmatie'],
 			tabac: App.get('TVisitData combo#TTabac').getValue(),
 			alcool: App.get('TVisitData combo#TAlcool').getValue(),
 			sport: App.get('TVisitData combo#TSport').getValue(),
@@ -220,8 +224,12 @@ App.controller.define('CAgent', {
 					grid.setProperty('Resultat', o.TU_RESULT);
 					grid.setProperty('Rq', o.TU);
 				var grid=App.get('TVisitData propertygrid#TV');
-					grid.setProperty('Oeil droit', o.OD);
-					grid.setProperty('Oeil gauche', o.OG);
+					grid.setProperty('Oeil droit', o.TV_OD);
+					grid.setProperty('Oeil gauche', o.TV_OG);
+					grid.setProperty('Correction', o.TV_CORRECTION);
+					grid.setProperty('Rq', o.TV_RQ);
+					grid.setProperty('Anomalie', o.TV_ANOMALIE);
+					grid.setProperty('Astigmatie', o.TV_STIGM);
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
 				App.get('TVisitData textarea#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData textarea#TTraitements').setValue(o.traitements);
