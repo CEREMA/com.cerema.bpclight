@@ -207,43 +207,43 @@ App.view.define('agent.VVisit.formulaire', {
 									],
 									data: [
 										{
-											item: "1",
+											item: 1,
 											value: "Médecin traitant"
 										},
 										{
-											item: "2",
+											item: 2,
 											value: "Cardiologue"
 										},
 										{
-											item: "3",
+											item: 3,
 											value: "Pneumologue"
 										},
 										{
-											item: "4",
+											item: 4,
 											value: "Dermatologue"
 										},
 										{
-											item: "5",
+											item: 5,
 											value: "ORL"
 										},
 										{
-											item: "6",
+											item: 6,
 											value: "Ophtalmologue"
 										},
 										{
-											item: "7",
+											item: 7,
 											value: "Gynécologue"
 										},
 										{
-											item: "8",
+											item: 8,
 											value: "Autres médecins"
 										},
 										{
-											item: "9",
+											item: 9,
 											value: "Assistance sociale"
 										},
 										{
-											item: "10",
+											item: 10,
 											value: "MDPH"
 										}
 									]
