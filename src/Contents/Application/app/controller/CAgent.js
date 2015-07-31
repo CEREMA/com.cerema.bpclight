@@ -182,7 +182,6 @@ App.controller.define('CAgent', {
 			OG: TV['Oeil gauche'],
 			commentaires: App.get('TVisitData htmleditor#comments').getValue(),
 			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
-			//pathologies: App.get('TVisitData textarea#TPathologies').getValue(),
 			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
