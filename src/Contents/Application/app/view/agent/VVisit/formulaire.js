@@ -99,6 +99,8 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "panel",
 								layout: "hbox",
+								width: "100%",
+								border: false,
 								items: [
 									{
 										xtype: "combo",
