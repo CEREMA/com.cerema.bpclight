@@ -224,9 +224,9 @@ App.controller.define('CAgent', {
 				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
 				App.get('TVisitData boxselect#orientations').setValue(o[0].orientations);
 				App.get('TVisitData combo#TConclusions').setValue(o[0].conclusions);
-				App.get('TVisitData combo#').setValue(o[0].tabac);
-				App.get('TVisitData combo#').setValue(o[0].alcool);
-				App.get('TVisitData combo#').setValue(o[0].sport);
+				App.get('TVisitData combo#TTabac').setValue(o[0].tabac);
+				App.get('TVisitData combo#TAlcool').setValue(o[0].alcool);
+				App.get('TVisitData combo#TSport').setValue(o[0].sport);
 			});
 		}
 	},
