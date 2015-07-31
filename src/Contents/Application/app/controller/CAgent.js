@@ -180,6 +180,9 @@ App.controller.define('CAgent', {
 			TU: TU.TU,
 			OD: TV['Oeil droit'],
 			OG: TV['Oeil gauche'],
+			tabac: App.get('TVisitData combo#TTabac').getValue(),
+			alcool: App.get('TVisitData combo#TAlcool').getValue(),
+			sport: App.get('TVisitData combo#TSport').getValue(),
 			commentaires: App.get('TVisitData htmleditor#comments').getValue(),
 			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
 			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
@@ -216,14 +219,14 @@ App.controller.define('CAgent', {
 				var grid=App.get('TVisitData propertygrid#TV');
 					grid.setProperty('Oeil droit', o[0].OD);
 					grid.setProperty('Oeil gauche', o[0].OG);
+				App.get('TVisitData htmleditor#comments').setValue(p[0].commentaires);
 				App.get('TVisitData textarea#TPosteActuel').setValue(o[0].poste_actuel);
-				App.get('TVisitData textarea#TPathologies').setValue(o[0].pathologies);
 				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
-				App.get('TVisitData textarea#TOrientations').setValue(o[0].orientations);
-				App.get('TVisitData htmleditor#TConclusions').setValue(o[0].conclusions);
-				if (o[0].tabac==1) App.get('TVisitData checkboxgroup#CBG').items.items[0].setValue(true);
-				if (o[0].alcool==1) App.get('TVisitData checkboxgroup#CBG').items.items[1].setValue(true);
-				if (o[0].sport==1) App.get('TVisitData checkboxgroup#CBG').items.items[2].setValue(true);
+				App.get('TVisitData boxselect#orientations').setValue(o[0].orientations);
+				App.get('TVisitData combo#TConclusions').setValue(o[0].conclusions);
+				App.get('TVisitData combo#').setValue(o[0].tabac);
+				App.get('TVisitData combo#').setValue(o[0].alcool);
+				App.get('TVisitData combo#').setValue(o[0].sport);
 			});
 		}
 	},
