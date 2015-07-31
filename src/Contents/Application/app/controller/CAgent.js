@@ -240,8 +240,8 @@ App.controller.define('CAgent', {
 					grid.setProperty('Correction',o.TA_CORRECTION);
 					grid.setProperty('Rq',o.TA_RQ);
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
-				App.get('TVisitData htmleditorTPosteActuel').setValue(o.poste_actuel);
-				App.get('TVisitData htmleditorTTraitements').setValue(o.traitements);
+				App.get('TVisitData htmleditor#TPosteActuel').setValue(o.poste_actuel);
+				App.get('TVisitData htmleditor#TTraitements').setValue(o.traitements);
 				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
 				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
