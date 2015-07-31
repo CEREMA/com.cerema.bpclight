@@ -55,7 +55,7 @@ App.view.define('agent.VVisit.formulaire', {
 										labelAlign: "top",
 										width: 200,
 										displayField: "type",
-										valueField: "id",
+										fieldValue: "id",
 										itemId: "TMedicTypeVisite",
 										store: App.store.create("bpclight://medic_type",{autoLoad: true})
 									},
@@ -65,7 +65,7 @@ App.view.define('agent.VVisit.formulaire', {
 										labelAlign: "top",
 										width: 100,
 										displayField: "cat",
-										valueField: "id",
+										fieldValue: "id",
 										itemId: "TMedicCategorie",
 										margin: {
 											left: 10
@@ -293,7 +293,7 @@ App.view.define('agent.VVisit.formulaire', {
 								}),
 								displayField: "display",
 								editable: false,
-								valueField: "value",
+								fieldValue: "value",
 								width: "100%"
 							}						
 							],
@@ -362,7 +362,7 @@ App.view.define('agent.VVisit.formulaire', {
 											},
 											queryMode: 'local',
 											displayField: 'display',
-											valueField: 'value',
+											fieldValue: 'value',
 											editable: false
 										}
 									},
@@ -397,7 +397,7 @@ App.view.define('agent.VVisit.formulaire', {
 											},
 											queryMode: 'local',
 											displayField: 'display',
-											valueField: 'value',
+											fieldValue: 'value',
 											editable: false
 										}
 									},									
