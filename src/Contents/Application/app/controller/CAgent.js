@@ -187,12 +187,6 @@ App.controller.define('CAgent', {
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
-		var checks=App.get('TVisitData checkboxgroup#CBG').items.items;
-		for (var i=0;i<checks.length;i++) {
-			if (checks[0].checked) DATA.tabac=1; else DATA.tabac=0;
-			if (checks[1].checked) DATA.alcool=1; else DATA.alcool=0;
-			if (checks[2].checked) DATA.sport=1; else DATA.sport=0;
-		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
 			App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('window')._dossier;
