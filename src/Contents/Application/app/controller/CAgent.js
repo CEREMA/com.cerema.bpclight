@@ -234,6 +234,11 @@ App.controller.define('CAgent', {
 					grid.setProperty('Rq', o.TV_RQ);
 					grid.setProperty('Anomalie', o.TV_ANOMALIE);
 					grid.setProperty('Astigmatie', o.TV_STIGM);
+				var grid=App.get('TVisitData propertygrid#TA');
+					grid.setProperty('ORD',o.TA_ORD);
+					grid.setProperty('ORG',o.TA_ORG);
+					grid.setProperty('Correction',o.TA_CORRECTION);
+					grid.setProperty('Rq',o.TA_RQ);
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
 				App.get('TVisitData textarea#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData textarea#TTraitements').setValue(o.traitements);
