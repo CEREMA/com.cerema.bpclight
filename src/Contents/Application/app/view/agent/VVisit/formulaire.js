@@ -264,11 +264,11 @@ App.view.define('agent.VVisit.formulaire', {
 									},
 									{
 										value: "2",
-										display: "Compatible"
+										display: "Compatible avec aménagement"
 									},
 									{
 										value: "3",
-										display: "Compatible"
+										display: "Compatible avec restriction"
 									},
 									{
 										value: "4",
