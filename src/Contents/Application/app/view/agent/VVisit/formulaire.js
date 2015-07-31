@@ -142,6 +142,9 @@ App.view.define('agent.VVisit.formulaire', {
 									{
 										xtype: "combo",
 										fieldLabel: "Alcool",
+										margin: {
+											left: 10
+										},
 										labelAlign: "top",
 										flex: 1,
 										itemId: "TAlcool",
@@ -175,6 +178,9 @@ App.view.define('agent.VVisit.formulaire', {
 									{
 										xtype: "combo",
 										fieldLabel: "Sport",
+										margin: {
+											left: 10
+										},
 										labelAlign: "top",
 										flex: 1,
 										itemId: "TSport",
