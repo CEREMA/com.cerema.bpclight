@@ -85,14 +85,16 @@ App.view.define('agent.VVisit.formulaire', {
 								]
 							},
 							{
-								xtype: "textarea",
+								xtype: "htmleditor",
 								itemId: "TPosteActuel",
 								fieldLabel: "Poste actuel",
+								height: 200,
 								width: "100%"
 							},
 							{
-								xtype: "textarea",
+								xtype: "htmleditor",
 								itemId: "TTraitements",
+								height: 200,
 								fieldLabel: "Traitements actuels",
 								width: "100%"
 							},
