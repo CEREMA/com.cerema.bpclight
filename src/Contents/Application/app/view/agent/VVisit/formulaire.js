@@ -390,9 +390,9 @@ App.view.define('agent.VVisit.formulaire', {
 											store: {
 												fields: ['display', 'value'],
 												data: [
-													{ 'display': '-', 'value': '0' },
-													{ 'display': 'hypermétropie', 'value': '1' },
-													{ 'display': 'myopie', 'value': '2' }
+													{ 'display': '-', 'value': '-' },
+													{ 'display': 'hypermétropie', 'value': 'hypermétropie' },
+													{ 'display': 'myopie', 'value': 'myopie' }
 												]
 											},
 											queryMode: 'local',
