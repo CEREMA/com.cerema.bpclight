@@ -201,33 +201,33 @@ App.controller.define('CAgent', {
 	{
 		if (p._id) {
 			App.DB.get('bpclight://medic_dossiers',function(o) {
-				console.log(o);
-				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
-				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
-				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
+				o=o.data[0];
+				App.get('TVisitData combo#TMedicTypeVisite').setValue(o.type);
+				App.get('TVisitData combo#TMedicCategorie').setValue(o.cat);
+				App.get('TVisitData datefield#TMedicDate').setValue(o.date.toDate());
 				var grid=App.get('TVisitData propertygrid#RG');
-					grid.setProperty('Taille', o[0].Taille);
-					grid.setProperty('Poids', o[0].Poids);
-					grid.setProperty('Pouls', o[0].Pouls);
-					grid.setProperty('TA', o[0].TA);
+					grid.setProperty('Taille', o.Taille);
+					grid.setProperty('Poids', o.Poids);
+					grid.setProperty('Pouls', o.Pouls);
+					grid.setProperty('TA', o.TA);
 				var grid=App.get('TVisitData propertygrid#EFR');
-					grid.setProperty('CVF', o[0].CVF);
-					grid.setProperty('DEMM', o[0].DEMM);
-					grid.setProperty('VEMS', o[0].VEMS);
-					grid.setProperty('VEMS/CVF', o[0].VEMS_CVF);
+					grid.setProperty('CVF', oC.VF);
+					grid.setProperty('DEMM', o.DEMM);
+					grid.setProperty('VEMS', o.VEMS);
+					grid.setProperty('VEMS/CVF', o.VEMS_CVF);
 				var grid=App.get('TVisitData propertygrid#TU');
-					grid.setProperty('TU', o[0].TU);
+					grid.setProperty('TU', o.TU);
 				var grid=App.get('TVisitData propertygrid#TV');
-					grid.setProperty('Oeil droit', o[0].OD);
-					grid.setProperty('Oeil gauche', o[0].OG);
-				App.get('TVisitData htmleditor#comments').setValue(p[0].commentaires);
-				App.get('TVisitData textarea#TPosteActuel').setValue(o[0].poste_actuel);
-				App.get('TVisitData textarea#TTraitements').setValue(o[0].traitements);
-				App.get('TVisitData boxselect#orientations').setValue(o[0].orientations);
-				App.get('TVisitData combo#TConclusions').setValue(o[0].conclusions);
-				App.get('TVisitData combo#TTabac').setValue(o[0].tabac);
-				App.get('TVisitData combo#TAlcool').setValue(o[0].alcool);
-				App.get('TVisitData combo#TSport').setValue(o[0].sport);
+					grid.setProperty('Oeil droit', o.OD);
+					grid.setProperty('Oeil gauche', o.OG);
+				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
+				App.get('TVisitData textarea#TPosteActuel').setValue(o.poste_actuel);
+				App.get('TVisitData textarea#TTraitements').setValue(o.traitements);
+				App.get('TVisitData boxselect#orientations').setValue(o.orientations);
+				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
+				App.get('TVisitData combo#TTabac').setValue(o.tabac);
+				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
+				App.get('TVisitData combo#TSport').setValue(o.sport);
 			});
 		}
 	},
