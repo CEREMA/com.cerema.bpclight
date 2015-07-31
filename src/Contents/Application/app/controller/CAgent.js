@@ -186,7 +186,7 @@ App.controller.define('CAgent', {
 			commentaires: App.get('TVisitData htmleditor#comments').getValue(),
 			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
 			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
-			orientations: "2,3",
+			orientations: ["2,3"],
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
