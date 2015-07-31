@@ -201,6 +201,7 @@ App.controller.define('CAgent', {
 	{
 		if (p._id) {
 			App.DB.get('bpclight://medic_dossiers',function(o) {
+				console.log(o);
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
