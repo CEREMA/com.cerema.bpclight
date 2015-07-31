@@ -193,8 +193,8 @@ App.controller.define('CAgent', {
 			alcool: App.get('TVisitData combo#TAlcool').getValue(),
 			sport: App.get('TVisitData combo#TSport').getValue(),
 			commentaires: App.get('TVisitData htmleditor#comments').getValue(),
-			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
-			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
+			poste_actuel: App.get('TVisitData htmleditor#TPosteActuel').getValue(),
+			traitements: App.get('TVisitData htmleditor#TTraitements').getValue(),
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
@@ -240,8 +240,8 @@ App.controller.define('CAgent', {
 					grid.setProperty('Correction',o.TA_CORRECTION);
 					grid.setProperty('Rq',o.TA_RQ);
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
-				App.get('TVisitData textarea#TPosteActuel').setValue(o.poste_actuel);
-				App.get('TVisitData textarea#TTraitements').setValue(o.traitements);
+				App.get('TVisitData htmleditorTPosteActuel').setValue(o.poste_actuel);
+				App.get('TVisitData htmleditorTTraitements').setValue(o.traitements);
 				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
 				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
