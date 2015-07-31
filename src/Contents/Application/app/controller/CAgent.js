@@ -177,8 +177,8 @@ App.controller.define('CAgent', {
 			VEMS: EFR.VEMS,
 			VEMS_CVF: EFR['VEMS/CVF'],
 			DEMM: EFR.DEMM,
-			TU: TU.TU['Rq'],
-			TU_RESULT: TU.TU['Resultat'],
+			TU: TU['Rq'],
+			TU_RESULT: TU['Resultat'],
 			OD: TV['Oeil droit'],
 			OG: TV['Oeil gauche'],
 			tabac: App.get('TVisitData combo#TTabac').getValue(),
@@ -217,8 +217,8 @@ App.controller.define('CAgent', {
 					grid.setProperty('VEMS', o.VEMS);
 					grid.setProperty('VEMS/CVF', o.VEMS_CVF);
 				var grid=App.get('TVisitData propertygrid#TU');
-					grid.setProperty('Resultat', o.TU);
-					grid.setProperty('Rq', o.TU_RESULT);
+					grid.setProperty('Resultat', o.TU_RESULT);
+					grid.setProperty('Rq', o.TU);
 				var grid=App.get('TVisitData propertygrid#TV');
 					grid.setProperty('Oeil droit', o.OD);
 					grid.setProperty('Oeil gauche', o.OG);
