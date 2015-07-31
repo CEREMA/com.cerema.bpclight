@@ -391,7 +391,7 @@ App.view.define('agent.VVisit.formulaire', {
 												fields: ['display', 'value'],
 												data: [
 													{ 'display': '-', 'value': '0' },
-													{ 'display': 'presbytie', 'value': '1' },
+													{ 'display': 'hypermétropie', 'value': '1' },
 													{ 'display': 'myopie', 'value': '2' }
 												]
 											},
