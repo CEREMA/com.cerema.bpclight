@@ -223,7 +223,7 @@ App.controller.define('CAgent', {
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
 				App.get('TVisitData textarea#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData textarea#TTraitements').setValue(o.traitements);
-				App.get('TVisitData boxselect#orientations').setValue([2,3]);
+				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
 				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
 				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
