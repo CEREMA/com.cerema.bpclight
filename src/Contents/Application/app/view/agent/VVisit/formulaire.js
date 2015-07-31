@@ -103,6 +103,7 @@ App.view.define('agent.VVisit.formulaire', {
 									{
 										xtype: "combo",
 										fieldLabel: "Tabac",
+										labelAlign: "top",
 										itemId: "TTabac",
 										valueField: "item",
 										displayField: "value",
@@ -138,6 +139,7 @@ App.view.define('agent.VVisit.formulaire', {
 									{
 										xtype: "combo",
 										fieldLabel: "Alcool",
+										labelAlign: "top",
 										itemId: "TAlcool",
 										valueField: "item",
 										displayField: "value",
@@ -169,6 +171,7 @@ App.view.define('agent.VVisit.formulaire', {
 									{
 										xtype: "combo",
 										fieldLabel: "Sport",
+										labelAlign: "top",
 										itemId: "TSport",
 										valueField: "item",
 										displayField: "value",
