@@ -200,7 +200,7 @@ App.controller.define('CAgent', {
 	visitdata_onshow: function(p)
 	{
 		if (p._id) {
-			App.Medical.getDossierById(p._id,function(o) {
+			App.DB.get('bpclight://medic_dossiers',function(o) {
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o[0].type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o[0].cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o[0].date.toDate());
