@@ -211,7 +211,7 @@ App.controller.define('CAgent', {
 					grid.setProperty('Pouls', o.Pouls);
 					grid.setProperty('TA', o.TA);
 				var grid=App.get('TVisitData propertygrid#EFR');
-					grid.setProperty('CVF', oC.VF);
+					grid.setProperty('CVF', o.CVF);
 					grid.setProperty('DEMM', o.DEMM);
 					grid.setProperty('VEMS', o.VEMS);
 					grid.setProperty('VEMS/CVF', o.VEMS_CVF);
