@@ -91,6 +91,12 @@ App.view.define('agent.VVisit.formulaire', {
 								width: "100%"
 							},
 							{
+								xtype: "textarea",
+								itemId: "TTraitements",
+								fieldLabel: "Traitements actuels",
+								width: "100%"
+							},
+							{
 								xtype: "combo",
 								fieldLabel: "Tabac",
 								fieldValue: "item",
@@ -187,13 +193,8 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "boxselect",
 								width: "100%",
+								fieldLabel: "Orientations",
 								itemId: "orientations"
-							},
-							{
-								xtype: "textarea",
-								itemId: "TTraitements",
-								fieldLabel: "Traitements actuels",
-								width: "100%"
 							},
 							{
 								xtype: "combo",
