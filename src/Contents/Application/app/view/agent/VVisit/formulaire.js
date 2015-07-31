@@ -351,7 +351,7 @@ App.view.define('agent.VVisit.formulaire', {
 									itemId: "TU",
 									border: false,
 									customEditors: {
-										TU: {
+										Resultat: {
 											xtype: 'combo',
 											store: {
 												fields: ['display', 'value'],
