@@ -180,12 +180,10 @@ App.controller.define('CAgent', {
 			TU: TU.TU,
 			OD: TV['Oeil droit'],
 			OG: TV['Oeil gauche'],
-			antecedents: App.get('TVisitData textarea#TAntecedentsPerso').getValue(),
-			antecedents_familiaux: App.get('TVisitData textarea#TAntecedentsFamille').getValue(),
 			poste_actuel: App.get('TVisitData textarea#TPosteActuel').getValue(),
 			pathologies: App.get('TVisitData textarea#TPathologies').getValue(),
 			traitements: App.get('TVisitData textarea#TTraitements').getValue(),
-			orientations: App.get('TVisitData textarea#TOrientations').getValue(),
+			orientations: App.get('TVisitData boxselect#orientations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
 		var checks=App.get('TVisitData checkboxgroup#CBG').items.items;
