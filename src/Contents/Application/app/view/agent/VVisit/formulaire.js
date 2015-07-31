@@ -262,31 +262,31 @@ App.view.define('agent.VVisit.formulaire', {
 									],
 									data: [
 									{
-										value: 1,
+										value: "1",
 										display: "Compatible"
 									},
 									{
-										value: 2,
+										value: "2",
 										display: "Compatible avec aménagement"
 									},
 									{
-										value: 3,
+										value: "3",
 										display: "Compatible avec restriction"
 									},
 									{
-										value: 4,
+										value: "4",
 										display: "Incompatibilité temporaire"
 									},
 									{
-										value: 5,
+										value: "5",
 										display: "Incompatibilité au poste"
 									},
 									{
-										value: 6,
+										value: "6",
 										display: "Incompatibilité à tous les postes"
 									},
 									{
-										value: 7,
+										value: "7",
 										display: "Pas d'avis ce jour"
 									}
 									]
