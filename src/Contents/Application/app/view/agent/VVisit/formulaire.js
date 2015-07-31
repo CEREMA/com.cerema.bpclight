@@ -194,7 +194,58 @@ App.view.define('agent.VVisit.formulaire', {
 								xtype: "boxselect",
 								width: "100%",
 								fieldLabel: "Orientations",
-								itemId: "orientations"
+								itemId: "orientations",
+								fieldValue: "item",
+								displayField: "value",
+								store: App.store.create({
+									fields: [
+										"item",
+										"value"
+									],
+									data: [
+										{
+											item: "1",
+											value: "Médecin traitant"
+										},
+										{
+											item: "2",
+											value: "Cardiologue"
+										},
+										{
+											item: "3",
+											value: "Pneumologue"
+										},
+										{
+											item: "4",
+											value: "Dermatologue"
+										},
+										{
+											item: "5",
+											value: "ORL"
+										},
+										{
+											item: "6",
+											value: "Ophtalmologue"
+										},
+										{
+											item: "7",
+											value: "Gynécologue"
+										},
+										{
+											item: "8",
+											value: "Autres médecins"
+										},
+										{
+											item: "9",
+											value: "Assistance sociale"
+										},
+										{
+											item: "10",
+											value: "MDPH"
+										}
+									]
+								})
+
 							},
 							{
 								xtype: "combo",
