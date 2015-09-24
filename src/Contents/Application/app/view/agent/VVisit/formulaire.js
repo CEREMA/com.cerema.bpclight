@@ -419,15 +419,43 @@ App.view.define('agent.VVisit.formulaire', {
 											displayField: 'display',
 											valueField: 'value',
 											editable: false
+										},
+										Astigmatie: {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': '-', 'value': '-' },
+													{ 'display': '+', 'value': '+' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false										
+										},
+										Correction: {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': 'oui', 'value': 'oui' },
+													{ 'display': 'non', 'value': 'non' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false										
 										}
 									},									
 									source: {
 										"Oeil droit": 0,
 										"Oeil gauche": 0,
-										"Correction": false,
+										"Correction": "-",
 										"Rq": "",
 										"Anomalie": '-',
-										"Astigmatie": false
+										"Astigmatie": "-"
 									}						
 								},
 								{
