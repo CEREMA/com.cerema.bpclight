@@ -250,22 +250,6 @@ App.view.define('agent.VVisit.formulaire', {
 										{
 											item: 6,
 											value: "Autres"
-										},
-										{
-											item: 7,
-											value: "Gynécologue"
-										},
-										{
-											item: 8,
-											value: "Autres médecins"
-										},
-										{
-											item: 9,
-											value: "Assistance sociale"
-										},
-										{
-											item: 10,
-											value: "MDPH"
 										}
 									]
 								})
