@@ -156,15 +156,18 @@ App.controller.define('CAgent', {
 				click: "Visit_onRecord"
 			},
 			"TVisitData button#prev": {
-				click: function() {
-					alert('prev');
-				}
+				click: "visit_prev"
 			},
 			"TVisitData button#next": {
-				click: function() {
-					alert('next');
-				}
+				click: "visit_next"
 			}			
+		});
+	},
+	visit_prev: function(p)
+	{
+		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
+			// get Kage
+			console.log(o);		
 		});
 	},
 	Visit_onRecord: function(p)
