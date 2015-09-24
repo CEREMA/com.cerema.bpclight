@@ -196,6 +196,7 @@ App.controller.define('CAgent', {
 			traitements: App.get('TVisitData htmleditor#TTraitements').getValue(),
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
 			clinique: App.get('TVisitData boxselect#clinique').getValue(),
+			vaccinations: App.get('TVisitData htmleditor#vaccinations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
@@ -247,6 +248,7 @@ App.controller.define('CAgent', {
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
 				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
 				App.get('TVisitData combo#TSport').setValue(o.sport);
+				App.get('TVisitData htmleditor#vaccinations').setValue(o.vaccinations);
 				if (App.get('TVisitData htmleditor#TPosteActuel').getValue()=="") App.get('TVisitData htmleditor#TPosteActuel').setValue("<b>Risques</b><hr><div><br></div><div><b>Ancienneté</b><hr></div><div><b><br></b></div><div><b>A.T.</b><hr></div>");
 			});
 		}
