@@ -165,6 +165,7 @@ App.controller.define('CAgent', {
 	},
 	visit_prev: function(p)
 	{
+		var me=this;
 		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
 			// get Kage
 			App.DB.get('bpclight://medic_dossiers{id,date+}?kage='+o.data[0].kage,function(m) {
@@ -174,7 +175,9 @@ App.controller.define('CAgent', {
 					};
 				};
 				if (z) {
-					console.log(z);					
+					console.log(z);
+					p.up('window')._id=z.id;
+					me.visitdata_onshow();
 				} else {
 					alert("Il n'y a pas d'autre fiche");
 				}
@@ -183,6 +186,7 @@ App.controller.define('CAgent', {
 	},
 	visit_next: function(p)
 	{
+		var me=this;
 		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
 			// get Kage
 			App.DB.get('bpclight://medic_dossiers{id,date+}?kage='+o.data[0].kage,function(m) {
@@ -192,7 +196,8 @@ App.controller.define('CAgent', {
 					};
 				};
 				if (z) {
-					console.log(z);
+					p.up('window')._id=z.id;
+					me.visitdata_onshow();
 				} else {
 					alert("Il n'y a pas d'autre fiche");
 				}
