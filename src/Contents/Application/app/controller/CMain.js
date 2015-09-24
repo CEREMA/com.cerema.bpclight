@@ -183,8 +183,14 @@ App.controller.define('CMain', {
 	onSearch: function(v)
 	{
 		var grid=App.get('grid#GridAgents');
-		grid.getStore().getProxy().extraParams={
-			nom: App.get('ux-searchbox#searchbox').getValue()+"%"
+		if (App.get('ux-searchbox#searchbox').getValue()!="") {
+			grid.getStore().getProxy().extraParams={
+				nom: App.get('ux-searchbox#searchbox').getValue()+"%"
+			};
+		} else {
+			grid.getStore().getProxy().extraParams={
+				nom: "-1"
+			};		
 		};
 		grid.getStore().load();
 	},
