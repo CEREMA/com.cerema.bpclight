@@ -179,8 +179,7 @@ App.controller.define('CAgent', {
 			DEMM: EFR.DEMM,
 			TU: TU['Rq'],
 			TU_RESULT: TU['Resultat'],
-			TV_OD: TV['Oeil droit'],
-			TV_OG: TV['Oeil gauche'],
+			TV_OD: TV['OD/OG'],
 			TV_CORRECTION: TV['Correction'],
 			TV_RQ: TV['Rq'],
 			TV_ANOMALIE: TV['Anomalie'],
@@ -228,7 +227,8 @@ App.controller.define('CAgent', {
 					grid.setProperty('Resultat', o.TU_RESULT);
 					grid.setProperty('Rq', o.TU);
 				var grid=App.get('TVisitData propertygrid#TV');
-					grid.setProperty('Oeil droit', o["OD/OG"]);
+					grid.setProperty('Oeil droit', o.TV_OD);
+					grid.setProperty('Oeil gauche', o.TV_OG);
 					grid.setProperty('Correction', o.TV_CORRECTION);
 					grid.setProperty('Rq', o.TV_RQ);
 					grid.setProperty('Anomalie', o.TV_ANOMALIE);
@@ -278,6 +278,7 @@ App.controller.define('CAgent', {
 			else App.get('TVisit htmleditor#data_medic_perso').setValue('');
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_family').setValue(response.data[0].gen_family);
 			else App.get('TVisit htmleditor#data_medic_family').setValue('');
+			
 		});
 		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get('TVisit grid#grid_medic').getStore().load();
