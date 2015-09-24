@@ -227,8 +227,7 @@ App.controller.define('CAgent', {
 					grid.setProperty('Resultat', o.TU_RESULT);
 					grid.setProperty('Rq', o.TU);
 				var grid=App.get('TVisitData propertygrid#TV');
-					grid.setProperty('Oeil droit', o.TV_OD);
-					grid.setProperty('Oeil gauche', o.TV_OG);
+					grid.setProperty('OD/OG', o.TV_OD);
 					grid.setProperty('Correction', o.TV_CORRECTION);
 					grid.setProperty('Rq', o.TV_RQ);
 					grid.setProperty('Anomalie', o.TV_ANOMALIE);
