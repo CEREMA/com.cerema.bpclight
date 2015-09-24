@@ -217,6 +217,63 @@ App.view.define('agent.VVisit.formulaire', {
 							{
 								xtype: "boxselect",
 								width: "100%",
+								fieldLabel: "Antécédents clinique",
+								itemId: "clinique",
+								valueField: "item",
+								displayField: "value",
+								store: App.store.create({
+									fields: [
+										"item",
+										"value"
+									],
+									data: [
+										{
+											item: 1,
+											value: "Cardio"
+										},
+										{
+											item: 2,
+											value: "Locomoteur"
+										},
+										{
+											item: 3,
+											value: "Neurologique"
+										},
+										{
+											item: 4,
+											value: "Digestif"
+										},
+										{
+											item: 5,
+											value: "Psychisme"
+										},
+										{
+											item: 6,
+											value: "Autres"
+										},
+										{
+											item: 7,
+											value: "Gynécologue"
+										},
+										{
+											item: 8,
+											value: "Autres médecins"
+										},
+										{
+											item: 9,
+											value: "Assistance sociale"
+										},
+										{
+											item: 10,
+											value: "MDPH"
+										}
+									]
+								})
+
+							},
+							{
+								xtype: "boxselect",
+								width: "100%",
 								fieldLabel: "Orientations",
 								itemId: "orientations",
 								valueField: "item",
