@@ -170,6 +170,13 @@ App.controller.define('CAgent', {
 			console.log(o);		
 		});
 	},
+	visit_next: function(p)
+	{
+		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
+			// get Kage
+			console.log(o);		
+		});
+	},	
 	Visit_onRecord: function(p)
 	{
 		var RG = App.get('TVisitData propertygrid#RG').getSource();
