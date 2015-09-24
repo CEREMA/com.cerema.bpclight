@@ -412,7 +412,8 @@ App.view.define('agent.VVisit.formulaire', {
 												data: [
 													{ 'display': '-', 'value': '-' },
 													{ 'display': 'hypermétropie', 'value': 'hypermétropie' },
-													{ 'display': 'myopie', 'value': 'myopie' }
+													{ 'display': 'myopie', 'value': 'myopie' },
+													{ 'display': 'presbytie', 'value': 'presbytie' }
 												]
 											},
 											queryMode: 'local',
@@ -447,11 +448,24 @@ App.view.define('agent.VVisit.formulaire', {
 											displayField: 'display',
 											valueField: 'value',
 											editable: false										
+										},
+										"OD/OG": {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': '-', 'value': '-' },
+													{ 'display': '+', 'value': '+' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false										
 										}
 									},									
 									source: {
-										"Oeil droit": 0,
-										"Oeil gauche": 0,
+										"OD/OG": "",
 										"Correction": "-",
 										"Rq": "",
 										"Anomalie": '-',
