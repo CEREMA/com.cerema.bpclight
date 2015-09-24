@@ -38,7 +38,7 @@ App.view.define('agent.VVisit', {
 				{
 					xtype: "button",
 					itemId: "btn_record",
-					text: "Enregistrer",
+					text: "Mettre à jour",
 					width: 100
 				}
 			]
