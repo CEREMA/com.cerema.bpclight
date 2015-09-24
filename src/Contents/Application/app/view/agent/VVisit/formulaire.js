@@ -94,6 +94,7 @@ App.view.define('agent.VVisit.formulaire', {
 								xtype: "htmleditor",
 								itemId: "TTraitements",
 								fieldLabel: "Traitements actuels",
+								height: 150,
 								width: "100%"
 							},
 							{
