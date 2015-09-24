@@ -193,7 +193,7 @@ App.controller.define('CAgent', {
 					};
 				};
 				if (z) {
-					
+					console.log(z);
 				} else {
 					alert("Il n'y a pas d'autre fiche");
 				}
