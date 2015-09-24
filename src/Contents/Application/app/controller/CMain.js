@@ -58,7 +58,7 @@ App.controller.define('CMain', {
 				click: "btnExport_onclick"
 			},
 			"mainform ux-searchbox#searchbox" : {
-				click: "onSearch"
+				click: "onSearch",
 				specialkey: function(f,e)
 				{
 					alert('bidon');
