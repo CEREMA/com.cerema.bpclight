@@ -12,6 +12,14 @@ App.view.define('agent.VVisit.formulaire', {
         };
 
         this.bbar = [
+			{
+				text: "<",
+				itemId: "prev"
+			},
+			{
+				text: ">",
+				itemId: "next"
+			},
             '->', 
 			{
                 text: 'Quitter',
