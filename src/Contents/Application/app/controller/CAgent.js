@@ -177,7 +177,7 @@ App.controller.define('CAgent', {
 				if (z) {
 					console.log(z);
 					p.up('window')._id=z.id;
-					me.visitdata_onshow();
+					me.visitdata_onshow(p.up('window'));
 				} else {
 					alert("Il n'y a pas d'autre fiche");
 				}
@@ -197,7 +197,7 @@ App.controller.define('CAgent', {
 				};
 				if (z) {
 					p.up('window')._id=z.id;
-					me.visitdata_onshow();
+					me.visitdata_onshow(p.up('window'));
 				} else {
 					alert("Il n'y a pas d'autre fiche");
 				}
