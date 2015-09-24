@@ -242,6 +242,7 @@ App.controller.define('CAgent', {
 				App.get('TVisitData htmleditor#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData htmleditor#TTraitements').setValue(o.traitements);
 				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
+				App.get('TVisitData boxselect#clinique').setValue(JSON.parse(o.clinique));
 				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
 				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
