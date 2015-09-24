@@ -195,6 +195,7 @@ App.controller.define('CAgent', {
 			poste_actuel: App.get('TVisitData htmleditor#TPosteActuel').getValue(),
 			traitements: App.get('TVisitData htmleditor#TTraitements').getValue(),
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
+			clinique: App.get('TVisitData boxselect#clinique').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
