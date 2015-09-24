@@ -185,7 +185,7 @@ App.controller.define('CAgent', {
 	{
 		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
 			// get Kage
-			App.DB.get('bpclight://medic_dossiers{id}?kage='+o.data[0].kage,function(m) {
+			App.DB.get('bpclight://medic_dossiers{id,date}?kage='+o.data[0].kage,function(m) {
 				for (var i=0;i<m.data.length;i++) {
 					console.log(m.data[i]);
 					if (m.data[i].date.split('T')[0]==o.data[0].date.split('T')[0]) {
