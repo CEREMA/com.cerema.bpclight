@@ -167,17 +167,36 @@ App.controller.define('CAgent', {
 	{
 		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
 			// get Kage
-			App.DB.get('bpclight://medic_dossiers{kage,date}?DATE(date)<="'+o.data[0].date.split('T')[0]+'"+&kage='+o.data[0].kage,function(m) {
-				console.log(m.data);
+			App.DB.get('bpclight://medic_dossiers{kage,date}?kage='+o.data[0].kage,function(m) {
+				for (var i=0;i<m.data.length;i++) {
+					if (m.data[i]==o.data[0].date.split('T')[0]) {
+						var z=m.data[i-1];
+					};
+				};
+				if (z) {
+					
+				} else {
+					alert("Il n'y a pas d'autre fiche");
+				}
 			});
-			console.log(o);		
 		});
 	},
 	visit_next: function(p)
 	{
 		App.DB.get('bpclight://medic_dossiers{kage,date}?id='+p.up('window')._id,function(o) {
 			// get Kage
-			console.log(o);		
+			App.DB.get('bpclight://medic_dossiers{kage,date}?kage='+o.data[0].kage,function(m) {
+				for (var i=0;i<m.data.length;i++) {
+					if (m.data[i]==o.data[0].date.split('T')[0]) {
+						var z=m.data[i+1];
+					};
+				};
+				if (z) {
+					
+				} else {
+					alert("Il n'y a pas d'autre fiche");
+				}
+			});
 		});
 	},	
 	Visit_onRecord: function(p)
