@@ -184,7 +184,7 @@ App.controller.define('CMain', {
 	{
 		var grid=App.get('grid#GridAgents');
 		grid.getStore().getProxy().extraParams={
-			nom: v+"%"
+			nom: App.get('ux-searchbox#searchbox').getValue()+"%"
 		};
 		grid.getStore().load();
 	},
