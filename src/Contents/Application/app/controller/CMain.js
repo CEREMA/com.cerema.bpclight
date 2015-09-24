@@ -59,10 +59,7 @@ App.controller.define('CMain', {
 			},
 			"mainform ux-searchbox#searchbox" : {
 				click: "onSearch",
-				keypress: function(f,e)
-				{
-					alert('bidon');
-				}
+				specialkey: "onSearch"
 			},
 			/*
 			createAgent
