@@ -339,7 +339,7 @@ App.view.define('agent.VVisit.formulaire', {
 									source: {
 										"Taille": 0,
 										"Poids": 0,
-										"TA": 0,
+										"TA": "",
 										"Pouls": 0
 									}						
 								},
