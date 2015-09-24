@@ -154,6 +154,16 @@ App.controller.define('CAgent', {
 			},
 			"TVisitData toolbar #RecordMe": {
 				click: "Visit_onRecord"
+			},
+			"TVisitData button#prev": {
+				click: function() {
+					alert('prev');
+				}
+			},
+			"TVisitData button#next": {
+				click: function() {
+					alert('next');
+				}
 			}			
 		});
 	},
