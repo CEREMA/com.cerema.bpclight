@@ -483,10 +483,26 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 140,
 									width: "100%",
+									customEditors: {
+										"Correction": {
+											xtype: 'combo',
+											store: {
+												fields: ['display', 'value'],
+												data: [
+													{ 'display': '-', 'value': '-' },
+													{ 'display': '+', 'value': '+' }
+												]
+											},
+											queryMode: 'local',
+											displayField: 'display',
+											valueField: 'value',
+											editable: false										
+										}									
+									},
 									source: {
 										"ORD": '',
 										"ORG": '',
-										"Correction": false,
+										"Correction": "-",
 										"Rq": ""
 									}						
 								}								
