@@ -277,7 +277,7 @@ App.controller.define('CAgent', {
 			else App.get('TVisit htmleditor#data_medic_perso').setValue('');
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_family').setValue(response.data[0].gen_family);
 			else App.get('TVisit htmleditor#data_medic_family').setValue('');
-			
+			if (App.get('TVisit htmleditor#data_medic_family').getValue()=="") App.get('TVisit htmleditor#data_medic_family').setValue("<b>Père</b><hr><div><br></div><div><b>Mère</b><hr></div><div><b><br></b></div><div><b>Fratrie</b><hr></div>");
 		});
 		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 		App.get('TVisit grid#grid_medic').getStore().load();
