@@ -553,6 +553,21 @@ App.view.define('agent.VVisit.formulaire', {
 					]
 				},
 				{
+					title: "Vaccinations",
+					layout: "fit",
+					defaults: {
+						padding: 0
+					},
+					items: [
+						{
+							xtype: "htmleditor",
+							itemId: "vaccinations",
+							border: false,
+							width: "100%"
+						}					
+					]
+				},
+				{
 					title: "Commentaires",
 					layout: "fit",
 					defaults: {
