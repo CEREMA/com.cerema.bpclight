@@ -683,7 +683,7 @@ App.controller.define('CAgent', {
 			Ksec: App.get(p.up('TForm1'),'combo#Sec1').getValue(),
 			Ksec2: App.get(p.up('TForm1'),'combo#Sec2').getValue()
 		};
-		App.Agents.save(o,function(err,response) {
+		App.DB.post("bpclight://agents",o,function(err,response) {
 			var o={
 				Kage: p.up('TForm1').agent.Kage,
 				Kadr: App.get(p.up('TForm1'),'textfield#AdrK').getValue(),
@@ -692,7 +692,12 @@ App.controller.define('CAgent', {
 			};
 			App.Agents.setAdresse(o,function(err,response) {
 				App.get('TPrincipal grid#GridAgents').getStore().load();
-				p.up('window').close();
+				App.DB.post('bpclight://mela',{
+					Kage: p.up('TForm1').agent.Kage,
+					LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
+				}, function(err,response) {
+					p.up('window').close();
+				});				
 			});
 		});
 	},
