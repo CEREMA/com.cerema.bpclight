@@ -692,12 +692,17 @@ App.controller.define('CAgent', {
 			};
 			App.Agents.setAdresse(o,function(err,response) {
 				App.get('TPrincipal grid#GridAgents').getStore().load();
-				App.DB.post('bpclight://mela',{
-					Kage: p.up('TForm1').agent.Kage,
-					LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
-				}, function(err,response) {
-					p.up('window').close();
-				});				
+				App.DB.get('bpclight://mela{kmela}?kage='+p.up('TForm1').agent.Kage,function(e,r) {
+					console.lgo(e);
+					console.lgo(r);
+					/*App.DB.post('bpclight://mela',{
+						Kmela: p.up('TForm1').agent.Kage,
+						LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
+					}, function(err,response) {
+						p.up('window').close();
+					});				
+					*/
+				});
 			});
 		});
 	},
