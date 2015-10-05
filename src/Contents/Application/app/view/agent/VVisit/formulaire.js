@@ -576,6 +576,21 @@ App.view.define('agent.VVisit.formulaire', {
 					]
 				},
 				{
+					title: "Clinique",
+					layout: "fit",
+					defaults: {
+						padding: 0
+					},
+					items: [
+						{
+							xtype: "htmleditor",
+							itemId: "clinique",
+							border: false,
+							width: "100%"
+						}					
+					]
+				},
+				{
 					title: "Commentaires",
 					layout: "fit",
 					defaults: {
