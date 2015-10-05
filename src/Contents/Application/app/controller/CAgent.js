@@ -239,7 +239,7 @@ App.controller.define('CAgent', {
 			alcool: App.get('TVisitData combo#TAlcool').getValue(),
 			sport: App.get('TVisitData combo#TSport').getValue(),
 			commentaires: App.get('TVisitData htmleditor#comments').getValue(),
-			clinique: App.get('TVisitData htmleditor#clinique').getValue(),
+			_clinique: App.get('TVisitData htmleditor#clinique').getValue(),
 			poste_actuel: App.get('TVisitData htmleditor#TPosteActuel').getValue(),
 			traitements: App.get('TVisitData htmleditor#TTraitements').getValue(),
 			orientations: App.get('TVisitData boxselect#orientations').getValue(),
@@ -288,7 +288,7 @@ App.controller.define('CAgent', {
 					grid.setProperty('Correction',o.TA_CORRECTION);
 					grid.setProperty('Rq',o.TA_RQ);
 				App.get('TVisitData htmleditor#comments').setValue(o.commentaires);
-				App.get('TVisitData htmleditor#clinique').setValue(o.clinique);
+				App.get('TVisitData htmleditor#clinique').setValue(o._clinique);
 				App.get('TVisitData htmleditor#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData htmleditor#TTraitements').setValue(o.traitements);
 				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
