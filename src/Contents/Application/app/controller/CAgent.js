@@ -303,8 +303,7 @@ App.controller.define('CAgent', {
 	grid_medic_click: function(me,s)
 	{
 		App.view.create('agent.VVisit.formulaire',{
-			_id: s.data.id ,
-			modal: true
+			_id: s.data.id 
 		}).show();
 	},
 	Visit_onExit: function(p)
