@@ -43,6 +43,7 @@
             "src": "http://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
         }
     ],
+    "blur": "0",
     "auth": [
         "CERBERE"
     ],
