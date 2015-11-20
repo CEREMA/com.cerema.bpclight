@@ -78,7 +78,7 @@ App.view.define('agent.VVisit', {
 					dataIndex: "cat"
 				}
 			],
-			store: App.store.create("App.Medical.getAll")
+			store: App.store.create("bpclight://medic_dossiers{id,date-,type->medic_type{type},cat->medic_cat{cat}}")
 		}
 		];
 		this.callParent();
