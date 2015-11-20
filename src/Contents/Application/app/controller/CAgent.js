@@ -249,6 +249,8 @@ App.controller.define('CAgent', {
 		};
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
+			console.log(o);
+			return;
 			App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('window')._dossier;
 			p.up('window').close();			
 			App.get('TVisit grid#grid_medic').getStore().load();
