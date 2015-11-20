@@ -338,6 +338,7 @@ App.controller.define('CAgent', {
 			if (App.get('TVisit htmleditor#data_medic_family').getValue()=="") App.get('TVisit htmleditor#data_medic_family').setValue("<b>Père</b><hr><div><br></div><div><b>Mère</b><hr></div><div><b><br></b></div><div><b>Fratrie</b><hr></div>");
 		});
 		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
+		alert(p.up('TForm1').agent.Kage);
 		App.get('TVisit grid#grid_medic').getStore().load();
 	},
 	VisitDataOpen: function(p)
