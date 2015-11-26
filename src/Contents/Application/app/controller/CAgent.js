@@ -700,7 +700,7 @@ App.controller.define('CAgent', {
 			App.Agents.setAdresse(o,function(err,response) {
 				App.get('TPrincipal grid#GridAgents').getStore().load();
 				App.DB.get('bpclight://mela{kmela}?kage='+p.up('TForm1').agent.Kage,function(r) {
-					alert(r.data[0].kmela);
+					alert(App.get(p.up('TForm1'),'textfield#TMelA').getValue());
 					App.DB.post('bpclight://mela',{
 						Kmela: r.data[0].kmela,
 						LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
