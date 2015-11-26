@@ -702,8 +702,6 @@ App.controller.define('CAgent', {
 				App.DB.get('bpclight://mela{kmela}?kage='+p.up('TForm1').agent.Kage,function(r) {
 					alert(App.get(p.up('TForm1'),'textfield#TMelA').getValue());
 					App.DB.post('bpclight://mela',{
-						Kmela: r.data[0].kmela,
-						LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
 					}, function(err,response) {
 						p.up('window').close();
 					});				
