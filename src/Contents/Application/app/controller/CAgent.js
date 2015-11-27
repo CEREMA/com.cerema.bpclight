@@ -211,7 +211,6 @@ App.controller.define('CAgent', {
 		var TU = App.get('TVisitData propertygrid#TU').getSource();
 		var TV = App.get('TVisitData propertygrid#TV').getSource();	
 		var TA = App.get('TVisitData propertygrid#TA').getSource();
-		alert(App.get('TVisitData combo#TMedicCategorie').getValue());
 		var DATA={
 			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
 			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
@@ -251,10 +250,6 @@ App.controller.define('CAgent', {
 		if (p.up('window')._id) DATA.id=p.up('window')._id;		
 		App.DB.post('bpclight://medic_dossiers',DATA,function(o) {
 			console.log(o);
-			/*if ((!o.affectedRows) || (o.affectedRows==0)) {
-			
-			};
-			return;*/
 			App.get('TVisit grid#grid_medic').getStore().load();
 			p.up('window').close();			
 			App.notify("Le dossier a bien été enregistré.");
