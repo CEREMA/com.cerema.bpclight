@@ -211,6 +211,7 @@ App.controller.define('CAgent', {
 		var TU = App.get('TVisitData propertygrid#TU').getSource();
 		var TV = App.get('TVisitData propertygrid#TV').getSource();	
 		var TA = App.get('TVisitData propertygrid#TA').getSource();
+		alert(App.get('TVisitData combo#TMedicCategorie').getValue());
 		var DATA={
 			type: App.get('TVisitData combo#TMedicTypeVisite').getValue(),
 			cat: App.get('TVisitData combo#TMedicCategorie').getValue(),
@@ -264,7 +265,6 @@ App.controller.define('CAgent', {
 		if (p._id) {
 			App.DB.get('bpclight://medic_dossiers?id='+p._id,function(o) {
 				o=o.data[0];
-				alert(o.cat);
 				App.get('TVisitData combo#TMedicTypeVisite').setValue(o.type);
 				App.get('TVisitData combo#TMedicCategorie').setValue(o.cat);
 				App.get('TVisitData datefield#TMedicDate').setValue(o.date.toDate());
