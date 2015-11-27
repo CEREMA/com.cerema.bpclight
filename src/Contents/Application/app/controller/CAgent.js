@@ -319,6 +319,7 @@ App.controller.define('CAgent', {
 			gen_perso: App.get('TVisit htmleditor#data_medic_perso').getValue(),
 			gen_family: App.get('TVisit htmleditor#data_medic_family').getValue()
 		};
+		console.log(o);
 		App.DB.post('bpclight://medic_gen',o,function(response) {
 			console.log(response);
 			App.notify('Changement enregistré');
