@@ -320,8 +320,8 @@ App.controller.define('CAgent', {
 		if (App.get('TVisit htmleditor#data_medic_family').getValue()) gen_family=App.get('TVisit htmleditor#data_medic_family').getValue();
 		var o={
 			kage: App.get('TForm1').agent.Kage,
-			gen_perso: App.get('TVisit htmleditor#data_medic_perso').getValue(),
-			gen_family: App.get('TVisit htmleditor#data_medic_family').getValue()
+			gen_perso: gen_perso,
+			gen_family: gen_family
 		};
 		App.DB.post('bpclight://medic_gen',o,function(response) {
 			App.notify('Changement enregistré');
