@@ -316,8 +316,8 @@ App.controller.define('CAgent', {
 	{
 		var gen_perso="-";
 		var gen_family="-";
-		if (App.get('TVisit htmleditor#data_medic_perso').getValue())  gen_perso=App.get('TVisit htmleditor#data_medic_perso').getValue();
-		if (App.get('TVisit htmleditor#data_medic_family').getValue()) gen_family=App.get('TVisit htmleditor#data_medic_family').getValue();
+		if (App.get('TVisit htmleditor#data_medic_perso').getValue()!="")  gen_perso=App.get('TVisit htmleditor#data_medic_perso').getValue();
+		if (App.get('TVisit htmleditor#data_medic_family').getValue()!="") gen_family=App.get('TVisit htmleditor#data_medic_family').getValue();
 		var o={
 			kage: App.get('TForm1').agent.Kage,
 			gen_perso: gen_perso,
