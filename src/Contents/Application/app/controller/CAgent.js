@@ -699,9 +699,9 @@ App.controller.define('CAgent', {
 						LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
 					}];
 					console.log(obj);
-					/*App.DB.post('bpclight://mela',obj, function(err,response) {
+					App.DB.post('bpclight://mela',obj, function(err,response) {
 						p.up('window').close();
-					});				*/
+					});				
 					
 				});
 			});
