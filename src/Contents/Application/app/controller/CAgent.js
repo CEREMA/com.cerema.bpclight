@@ -320,6 +320,7 @@ App.controller.define('CAgent', {
 			gen_family: App.get('TVisit htmleditor#data_medic_family').getValue()
 		};
 		App.DB.post('bpclight://medic_gen',o,function(response) {
+			console.log(response);
 			App.notify('Changement enregistré');
 		});
 	},
