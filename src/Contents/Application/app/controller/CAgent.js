@@ -254,7 +254,6 @@ App.controller.define('CAgent', {
 			
 			};
 			return;*/
-			App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
 			App.get('TVisit grid#grid_medic').getStore().load();
 			p.up('window').close();			
 			App.notify("Le dossier a bien été enregistré.");
