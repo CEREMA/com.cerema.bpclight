@@ -314,14 +314,16 @@ App.controller.define('CAgent', {
 	},
 	Visit_recordgen: function(p)
 	{
+		var gen_perso="-";
+		var gen_family="-";
+		if (App.get('TVisit htmleditor#data_medic_perso').getValue())  gen_perso=App.get('TVisit htmleditor#data_medic_perso').getValue();
+		if (App.get('TVisit htmleditor#data_medic_family').getValue()) gen_family=App.get('TVisit htmleditor#data_medic_family').getValue();
 		var o={
 			kage: App.get('TForm1').agent.Kage,
 			gen_perso: App.get('TVisit htmleditor#data_medic_perso').getValue(),
 			gen_family: App.get('TVisit htmleditor#data_medic_family').getValue()
 		};
-		console.log(o);
 		App.DB.post('bpclight://medic_gen',o,function(response) {
-			console.log(response);
 			App.notify('Changement enregistré');
 		});
 	},
