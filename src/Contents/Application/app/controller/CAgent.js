@@ -298,10 +298,9 @@ App.controller.define('CAgent', {
 				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
 				App.get('TVisitData combo#TSport').setValue(o.sport);
 				App.get('TVisitData htmleditor#vaccinations').setValue(o.vaccinations);
-				alert(App.get('TVisitData htmleditor#TPosteActuel').getValue());
 				if (App.get('TVisitData htmleditor#TPosteActuel').getValue()=="") App.get('TVisitData htmleditor#TPosteActuel').setValue("<b>Risques</b><hr><div><br></div><div><b>Ancienneté</b><hr></div><div><b><br></b></div><div><b>A.T.</b><hr></div>");
 			});
-		}
+		} else App.get('TVisitData htmleditor#TPosteActuel').setValue("<b>Risques</b><hr><div><br></div><div><b>Ancienneté</b><hr></div><div><b><br></b></div><div><b>A.T.</b><hr></div>");
 	},
 	grid_medic_click: function(me,s)
 	{
