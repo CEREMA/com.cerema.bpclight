@@ -350,7 +350,7 @@ App.controller.define('CMain', {
 			console.log(response);*/
 		});
 		Auth.login(function(x) {
-		
+			console.log(Auth.User);
 		});
 	}
 	
