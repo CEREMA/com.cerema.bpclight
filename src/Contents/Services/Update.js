@@ -1,4 +1,26 @@
 Update = {
+	actif: function(cbx)
+	{
+		console.log('SET ACTIF ---------------------------------------------------------');	
+		var SQL="SELECT distinct kage,keta,position.kpst,position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc";
+		var db=Update.using('db');
+		db.query('bpclight',db,function(err,r) {
+			var agents={};
+			for (var i=0;i<r.length;i++) {
+				agents[r[i].kage]=r[i].kpst;
+			};
+			var upd=[];
+			for (var el in agents) {
+				if (agents[el]==6) upd.push(el);
+			};
+			console.log('UPDATE agents SET actif=1 WHERE kage in ['+upd.join(',')+']');
+			/*db.query('bpclight','UPDATE agents SET actif=1 WHERE kage in ['+upd.join(',')+']',function(e,r) {
+				console.log(e);
+				console.log(r);
+				cbx();
+			});*/
+		});
+	},
 	position: function(cbx)
 	{
 		var select=[];
