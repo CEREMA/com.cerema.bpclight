@@ -2,7 +2,7 @@ Update = {
 	actif: function(cbx)
 	{
 		console.log('SET ACTIF ---------------------------------------------------------');	
-		var SQL="SELECT distinct kage,keta,position.kpst,position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc";
+		var SQL="SELECT distinct kage,keta,position.kpst,position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta";
 		var db=Update.using('db');
 		db.query('bpclight',SQL,function(err,r) {
 			var agents={};
