@@ -14,7 +14,7 @@ Update = {
 				if (agents[el]==6) upd.push(el);
 			};
 			console.log('UPDATE agents SET actif=1 WHERE kage in ['+upd.join(',')+']');
-			db.query('bpclight','UPDATE agents SET actif=1 WHERE kage in ['+upd.join(',')+']',function(e,r) {
+			db.query('bpclight','UPDATE agents SET actif=1 WHERE kage in ('+upd.join(',')+')',function(e,r) {
 				console.log(e);
 				console.log(r);
 				cbx();
