@@ -4,7 +4,7 @@ Update = {
 		console.log('SET ACTIF ---------------------------------------------------------');	
 		var SQL="SELECT distinct kage,keta,position.kpst,position.Position FROM bpclight.ageetat ageetat INNER JOIN bpclight.position position ON (ageetat.Kpst = position.Kpst) WHERE (ageetat.DatEta<=NOW()) ORDER BY ageetat.DatEta desc";
 		var db=Update.using('db');
-		db.query('bpclight',db,function(err,r) {
+		db.query('bpclight',SQL,function(err,r) {
 			var agents={};
 			for (var i=0;i<r.length;i++) {
 				agents[r[i].kage]=r[i].kpst;
