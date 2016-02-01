@@ -500,7 +500,7 @@ App.controller.define('CAgent', {
 	},
 	situation_record: function(p)
 	{
-		alert(p.up('TForm1').agent.Kage);
+		
 		var o={
 			Kpst: App.get(p.up('TForm1'),'textfield#Situation_Kpst').getValue(),
 			DatEta: App.get(p.up('TForm1'),'datefield#datEta').getValue(),
