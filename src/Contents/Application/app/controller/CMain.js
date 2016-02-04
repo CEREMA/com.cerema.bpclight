@@ -138,9 +138,10 @@ App.controller.define('CMain', {
 			});
 		} else {
 			console.log(o);
-			App.Agents.insert(o,function(e,r) {
-				alert(r.result.insertId);
-				App.Agents.getOne(r.result.insertId,function(e,m) {
+			App.DB.post(o,function(r) {
+				console.log(r);
+				alert(r.insertId);
+				App.Agents.getOne(r.insertId,function(e,m) {
 					alert(m.result[0]);
 					App.view.create('VForm1',{
 						agent: m.result[0]
