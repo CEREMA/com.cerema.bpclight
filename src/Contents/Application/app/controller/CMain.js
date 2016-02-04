@@ -107,29 +107,29 @@ App.controller.define('CMain', {
 	{
 		var err=[];
 		var o={
-			kuni: App.get("combo#TCADepartement").getValue(),
-			ksub: App.get("combo#TCAService").getValue(),
-			nom: App.get("textfield#TCANom").getValue(),
-			prenom: App.get("textfield#TCAPrenom").getValue(),
+			Kuni: App.get("combo#TCADepartement").getValue(),
+			Ksub: App.get("combo#TCAService").getValue(),
+			Nom: App.get("textfield#TCANom").getValue(),
+			Prenom: App.get("textfield#TCAPrenom").getValue(),
 			actif: 1
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
-			o.kgra=66;
+			o.Kgra=66;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
-			o.kgra=67;
+			o.Kgra=67;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
 			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
-			o.matri=t.matri;
+			o.Matri=t.matri;
 			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
 			else
-			o.kgra=App.get('createAgent combo#TCAGrade').getValue();
+			o.Kgra=App.get('createAgent combo#TCAGrade').getValue();
 		};		
-		if (o.nom=="") err.push("<li>Nom");
-		if (o.prenom=="") err.push("<li>Prénom");
-		if (!o.kuni) err.push("<li>Le département");
-		if (!o.ksub) err.push("<li>Le service");
+		if (o.Nom=="") err.push("<li>Nom");
+		if (o.Prenom=="") err.push("<li>Prénom");
+		if (!o.Kuni) err.push("<li>Le département");
+		if (!o.Ksub) err.push("<li>Le service");
 		if (err.length>0) {
 			Ext.MessageBox.show({
 			   title: 'BPCLight',
