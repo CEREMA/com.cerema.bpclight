@@ -137,7 +137,9 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
+			console.log(o);
 			App.Agents.insert(o,function(e,r) {
+				alert(r.result.insertId);
 				App.Agents.getOne(r.result.insertId,function(e,m) {
 					App.view.create('VForm1',{
 						agent: m.result[0]
