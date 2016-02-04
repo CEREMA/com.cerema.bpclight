@@ -137,12 +137,8 @@ App.controller.define('CMain', {
 			   buttons: Ext.MessageBox.OK
 			});
 		} else {
-			console.log(o);
 			App.DB.post("bpclight://agents",o,function(r) {
-				console.log(r);
-				alert(r.insertId);
 				App.Agents.getOne(r.insertId,function(e,m) {
-					alert(m.result[0]);
 					App.view.create('VForm1',{
 						agent: m.result[0]
 					}).show();
