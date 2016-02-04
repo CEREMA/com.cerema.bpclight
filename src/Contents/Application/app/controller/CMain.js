@@ -141,6 +141,7 @@ App.controller.define('CMain', {
 			App.Agents.insert(o,function(e,r) {
 				alert(r.result.insertId);
 				App.Agents.getOne(r.result.insertId,function(e,m) {
+					alert(m.result[0]);
 					App.view.create('VForm1',{
 						agent: m.result[0]
 					}).show();
