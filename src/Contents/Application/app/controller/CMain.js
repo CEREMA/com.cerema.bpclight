@@ -138,7 +138,7 @@ App.controller.define('CMain', {
 			});
 		} else {
 			console.log(o);
-			App.DB.post(o,function(r) {
+			App.DB.post("bpclight://agents",o,function(r) {
 				console.log(r);
 				alert(r.insertId);
 				App.Agents.getOne(r.insertId,function(e,m) {
