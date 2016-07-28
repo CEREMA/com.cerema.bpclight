@@ -212,7 +212,9 @@ App.controller.define('CAgent', {
         if (me.up('window').agent==-1) {
             // On récupère l'objet agent
             App.Agents.getOne(kage,function(response){
-                console.log(response) ;
+                App.view.create('VAgentPanel',{
+                    agent: response[0]
+                }).show();                
             });
         };
     },
