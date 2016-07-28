@@ -209,7 +209,7 @@ App.controller.define('CAgent', {
     rdv_dblclick: function( me, eventRecord, e, eOpts )
     {
         var kage=eventRecord.data.kage;
-        if (me.up('window').window.kage==-1) {
+        if (me.up('window').agent==-1) {
             alert('x')  ;
         };
     },
