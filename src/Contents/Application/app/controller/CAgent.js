@@ -210,7 +210,10 @@ App.controller.define('CAgent', {
     {
         var kage=eventRecord.data.kage;
         if (me.up('window').agent==-1) {
-            alert('x')  ;
+            // On récupère l'objet agent
+            App.Agents.getOne(kage,function(response){
+                console.log(response) ;
+            });
         };
     },
     rdv_drag_add: function( me, newEventRecord, resources, eOpts )
