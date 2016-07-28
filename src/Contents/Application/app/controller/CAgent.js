@@ -306,6 +306,7 @@ App.controller.define('CAgent', {
         App.get(me.up('window'),'combo#selectMonth').setValue(newdate.getMonth());
         App.get(me.up('window'),'combo#selectAnnee').setValue(newdate.getFullYear());
         scheduler.setStart(newdate);        
+        scheduler.setEnd(newdate); 
     },
     rdv_next: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
@@ -313,6 +314,7 @@ App.controller.define('CAgent', {
         App.get(me.up('window'),'combo#selectMonth').setValue(newdate.getMonth());
         App.get(me.up('window'),'combo#selectAnnee').setValue(newdate.getFullYear());
         scheduler.setStart(newdate);
+        scheduler.setEnd(newdate);
     },
     VRDVScheduler_onshow: function(me)
     {
