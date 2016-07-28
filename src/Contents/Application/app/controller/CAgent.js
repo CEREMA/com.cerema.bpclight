@@ -200,15 +200,18 @@ App.controller.define('CAgent', {
                 click: "rdv_record"
             },
             "VRDVScheduler schedulergrid": {
-                 eventcontextmenu: "rdv_oncontextmenu",
-                 beforeeventadd: "rdv_drag_add",
+                eventcontextmenu: "rdv_oncontextmenu",
+                beforeeventadd: "rdv_drag_add",
                 eventdblclick: "rdv_dblclick"
             }
 		});
 	},
     rdv_dblclick: function( me, eventRecord, e, eOpts )
     {
-        console.log(eventRecord);
+        var kage=eventRecord.data.kage;
+        if (me.up.window.kage==-1) {
+            alert('x')  ;
+        };
     },
     rdv_drag_add: function( me, newEventRecord, resources, eOpts )
     {        
