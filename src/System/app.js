@@ -184,7 +184,6 @@ App = {
 					};
 					str+=o[i].name;
 					str+=o[i].value;
-					//str=str.replace(/item/g,o[i].value);
 					where.push(str);
 				};		
 				var sql=db.get('bpclight',objs,where);
