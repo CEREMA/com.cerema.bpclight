@@ -268,14 +268,14 @@ App.controller.define('CAgent', {
                     ResourceId: 1,
                     kage: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
-					EndDate: item.data.EndDate,
-                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
+					EndDate: item.data.EndDate
                 };
+                if (me.up('window').agent!='-1') obj.Name=me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
                 
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
-                console.log(obj);
+                
                 App.DB.post('bpclight://medic_rdv',obj,function(obj){
-                    console.log(obj);
+                    
                 });
 			}
 		};        
