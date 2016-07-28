@@ -275,12 +275,11 @@ App.controller.define('CAgent', {
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
                 
                 App.DB.post('bpclight://medic_rdv',obj,function(obj){
-                    
+                      grid.getStore().load();
+		              me.up('window').close();                    
                 });
 			}
 		};        
-        grid.getStore().load();
-		me.up('window').close();
     },
     rdv_month: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
