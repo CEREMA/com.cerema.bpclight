@@ -223,7 +223,7 @@ App.view.define('agent.VVisit.formulaire', {
 								]
 							},
 							{
-								xtype: "boxselect",
+								xtype: "tagfield",
 								width: "100%",
 								fieldLabel: "Antécédents clinique",
 								itemId: "clinique",
@@ -264,7 +264,7 @@ App.view.define('agent.VVisit.formulaire', {
 
 							},
 							{
-								xtype: "boxselect",
+								xtype: "tagfield",
 								width: "100%",
 								fieldLabel: "Orientations",
 								itemId: "orientations",
@@ -420,7 +420,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TU",
 									border: false,
-									customEditors: {
+									sourceConfig: {
 										Resultat: {
 											xtype: 'combo',
 											store: {
@@ -454,7 +454,7 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 150,
 									width: "100%",
-									customEditors: {
+									sourceConfig: {
 										Anomalie: {
 											xtype: 'combo',
 											store: {
@@ -533,7 +533,7 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 140,
 									width: "100%",
-									customEditors: {
+									sourceConfig: {
 										"Correction": {
 											xtype: 'combo',
 											store: {

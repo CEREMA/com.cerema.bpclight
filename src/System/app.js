@@ -19,7 +19,7 @@ Math.uuid = function() {
 App = {
 	init: function(app,server) {
 		if (!require('fs').existsSync(__dirname + require('path').sep+'tmp')) require('fs').mkdirSync(__dirname + require('path').sep+'tmp');
-		app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));
+		//app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
 			App.using('db').model('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+req.body.kage,function(err,o){
@@ -47,10 +47,8 @@ App = {
 				var o=req.body.kage.split(',');
 				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
-						console.log(tabs);
-						var uid=Math.uuid();
-						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
-						var sheet1 = workbook.createSheet('BPCLight', 1500, 1500);
+                        var tempfile=App.temp('xlsx');
+						var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);                        
 						var conf={};
 						conf.cols = [
 						{
@@ -134,12 +132,14 @@ App = {
 							width: 100
 						}
 						];	
-					
+						
+                        var sheet1 = workbook.createSheet('BPCLight', conf.cols.length, tabs.length);
+                        
 						for (var e=0;e<conf.cols.length;e++) {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
 						};
-						for (var i=0;i<tabs.length;i++) {
+						/*for (var i=0;i<tabs.length;i++) {
 							var element=tabs[i];
 							var k=1;
 							var ii=i+2;
@@ -149,10 +149,13 @@ App = {
 								};
 								k++;
 							};
-						};			
+						};*/		
+						
 						workbook.save(function(ok){
-							res.end('/tmp/'+uid+'.xlsx');
-						});					
+                            console.log(ok);
+				            res.end(tempfile.url);
+						});	
+                        
 					});	
 				};
 			};

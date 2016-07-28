@@ -24,7 +24,18 @@ App.view.define('VMain', {
 							itemId: "MNU_AGENT_NEW"
 						}
 					]
-				}
+				},
+				{
+					text: "Visites médicales",
+					hidden: false,
+					id: "MNU_VM",
+					menu: [
+						{
+							text: "Rendez-vous",
+							itemId: "MNU_RDV"
+						}
+					]
+				}				
 			]		
 		},
 		{

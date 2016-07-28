@@ -15,6 +15,7 @@ App.view.define('VPrincipal',{
 			split:true,
 			tbar: [
 				{
+                    xtype: "button",
 					text: "Nouvel agent",
 					itemId: "NewAgent",
 					scale: 'small', 
@@ -137,9 +138,17 @@ App.view.define('VPrincipal',{
 			itemId: "GridAgents",
 			tbar: [
 				{
-					xtype: 'ux-searchbox',
+					xtype: 'textfield',
+                    enableKeyEvents:true,
 					width: 200,
-					triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
+					triggers: {
+                    	search: {
+							cls: 'x-form-search-trigger',
+                        	handler: function() {
+                            	alert('add trigger clicked');
+                        	}
+                    	}
+                	},
 					itemId: 'searchbox',
 					padding:4,
 					width: 150

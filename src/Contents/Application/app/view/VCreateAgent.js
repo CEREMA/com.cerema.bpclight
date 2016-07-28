@@ -1,20 +1,17 @@
 App.view.define('VCreateAgent', {
 
-    extend: 'Ext.Window.window',
-	extend: "Ext.window.Window",
-    alias: 'widget.createAgent',
-    initComponent: function() {
-		
+    extend: 'Ext.window.Window',
+	alias: "widget.createAgent",
+
+initComponent: function()
+	{
+		this.title="Situation";
+		this.layout="vbox";
+		this.border=false;
 		this.width = 430;
-        this.height = 610;
+        this.height = 630;
         this.title = "Nouvel agent";
-
-        this.layout = {
-            type: 'vbox'
-        };
-		
 		this.bodyStyle="background-color: white";
-
         this.bbar = [
             '->', {
                 text: 'Enregistrer',
@@ -23,12 +20,7 @@ App.view.define('VCreateAgent', {
                 text: 'Quitter',
 				itemId: "Exit"
             }
-        ];		
-        
-		this.defaults = {
-            split: true
-        };	
-		
+        ];	
 		this.items = [
 			{
 				html: '<div style="font-weight: bold;padding:5px">1. Typologie du nouvel agent</div>',
@@ -222,9 +214,7 @@ App.view.define('VCreateAgent', {
 				]
 			}
 		];
-		
 		this.callParent();
-		
-	}
+	}	
 	
 });

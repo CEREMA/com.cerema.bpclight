@@ -1,9 +1,9 @@
-App.view.define('VForm1', {
+App.view.define('VAgentPanel', {
     extend: "Ext.window.Window",
-    alias: 'widget.TForm1',
+    alias: 'widget.TAgentPanel',
     initComponent: function() {
         this.width = 1024;
-        this.height = 660;
+        this.height = 700;
         this.title = "...";
 
         this.layout = {
@@ -44,9 +44,11 @@ App.view.define('VForm1', {
                 border: false,
                 xtype: "tabpanel",
 				itemId: "tabs",
-                items: [{
+                items: [
+                {
                     xtype: "TAgent"
-                }, {
+                }, 
+                {
                     xtype: "TSituation"
                 },
 				{
@@ -55,7 +57,11 @@ App.view.define('VForm1', {
 				{
 					xtype: "TVisit",
 					itemId: "tab_medic"
-				}]
+				},
+                {
+                    xtype: "TRendezVous",
+                    itemId: "tab_rdv"
+                }]
             }			
 			]
 		},

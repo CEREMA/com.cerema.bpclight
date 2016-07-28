@@ -1,16 +1,16 @@
 {
     "namespace": "com.cerema.bpclight",
-    "git": "https://github.com/CEREMA/com.cerema.bpclight",
+    "git": "https://github.com/CEREMA/com.cerema.bpclight.git",
     "title": "BPCLight",
     "description": "Base du personnel centralisée",
     "platform": "desktop",
     "targets": [
         "webapp"
     ],
-    "uid": "4020cde1-023a-4374-bd84-d079b0f77a83",
+    "uid": "e404d3a0-cc1d-418b-bd68-1ffef1b06551",
     "version": "1.3.0",
     "build": 133,
-    "copyright": "Copyright (c) 2014 By CEREMA",
+    "copyright": "Copyright (c) 2016 By CEREMA",
     "license": "BSD",
     "author": {
         "name": "Stéphane Zucatti",
@@ -27,23 +27,24 @@
     ],
     "frameworks": [
         {
-            "name": "ext",
-            "version": "4.2.1",
-            "theme": "classic",
-            "src": [
-                "http://cdn.sencha.com/ext/gpl/{version}/ext-all-debug.js"
-            ],
-            "res": [
-                "http://cdn.sencha.com/ext/gpl/{version}/resources/ext-theme-{theme}/ext-theme-{theme}-all.css"
-            ]
+            "name": "JQUERY",
+            "version": "3.1.0",
+            "src": "http://cdn.omneedia.com/public/jquery/{version}/jquery.js"
         },
         {
-            "name": "jquery",
-            "version": "2.0.3",
-            "src": "http://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
+            "name": "EXTJS",
+            "type": "desktop",
+            "version": "6.0.1",
+            "theme": "classic",
+            "src": [
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/ext-all-debug.js",
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/classic/theme-{theme}/theme-{theme}-debug.js"
+            ],
+            "res": [
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/classic/theme-{theme}/resources/theme-{theme}-all-debug.css"
+            ]
         }
     ],
-    "blur": "0",
     "auth": [
         "CERBERE"
     ],
@@ -53,17 +54,14 @@
         "CAgent"
     ],
     "modules": [
+        "Ext.ux.Scheduler",
         "Ext.ux.FilterBox",
-        "Ext.ux.form.SearchBox",
-        "Ext.plugin.FileDrop",
-        "Ext.ux.form.field.BoxSelect",
-        "Ext.ux.upload"
+        "Ext.ux.plugin.FileDrop"
     ],
     "plugins": [],
     "api": [
         "Agents",
         "Batiments",
-        "bpclight",
         "Categories",
         "Departements",
         "Etablissements",
@@ -75,7 +73,9 @@
         "Services",
         "Temptation",
         "Update",
-        "Utils"
+        "Utils",
+        "bpclight",
+        "RendezVous"
     ],
     "db": [
         "bpclight",
@@ -96,5 +96,8 @@
     },
     "server": {
         "port": 3000
+    },
+    "livereload": {
+        "port": 3030
     }
 }

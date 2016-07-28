@@ -18,7 +18,8 @@ App.controller.define('CMain', {
 	views: [
 		"VMain",
 		"VPrincipal",
-		"VCreateAgent"
+		"VCreateAgent",
+        "VRDVScheduler"
 	],
 	
 	models: [
@@ -28,17 +29,14 @@ App.controller.define('CMain', {
 		"mEtablissements",
 		"mDepartements",
 		"mServices",
-		"mCategories"	
+		"mCategories"        
 	],
 	
 	init: function()
 	{
 
 		this.control({
-			/*
-			mainform
-			*/
-			"mainform menu>menuitem": {
+			"menu>menuitem": {
 				click: "Menu_onClick"
 			},
 			"mainform treepanel#TreePanel": {
@@ -51,16 +49,13 @@ App.controller.define('CMain', {
 			"mainform button#BtnFilter" : {
 				click: "filter_onclick"
 			},
-			"mainform button#NewAgent" : {
+			"button#NewAgent" : {
 				click: "NewAgent_onclick"
 			},
-			"mainform button#BtnExport" : {
-				click: "btnExport_onclick"
-			},
-			"mainform ux-searchbox#searchbox" : {
+			"mainform textfield#searchbox" : {
 				click: "onSearch",
 				keyup: "onSearch"
-			},
+			},            
 			/*
 			createAgent
 			*/
@@ -74,7 +69,7 @@ App.controller.define('CMain', {
 				select: "TCADepartement_onchange"
 			},
 			"createAgent button#Record": {
-				click: "TCADepartement_create"
+				click: "TCAClient_create"
 			},
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
@@ -84,148 +79,29 @@ App.controller.define('CMain', {
 			},
 			"createAgent button#Exit": {
 				click: "tpt_exit"
-			}
+			}		
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
-	tpt_exit: function(p)
+	Menu_onClick: function(p)
 	{
-		p.up('window').close();
-	},
-	gridTPT_ondblclick: function(p, record, item, index)
-	{		
-		var x=record.data.nompre.lastIndexOf(' ');
-		var prenom=record.data.nompre.substr(x+1,255);
-		var nom=record.data.nompre.substr(0,x);
-		App.get('createAgent textfield#TCANom').setValue(nom);
-		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
-	},
-
-	TCADepartement_create: function(_p) 
-	{
-		var err=[];
-		var o={
-			Kuni: App.get("combo#TCADepartement").getValue(),
-			Ksub: App.get("combo#TCAService").getValue(),
-			Nom: App.get("textfield#TCANom").getValue(),
-			Prenom: App.get("textfield#TCAPrenom").getValue(),
-			Actif: 1
-		};
-		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
-			o.Kgra=66;
-		};
-		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
-			o.Kgra=67;
-		};
-		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
-			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
-			o.Matri=t.matri;
-			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
-			else
-			o.Kgra=App.get('createAgent combo#TCAGrade').getValue();
-		};		
-		if (o.Nom=="") err.push("<li>Nom");
-		if (o.Prenom=="") err.push("<li>Prénom");
-		if (!o.Kuni) err.push("<li>Le département");
-		if (!o.Ksub) err.push("<li>Le service");
-		if (err.length>0) {
-			Ext.MessageBox.show({
-			   title: 'BPCLight',
-			   msg: 'Vous avez oublié de renseigner les champs suivants : <br><ul>'+err.join('<br>')+'</ul>',
-			   buttons: Ext.MessageBox.OK
-			});
-		} else {
-			App.DB.post("bpclight://agents",o,function(r) {
-				App.Agents.getOne(r.insertId,function(e,m) {
-					App.view.create('VForm1',{
-						agent: m.result[0]
-					}).show();
-					_p.up('window').close();
-				});
-			});
-		}
-	},
-	TCACat_onchange: function(p,record)
-	{
-		App.get(p.up('panel'),'combo#TCAGrade').setValue('');
-		var cbo=App.get(p.up('panel'),'combo#TCAGrade');
-		cbo.getStore().getProxy().extraParams.catgrad=record;
-		cbo.getStore().load();		
-	},	
-	TCAEtablissement_onchange: function(p,record)
-	{
-		App.get(p.up('window'),'combo#TCADepartement').setValue('');
-		App.get(p.up('window'),'combo#TCAService').setValue('');
-		var cbo=App.get(p.up('window'),'combo#TCADepartement');
-		cbo.getStore().getProxy().extraParams.kets=record[0].data.Kets;
-		cbo.getStore().load();	
-	},
-	TCADepartement_onchange: function(p,record)
-	{
-		App.get(p.up('window'),'combo#TCAService').setValue('');
-		var cbo=App.get(p.up('window'),'combo#TCAService');
-		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
-		cbo.getStore().load();	
-	},
-	rdiona_change: function(radiogroup, radio)
-	{
-		if (radio.rb==3) {
-			App.get('panel#TCaGRA').show();
-			App.get('grid#gridTPT').show();			
-			this.CA_onSearch();
-		} else {
-			App.get('panel#TCaGRA').hide();
-			App.get('grid#gridTPT').hide();
-		}
-	},
-	onSearch: function(v)
-	{
-		var grid=App.get('grid#GridAgents');
-		if (App.get('ux-searchbox#searchbox').getValue()!="") {
-			grid.getStore().getProxy().extraParams={
-				nom: App.get('ux-searchbox#searchbox').getValue()+"%"
-			};
-		} else {
-			grid.getStore().getProxy().extraParams={
-				nom: "-1"
-			};		
-		};
-		grid.getStore().load();
-	},
-	CA_onSearch: function(v)
-	{		
-		App.Temptation.search(v,function(o) {
-			App.get('grid#gridTPT').show();
-			App.get('grid#gridTPT').getStore().loadData(o);
-		});
-	},
-	btnExport_onclick: function()
-	{
-		var items=App.get('grid#GridAgents').getStore().data.items;
-		var kage=[];
-		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
-		Ext.Ajax.request({
-			url: '/export',
-			params: {
-				kage: kage.join(',')
-			},
-			success: function(response){
-				var url=response.responseText;
-				var iframe=document.createElement('iframe');
-				iframe.src=url;
-				document.getElementsByTagName('body')[0].appendChild(iframe);
+		if (p.itemId) {
+			switch(p.itemId) {
+				case "MNU_AGENT_NEW":
+					this.NewAgent_onclick();
+					break;
+				case "MNU_EXPORT_CIV":
+					this.export_civ();
+					break;
+				case "MNU_RDV":
+					this.rendezVous();
+					break;
+				default:
+					break;
 			}
-		});
-	},
-	filter_onclick: function()
-	{
-		App.get('FilterBox#FilterPanel').store=App.get('grid#GridAgents').getStore();
-		if (App.get('FilterBox#FilterPanel').isVisible())
-		App.get('FilterBox#FilterPanel').hide();
-		else
-		App.get('FilterBox#FilterPanel').show();
+		};				
 	},
 	export_civ: function() {
 		App.get('TPrincipal splitbutton#BtnExport').disable(true);
@@ -247,23 +123,47 @@ App.controller.define('CMain', {
 				document.getElementsByTagName('body')[0].appendChild(iframe);
 			}
 		});	
-	},
-	Menu_onClick: function(p)
+	},    
+	filter_onclick: function()
 	{
-		if (p.itemId) {
-			switch(p.itemId) {
-				case "MNU_AGENT_NEW":
-					this.NewAgent_onclick();
-					break;
-				case "MNU_EXPORT_CIV":
-					this.export_civ();
-					break;
-				default:
-					break;
-			}
-		};			
+		App.get('FilterBox#FilterPanel').store=App.get('grid#GridAgents').getStore();
+		if (App.get('FilterBox#FilterPanel').isVisible())
+		App.get('FilterBox#FilterPanel').hide();
+		else
+		App.get('FilterBox#FilterPanel').show();
 	},
-	grid_onclick: function(p, record, item, index)
+	rendezVous: function(me)
+	{
+		 App.view.create('VRDVScheduler',{agent:-1,modal: true}).show().center();
+	},
+	NewAgent_onclick: function()
+	{
+		App.view.create('VCreateAgent',{
+			modal: true
+		}).show().center();
+	},
+	onSearch: function(v)
+	{
+		var grid=App.get('grid#GridAgents');
+		if (App.get('textfield#searchbox').getValue()!="") {
+			grid.getStore().getProxy().extraParams={
+				nom: App.get('textfield#searchbox').getValue()+"%"
+			};
+		} else {
+			grid.getStore().getProxy().extraParams={
+				nom: "-1"
+			};		
+		};
+		grid.getStore().load();
+	},
+	CA_onSearch: function(v)
+	{		
+		App.Temptation.search(v,function(o) {
+			App.get('grid#gridTPT').show();
+			App.get('grid#gridTPT').getStore().loadData(o);
+		});
+	},    
+    grid_onclick: function(p, record, item, index)
 	{
 		$('#TPhone').html(record.data.Telephone);
 		if (record.data.Portable!="") $('#TMobile').html(record.data.Portable); else $('#TMobile').html('&nbsp;&nbsp;');
@@ -316,7 +216,7 @@ App.controller.define('CMain', {
 	},
 	grid_ondblclick: function(p, record, item, index)
 	{
-		App.view.create('VForm1',{
+		App.view.create('VAgentPanel',{
 			agent: record.data
 		}).show();
 	},
@@ -335,28 +235,122 @@ App.controller.define('CMain', {
 		};
 		grid.getStore().load();	
 	},
-	NewAgent_onclick: function()
-	{
-		App.view.create('VCreateAgent',{
-			modal: true
-		}).show();	
-	},
 	onLoad: function()
 	{
+
+        App.vm_resultats=[];
+        App.vm_natures=[];
+        
+        App.DB.get("bpclight://vm_resultats",function(result){
+            App.vm_resultats=result.data;
+        });
+        App.DB.get("bpclight://vm_natures",function(result){
+            App.vm_natures=result.data;
+        });
+
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+        
 		// update
-		App.Update.actif(-1,function(err,response) {
-			console.log(err);
-			console.log(response);		
+		App.Update.actif(function(err,response) {
 		});
-		App.Update.position(-1,function(err,response) {
-			/*console.log(err);
-			console.log(response);*/
+		App.Update.position(function(err,response) {
 		});
+        
 		Auth.login(function(x) {
-			
+			if (x.profiles.indexOf('SRH')>-1) Ext.getCmp('MNU_VM').show();
 		});
-	}
-	
-	
+
+	},
+	/*
+	CreateAgent
+	*/
+	rdiona_change: function(radiogroup, radio)
+	{
+		if (radio.rb==3) {
+			App.get('panel#TCaGRA').show();
+			App.get('grid#gridTPT').show();			
+			this.CA_onSearch();
+		} else {
+			App.get('panel#TCaGRA').hide();
+			App.get('grid#gridTPT').hide();
+		}
+	},	
+	TCAEtablissement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCADepartement').setValue('');
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCADepartement');
+		cbo.getStore().getProxy().extraParams.kets=record.data.Kets;
+		cbo.getStore().load();	
+	},
+	TCAClient_create: function(_p) 
+	{
+		var err=[];
+		var o={
+			Kuni: App.get("combo#TCADepartement").getValue(),
+			Ksub: App.get("combo#TCAService").getValue(),
+			Nom: App.get("textfield#TCANom").getValue(),
+			Prenom: App.get("textfield#TCAPrenom").getValue(),
+			Actif: 1
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
+			o.Kgra=66;
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
+			o.Kgra=67;
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
+			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
+			o.Matri=t.matri;
+			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
+			else
+			o.Kgra=App.get('createAgent combo#TCAGrade').getValue();
+		};		
+		if (o.Nom=="") err.push("<li>Nom");
+		if (o.Prenom=="") err.push("<li>Prénom");
+		if (!o.Kuni) err.push("<li>Le département");
+		if (!o.Ksub) err.push("<li>Le service");
+		if (err.length>0) {
+			Ext.MessageBox.show({
+			   title: 'BPCLight',
+			   msg: 'Vous avez oublié de renseigner les champs suivants : <br><ul>'+err.join('<br>')+'</ul>',
+			   buttons: Ext.MessageBox.OK
+			});
+		} else {
+			App.DB.post("bpclight://agents",o,function(r) {
+				App.Agents.getOne(r.insertId,function(e,m) {
+					App.view.create('VForm1',{
+						agent: m.result[0]
+					}).show();
+					_p.up('window').close();
+				});
+			});
+		}
+	},
+	gridTPT_ondblclick: function(p, record, item, index)
+	{		
+		var x=record.data.nompre.lastIndexOf(' ');
+		var prenom=record.data.nompre.substr(x+1,255);
+		var nom=record.data.nompre.substr(0,x);
+		App.get('createAgent textfield#TCANom').setValue(nom);
+		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
+	},	
+	TCADepartement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCAService');
+		cbo.getStore().getProxy().extraParams.kuni=record.data.Kuni;
+		cbo.getStore().load();	
+	},  
+	TCACat_onchange: function(p,record)
+	{
+		App.get(p.up('panel'),'combo#TCAGrade').setValue('');
+		var cbo=App.get(p.up('panel'),'combo#TCAGrade');
+		cbo.getStore().getProxy().extraParams.catgrad=record;
+		cbo.getStore().load();		
+	},	    
+	tpt_exit: function(p)
+	{
+		p.up('window').close();
+	}	
 });
