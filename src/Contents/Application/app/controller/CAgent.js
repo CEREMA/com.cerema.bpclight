@@ -201,10 +201,15 @@ App.controller.define('CAgent', {
             },
             "VRDVScheduler schedulergrid": {
                  eventcontextmenu: "rdv_oncontextmenu",
-                 beforeeventadd: "rdv_drag_add"
+                 beforeeventadd: "rdv_drag_add",
+                eventdblclick: "rdv_dblclick"
             }
 		});
 	},
+    rdv_dblclick: function( me, eventRecord, e, eOpts )
+    {
+        console.log(eventRecord);
+    },
     rdv_drag_add: function( me, newEventRecord, resources, eOpts )
     {        
         if (me.up('window').agent==-1) return false;
