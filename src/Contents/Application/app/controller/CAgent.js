@@ -209,9 +209,11 @@ App.controller.define('CAgent', {
     rdv_dblclick: function( me, eventRecord, e, eOpts )
     {
         var kage=eventRecord.data.kage;
+        App.info.loading('Veuillez patienter');
         if (me.up('window').agent==-1) {
             // On récupère l'objet agent
             App.Agents.getOne(kage,function(response){
+                App.info.hide();
                 App.view.create('VAgentPanel',{
                     agent: response[0]
                 }).show();                
