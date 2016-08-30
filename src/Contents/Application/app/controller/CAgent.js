@@ -1008,7 +1008,7 @@ App.controller.define('CAgent', {
 		};
 		p.setTitle(p.agent.Prenom+" "+p.agent.Nom);
 		App.Agents.getPhoto(p.agent.Kage,function(o) {
-			if (o.length>0)	App.get(p,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+o[0].trombi+'" width=100 height=120></img></div>');
+			if (o.length>0)	App.get(p,'TSidePanel panel#PanelPhoto').update('<div class=IPhoto><img src="'+o[0].trombi+'" width=120 height=160></img></div>');
 		});		
 		App.get(p,'TSidePanel textfield#LAgentNom').setValue(p.agent.Nom);
 		App.get(p,'TSidePanel textfield#LAgentPrenom').setValue(p.agent.Prenom);
