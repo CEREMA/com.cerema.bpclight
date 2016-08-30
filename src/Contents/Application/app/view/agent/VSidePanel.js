@@ -11,7 +11,7 @@ App.view.define('agent.VSidePanel',{
 				html: "",
 				itemId: "PanelPhoto",
 				height: 180,
-                width: "100%",
+                width: "90%",
 				border: false,
                 plugins: [{
 					ptype: "filedrop",
