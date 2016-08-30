@@ -10,7 +10,8 @@ App.view.define('agent.VSidePanel',{
 				xtype: "panel",
 				html: "",
 				itemId: "PanelPhoto",
-				height: 140,
+				height: 160,
+                width: 120,
 				width: "100%",
 				border: false,
                 plugins: [{
