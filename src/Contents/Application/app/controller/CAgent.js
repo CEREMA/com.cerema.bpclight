@@ -782,8 +782,6 @@ App.controller.define('CAgent', {
 	},
 	position_onchange: function(p,record)
 	{
-		var record=[p.getStore()];
-		console.log(record);
 		this.situation_cancel_onclick(p);
 		App.get(p.up('TSituation'),'grid#gridPositions').hide();
 		App.get(p.up('TSituation'),'panel#situation_header').show();
