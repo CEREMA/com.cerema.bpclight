@@ -1106,6 +1106,7 @@ App.controller.define('CAgent', {
 	},
 	TIDepartement_onchange: function(p,record)
 	{
+		record=[record];
 		App.get(p.up('window'),'combo#TIService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TIService');
 		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
