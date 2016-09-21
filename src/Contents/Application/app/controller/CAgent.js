@@ -87,7 +87,9 @@ App.controller.define('CAgent', {
 				show: "TSituation_onshow"
 			},
 			"TSituation combo#position": {
-				select: "position_onchange"
+				select: function(p,record) {
+					alert(record);
+				}
 			},
 			"TSituation button#situation_cancel": {
 				click: "situation_cancel_onclick"
