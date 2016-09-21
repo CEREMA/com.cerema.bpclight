@@ -87,9 +87,7 @@ App.controller.define('CAgent', {
 				show: "TSituation_onshow"
 			},
 			"TSituation combo#position": {
-				select: function(p,record) {
-					alert(record);
-				}
+				select: "position_onchange"
 			},
 			"TSituation button#situation_cancel": {
 				click: "situation_cancel_onclick"
@@ -784,6 +782,7 @@ App.controller.define('CAgent', {
 	},
 	position_onchange: function(p,record)
 	{
+		alert(record);
 		this.situation_cancel_onclick(p);
 		App.get(p.up('TSituation'),'grid#gridPositions').hide();
 		App.get(p.up('TSituation'),'panel#situation_header').show();
