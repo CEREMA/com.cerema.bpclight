@@ -1097,6 +1097,7 @@ App.controller.define('CAgent', {
 	},
 	TIEtablissement_onchange: function(p,record)
 	{
+		record=[record];
 		App.get(p.up('window'),'combo#TIDepartement').setValue('');
 		App.get(p.up('window'),'combo#TIService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TIDepartement');
