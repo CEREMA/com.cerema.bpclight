@@ -36,12 +36,13 @@
             "type": "desktop",
             "version": "6.2.0",
             "theme": "classic",
+            "platform": "classic",
             "src": [
-                "http://cdn.omneedia.com/public/ext/gpl/{version}/ext-all-debug.js",
-                "http://cdn.omneedia.com/public/ext/gpl/{version}/classic/theme-{theme}/theme-{theme}-debug.js"
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/ext-{platform}-all-debug.js",
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/{platform}/theme-{theme}/theme-{theme}-debug.js"
             ],
             "res": [
-                "http://cdn.omneedia.com/public/ext/gpl/{version}/classic/theme-{theme}/resources/theme-{theme}-all-debug.css"
+                "http://cdn.omneedia.com/public/ext/gpl/{version}/{platform}/theme-{theme}/resources/theme-{theme}-all-debug.css"
             ]
         }
     ],
