@@ -819,6 +819,7 @@ App.controller.define('CAgent', {
 	},
 	VilleCBO_onclick: function(p,record)
 	{
+		record=[record];
 		p.hide();
 		App.get(p.up('TAgentPanel'),'textfield#CodePostal').setValue(p.getValue());
 		App.get(p.up('TAgentPanel'),'textfield#Ville').show();
@@ -1073,6 +1074,7 @@ App.controller.define('CAgent', {
 	},
 	TCat_onchange: function(p,record)
 	{
+		record=[record];
 		App.get(p.up('window'),'combo#TGrade').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TGrade');
 		cbo.getStore().getProxy().extraParams.catgrad=record[0].data.Kcgr;
