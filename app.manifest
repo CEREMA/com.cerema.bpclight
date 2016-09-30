@@ -57,7 +57,7 @@
         "Ext.ux.Scheduler",
         "Ext.ux.FilterBox",
         "Ext.ux.plugin.FileDrop",
-        "Ext.ux.form.field.DateTime"
+        "Ext.ux.DateTimeField"
     ],
     "plugins": [],
     "api": [
