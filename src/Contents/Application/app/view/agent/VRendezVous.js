@@ -71,7 +71,7 @@ App.view.define('agent.VRendezVous', {
                     width: 100,
                     renderer:Ext.util.Format.dateRenderer('d/m/Y g:i'),
 					editor: {
-                        xtype: 'datefield',
+                        xtype: 'datetimepicker',
                         allowBlank: false					
 					}
                 },
