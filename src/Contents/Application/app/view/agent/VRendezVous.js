@@ -21,14 +21,14 @@ App.view.define('agent.VRendezVous', {
             boxLabel: 'Agent occupant un poste à risque'
         },
         {
-            xtype: "checkboxfield",
+            xtype: "radiofield",
             width: "100%",
             itemId: "dossierdemande",
             padding: 10,
             boxLabel: 'Dossier demandé'
         },
         {
-            xtype: "checkboxfield",
+            xtype: "radiofield",
             width: "100%",
             itemId: "dossierrecu",
             padding: 10,
