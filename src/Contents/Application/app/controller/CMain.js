@@ -217,7 +217,8 @@ App.controller.define('CMain', {
 	grid_ondblclick: function(p, record, item, index)
 	{
 		App.view.create('VAgentPanel',{
-			agent: record.data
+			agent: record.data,
+			modal: true
 		}).show();
 	},
 	tree_onclick: function(p, record, item, index)
