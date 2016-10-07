@@ -172,7 +172,7 @@ App.controller.define('CAgent', {
                 "click": "add_rdv"     
             },
             "TRendezVous grid": {
-                edit: "update_rdv"
+                //edit: "update_rdv"
             },
             "TRendezVous checkboxfield": {
                 change: "rdv_check_change"  
