@@ -2,7 +2,7 @@ App.view.define('VMedicRDV',{
 	extend: "Ext.window.Window",
 	alias: "widget.vmedicwindow",
     width : 630,
-    height : 200,
+    height : 250,
 	itemId: "RDV",
     layout : 'vbox',
 	title: "Rendez vous",
