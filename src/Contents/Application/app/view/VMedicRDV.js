@@ -66,7 +66,7 @@ App.view.define('VMedicRDV',{
 						displayField: 'nature',
 						valueField: 'kvm_natures'
 					},{
-						xtype: 'datefield',
+						xtype: 'datetimefield',
 						itemId:'EdVMDate',
 						fieldLabel: 'Date RDV',
 						labelAlign:'top',
