@@ -182,6 +182,7 @@ App.controller.define('CAgent', {
 				show: function(me) {
 					console.log(me.dta);
 					App.get(me,'combo#EdVMNature').getStore().on('load',function(){
+						alert('x');
 						App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
 					});
 					
