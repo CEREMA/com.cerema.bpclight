@@ -51,11 +51,13 @@ App.view.define('VMedicRDV',{
 		{
 				layout: 'hbox',
 				border: false,
+				width: "100%",
 				items: [
 					{
 						xtype: 'combo',
-						id:'EdVMNature',
+						itemId:'EdVMNature',
 						fieldLabel: 'Nature de la visite',
+						flex: 1,
 						labelAlign: 'top',
 						padding: 5,
 						store: App.store.create("bpclight://vm_natures"),
@@ -64,20 +66,21 @@ App.view.define('VMedicRDV',{
 						valueField: 'kvm_natures'
 					},{
 						xtype: 'datefield',
-						id:'EdVMDate',
+						itemId:'EdVMDate',
 						fieldLabel: 'Date RDV',
 						labelAlign:'top',
 						padding:5						
 					},{
 						xtype: 'textfield',
-						id:'EdVMHeure',
+						iditemIdEdVMHeure',
 						fieldLabel: 'Heure RDV',
 						labelAlign:'top',
 						padding:5						
 					},{
 						xtype: 'combo',
 						fieldLabel: 'Résultats',
-						id:'EdVMResultats',
+						itemId:'EdVMResultats',
+						flex: 1,
 						labelAlign:'top',
 						editable: false,
 						padding:5,
@@ -90,11 +93,11 @@ App.view.define('VMedicRDV',{
 		},{
 				xtype: 'textfield',
 				fieldLabel: 'Commentaires',
-				id: 'EdVMCommentaires',
+				itemId: 'EdVMCommentaires',
 				labelAlign:'top',
 				padding: 5,
 				flex: 1,
-				width: 595
+				width: "100%"
 		}];
 		this.callParent();
 	}
