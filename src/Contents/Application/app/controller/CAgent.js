@@ -268,6 +268,7 @@ App.controller.define('CAgent', {
 		/*App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
 			console.log(r);
 		});*/
+		});*/
     },
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
