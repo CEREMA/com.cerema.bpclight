@@ -173,6 +173,7 @@ App.controller.define('CAgent', {
             },
             "TRendezVous grid": {
                 //edit: "update_rdv"
+				dblclick: "grid_click"
             },
             "TRendezVous checkboxfield": {
                 //change: "rdv_check_change"  
@@ -180,7 +181,9 @@ App.controller.define('CAgent', {
             
 		});
 	},
-    
+    grid_click: function(me,record) {
+		console.log(record);
+	},
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
         App.get(me,'grid').bindStore(store);
