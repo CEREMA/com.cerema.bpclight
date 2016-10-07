@@ -19,7 +19,6 @@ App.controller.define('CMain', {
 		"VMain",
 		"VPrincipal",
 		"VCreateAgent",
-        "VRDVScheduler",
 		"VMedicRDV"
 	],
 	
