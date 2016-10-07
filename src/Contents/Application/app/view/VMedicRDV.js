@@ -23,8 +23,11 @@ App.view.define('VMedicRDV',{
 						resultat: Ext4.getCmp('EdVMResultats').getValue(),
 						commentaires: Ext4.getCmp('EdVMCommentaires').getValue()
 					};
-					//if (me.up('window').dta.)
-					
+					if (me.up('window').dta.rdv_id) request.rdv_id=me.up('window').dta.rdv_id;
+					App.DB.post('bpclight://medic_rdv',request,function(r){
+						console.log(r);
+						me.up('window').close();
+					})
 				}
 			},{
 				xtype: "button",
