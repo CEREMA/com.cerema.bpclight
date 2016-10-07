@@ -44,20 +44,20 @@ App.view.define('agent.VRendezVous', {
                 itemId: "add_rdv"
             }
             ],
-            plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+            plugins: [/*Ext.create('Ext.grid.plugin.CellEditing', {
                 clicksToEdit : 1
-            })],
+            })*/],
             columns:[
                 {
                     header: "Nature visite",
 					dataIndex: "nature",
-                    editor: {
+                    /*editor: {
                         xtype: 'combo',
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_natures'),
                         displayField: "nature",
                         valueField: "kvm_natures"
-                    },
+                    },*/
                     flex: 1,
                     renderer : function (value, meta, record, rowIndex, columnIndex, view) {
                         for (var i=0;i<App.vm_natures.length;i++) {
@@ -70,21 +70,21 @@ App.view.define('agent.VRendezVous', {
 					dataIndex: "StartDate",
                     width: 100,
                     renderer:Ext.util.Format.dateRenderer('d/m/Y'),
-					editor: {
+					/*editor: {
                         xtype: 'datetimefield',
                         allowBlank: false					
-					}
+					}*/
                 },
                 {
                     header: "Résultat",
 					dataIndex: "resultat",
-                    editor: {
+                    /*editor: {
                         xtype: 'combo',
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
                         displayField: "resultat",
                         valueField: "kvm_resultats"
-                    },
+                    },*/
                     renderer : function (value, meta, record, rowIndex, columnIndex, view) {
                         for (var i=0;i<App.vm_resultats.length;i++) {
                             if (App.vm_resultats[i].kvm_resultats==value) return App.vm_resultats[i].resultat;
