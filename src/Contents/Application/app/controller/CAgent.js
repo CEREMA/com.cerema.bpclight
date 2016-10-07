@@ -178,6 +178,9 @@ App.controller.define('CAgent', {
             "TRendezVous checkboxfield": {
                 change: "rdv_check_change"  
             },
+            "TRendezVous radiofield": {
+                change: "rdv_radio_change"  
+            },			
 			"vmedicwindow": {
 				show: function(me) {
 					if (me.dta) {
@@ -196,13 +199,23 @@ App.controller.define('CAgent', {
             
 		});
 	},
+	rdv_radio_change: function(radio, val) {
+		var obj={
+            kage: radio.up('window').agent.Kage,
+			gen_dossierdemande:0,
+        	gen_dossierrecu:0		
+        };
+		if (radio.itemId=="dossierdemande") obj.gen_dossierdemande=val;
+        if (radio.itemId=="dossierrecu") obj.gen_dossierrecu=val;        
+        App.DB.post('bpclight://medic_gen',obj,function(e){
+            console.log(e);
+        })		
+	},
 	rdv_check_change: function (checkbox, val) { 
         var obj={
             kage: checkbox.up('window').agent.Kage
         };
         if (checkbox.itemId=="posteRisque") obj.gen_posterisque=val;
-        if (checkbox.itemId=="dossierdemande") obj.gen_dossierdemande=val;
-        if (checkbox.itemId=="dossierrecu") obj.gen_dossierrecu=val;
         App.DB.post('bpclight://medic_gen',obj,function(e){
             console.log(e);
         })
