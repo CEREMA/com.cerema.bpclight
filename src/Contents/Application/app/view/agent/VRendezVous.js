@@ -18,6 +18,11 @@ App.view.define('agent.VRendezVous', {
             itemId: "posteRisque",
             width: "100%",
             padding: 10,
+			listeners: {
+            change: function(field, newValue, oldValue, eOpts){
+                console.log('change:' + field.fieldLabel + ' ' + newValue.rb);
+            }
+        	},
             boxLabel: 'Agent occupant un poste à risque'
         },
         {
