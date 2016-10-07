@@ -68,7 +68,7 @@ App.view.define('VMedicRDV',{
 					},{
 						xtype: 'datetimefield',
 						itemId:'EdVMDate',
-						width: 100,
+						width: 140,
 						fieldLabel: 'Date RDV',
 						labelAlign:'top',
 						padding:5						
