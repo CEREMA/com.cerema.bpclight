@@ -72,12 +72,6 @@ App.view.define('VMedicRDV',{
 						labelAlign:'top',
 						padding:5						
 					},{
-						xtype: 'textfield',
-						iditemId: 'EdVMHeure',
-						fieldLabel: 'Heure RDV',
-						labelAlign:'top',
-						padding:5						
-					},{
 						xtype: 'combo',
 						fieldLabel: 'Résultats',
 						itemId:'EdVMResultats',
