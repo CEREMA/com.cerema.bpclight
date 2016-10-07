@@ -168,21 +168,15 @@ App.controller.define('CAgent', {
             "TRendezVous": {
                 show: "TRendezVous_onshow"  
             },
-			"TRendezVous checkboxfield": {
-				change: function() {
-					alert('x');
-				} 	
-			},
             "TRendezVous button#add_rdv": {
                 "click": "add_rdv"     
             },
             "TRendezVous grid": {
-                //edit: "update_rdv"
 				itemdblclick: "grid_click",
 				itemcontextmenu: "grid_onContextMenu",
             },
             "TRendezVous checkboxfield": {
-                //change: "rdv_check_change"  
+                change: "rdv_check_change"  
             },
 			"vmedicwindow": {
 				show: function(me) {
@@ -202,6 +196,17 @@ App.controller.define('CAgent', {
             
 		});
 	},
+	rdv_check_change: function (checkbox, val) { 
+        var obj={
+            kage: checkbox.up('window').agent.Kage
+        };
+        if (checkbox.itemId=="posteRisque") obj.gen_posterisque=val;
+        if (checkbox.itemId=="dossierdemande") obj.gen_dossierdemande=val;
+        if (checkbox.itemId=="dossierrecu") obj.gen_dossierrecu=val;
+        App.DB.post('bpclight://medic_gen',obj,function(e){
+            console.log(e);
+        })
+    },
 	grid_onContextMenu: function(view,rec,node,index,e) {
 		e.stopEvent();
 		var x=Ext.create('Ext.menu.Menu',{
