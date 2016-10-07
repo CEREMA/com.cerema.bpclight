@@ -58,7 +58,7 @@ App.view.define('VMedicRDV',{
 						fieldLabel: 'Nature de la visite',
 						labelAlign: 'top',
 						padding: 5,
-						store: App.store.create({fields:[],data:[]}),
+						store: App.store.create("bpclight://vm_natures"),
 						editable: false,						
 						displayField: 'nature',
 						valueField: 'kvm_natures'
@@ -81,7 +81,8 @@ App.view.define('VMedicRDV',{
 						labelAlign:'top',
 						editable: false,
 						padding:5,
-						store: App.store.create({fields:[],data:[]}),
+						flex: 1,
+						store: App.store.create("bpclight://vm_resultats"),
 						displayField:'resultat',
 						valueField:'kvm_resultats'						
 					}
