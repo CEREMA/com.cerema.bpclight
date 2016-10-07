@@ -72,7 +72,7 @@ App.view.define('VMedicRDV',{
 						padding:5						
 					},{
 						xtype: 'textfield',
-						iditemIdEdVMHeure',
+						iditemId: 'EdVMHeure',
 						fieldLabel: 'Heure RDV',
 						labelAlign:'top',
 						padding:5						
