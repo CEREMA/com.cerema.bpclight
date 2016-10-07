@@ -70,6 +70,7 @@ App.view.define('agent.VRendezVous', {
 					dataIndex: "StartDate",
                     width: 100,
                     renderer:Ext.util.Format.dateRenderer('d/m/Y'),
+					dateFormat: 'Y-m-d H:i:s'
 					/*editor: {
                         xtype: 'datetimefield',
                         allowBlank: false					
