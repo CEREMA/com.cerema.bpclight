@@ -77,7 +77,7 @@ App.view.define('agent.VRendezVous', {
                 },
                 {
                     header: "Résultat",
-					dataIndex: "resultats",
+					dataIndex: "resultat",
                     editor: {
                         xtype: 'combo',
                         allowBlank: false,
