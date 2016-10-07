@@ -173,7 +173,8 @@ App.controller.define('CAgent', {
             },
             "TRendezVous grid": {
                 //edit: "update_rdv"
-				itemdblclick: "grid_click"
+				itemdblclick: "grid_click",
+				itemcontextmenu: "grid_onContextMenu",
             },
             "TRendezVous checkboxfield": {
                 //change: "rdv_check_change"  
@@ -195,6 +196,23 @@ App.controller.define('CAgent', {
 			}
             
 		});
+	},
+	grid_onContextMenu: function(view,rec,node,index,e) {
+		e.stopEvent();
+		var x=Ext.create('Ext.menu.Menu',{
+			items: [
+				{
+					text: "Supprimer",
+					handler: function(me) {
+						App.DB.del('bpclight://medic_rdv?rdv_id='+rec.data.rdv_id,function(r){
+							console.log(r);
+						})
+					};
+				}				
+			]
+		});
+		x.showAt(e.getXY());
+		return false;	
 	},
     grid_click: function(me,record) {
 		console.log(record.data);
