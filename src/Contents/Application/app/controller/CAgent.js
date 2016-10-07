@@ -175,7 +175,7 @@ App.controller.define('CAgent', {
                 //edit: "update_rdv"
             },
             "TRendezVous checkboxfield": {
-                change: "rdv_check_change"  
+                //change: "rdv_check_change"  
             }
             
 		});
