@@ -23,21 +23,8 @@ App.view.define('VMedicRDV',{
 						resultat: Ext4.getCmp('EdVMResultats').getValue(),
 						commentaires: Ext4.getCmp('EdVMCommentaires').getValue()
 					};
-					if (me.up('window').dta.)
-					VM.update(request,function(b){
-						/*if (b)
-						{
-							$.gritter.add({
-								title: 'BPCLight Notification',
-								text: "Enregistrement effectué.",
-								image: "",
-								sticky: false,
-								time: ''
-							});		
-							Me().StoreVM.load();
-							_p.close();
-						} else Ext4.MessageBox.alert('BPC Light',"Erreur lors de l'enregistrement");
-					});*/
+					//if (me.up('window').dta.)
+					
 				}
 			},{
 				xtype: "button",
