@@ -25,10 +25,6 @@ App.view.define('agent.VRendezVous', {
         	},
             boxLabel: 'Agent occupant un poste à risque'
         },
-		{
-			xtype      : 'fieldcontainer',
-            fieldLabel : 'Size',
-			items: [
 				{
 					xtype: "radiofield",
 					width: "100%",
@@ -42,9 +38,7 @@ App.view.define('agent.VRendezVous', {
 					itemId: "dossierrecu",
 					padding: 10,
 					boxLabel: 'Dossier reçu'
-				}		
-			]
-		},
+				},
         {
             xtype: "grid",
             width: "100%",
