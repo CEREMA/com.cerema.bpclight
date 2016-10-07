@@ -48,50 +48,7 @@ App.view.define('agent.VRendezVous', {
                 clicksToEdit : 1
             })],
             columns:[
-                {
-                    header: "Nature visite",
-					dataIndex: "nature_visite",
-                    editor: {
-                        xtype: 'combo',
-                        allowBlank: false,
-                        store: App.store.create('bpclight://vm_natures'),
-                        displayField: "nature",
-                        valueField: "kvm_natures"
-                    },
-                    flex: 1,
-                    renderer : function (value, meta, record, rowIndex, columnIndex, view) {
-                        for (var i=0;i<App.vm_natures.length;i++) {
-                            if (App.vm_natures[i].kvm_natures==value) return App.vm_natures[i].nature;
-                        };
-                    }
-                },
-                /*{
-                    header: "Date visite",
-					dataIndex: "date_visite",
-                    width: 100,
-                    renderer:Ext.util.Format.dateRenderer('d/m/Y'),
-					editor: {
-                        xtype: 'datefield',
-                        allowBlank: false					
-					}
-                },*/
-                {
-                    header: "Résultat",
-					dataIndex: "resultats",
-                    editor: {
-                        xtype: 'combo',
-                        allowBlank: false,
-                        store: App.store.create('bpclight://vm_resultats'),
-                        displayField: "resultat",
-                        valueField: "kvm_resultats"
-                    },
-                    renderer : function (value, meta, record, rowIndex, columnIndex, view) {
-                        for (var i=0;i<App.vm_resultats.length;i++) {
-                            if (App.vm_resultats[i].kvm_resultats==value) return App.vm_resultats[i].resultat;
-                        };
-                    },                    
-                    flex: 1
-                }
+                
             ],
             store: App.store.create({fields:[],data:[]})
         }
