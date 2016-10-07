@@ -183,6 +183,7 @@ App.controller.define('CAgent', {
 					App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
 					App.get(me,'datetimefield#EdVMDate').setValue(me.dta.StartDate);
 					App.get(me,'combo#EdVMResultats').setValue(me.dta.resultat);
+					App.get(me,'textarea#EdVMCommentaires').setValue(me.dta.commentaires);
 				}
 			}
             
