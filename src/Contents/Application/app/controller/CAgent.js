@@ -16,7 +16,6 @@ App.controller.define('CAgent', {
 	views: [
 		"VAgentPanel",
 		"VShowFormation",
-        "VRDVScheduler",
 		"agent.VSidePanel",
 		"agent.VAgent",
 		"agent.VSituation",
