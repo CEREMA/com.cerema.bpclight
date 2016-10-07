@@ -205,8 +205,14 @@ App.controller.define('CAgent', {
 			gen_dossierdemande:0,
         	gen_dossierrecu:0		
         };
-		if (radio.itemId=="dossierdemande") obj.gen_dossierdemande=val;
-        if (radio.itemId=="dossierrecu") obj.gen_dossierrecu=val;        
+		if (radio.itemId=="dossierdemande") {
+			obj.gen_dossierdemande=val;
+			App.get("radiofield#dossierrecu").setValue(false);
+		};
+        if (radio.itemId=="dossierrecu") {
+			obj.gen_dossierrecu=val;
+			App.get("radiofield#dossierdemande").setValue(false);
+		};
         App.DB.post('bpclight://medic_gen',obj,function(e){
             console.log(e);
         })		
