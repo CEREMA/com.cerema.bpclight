@@ -264,11 +264,10 @@ App.controller.define('CAgent', {
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://vm?kage='+me.up('window').agent.Kage);
         App.get(me,'grid').bindStore(store);
-        App.get(me,'grid').getStore().load();
+        store.load();
 		/*App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
 			console.log(r);
 		});*/
-		});
     },
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
