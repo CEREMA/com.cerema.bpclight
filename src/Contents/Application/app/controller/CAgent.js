@@ -179,8 +179,8 @@ App.controller.define('CAgent', {
                 //change: "rdv_check_change"  
             },
 			"vmedicwindow": {
-				show: function() {
-					alert(this.dta);
+				show: function(me) {
+					alert(me.dta);
 				}
 			}
             
