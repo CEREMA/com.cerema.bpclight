@@ -176,90 +176,11 @@ App.controller.define('CAgent', {
             },
             "TRendezVous checkboxfield": {
                 change: "rdv_check_change"  
-            },
-            /*
-            VRDVScheduler
-            */
-            "VRDVScheduler": {
-                show: "VRDVScheduler_onshow"
-            },
-            "VRDVScheduler combo#selectMonth": {
-                select: "rdv_month"
-            },
-            "VRDVScheduler combo#selectAnnee": {
-                select: "rdv_year"
-            },            
-            "VRDVScheduler button#previous": {
-                click: "rdv_previous"
-            },
-            "VRDVScheduler button#next": {
-                click: "rdv_next"
-            },
-            "VRDVScheduler button#record": {
-                click: "rdv_record"
-            },
-            "VRDVScheduler schedulergrid": {
-                eventcontextmenu: "rdv_oncontextmenu",
-                beforeeventadd: "rdv_drag_add",
-                eventdblclick: "rdv_dblclick"
             }
+            
 		});
 	},
-    rdv_dblclick: function( me, eventRecord, e, eOpts )
-    {
-        var kage=eventRecord.data.kage;
-        App.info.loading('Veuillez patienter');
-        if (me.up('window').agent==-1) {
-            // On récupère l'objet agent
-            App.Agents.getOne(kage,function(response){
-                App.info.hide();
-                App.view.create('VAgentPanel',{
-                    agent: response[0]
-                }).show();                
-            });
-        };
-    },
-    rdv_drag_add: function( me, newEventRecord, resources, eOpts )
-    {        
-        if (me.up('window').agent==-1) return false;
-    },
-    rdv_oncontextmenu: function( me, record, e, eOpts ) {                            
-        e.stopEvent();
-
-        Ext.create('Ext.menu.Menu', {
-            items: [
-			{
-				text: "Supprimer le rendez-vous",
-                handler: function() {
-                    /*App.DB.del("bpclight://medic_rdv",[record.data.internalId],function(){
-                        me.getEventStore().load();
-                    })*/
-                }
-			}]
-        }).showAt(e.getXY());
-        
-    },
-    rdv_check_change: function (checkbox, val) { 
-        var obj={
-            kage: checkbox.up('window').agent.Kage
-        };
-        if (checkbox.itemId=="posteRisque") obj.gen_posterisque=val;
-        if (checkbox.itemId=="dossierdemande") obj.gen_dossierdemande=val;
-        if (checkbox.itemId=="dossierrecu") obj.gen_dossierrecu=val;
-        App.DB.post('bpclight://medic_gen',obj,function(e){
-            console.log(e);
-        })
-    },
-    update_rdv: function(me) {
-        var grid=App.get('TRendezVous grid');
-        var records = grid.getStore().getRange();
-        for (var i=0;i<records.length;i++) {
-            var rec=records[i].data;
-            /*App.DB.post('bpclight://medic_rdv',rec,function() {
-                grid.getStore().load();
-            });*/
-        };        
-    },
+    
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://vmedic_rdv?kage='+me.up('window').agent.Kage);
 		console.log(store);
