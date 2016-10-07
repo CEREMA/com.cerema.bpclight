@@ -232,9 +232,9 @@ App.controller.define('CAgent', {
 			{
 				text: "Supprimer le rendez-vous",
                 handler: function() {
-                    App.DB.del("bpclight://medic_rdv",[record.data.internalId],function(){
+                    /*App.DB.del("bpclight://medic_rdv",[record.data.internalId],function(){
                         me.getEventStore().load();
-                    })
+                    })*/
                 }
 			}]
         }).showAt(e.getXY());
@@ -256,9 +256,9 @@ App.controller.define('CAgent', {
         var records = grid.getStore().getRange();
         for (var i=0;i<records.length;i++) {
             var rec=records[i].data;
-            App.DB.post('bpclight://medic_rdv',rec,function() {
+            /*App.DB.post('bpclight://medic_rdv',rec,function() {
                 grid.getStore().load();
-            });
+            });*/
         };        
     },
     TRendezVous_onshow: function(me) {
@@ -289,10 +289,10 @@ App.controller.define('CAgent', {
                 
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
                 
-                App.DB.post('bpclight://medic_rdv',obj,function(obj){
+               /* App.DB.post('bpclight://medic_rdv',obj,function(obj){
                       if (grid) grid.getStore().load();
 		              me.up('window').close();                    
-                });
+                });*/
 			}
 		};        
     },
