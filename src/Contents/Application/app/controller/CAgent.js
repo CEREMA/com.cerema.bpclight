@@ -182,7 +182,7 @@ App.controller.define('CAgent', {
 	},
     
     TRendezVous_onshow: function(me) {
-        var store=App.store.create('bpclight://vmedic_rdv?kage='+me.up('window').agent.Kage);
+        var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
 		console.log(store);
         App.get(me,'grid').bindStore(store);
         store.load();
