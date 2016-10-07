@@ -177,7 +177,12 @@ App.controller.define('CAgent', {
             },
             "TRendezVous checkboxfield": {
                 //change: "rdv_check_change"  
-            }
+            },
+			"vmedicwindow": {
+				show: function() {
+					alert(this.data);
+				}
+			}
             
 		});
 	},
