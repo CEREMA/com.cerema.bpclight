@@ -150,10 +150,10 @@ App.controller.define('CAgent', {
 			"TVisitData": {
 				show: "visitdata_onshow"
 			},
-			"TVisitData toolbar #Exit": {
+			"TVisitData toolbar#Exit": {
 				click: "Visit_onExit"
 			},
-			"TVisitData toolbar #RecordMe": {
+			"TVisitData toolbar#RecordMe": {
 				click: "Visit_onRecord"
 			},
 			"TVisitData button#prev": {
