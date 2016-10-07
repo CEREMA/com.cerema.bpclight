@@ -14,16 +14,16 @@ App.view.define('VMedicRDV',{
 			{
 				xtype: "button",
 				text: "OK",
-				handler: function()
+				handler: function(me)
 				{
-					/*var request={};
-					request.kage=AGENT_KAGE;
-					request.nature=Ext4.getCmp('EdVMNature').getValue();
-					request.date=Ext4.getCmp('EdVMDate').getValue();
-					request.heure=Ext4.getCmp('EdVMHeure').getValue();
-					request.resultats=Ext4.getCmp('EdVMResultats').getValue();
-					request.commentaires=Ext4.getCmp('EdVMCommentaires').getValue();
-					request.kvm=VM_KVM;
+					var request={
+						kage: me.up('window').dta.kage,
+						nature: Ext4.getCmp('EdVMNature').getValue(),
+						StartDate: Ext4.getCmp('EdVMDate').getValue(),
+						resultat: Ext4.getCmp('EdVMResultats').getValue(),
+						commentaires: Ext4.getCmp('EdVMCommentaires').getValue()
+					};
+					if (me.up('window').dta.)
 					VM.update(request,function(b){
 						/*if (b)
 						{
