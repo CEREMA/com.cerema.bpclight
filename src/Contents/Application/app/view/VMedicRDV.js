@@ -1,5 +1,5 @@
 App.view.define('VMedicRDV',{
-	extend: "Ext4.window.Window",
+	extend: "Ext.window.Window",
 	alias: "widget.vmedicwindow",
     width : 630,
     height : 200,
