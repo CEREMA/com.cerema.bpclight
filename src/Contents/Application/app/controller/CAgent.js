@@ -180,7 +180,7 @@ App.controller.define('CAgent', {
             },
 			"vmedicwindow": {
 				show: function(me) {
-					alert(me.dta);
+					App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
 				}
 			}
             
