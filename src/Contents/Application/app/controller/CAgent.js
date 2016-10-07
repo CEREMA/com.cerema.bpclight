@@ -205,7 +205,7 @@ App.controller.define('CAgent', {
 					text: "Supprimer",
 					handler: function(me) {
 						App.DB.del('bpclight://medic_rdv?rdv_id='+rec.data.rdv_id,function(r){
-							console.log(r);
+							view.up('grid').getStore().load();
 						})
 					}
 				}				
