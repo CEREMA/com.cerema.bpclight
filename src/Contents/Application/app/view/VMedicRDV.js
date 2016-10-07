@@ -18,10 +18,10 @@ App.view.define('VMedicRDV',{
 				{
 					var request={
 						kage: me.up('window').dta.kage,
-						nature: Ext4.getCmp('EdVMNature').getValue(),
-						StartDate: Ext4.getCmp('EdVMDate').getValue(),
-						resultat: Ext4.getCmp('EdVMResultats').getValue(),
-						commentaires: Ext4.getCmp('EdVMCommentaires').getValue()
+						nature: App.get('combo#EdVMNature').getValue(),
+						StartDate: App.get('datetimefield#EdVMDate').getValue(),
+						resultat: App.get('combo#EdVMResultats').getValue(),
+						commentaires: App.get('textarea#EdVMCommentaires').getValue()
 					};
 					if (me.up('window').dta.rdv_id) request.rdv_id=me.up('window').dta.rdv_id;
 					App.DB.post('bpclight://medic_rdv',request,function(r){
