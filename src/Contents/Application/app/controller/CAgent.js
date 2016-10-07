@@ -168,6 +168,11 @@ App.controller.define('CAgent', {
             "TRendezVous": {
                 show: "TRendezVous_onshow"  
             },
+			"TRendezVous checkboxfield": {
+				change: function() {
+					alert('x');
+				} 	
+			},
             "TRendezVous button#add_rdv": {
                 "click": "add_rdv"     
             },
