@@ -181,6 +181,7 @@ App.controller.define('CAgent', {
 			"vmedicwindow": {
 				show: function(me) {
 					App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
+					App.get(me,'combo#EdVMResultats').setValue(me.dta.resultat);
 				}
 			}
             
