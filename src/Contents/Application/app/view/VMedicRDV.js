@@ -15,7 +15,7 @@ App.view.define('VMedicRDV',{
 				text: "OK",
 				handler: function()
 				{
-					var request={};
+					/*var request={};
 					request.kage=AGENT_KAGE;
 					request.nature=Ext4.getCmp('EdVMNature').getValue();
 					request.date=Ext4.getCmp('EdVMDate').getValue();
@@ -24,7 +24,7 @@ App.view.define('VMedicRDV',{
 					request.commentaires=Ext4.getCmp('EdVMCommentaires').getValue();
 					request.kvm=VM_KVM;
 					VM.update(request,function(b){
-						if (b)
+						/*if (b)
 						{
 							$.gritter.add({
 								title: 'BPCLight Notification',
@@ -36,14 +36,14 @@ App.view.define('VMedicRDV',{
 							Me().StoreVM.load();
 							_p.close();
 						} else Ext4.MessageBox.alert('BPC Light',"Erreur lors de l'enregistrement");
-					});
+					});*/
 				}
 			},{
 				xtype: "button",
 				text: "Annuler",
 				handler: function()
 				{
-					Ext4.getCmp('VMedicWindow').close();
+					//Ext.getCmp('VMedicWindow').close();
 				}
 			}
 		];
