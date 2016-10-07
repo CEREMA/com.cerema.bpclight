@@ -182,7 +182,8 @@ App.controller.define('CAgent', {
 		});
 	},
     grid_click: function(me,record) {
-		console.log(record);
+		console.log(record.data);
+		App.view.create('VMedicRDV',{modal:true,data:record.data}).show().center();
 	},
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
