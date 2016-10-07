@@ -60,6 +60,7 @@ App.view.define('VMedicRDV',{
 						itemId:'EdVMDate',
 						width: 140,
 						fieldLabel: 'Date RDV',
+						
 						labelAlign:'top',
 						padding:5						
 					},{
