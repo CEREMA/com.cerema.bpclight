@@ -56,8 +56,7 @@
     "modules": [
         "Ext.ux.Scheduler",
         "Ext.ux.FilterBox",
-        "Ext.ux.plugin.FileDrop",
-        "Ext.ux.DateTimeField"
+        "Ext.ux.plugin.FileDrop"
     ],
     "plugins": [],
     "api": [
