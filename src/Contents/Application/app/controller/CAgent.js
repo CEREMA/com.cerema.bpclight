@@ -180,13 +180,8 @@ App.controller.define('CAgent', {
             },
 			"vmedicwindow": {
 				show: function(me) {
-					console.log(me.dta);
-					App.get(me,'combo#EdVMNature').getStore().on('load',function(){
-						alert('x');
-						App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
-					});
-					
-					
+					App.get(me,'combo#EdVMNature').setValue(me.dta.nature);
+					App.get(me,'datetimefield#EdVMDate').setValue(me.dta.StartDate);
 					App.get(me,'combo#EdVMResultats').setValue(me.dta.resultat);
 				}
 			}
