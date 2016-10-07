@@ -69,9 +69,9 @@ App.view.define('agent.VRendezVous', {
                     header: "Date visite",
 					dataIndex: "date_visite",
                     width: 100,
-                    renderer:Ext.util.Format.dateRenderer('d/m/Y H:i'),
+                    renderer:Ext.util.Format.dateRenderer('d/m/Y'),
 					editor: {
-                        xtype: 'datetimefield',
+                        xtype: 'datefield',
                         allowBlank: false					
 					}
                 },
