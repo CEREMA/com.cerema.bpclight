@@ -219,7 +219,7 @@ App.controller.define('CMain', {
 		App.view.create('VAgentPanel',{
 			agent: record.data,
 			modal: true
-		}).show();
+		}).show().center();
 	},
 	tree_onclick: function(p, record, item, index)
 	{
