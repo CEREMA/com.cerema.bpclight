@@ -5,6 +5,7 @@ App.view.define('VMedicRDV',{
     height : 200,
 	itemId: "RDV",
     layout : 'vbox',
+	title: "Rendez vous",
 	bodyStyle:{"background-color":"white"}, 
 	initComponent : function() {
 		var _p=this;
@@ -91,7 +92,7 @@ App.view.define('VMedicRDV',{
 					}
 				]
 		},{
-				xtype: 'textfield',
+				xtype: 'textarea',
 				fieldLabel: 'Commentaires',
 				itemId: 'EdVMCommentaires',
 				labelAlign:'top',
