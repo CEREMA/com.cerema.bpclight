@@ -65,7 +65,7 @@ App.view.define('agent.VRendezVous', {
                         };
                     }
                 },
-                /*{
+                {
                     header: "Date visite",
 					dataIndex: "date_visite",
                     width: 100,
@@ -74,7 +74,7 @@ App.view.define('agent.VRendezVous', {
                         xtype: 'datefield',
                         allowBlank: false					
 					}
-                },*/
+                },
                 {
                     header: "Résultat",
 					dataIndex: "resultats",
