@@ -187,7 +187,7 @@ App.controller.define('CAgent', {
 						App.get(me,'textarea#EdVMCommentaires').setValue(me.dta.commentaires);
 					} else {
 						me.dta={
-							kage: Auth.User.uid
+							kage: App.get('')
 						}
 						console.log(me.dta);
 					}
