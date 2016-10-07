@@ -58,7 +58,7 @@ App.view.define('VMedicRDV',{
 						fieldLabel: 'Nature de la visite',
 						labelAlign: 'top',
 						padding: 5,
-						store: Me().StoreVMNatures,
+						store: App.store.create({fields:[],data:[]}),
 						editable: false,						
 						displayField: 'nature',
 						valueField: 'kvm_natures'
@@ -81,7 +81,7 @@ App.view.define('VMedicRDV',{
 						labelAlign:'top',
 						editable: false,
 						padding:5,
-						store: Me().StoreVMResultats,
+						store: App.store.create({fields:[],data:[]}),
 						displayField:'resultat',
 						valueField:'kvm_resultats'						
 					}
