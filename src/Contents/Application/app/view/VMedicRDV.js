@@ -25,7 +25,7 @@ App.view.define('VMedicRDV',{
 					};
 					if (me.up('window').dta.rdv_id) request.rdv_id=me.up('window').dta.rdv_id;
 					App.DB.post('bpclight://medic_rdv',request,function(r){
-						console.log(r);
+						App.get('TRendezVous grid').getStore().load();
 						me.up('window').close();
 					})
 				}
