@@ -42,7 +42,7 @@ App.view.define('VAgentPanel', {
 			items: [
 			{
                 border: false,
-                xtype: "tabpanel",
+                xtype: "accordion",
 				itemId: "tabs",
                 items: [
                 {
