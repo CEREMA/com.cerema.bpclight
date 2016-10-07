@@ -39,9 +39,13 @@ App.view.define('VAgentPanel', {
             }]
         }, {
             region: 'center',
-			layout: "accordion",
 			items: [
-				{
+			{
+                border: false,
+                xtype: "tabpanel",
+				itemId: "tabs",
+                items: [
+                {
                     xtype: "TAgent"
                 }, 
                 {
@@ -57,7 +61,8 @@ App.view.define('VAgentPanel', {
                 {
                     xtype: "TRendezVous",
                     itemId: "tab_rdv"
-                }			
+                }]
+            }			
 			]
 		},
 		{
