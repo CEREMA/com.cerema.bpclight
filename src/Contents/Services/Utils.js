@@ -111,8 +111,9 @@ Utils = {
 				for (var i=0;i<tabs.length;i++)
 				{
 					var element=tabs[i];
-					console.log(element);
-					for (var e=0;e<element.length;e++) sheet1.set(e+1, i+2, element[e]);
+					try {
+						for (var e=0;e<element.length;e++) sheet1.set(e+1, i+2, element[e]);
+					} catch(e) {};
 				};
 				workbook.save(function(ok){
 					console.log(ok);
