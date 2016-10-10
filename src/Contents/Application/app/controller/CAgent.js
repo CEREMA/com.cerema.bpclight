@@ -252,8 +252,8 @@ App.controller.define('CAgent', {
         App.get(me,'grid').bindStore(store);
         store.load();
 		App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
-			if (r.length>0) {
-				console.log(r);
+			if (r.data.length>0) {
+				console.log(r.data);
 				//if (r[0].gen_posterisque) 
 			}
 		});
