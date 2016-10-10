@@ -19,7 +19,8 @@ App.controller.define('CMain', {
 		"VMain",
 		"VPrincipal",
 		"VCreateAgent",
-		"VMedicRDV"
+		"VMedicRDV",
+		"VShowDoc"
 	],
 	
 	models: [
