@@ -3,6 +3,39 @@ Agents = {
 	{
 		Agents.using('db').post('bpclight','agents',o,cb);
 	},
+	upload_blob: function(list,ndx,cb)
+	{
+		if (!list[ndx]) {cb();return;}
+		Agents.using('db').query('bpclight','select docId from docs where docId="'+list[ndx].docId+'"',function(err,result) {
+			if (result.length>0) {
+				// déjà uploadé
+				Agents.upload_blob(list,ndx+1,cb);
+			} else {
+				Agents.using('db').query('bpclight','insert into docs VALUES ("'+list[ndx].docId+'","-1","-1","-1","-1")',function() {
+                    App.upload.toBase64(list[ndx].docId,function(err,blob) {
+                        Agents.using('db').post('bpclight','docs',{
+                            docId: list[ndx].docId,
+                            _blob: blob,
+                            filename: list[ndx].filename,
+                            type: list[ndx].filetype,
+                            size: list[ndx].filesize
+                        },function() {
+                            Agents.upload_blob(list,ndx+1,cb);
+                        });                        
+                    });
+				});			
+			}
+		});
+	},
+	updateMe: function(o,cb) {
+		Agents.using('db').post('bpclight','agents',o,function(r){
+			if (o._BLOB) {
+				Agents.upload_blob(o._BLOB,0,function() {
+					cb(r);
+				});
+			} else cb(r);
+		});		
+	},
 	insert: function(o,cb)
 	{
 		if (!o.matri) {
