@@ -39,14 +39,14 @@ Utils = {
 						else
 						item.push(VM[i][el]);
 					};
-					CSV.push('"'+item.join('","')+'"');
+					CSV.push(item);
 				};
 
 				for (var i=0;i<AllAgents.length;i++) {
 					var item=[];
 					if (Agents.indexOf(AllAgents[i])==-1) {
 						for (var el in Agent[AllAgents[i]]) item.push(Agent[AllAgents[i]][el]);
-						CSV.push('"'+item.join('","')+'"');
+						CSV.push(item);
 					}
 				};
 				var tempfile=App.temp('xlsx');
