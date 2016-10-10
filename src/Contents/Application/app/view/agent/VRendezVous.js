@@ -7,6 +7,7 @@ App.view.define('agent.VRendezVous', {
 		this.layout="vbox";
         this.height="100%";
 		this.border=false;
+
 		this.items = [
         {
             html: "<div class=redtext>L’identification d’un poste à risque doit être validée par le conseiller prévention <br>et le médecin de prévention</div>",
@@ -47,7 +48,7 @@ App.view.define('agent.VRendezVous', {
             {
                 text: "Ajouter",
                 itemId: "add_rdv"
-            }
+            }				
             ],
             plugins: [/*Ext.create('Ext.grid.plugin.CellEditing', {
                 clicksToEdit : 1
