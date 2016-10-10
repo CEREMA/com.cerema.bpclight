@@ -115,11 +115,11 @@ Utils = {
 					console.log(element);
 					var k=1;
 					var ii=i+2;
-					for (var el in element) {
+					for (var e=0;e<element.length;e++) {
 						//if (k<18) {
-							sheet1.set(1, 1, element[el]);								
+							sheet1.set(i+2, e+1, element[e]);								
 						//};
-						k++;
+						//k++;
 					};
 				};
 				workbook.save(function(ok){
