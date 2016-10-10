@@ -115,7 +115,7 @@ Utils = {
 					var ii=i+2;
 					for (var el in element) {
 						//if (k<18) {
-							sheet1.set(k, ii, element[el]);								
+							if (element[el]) sheet1.set(k, ii, element[el]);								
 						//};
 						k++;
 					};
