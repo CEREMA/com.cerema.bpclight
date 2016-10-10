@@ -874,8 +874,7 @@ App.controller.define('CAgent', {
 			Kgra: App.get(p.up('TAgentPanel'),'combo#TGrade').getValue(),
 			Kbat: App.get(p.up('TAgentPanel'),'combo#batiment').getValue(),
 			Ksec: App.get(p.up('TAgentPanel'),'combo#Sec1').getValue(),
-			Ksec2: App.get(p.up('TAgentPanel'),'combo#Sec2').getValue(),
-			_BLOB: JSON.stringify(App.get('TAgentPanel uploadfilemanager#up').getFiles())
+			Ksec2: App.get(p.up('TAgentPanel'),'combo#Sec2').getValue()
 		};
 		App.DB.post("bpclight://agents",o,function(err,response) {
 			var o={
