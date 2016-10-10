@@ -135,7 +135,9 @@ App.controller.define('CMain', {
 	rendezVous: function(me)
 	{
 		 //App.view.create('VRDVScheduler',{agent:-1,modal: true}).show().center();
-		
+		App.Utils.dumpVisites({},function(r){
+			alert(r);
+		});
 	},
 	NewAgent_onclick: function()
 	{
