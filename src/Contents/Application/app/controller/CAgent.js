@@ -254,7 +254,7 @@ App.controller.define('CAgent', {
 		App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
 			if (r.data.length>0) {
 				console.log(r.data);
-				//if (r[0].gen_posterisque) 
+				if (r[0].gen_posterisque==1) App.get(me.up('window'),'checkboxfield#posteRisque').setValue(true); 
 			}
 		});
     },
