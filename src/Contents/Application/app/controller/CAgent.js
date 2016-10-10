@@ -251,9 +251,12 @@ App.controller.define('CAgent', {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
         App.get(me,'grid').bindStore(store);
         store.load();
-		/*App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
-			console.log(r);
-		});*/
+		App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(r){
+			if (r.length>0) {
+				console.log(r);
+				//if (r[0].gen_posterisque) 
+			}
+		});
     },
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
