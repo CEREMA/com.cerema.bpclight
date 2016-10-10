@@ -4,6 +4,13 @@ Utils = {
 		db.model('bpclight','select Id, Code,concat(Ville, " (",Code,")") Ville from postal where Code like "'+o.Code+'%"',cb);
 	},
 	dumpVisites: function(o,cb) {
+		Date.prototype.ymd = function() {
+		  var mm = this.getMonth() + 1; // getMonth() is zero-based
+		  var dd = this.getDate();
+
+		  //return [this.getFullYear(), !mm[1] && '0', mm, !dd[1] && '0', dd].join(''); // padding
+		  return this.getFullYear() + '-' + mm + '-' + dd;
+		};		
 		var db=Utils.using('db');
 		var excelbuilder=App.using('msexcel-builder');
 		var Agents=[];
