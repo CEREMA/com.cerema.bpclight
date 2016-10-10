@@ -77,7 +77,13 @@ App.view.define('VAgentPanel', {
 					itemId: "metier",
                     width: "100%",
                     flex: 1
-                }, {
+                },
+				{
+					title: "Pièce(s) jointe(s)",
+					height: 200,
+					xtype: "uploadfilemanager"
+				},
+				{
                     xtype: "grid",
 					itemId: "roles",
                     flex: 1,
