@@ -76,6 +76,7 @@ App.view.define('VAgentPanel', {
                     xtype: "htmleditor",
 					itemId: "metier",
                     width: "100%",
+					border: false,
                     flex: 1
                 },
 				{
