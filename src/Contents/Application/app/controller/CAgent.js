@@ -255,6 +255,8 @@ App.controller.define('CAgent', {
 			if (r.data.length>0) {
 				console.log(r.data);
 				if (r.data[0].gen_posterisque==1) App.get(me.up('window'),'checkboxfield#posteRisque').setValue(true); 
+				if (r.data[0].gen_dossierrecu==1) App.get("radiofield#dossierrecu").setValue(true);
+				if (r.data[0].gen_dossierdemande==1) App.get("radiofield#dossierdemande").setValue(true);
 			}
 		});
     },
