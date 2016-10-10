@@ -82,7 +82,8 @@ App.view.define('VAgentPanel', {
 				{
 					height: 200,
 					width: "100%",
-					xtype: "uploadfilemanager"
+					xtype: "uploadfilemanager",
+					itemId: "up"
 				},
 				{
                     xtype: "grid",
