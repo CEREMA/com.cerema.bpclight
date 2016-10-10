@@ -56,7 +56,8 @@
     "modules": [
         "Ext.ux.FilterBox",
         "Ext.ux.plugin.FileDrop",
-        "Ext.ux.DateTimeField"
+        "Ext.ux.DateTimeField",
+        "Ext.ux.upload"
     ],
     "plugins": [],
     "api": [
