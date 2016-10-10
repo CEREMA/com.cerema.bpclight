@@ -55,7 +55,10 @@ App.controller.define('CMain', {
 			"mainform textfield#searchbox" : {
 				click: "onSearch",
 				keyup: "onSearch"
-			},            
+			}, 
+			"TAgentPanel uploadfilemanager#up": {
+				itemdblclick: "up_onclick"
+			},
 			/*
 			createAgent
 			*/
@@ -84,6 +87,13 @@ App.controller.define('CMain', {
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	up_onclick: function(p, record) {
+		App.view.create('VShowDoc', {
+			modal: true,
+			title: record.data.filename,
+			pid: record.data.docId
+		}).show().center();			
 	},
 	Menu_onClick: function(p)
 	{
