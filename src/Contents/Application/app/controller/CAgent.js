@@ -877,7 +877,7 @@ App.controller.define('CAgent', {
 			Ksec2: App.get(p.up('TAgentPanel'),'combo#Sec2').getValue(),
 			_BLOB: App.get(p.up('TAgentPanel'),'uploadfilemanager#up').getFiles()
 		};
-		App.DB.post("bpclight://agents",o,function(err,response) {
+		App.Agents.updateMe(o,function(err,response) {
 			var o={
 				Kage: p.up('TAgentPanel').agent.Kage,
 				Kadr: App.get(p.up('TAgentPanel'),'textfield#AdrK').getValue(),
