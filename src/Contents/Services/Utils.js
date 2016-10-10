@@ -108,19 +108,10 @@ Utils = {
 					sheet1.set(e+1,1,conf.cols[e].caption);
 					sheet1.width(e+1, conf.cols[e].width*1);
 				};		
-				//for (var i=0;i<tabs.length;i++)
-				var i=0;
+				for (var i=0;i<tabs.length;i++)
 				{
 					var element=tabs[i];
-					console.log(element);
-					var k=1;
-					var ii=i+2;
-					for (var e=0;e<element.length;e++) {
-						//if (k<18) {
-							sheet1.set(e+1, i+2, element[e]);								
-						//};
-						//k++;
-					};
+					for (var e=0;e<element.length;e++) sheet1.set(e+1, i+2, element[e]);
 				};
 				workbook.save(function(ok){
 					console.log(ok);
