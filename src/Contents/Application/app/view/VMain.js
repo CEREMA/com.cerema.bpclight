@@ -31,7 +31,7 @@ App.view.define('VMain', {
 					id: "MNU_VM",
 					menu: [
 						{
-							text: "Rendez-vous",
+							text: "Export Rendez-vous",
 							itemId: "MNU_RDV"
 						}
 					]
