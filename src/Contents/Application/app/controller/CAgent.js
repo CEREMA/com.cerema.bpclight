@@ -1029,9 +1029,9 @@ App.controller.define('CAgent', {
 		App.get(p,'TAgent textfield#Phone').setValue(p.agent.Telephone);
 		App.get(p,'TAgent textfield#Cell').setValue(p.agent.Portable);
 		
-		if (p.agent._BLOB=="") p.agent._BLOB=[];
+		/*if (p.agent._BLOB=="") p.agent._BLOB=[];
 		App.get('TAgentPanel uploadfilemanager#up').setFiles(JSON.parse(p.agent._BLOB));
-		
+		*/
 		// App.Agents.getAdresse
 		App.Agents.getAdresse(p.agent.Kage,function(response,x) {
 			if (response) 
