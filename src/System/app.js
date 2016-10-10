@@ -20,6 +20,9 @@ App = {
 	init: function(app,server) {
 		if (!require('fs').existsSync(__dirname + require('path').sep+'tmp')) require('fs').mkdirSync(__dirname + require('path').sep+'tmp');
 		//app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));
+		app.post('/',app.upload.any(),function(req,res,next) {
+			App.upload.up(req,res);	
+		});
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
 			App.using('db').model('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+req.body.kage,function(err,o){
