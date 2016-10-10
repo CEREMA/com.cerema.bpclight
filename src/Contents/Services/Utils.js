@@ -43,10 +43,79 @@ Utils = {
 					}
 				};
 				var tempfile=App.temp('xlsx');
-						var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);                        
-						var conf={};
-						conf.cols = [
-						];
+				var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);                        
+				var conf={};
+			//NOM	PRENOM	Dpt	Service	Date	Résultat	Commentaires	Type
+				conf.cols = [
+				{
+					caption: 'ID',
+					type:'string',
+					width: 15
+				},
+				{
+					caption: 'NOM',
+					type:'string',
+					width: 150
+				},
+				{
+					caption: 'PRENOM',
+					type:'string',
+					width: 150
+				},
+				{
+					caption: 'Dpt',
+					type:'string',
+					width: 50
+				},
+				{
+					caption: 'Service',
+					type:'string',
+					width: 50
+				},
+				{
+					caption: 'Date',
+					type:'string',
+					width: 50								
+				},
+				{
+					caption: 'Résultat',
+					type:'string',
+					width: 100								
+				},
+				{
+					caption: 'Commentaires',
+					type:'string',
+					width: 250								
+				},
+				{
+					caption: 'Type',
+					type:'string',
+					width: 100								
+				}
+				];
+
+				var tabs=CSV;
+				var sheet1 = workbook.createSheet('Visites', conf.cols.length, tabs.length);
+				
+				for (var e=0;e<conf.cols.length;e++) {
+					sheet1.set(e+1,1,conf.cols[e].caption);
+					sheet1.width(e+1, conf.cols[e].width*1);
+				};		
+				for (var i=0;i<tabs.length;i++) {
+					var element=tabs[i];
+					var k=1;
+					var ii=i+2;
+					for (var el in element) {
+						//if (k<18) {
+							sheet1.set(k, ii, element[el]);								
+						//};
+						k++;
+					};
+				};
+				workbook.save(function(ok){
+					console.log(ok);
+					cb(tempfile.url);
+				});	
 				/*console.log(CSV.join('\n'));
 				fs.writeFileSync('export.csv',CSV.join('\n'));*/
 				
