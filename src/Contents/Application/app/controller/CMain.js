@@ -136,7 +136,7 @@ App.controller.define('CMain', {
 	{
 		 //App.view.create('VRDVScheduler',{agent:-1,modal: true}).show().center();
 		App.Utils.dumpVisites({},function(r){
-			alert(r);
+			location.href(r);
 		});
 	},
 	NewAgent_onclick: function()
