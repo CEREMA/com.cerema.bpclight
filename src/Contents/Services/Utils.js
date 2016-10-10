@@ -116,10 +116,7 @@ Utils = {
 				workbook.save(function(ok){
 					console.log(ok);
 					cb(tempfile.url);
-				});	
-				/*console.log(CSV.join('\n'));
-				fs.writeFileSync('export.csv',CSV.join('\n'));*/
-				
+				});					
 			});
 		});
 
