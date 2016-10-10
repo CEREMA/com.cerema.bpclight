@@ -79,8 +79,8 @@ App.view.define('VAgentPanel', {
                     flex: 1
                 },
 				{
-					title: "Pièce(s) jointe(s)",
 					height: 200,
+					width: "100%",
 					xtype: "uploadfilemanager"
 				},
 				{
