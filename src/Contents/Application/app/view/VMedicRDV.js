@@ -32,9 +32,9 @@ App.view.define('VMedicRDV',{
 			},{
 				xtype: "button",
 				text: "Annuler",
-				handler: function()
+				handler: function(me)
 				{
-					//Ext.getCmp('VMedicWindow').close();
+					me.up('window').close();
 				}
 			}
 		];
