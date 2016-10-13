@@ -1,6 +1,6 @@
 App.view.define('VShowDoc', {
     extend: "Ext.window.Window",
-    alias: 'widget.TShowDoc',
+    alias: 'widget.VShowDoc',
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
