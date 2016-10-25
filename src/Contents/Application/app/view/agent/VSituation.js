@@ -94,6 +94,7 @@ App.view.define('agent.VSituation', {
 					],
 					columns:[{
 						header: "Echelon",
+						dataIndex: "ECH",
 						flex: 1,
 						editor: {
 							xtype: 'textfield'
@@ -101,12 +102,14 @@ App.view.define('agent.VSituation', {
 					},
 					{
 						header: "INM",
+						dataIndex: "INM",
 						editor: {
 							xtype: 'textfield'
 						}			
 					},
 					{
 						header: "Date",
+						dataIndex: "DAT",
 						editor: {
 							xtype: 'datefield'
 						}			
