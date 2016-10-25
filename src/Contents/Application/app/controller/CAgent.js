@@ -88,12 +88,8 @@ App.controller.define('CAgent', {
 			},
 			"TSituation grid#situadm": {
 				edit: function(ed,o) {
-					var post={
-						INM:o.record.data.INM,
-						DAT:o.record.data.DAT,
-						ECH:o.record.data.ECH,
-						kage: o.grid.up('window').agent.Kage
-					};
+					var post=o.record.data;
+					post.kage=o.grid.up('window').agent.Kage;
 					App.DB.post('bpclight://situadm',post,function(r){
 						o.store.load();
 					});
