@@ -102,11 +102,13 @@ App.view.define('agent.VSituation', {
 					itemId: "histoQ",
 					columns:[{
 						header: "Quotité",
-						width: 100
+						width: 100,
+						dataIndex: "quotite"
 					},
 					{
 						header: "Date",
-						flex: 1
+						flex: 1,
+						dataIndex: "date"
 					}],
 					padding: 10,
 					store: App.store.create({fields:["quotite","date"],data:[]}),
