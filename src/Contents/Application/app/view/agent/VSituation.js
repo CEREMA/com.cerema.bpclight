@@ -99,14 +99,6 @@ App.view.define('agent.VSituation', {
 				},
 				{
 					xtype: "grid",
-					tbar: [
-					{
-						xtype: "panel",
-						html: "&nbsp;Quotité",
-						border: false,
-						bodyStyle: "background: transparent"
-					}
-					],
 					columns:[{
 						header: "Quotité",
 						width: 100
