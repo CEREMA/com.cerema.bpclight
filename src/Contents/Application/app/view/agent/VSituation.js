@@ -113,7 +113,11 @@ App.view.define('agent.VSituation', {
 						editor: {
 							xtype: 'datefield',
 							format: 'd/m/Y'
-						}			
+						},
+						renderer: function(field) { 
+							var formated = Ext.util.Format.date(field, 'd/m/Y');
+							return formated;
+						}	
 					}],
 					padding: 10,
 					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
