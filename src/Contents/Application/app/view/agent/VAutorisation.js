@@ -3,7 +3,7 @@ App.view.define('agent.VAutorisation',{
 	alias: 'widget.TAutorisation',
 	initComponent: function()
 	{
-		this.title = "Autorisation";
+		this.title = "Autorisations";
 		this.border= false;
 		this.layout="vbox";
 		this.items = [
