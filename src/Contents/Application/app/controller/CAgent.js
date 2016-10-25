@@ -1040,6 +1040,7 @@ App.controller.define('CAgent', {
 		//console.log(p.agent);
 		
 		if (p.agent._BLOB=="") p.agent._BLOB="[]";
+		if (!p.agent._BLOB) p.agent._BLOB="[]";
 		App.get('TAgentPanel uploadfilemanager#up').setFiles(JSON.parse(p.agent._BLOB));
 		
 		// App.Agents.getAdresse
