@@ -102,7 +102,7 @@ App.view.define('agent.VSituation', {
 					itemId: "histoQ",
 					columns:[{
 						header: "Quotité",
-						width: 100,
+						width: 30,
 						dataIndex: "quotite"
 					},
 					{
