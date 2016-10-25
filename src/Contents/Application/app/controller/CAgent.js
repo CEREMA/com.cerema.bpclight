@@ -90,6 +90,7 @@ App.controller.define('CAgent', {
 				edit: function(ed,o) {
 					var post=o.record.data;
 					post.kage=o.grid.up('window').agent.Kage;
+					console.log(post);
 					App.DB.post('bpclight://situadm',post,function(r){
 						o.store.load();
 					});
