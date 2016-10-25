@@ -56,7 +56,8 @@ App.view.define('agent.VSituation', {
 				height: 200
 			},
 			{
-				html: "<h2>Situation administrative</h2>",
+				html: "<h4>Situation administrative</h4>",
+				width: 100%,
 				padding: 10,
 			},
 			{
