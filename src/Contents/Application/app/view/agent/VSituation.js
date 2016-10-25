@@ -85,6 +85,9 @@ App.view.define('agent.VSituation', {
 							me.up('grid').getStore().add({
 								
 							});
+							App.DB.post('bpclight://situadm',{},function(r){
+								me.up('grid').getStore().load();
+							});
 						}
 					}
 					],
