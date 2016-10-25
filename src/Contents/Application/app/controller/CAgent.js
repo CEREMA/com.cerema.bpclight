@@ -88,9 +88,10 @@ App.controller.define('CAgent', {
 			},
 			"TSituation grid#situadm": {
 				edit: function(ed,o) {
-					console.log(record.newValues);
+					console.log(o.record);
+					return;
 					var o={
-						INM:record.newValues.INM,
+						INM:o.record.newValues.INM,
 						DAT:record.newValues.DAT,
 						ECH:record.newValues.ECH,
 						kage: App.get('TAgentPanel').agent.Kage
