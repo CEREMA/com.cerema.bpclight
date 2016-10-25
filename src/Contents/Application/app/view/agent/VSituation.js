@@ -70,6 +70,7 @@ App.view.define('agent.VSituation', {
 				items: [
 				{
 					xtype: "grid",
+					itemId: "situadm",
 					tbar: [
 					{
 						xtype: "panel",
