@@ -67,7 +67,7 @@ App.view.define('agent.VSituation', {
 				tbar: [
 				{
 					xtype: "panel",
-					html: "Situation administrative",
+					html: "&nbsp;Situation administrative",
 					border: false,
 					bodyStyle: "background: transparent"
 				},
