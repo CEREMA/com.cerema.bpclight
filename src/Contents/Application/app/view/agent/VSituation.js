@@ -121,7 +121,7 @@ App.view.define('agent.VSituation', {
 						}	
 					}],
 					padding: 10,
-					store: App.store.create("bpclight://situadm",{autoLoad: true}),
+					store: App.store.create("bpclight://situadm"),
 					flex: 2,
 					height: 200
 				},
