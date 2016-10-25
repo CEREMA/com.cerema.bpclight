@@ -63,34 +63,70 @@ App.view.define('agent.VSituation', {
 				border: false,
 			},*/
 			{
-				xtype: "grid",
-				tbar: [
-				{
-					xtype: "panel",
-					html: "&nbsp;Situation administrative",
-					border: false,
-					bodyStyle: "background: transparent"
-				},
-				'->',
-				{
-					text: "Ajouter"
-				}
-				],
-				columns:[{
-					header: "Echelon",
-					flex: 1
-				},
-				{
-					header: "INM"			
-				},
-				{
-					header: "Date"			
-				}],
-				padding: 10,
-				store: App.store.create({fields:["echelon","INM","date"],data:[]}),
+				layout: "hbox",
 				width: "100%",
-				height: 200
-			},
+				flex: 1,
+				items: [
+				{
+					xtype: "grid",
+					tbar: [
+					{
+						xtype: "panel",
+						html: "&nbsp;Situation administrative",
+						border: false,
+						bodyStyle: "background: transparent"
+					},
+					'->',
+					{
+						text: "Ajouter"
+					}
+					],
+					columns:[{
+						header: "Echelon",
+						flex: 1
+					},
+					{
+						header: "INM"			
+					},
+					{
+						header: "Date"			
+					}],
+					padding: 10,
+					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
+					flex: 2,
+					height: 200
+				},
+				{
+					xtype: "grid",
+					tbar: [
+					{
+						xtype: "panel",
+						html: "&nbsp;Quotité",
+						border: false,
+						bodyStyle: "background: transparent"
+					},
+					'->',
+					{
+						text: "Ajouter"
+					}
+					],
+					columns:[{
+						header: "Echelon",
+						flex: 1
+					},
+					{
+						header: "INM"			
+					},
+					{
+						header: "Date"			
+					}],
+					padding: 10,
+					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
+					flex: 1,
+					height: 200
+				}					
+				]	
+			},		
 			/*
 			header
 			*/
