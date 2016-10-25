@@ -87,8 +87,9 @@ App.controller.define('CAgent', {
 				show: "TSituation_onshow"
 			},
 			"TSituation grid#situadm": {
-				afteredit: function() {
-					alert('x')
+				afteredit: function(me,record) {
+					alert('x');
+					console.log(record);
 				}	
 			},
 			"TSituation combo#position": {
