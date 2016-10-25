@@ -89,7 +89,7 @@ App.view.define('agent.VSituation', {
 					}
 					],
 					plugins: [
-						Ext.create('Ext.grid.plugin.CellEditing', {
+						Ext.create('Ext.grid.plugin.RowEditing', {
             				clicksToEdit: 1
         				})	
 					],
