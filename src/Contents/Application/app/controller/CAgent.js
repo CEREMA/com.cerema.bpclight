@@ -1001,6 +1001,8 @@ App.controller.define('CAgent', {
 			else
 			App.get(p.up('TAgentPanel'),'panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
 		});
+		App.get(p.up('TAgentPanel'),"grid#situadm").getStore().getProxy().extraParams.kage=p.up('TAgentPanel').agent.Kage;
+		App.get(p.up('TAgentPanel'),"grid#situadm").getStore().load();
 		// On interroge la base temptation
 		
 			var store=App.store.create("App.Temptation.quotite");
