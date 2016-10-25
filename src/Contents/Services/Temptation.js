@@ -5,7 +5,7 @@ Temptation = {
 		db.query('temptation',"SELECT MATRI matri, NOMPRE nompre, datouv FROM HopeMpl Hm where YEAR(datouv)>=YEAR(GetDate()) and datclo='1900-01-01' order by datouv desc",cb);
 	},
 	quotite: function(str,cb) {
-		Temptation.using('db').query('temptation',"SELECT MATRI, INETP,DAT FROM dbo.hophjoup WHERE MATRI LIKE '"+str+"' ORDER BY DAT desc",function(e,r){
+		Temptation.using('db').query('temptation',"SELECT MATRI, INETP,DAT FROM dbo.hophjoup WHERE MATRI LIKE '"+str+"' ORDER BY DAT",function(e,r){
 			var quotite="0";
 			var histo=[];
 			for (var i=0;i<r.length;i++) {
