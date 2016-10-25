@@ -95,7 +95,7 @@ App.controller.define('CAgent', {
 						ECH:o.record.data.ECH,
 						kage: o.grid.up('window').agent.Kage
 					};
-					App.DB.post('bpclight://situadm',function(r){
+					App.DB.post('bpclight://situadm',o,function(r){
 						o.grid.getStore().load();
 					});
 				}	
