@@ -333,15 +333,16 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.DB.post("bpclight://agents",o,function(r) {
-				console.log(r);
-				App.Agents.getOne(r.insertId,function(e,m) {
-					console.log(m);
-					App.view.create('VAgentPanel',{
-						agent: m.result[0],
-						modal: true
-					}).show();
-					_p.up('window').close();
-				});
+				if (!r.insertId) alert("L'enregistrement a échoué.") else {
+					App.Agents.getOne(r.insertId,function(e,m) {
+						console.log(m);
+						App.view.create('VAgentPanel',{
+							agent: m.result[0],
+							modal: true
+						}).show();
+						_p.up('window').close();
+					});
+				};
 			});
 		}
 	},
