@@ -121,7 +121,7 @@ App.view.define('agent.VSituation', {
 						}	
 					}],
 					padding: 10,
-					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
+					store: App.store.create({fields:["ECH","INM","DAT"],data:[]}),
 					flex: 2,
 					height: 200
 				},
