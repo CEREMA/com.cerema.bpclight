@@ -15,7 +15,7 @@ Temptation = {
 					quotite=item.INETP;
 					histo.push({
 						quotite: quotite,
-						date: date.split('T')[0]
+						date: date.split('T')[0].split('"')[1]
 					});
 				}
 			}
