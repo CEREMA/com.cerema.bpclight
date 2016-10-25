@@ -61,7 +61,10 @@ App.view.define('VAgentPanel', {
                 {
                     xtype: "TRendezVous",
                     itemId: "tab_rdv"
-                }]
+                },{
+					xtype: "TAutorisation",
+					itemId: "tab_autorisation"
+				}]
             }			
 			]
 		},
