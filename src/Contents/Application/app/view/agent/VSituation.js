@@ -79,7 +79,12 @@ App.view.define('agent.VSituation', {
 					},
 					'->',
 					{
-						text: "Ajouter"
+						text: "Ajouter",
+						handler: function(me) {
+							me.up('grid').getStore().add({
+								
+							});
+						}
 					}
 					],
 					plugins: [
