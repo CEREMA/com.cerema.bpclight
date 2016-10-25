@@ -994,7 +994,8 @@ App.controller.define('CAgent', {
 				fields: ["quotite","date"],
 				data: r
 			});
-			App.get(p.up('window'),'panel#');
+			App.get(p.up('window'),'panel#histoQ').bindStore(store);
+			store.load();
 		});
 	},
 	close_agent: function(p)
