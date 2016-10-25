@@ -85,11 +85,13 @@ App.view.define('agent.VSituation', {
 							me.up('grid').getStore().add({
 								INM: "",
 								DAT: "",
-								ECH: ""
+								ECH: "",
+								kage: me.up('window').agent.Kage
 							});
 							App.DB.post('bpclight://situadm',{INM: "",
 								DAT: "",
-								ECH: ""},function(r){
+								ECH: "",
+								kage: me.up('window').agent.Kage},function(r){
 								me.up('grid').getStore().load();
 							});
 						}
