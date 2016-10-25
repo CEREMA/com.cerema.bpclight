@@ -111,7 +111,8 @@ App.view.define('agent.VSituation', {
 						header: "Date",
 						dataIndex: "DAT",
 						editor: {
-							xtype: 'datefield'
+							xtype: 'datefield',
+							format: 'd/m/Y'
 						}			
 					}],
 					padding: 10,
