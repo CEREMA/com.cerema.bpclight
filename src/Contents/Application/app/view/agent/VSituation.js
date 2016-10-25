@@ -66,6 +66,7 @@ App.view.define('agent.VSituation', {
 				xtype: "grid",
 				tbar: [
 				{
+					xtype: "panel",
 					html: "Situation administrative"	
 				},
 				'->',
