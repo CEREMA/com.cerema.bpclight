@@ -10,11 +10,12 @@ Temptation = {
 			var histo=[];
 			for (var i=0;i<r.length;i++) {
 				var item=r[i];
+				var date=JSON.stringify(item.DAT);
 				if (item.INETP!=quotite) {
 					quotite=item.INETP;
 					histo.push({
 						quotite: quotite,
-						date: item.DAT.split('T')[0]
+						date: date.split('T')[0]
 					});
 				}
 			}
