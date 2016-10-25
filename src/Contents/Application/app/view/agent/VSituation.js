@@ -56,6 +56,12 @@ App.view.define('agent.VSituation', {
 				height: 200
 			},
 			{
+				html: "Situation administrative",
+				width: "100%",
+				padding: 10,
+				height: 200
+			},
+			{
 				xtype: "grid",
 				fieldLabel: "Situation administrative",
 				labelAlign: "top",				
@@ -69,6 +75,7 @@ App.view.define('agent.VSituation', {
 				{
 					header: "Date"			
 				}],
+				padding: 10,
 				store: App.store.create({fields:["echelon","INM","date"],data:[]}),
 				width: "100%",
 				height: 200
