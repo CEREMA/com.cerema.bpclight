@@ -990,7 +990,11 @@ App.controller.define('CAgent', {
 		// On interroge la base temptation
 		
 		App.Temptation.quotite(p.up('TAgentPanel').agent.Matri,function(r){
-			console.log(r);
+			var store=App.store.create({
+				fields: ["quotite","date"],
+				data: r
+			});
+			App.get(p.up('window'),'panel#');
 		});
 	},
 	close_agent: function(p)
