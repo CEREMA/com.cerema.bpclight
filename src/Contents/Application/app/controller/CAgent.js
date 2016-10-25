@@ -95,7 +95,7 @@ App.controller.define('CAgent', {
 						ECH:record.newValues.ECH,
 						kage: me.up('TAgentPanel').agent.Kage
 					};
-					App.DB.post('bpclight://situadm',,function(r){
+					App.DB.post('bpclight://situadm',function(r){
 						me.up('grid').getStore().load();
 					});
 				}	
