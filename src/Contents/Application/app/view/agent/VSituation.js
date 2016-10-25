@@ -83,9 +83,13 @@ App.view.define('agent.VSituation', {
 						text: "Ajouter",
 						handler: function(me) {
 							me.up('grid').getStore().add({
-								
+								INM: "",
+								DAT: "",
+								ECH: ""
 							});
-							App.DB.post('bpclight://situadm',{},function(r){
+							App.DB.post('bpclight://situadm',{INM: "",
+								DAT: "",
+								ECH: ""},function(r){
 								me.up('grid').getStore().load();
 							});
 						}
