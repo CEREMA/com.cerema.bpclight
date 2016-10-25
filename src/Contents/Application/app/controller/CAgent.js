@@ -88,7 +88,6 @@ App.controller.define('CAgent', {
 			},
 			"TSituation grid#situadm": {
 				edit: function(ed,o) {
-					alert(o.grid.up('window').agent.Kage);
 					var o={
 						INM:o.record.data.INM,
 						DAT:o.record.data.DAT,
