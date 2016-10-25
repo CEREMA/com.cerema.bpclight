@@ -333,7 +333,7 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.DB.post("bpclight://agents",o,function(r) {
-				if (!r.insertId) alert("L'enregistrement a échoué.") else {
+				if (!r.insertId) alert("L'enregistrement a échoué."); else {
 					App.Agents.getOne(r.insertId,function(e,m) {
 						console.log(m);
 						App.view.create('VAgentPanel',{
