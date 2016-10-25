@@ -989,14 +989,10 @@ App.controller.define('CAgent', {
 		});
 		// On interroge la base temptation
 		
-		App.Temptation.quotite(p.up('TAgentPanel').agent.Matri,function(r){
-			var store=App.store.create({
-				fields: ["quotite","date"],
-				data: r
-			});
+			var store=App.store.create("App.Temptation.quotite");
+			store.getProxy().extraParams.matri=p.up('TAgentPanel').agent.Matri;
 			App.get(p.up('window'),'panel#histoQ').bindStore(store);
 			store.load();
-		});
 	},
 	close_agent: function(p)
 	{
