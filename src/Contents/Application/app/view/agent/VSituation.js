@@ -55,6 +55,15 @@ App.view.define('agent.VSituation', {
 				width: "100%",
 				height: 200
 			},
+			{
+				xtype: "grid",
+				columns:[],
+				fieldLabel: "Situation administrative",
+				labelAlign: "top",
+				store: App.store.create({fields:[],data:[]}),
+				width: "100%",
+				height: 200
+			},
 			/*
 			header
 			*/
