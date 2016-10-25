@@ -988,9 +988,9 @@ App.controller.define('CAgent', {
 			App.get(p.up('TAgentPanel'),'panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
 		});
 		// On interroge la base temptation
-		alert(p.up('TAgentPanel').agent.Matri);
+		
 		App.Temptation.quotite(p.up('TAgentPanel').agent.Matri,function(r){
-			alert(r);
+			console.log(r);
 		});
 	},
 	close_agent: function(p)
