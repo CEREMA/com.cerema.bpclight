@@ -55,15 +55,24 @@ App.view.define('agent.VSituation', {
 				width: "100%",
 				height: 200
 			},
-			{
+			/*{
 				html: "<b>Situation administrative</b>",
 				width: "100%",
 				padding: 10,
 				height: 40,
 				border: false,
-			},
+			},*/
 			{
-				xtype: "grid",			
+				xtype: "grid",
+				tbar: [
+				{
+					html: "Situation administrative"	
+				},
+				'->',
+				{
+					text: "Ajouter"
+				}
+				],
 				columns:[{
 					header: "Echelon",
 					flex: 1
