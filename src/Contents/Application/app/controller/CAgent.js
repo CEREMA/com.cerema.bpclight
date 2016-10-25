@@ -91,9 +91,9 @@ App.controller.define('CAgent', {
 					console.log(o.record);
 					return;
 					var o={
-						INM:o.record.newValues.INM,
-						DAT:record.newValues.DAT,
-						ECH:record.newValues.ECH,
+						INM:o.record.data.INM,
+						DAT:o.record.DAT,
+						ECH:o.record.ECH,
 						kage: App.get('TAgentPanel').agent.Kage
 					};
 					App.DB.post('bpclight://situadm',function(r){
