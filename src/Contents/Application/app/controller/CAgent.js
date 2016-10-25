@@ -86,7 +86,11 @@ App.controller.define('CAgent', {
 			"TSituation": {
 				show: "TSituation_onshow"
 			},
-			"TSituation grid#"
+			"TSituation grid#situadm": {
+				afteredit: function() {
+					alert('x')
+				}	
+			},
 			"TSituation combo#position": {
 				select: "position_onchange"
 			},
