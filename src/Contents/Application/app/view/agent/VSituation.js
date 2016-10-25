@@ -88,12 +88,12 @@ App.view.define('agent.VSituation', {
 								ECH: "",
 								kage: me.up('window').agent.Kage
 							});
-							App.DB.post('bpclight://situadm',{INM: "",
+							/*App.DB.post('bpclight://situadm',{INM: "",
 								DAT: "",
 								ECH: "",
 								kage: me.up('window').agent.Kage},function(r){
 								me.up('grid').getStore().load();
-							});
+							});*/
 						}
 					}
 					],
