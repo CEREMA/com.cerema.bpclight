@@ -82,15 +82,29 @@ App.view.define('agent.VSituation', {
 						text: "Ajouter"
 					}
 					],
+					plugins: [
+						Ext.create('Ext.grid.plugin.CellEditing', {
+            				clicksToEdit: 1
+        				})	
+					],
 					columns:[{
 						header: "Echelon",
-						flex: 1
+						flex: 1,
+						editor: {
+							xtype: 'textfield'
+						}
 					},
 					{
-						header: "INM"			
+						header: "INM",
+						editor: {
+							xtype: 'textfield'
+						}			
 					},
 					{
-						header: "Date"			
+						header: "Date",
+						editor: {
+							xtype: 'datefield'
+						}			
 					}],
 					padding: 10,
 					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
