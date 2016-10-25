@@ -88,8 +88,6 @@ App.controller.define('CAgent', {
 			},
 			"TSituation grid#situadm": {
 				edit: function(ed,o) {
-					console.log(o.record);
-					return;
 					var o={
 						INM:o.record.data.INM,
 						DAT:o.record.DAT,
