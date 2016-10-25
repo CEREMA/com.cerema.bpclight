@@ -96,7 +96,7 @@ App.controller.define('CAgent', {
 						kage: o.grid.up('window').agent.Kage
 					};
 					App.DB.post('bpclight://situadm',o,function(r){
-						o.grid.getStore().load();
+						o.store.load();
 					});
 				}	
 			},
