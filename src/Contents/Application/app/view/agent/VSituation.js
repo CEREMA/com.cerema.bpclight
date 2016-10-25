@@ -65,6 +65,7 @@ App.view.define('agent.VSituation', {
 			{
 				layout: "hbox",
 				width: "100%",
+				border: false,
 				flex: 1,
 				items: [
 				{
@@ -104,24 +105,18 @@ App.view.define('agent.VSituation', {
 						html: "&nbsp;Quotité",
 						border: false,
 						bodyStyle: "background: transparent"
-					},
-					'->',
-					{
-						text: "Ajouter"
 					}
 					],
 					columns:[{
-						header: "Echelon",
+						header: "Quotité",
+						width: 100
+					},
+					{
+						header: "Date",
 						flex: 1
-					},
-					{
-						header: "INM"			
-					},
-					{
-						header: "Date"			
 					}],
 					padding: 10,
-					store: App.store.create({fields:["echelon","INM","date"],data:[]}),
+					store: App.store.create({fields:["quotite","date"],data:[]}),
 					flex: 1,
 					height: 200
 				}					
