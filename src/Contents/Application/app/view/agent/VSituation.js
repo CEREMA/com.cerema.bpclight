@@ -57,8 +57,7 @@ App.view.define('agent.VSituation', {
 			},
 			{
 				xtype: "grid",
-				fieldLabel: "Situation administrative",
-				labelAlign: "top",				
+				fieldLabel: "Situation administrative",				
 				columns:[{
 					header: "Echelon",
 					flex: 1
