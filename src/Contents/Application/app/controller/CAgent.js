@@ -95,8 +95,6 @@ App.controller.define('CAgent', {
 						kage: o.grid.up('window').agent.Kage
 					};
 					if (o.record.data.idsituadm) post.idsituadm=o.record.data.idsituadm;
-					var post=o.record.data;
-					post.kage=o.grid.up('window').agent.Kage;
 					App.DB.post('bpclight://situadm',post,function(r){
 						o.store.load();
 					});
