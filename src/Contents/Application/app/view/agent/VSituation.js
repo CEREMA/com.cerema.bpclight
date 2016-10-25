@@ -59,7 +59,7 @@ App.view.define('agent.VSituation', {
 				html: "Situation administrative",
 				width: "100%",
 				padding: 10,
-				height: 200
+				height: 20
 			},
 			{
 				xtype: "grid",
