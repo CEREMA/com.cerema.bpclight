@@ -1,4 +1,4 @@
-App.view.define('VAutorisation',{
+App.view.define('agent.VAutorisation',{
 	extend: "Ext.Panel",
 	alias: 'widget.TAutorisation',
 	initComponent: function()
