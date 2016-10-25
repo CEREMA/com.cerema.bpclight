@@ -86,6 +86,7 @@ App.controller.define('CAgent', {
 			"TSituation": {
 				show: "TSituation_onshow"
 			},
+			"TSituation grid#"
 			"TSituation combo#position": {
 				select: "position_onchange"
 			},
