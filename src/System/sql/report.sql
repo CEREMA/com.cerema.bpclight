@@ -23,4 +23,4 @@ SELECT 	agents.kage,
           bpclight.subdis subdis
        ON (agents.Ksub = subdis.Ksub)
 WHERE
-	agents.kage in ($agents)
+	agents.kage in ({agents})
