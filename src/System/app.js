@@ -42,6 +42,7 @@ App = {
 			var tpl=[];
 			var date = new Date();
 			var year = date.getFullYear();
+			var yearplus=year++;
 			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
@@ -61,6 +62,8 @@ App = {
 					cc=cc.replace('#NUM',year+'-'+item.kage);
 					cc=cc.replace('#AFFECTATION',item.LibUnic+'/'+item.LibSubC);
 					cc=cc.replace('#PERMIS',item.NumPie);
+					cc=cc.replace('#DATE_DEBUT','01/01/'+yearplus);
+					cc=cc.replace('#DATE_FIN','31/12/'+yearplus);
 					tpl.push(cc);
 				};
 				console.log(tpl);
