@@ -43,7 +43,7 @@ App = {
 			var date = new Date();
 			var year = date.getFullYear();
 			var yearplus=year+1;
-			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
+			db.query('bpclight',db.sql("report",{agents:"614,511"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
 					var cc=card;
