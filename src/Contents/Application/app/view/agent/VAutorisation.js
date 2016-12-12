@@ -6,7 +6,7 @@ App.view.define('agent.VAutorisation',{
 		this.title = "Autorisations";
 		this.border= false;
 		this.layout="vbox";
-		this.height="100%";
+		this.height=500;
 		this.width="100%";
 		this.items = [
 		{
