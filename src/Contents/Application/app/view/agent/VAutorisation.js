@@ -21,7 +21,7 @@ App.view.define('agent.VAutorisation',{
 				dataIndex: "NumPie"
 			},
 			{	
-				header: "Permis",
+				header: "Type",
 				dataIndex: "Kcpe",
 				renderer: function(value) {
 					if (value==1) return "Permis A";
