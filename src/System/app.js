@@ -58,6 +58,7 @@ App = {
 					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
 					tpl.push(cc);
 				};
+				console.log(tpl);
 				html.replace('<template></template>',tpl.join(''));
 				res.end(html);
 			});
