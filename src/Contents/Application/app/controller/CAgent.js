@@ -128,9 +128,12 @@ App.controller.define('CAgent', {
 			"TAutorisation": {
 				show: function(p) {
 					// Autorisations
-					/*var store='bpclight://agepiece?TypPie=1&kage='+p.up('window').agent+'&kcpe=2';
-					App.get(p,'grid').bindStore(store);
-					store.load();*/
+					var store='bpclight://agepiece?TypPie=1&kage='+p.up('window').agent+'&kcpe=2';
+					//App.get(p,'grid').bindStore(store);
+					store.load();
+					store.on('load',function() {
+						alert('z');
+					});
 				}	
 			},
 			/*
