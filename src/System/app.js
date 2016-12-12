@@ -37,6 +37,7 @@ App = {
 		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
 		app.get('/report',function(req,res){
 			var html=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html','utf-8');
+			console.log(html);
 			res.end(html);									
 		});
 		app.post('/agent',function(req,res) {
