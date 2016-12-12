@@ -53,7 +53,7 @@ App.view.define('agent.VAutorisation',{
 				width: 150,
 				renderer:Ext.util.Format.dateRenderer('d/m/Y'),
 				editor: {
-                	xtype: 'datetimefield',
+                	xtype: 'datefield',
                 	allowBlank: false					
 				}
 			},
