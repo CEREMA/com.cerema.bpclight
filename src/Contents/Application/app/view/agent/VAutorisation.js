@@ -20,6 +20,15 @@ App.view.define('agent.VAutorisation',{
 				header: "Permis",
 				dataIndex: "NumPie"
 			},
+			{	
+				header: "Permis",
+				dataIndex: "Kcpe",
+				renderer: function(value) {
+					App.DB.get('bpclight://catperm?Kcpe='+value,function(r){
+						return r[0].CatPerm
+					});
+				}
+			},				
 			{
 				header: "Date",
 				dataIndex: "DatPie",
