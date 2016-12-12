@@ -131,9 +131,6 @@ App.controller.define('CAgent', {
 					var store=App.store.create('bpclight://agepiece?TypPie=1&kage='+p.up('window').agent.Kage+'&kcpe=2');
 					App.get(p,'grid').bindStore(store);
 					store.load();
-					store.on('load',function() {
-						alert('z');
-					});
 				}	
 			},
 			/*
