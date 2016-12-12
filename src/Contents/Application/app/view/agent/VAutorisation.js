@@ -11,7 +11,7 @@ App.view.define('agent.VAutorisation',{
 		this.items = [
 		{
 			xtype: "grid",
-			height: 200,
+			flex: 1,
 			width: "100%",
 			padding: 5,
 			labelField: "Permis",
