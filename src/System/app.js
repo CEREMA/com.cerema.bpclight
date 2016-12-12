@@ -59,7 +59,7 @@ App = {
 					tpl.push(cc);
 				};
 				console.log(tpl);
-				html.replace('<template></template>',tpl.join(''));
+				html.replace('</body>',tpl.join('')+'</body>');
 				res.end(html);
 			});
 									
