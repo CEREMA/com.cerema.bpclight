@@ -1053,6 +1053,11 @@ App.controller.define('CAgent', {
 		App.get(p,'TAgent textfield#Phone').setValue(p.agent.Telephone);
 		App.get(p,'TAgent textfield#Cell').setValue(p.agent.Portable);
 		
+		// Autorisations
+		var store='bpclight://agepiece?TypPie=1&kage='+p.agent+'&kcpe=2';
+		App.get(p,'TAutorisation grid').bindStore(store);
+		store.load();
+		
 		//console.log(p.agent);
 		
 		if (p.agent._BLOB=="") p.agent._BLOB="[]";
