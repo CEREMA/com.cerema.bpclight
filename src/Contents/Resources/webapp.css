@@ -119,6 +119,8 @@
 .add
 {
 	background-image: url(webapp/addbutton.png);
+	background-size:16px 16px;
+	background-repeat:no-repeat;
 	width: 16px;
 	height: 16px;
 }
