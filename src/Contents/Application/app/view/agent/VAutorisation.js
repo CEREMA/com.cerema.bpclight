@@ -17,7 +17,7 @@ App.view.define('agent.VAutorisation',{
 			columns: [
 				
 			],
-			store: App.store.create('')
+			store: App.store.create('bpclight://agepiece?TypPie=1&kage=614&kcpe=2',{autoLoad:true})
 		}
 		];
 		this.callParent();
