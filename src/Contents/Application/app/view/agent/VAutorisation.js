@@ -21,7 +21,8 @@ App.view.define('agent.VAutorisation',{
 			tbar: [
 			'->',
 			{
-				text: "Ajouter"
+				text: "Ajouter",
+				iconCls: "add"
 			}
 			],
 			columns: [
