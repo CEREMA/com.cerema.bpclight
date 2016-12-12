@@ -36,7 +36,8 @@ App = {
 		});
 		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
 		app.get('/report',function(req,res){
-			
+			var html=require('fs').readFileSync(server.static(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html');
+			res.end(html);									
 		});
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
