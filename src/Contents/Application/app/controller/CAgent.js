@@ -128,7 +128,7 @@ App.controller.define('CAgent', {
 			"TAutorisation": {
 				show: function(p) {
 					// Autorisations
-					var store='bpclight://agepiece?TypPie=1&kage='+p.up('window').agent+'&kcpe=2';
+					var store='bpclight://agepiece?TypPie=1&kage='+p.up('window').agent.Kage+'&kcpe=2';
 					alert(store);
 					//App.get(p,'grid').bindStore(store);
 					store.load();
