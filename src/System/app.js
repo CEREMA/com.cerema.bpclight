@@ -59,6 +59,8 @@ App = {
 					var cc=card;
 					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
 					cc=cc.replace('#NUM',year+'-'+item.kage);
+					cc=cc.replace('#AFFECTATION',item.LibUnic+'/'+item.LibSubC);
+					cc=cc.replace('#PERMIS',item.NumPie);
 					tpl.push(cc);
 				};
 				console.log(tpl);
