@@ -25,7 +25,7 @@ App.view.define('agent.VAutorisation',{
 				dataIndex: "Kcpe",
 				renderer: function(value) {
 					App.DB.get('bpclight://catperm?Kcpe='+value,function(r){
-						return r[0].CatPerm
+						return r.data[0].CatPerm
 					});
 				}
 			},				
