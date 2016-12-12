@@ -37,7 +37,13 @@ App = {
 		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
 		app.get('/report',function(req,res){
 			var html=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html','utf-8');
-			console.log(html);
+			var card=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'card.template','utf-8');
+			var db=App.using('db');
+			console.log(db.sql("report",{agents:"614"}));
+			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
+				console.log(e);
+				console.log(r);
+			})
 			res.end(html);									
 		});
 		app.post('/agent',function(req,res) {
