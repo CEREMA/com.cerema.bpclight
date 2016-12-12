@@ -17,7 +17,7 @@ App.view.define('agent.VAutorisation',{
 			labelAlign: "top",
 			columns: [
 			{	
-				header: "Permis",
+				header: "Permis N°",
 				dataIndex: "NumPie"
 			},
 			{	
