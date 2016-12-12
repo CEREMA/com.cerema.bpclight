@@ -15,9 +15,20 @@ App.view.define('agent.VAutorisation',{
 			labelField: "Permis",
 			labelAlign: "top",
 			columns: [
-				
+			{	
+				header: "Permis",
+				dataIndex: "NumPie"
+			},
+			{
+				header: "Date",
+				dataIndex: "DatPie"
+			},
+			{
+				header: "Signature",
+				dataIndex: "SignPie"
+			}
 			],
-			store: App.store.create('bpclight://agepiece?TypPie=1&kage=614&kcpe=2',{autoLoad:true})
+			store: App.store.create({fields:[],data:[]})
 		}
 		];
 		this.callParent();
