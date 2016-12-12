@@ -46,23 +46,13 @@ App = {
 			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
-					/*kage: 614,
-    Nom: 'ZUCATTI',
-    Prenom: 'Stéphane',
-    DatPie: 2009-09-02T22:00:00.000Z,
-    DatVal: 2011-02-23T23:00:00.000Z,
-    SignPie: 'Bouches du Rhône',
-    TypPie: 1,
-    CatPerm: 'Permis B',
-    NumPie: '880619200180',
-    LibUnic: 'SG',
-    LibSubC: 'SII	*/
 					var cc=card;
 					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
 					cc=cc.replace('#NUM',year+'-'+item.kage);
 					cc=cc.replace('#AFFECTATION',item.LibUnic+'/'+item.LibSubC);
 					cc=cc.replace('#CAT_PERMIS',item.CatPerm);
 					cc=cc.replace('#PERMIS',item.NumPie);
+					cc=cc.replace('#PREFECTURE',item.SignPie);
 					cc=cc.replace('#DATE_PERMIS',item.DatPie.toString('dd/MM/yyyy'));
 					cc=cc.replace('#DATE_DEBUT','01/01/'+yearplus);
 					cc=cc.replace('#DATE_FIN','31/12/'+yearplus);
