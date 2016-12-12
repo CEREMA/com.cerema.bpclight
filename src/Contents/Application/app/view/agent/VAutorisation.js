@@ -22,11 +22,14 @@ App.view.define('agent.VAutorisation',{
 			},
 			{
 				header: "Date",
-				dataIndex: "DatPie"
+				dataIndex: "DatPie",
+				width: 150,
+				renderer:Ext.util.Format.dateRenderer('d/m/Y')
 			},
 			{
 				header: "Signature",
-				dataIndex: "SignPie"
+				dataIndex: "SignPie",
+				flex: 1
 			}
 			],
 			store: App.store.create({fields:[],data:[]})
