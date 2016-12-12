@@ -34,7 +34,7 @@ App = {
 		app.post('/',app.upload.any(),function(req,res,next) {
 			App.upload.up(req,res);	
 		});
-		app.use('/css',express.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
+		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
 		app.get('/report',function(req,res){
 			
 		});
