@@ -58,9 +58,10 @@ App = {
 					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
 					tpl.push(cc);
 				};
+				html.replace('<template></template>',tpl.join(''));
+				res.end(html);
 			});
-			html.replace('<template></template>',tpl.join(''));
-			res.end(html);									
+									
 		});
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
