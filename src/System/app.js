@@ -39,11 +39,27 @@ App = {
 			var html=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html','utf-8');
 			var card=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'card.template','utf-8');
 			var db=App.using('db');
-			console.log(db.sql("report",{agents:"614"}));
+			var tpl=[];
 			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
-				console.log(e);
-				console.log(r);
-			})
+				for (var i=0;i<r.length;i++) {
+					var item=r[i];
+					/*kage: 614,
+    Nom: 'ZUCATTI',
+    Prenom: 'Stéphane',
+    DatPie: 2009-09-02T22:00:00.000Z,
+    DatVal: 2011-02-23T23:00:00.000Z,
+    SignPie: 'Bouches du Rhône',
+    TypPie: 1,
+    CatPerm: 'Permis B',
+    NumPie: '880619200180',
+    LibUnic: 'SG',
+    LibSubC: 'SII	*/
+					var cc=card;
+					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
+					tpl.push(cc);
+				};
+			});
+			html.replace('<template></template>',tpl.join(''));
 			res.end(html);									
 		});
 		app.post('/agent',function(req,res) {
