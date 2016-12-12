@@ -15,10 +15,17 @@ App.view.define('agent.VAutorisation',{
 			width: "100%",
 			fieldLabel: "Permis",
 			labelAlign: "top",
+            plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                clicksToEdit : 1
+            })],
 			columns: [
 			{	
 				header: "Permis N°",
-				dataIndex: "NumPie"
+				dataIndex: "NumPie",
+				editor: {
+					xtype: 'textfield',
+                	allowBlank: false			
+				}
 			},
 			{	
 				header: "Type",
@@ -30,18 +37,33 @@ App.view.define('agent.VAutorisation',{
 					if (value==4) return "Permis D";
 					if (value==5) return "Permis E";
 					if (value==6) return "Permis EB";
+				},
+				editor: {
+                	xtype: 'combo',
+					store: App.store.create('bpclight://catperm'),
+					displayField: "CatPerm",
+					valueField: "Kcpe",
+                	allowBlank: false					
 				}
 			},				
 			{
 				header: "Date",
 				dataIndex: "DatPie",
 				width: 150,
-				renderer:Ext.util.Format.dateRenderer('d/m/Y')
+				renderer:Ext.util.Format.dateRenderer('d/m/Y'),
+				editor: {
+                	xtype: 'datetimefield',
+                	allowBlank: false					
+				}
 			},
 			{
 				header: "Signature",
 				dataIndex: "SignPie",
-				flex: 1
+				flex: 1,
+				editor: {
+					xtype: 'textfield',
+                	allowBlank: false			
+				}
 			}
 			],
 			store: App.store.create({fields:[],data:[]})
