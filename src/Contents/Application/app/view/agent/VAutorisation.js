@@ -24,15 +24,15 @@ App.view.define('agent.VAutorisation',{
 				text: "Ajouter",
 				iconCls: "add",
 				handler: function(me) {
-					var newRecord = new myRecord( 
+					/*var newRecord = new myRecord( 
     				{ 
         				NumPie: "",
 						Kcpe: "",
 						DatPie: "",
 						SignPie: ""
     				} 
-					); 
-					me.up('grid').getStore().insert(0, newRecord); 
+					); */
+					me.up('grid').getStore().insert(0, {}); 
 				}
 			}
 			],
