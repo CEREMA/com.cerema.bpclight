@@ -42,7 +42,7 @@ App = {
 			var tpl=[];
 			var date = new Date();
 			var year = date.getFullYear();
-			var yearplus=year++;
+			var yearplus=year+1;
 			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
