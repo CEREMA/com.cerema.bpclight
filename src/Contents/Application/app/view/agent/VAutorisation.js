@@ -18,6 +18,12 @@ App.view.define('agent.VAutorisation',{
             plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
                 clicksToEdit : 1
             })],
+			tbar: [
+			'->',
+			{
+				text: "Ajouter"
+			}
+			],
 			columns: [
 			{	
 				header: "Permis N°",
