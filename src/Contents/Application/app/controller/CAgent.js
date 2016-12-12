@@ -136,7 +136,7 @@ App.controller.define('CAgent', {
 			"TAutorisation grid": {
 				edit: function(me,store) {
 					var record=store.record;
-					App.DB.post("bpclight://agepiece",record);
+					App.DB.post("bpclight://agepiece",record.data);
 				}
 			},
 			/*
