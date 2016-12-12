@@ -22,7 +22,18 @@ App.view.define('agent.VAutorisation',{
 			'->',
 			{
 				text: "Ajouter",
-				iconCls: "add"
+				iconCls: "add",
+				handler: function(me) {
+					var newRecord = new myRecord( 
+    				{ 
+        				NumPie: "",
+						Kcpe: "",
+						DatPie: "",
+						SignPie: ""
+    				} 
+					); 
+					me.up('grid').getStore().insert(0, newRecord); 
+				}
 			}
 			],
 			columns: [
