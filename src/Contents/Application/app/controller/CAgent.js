@@ -137,7 +137,7 @@ App.controller.define('CAgent', {
 				edit: function(me,store) {
 					console.log(store);
 				}
-			}
+			},
 			/*
 			TFormation
 			*/
