@@ -7,6 +7,7 @@ App.view.define('agent.VAutorisation',{
 		this.border= false;
 		this.layout="vbox";
 		this.height="100%";
+		this.width="100%";
 		this.items = [
 		{
 			xtype: "grid",
