@@ -41,6 +41,7 @@ App.view.define('agent.VAutorisation',{
 				editor: {
                 	xtype: 'combo',
 					store: App.store.create('bpclight://catperm'),
+					editable: false,
 					displayField: "CatPerm",
 					valueField: "Kcpe",
                 	allowBlank: false					
