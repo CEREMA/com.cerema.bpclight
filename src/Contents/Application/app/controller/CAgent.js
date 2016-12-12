@@ -133,6 +133,11 @@ App.controller.define('CAgent', {
 					store.load();
 				}	
 			},
+			"TAutorisation grid": {
+				edit: function(me,store) {
+					console.log(store);
+				}
+			}
 			/*
 			TFormation
 			*/
