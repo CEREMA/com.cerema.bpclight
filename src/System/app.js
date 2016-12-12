@@ -43,6 +43,7 @@ App = {
 			var date = new Date();
 			var year = date.getFullYear();
 			var yearplus=year+1;
+			console.log(db.sql("report",{agents:"614,511"}));
 			db.query('bpclight',db.sql("report",{agents:"614,511"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
