@@ -24,11 +24,12 @@ App.view.define('agent.VAutorisation',{
 				header: "Permis",
 				dataIndex: "Kcpe",
 				renderer: function(value) {
-					App.DB.get('bpclight://catperm?Kcpe='+value,function(r){
-						console.log(value);
-						console.log(r);
-						return r.data[0].CatPerm
-					});
+					if (value==1) return "Permis A";
+					if (value==2) return "Permis B";
+					if (value==3) return "Permis C";
+					if (value==4) return "Permis D";
+					if (value==5) return "Permis E";
+					if (value==6) return "Permis EB";
 				}
 			},				
 			{
