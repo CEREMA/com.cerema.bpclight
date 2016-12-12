@@ -40,6 +40,8 @@ App = {
 			var card=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'card.template','utf-8');
 			var db=App.using('db');
 			var tpl=[];
+			var date = new Date();
+			var year = date.getFullYear();
 			db.query('bpclight',db.sql("report",{agents:"614"}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
@@ -56,6 +58,7 @@ App = {
     LibSubC: 'SII	*/
 					var cc=card;
 					cc=cc.replace('#NOMPRENOM',item.Nom+' '+item.Prenom);
+					cc=cc.replace('#NUM',year+'-'+item.kage);
 					tpl.push(cc);
 				};
 				console.log(tpl);
