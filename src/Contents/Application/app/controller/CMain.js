@@ -123,6 +123,7 @@ App.controller.define('CMain', {
 		var items=App.get('TPrincipal grid#GridAgents').getStore().data.items;
 		var kage=[];
 		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
+		console.log(kage);
 		Ext.Ajax.request({
 			url: '/report',
 			params: {
