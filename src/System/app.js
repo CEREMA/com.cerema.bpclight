@@ -61,7 +61,7 @@ App = {
 				console.log(tpl);
 				html=html.replace('<template></template>',tpl.join(''));
 				//res.end(html);
-				fs.writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'essai.html',html);
+				require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'essai.html',html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
 				wkhtmltopdf("http://127.0.0.1:3000/css/essai.html").pipe(res);
 			});
