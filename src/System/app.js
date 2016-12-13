@@ -35,7 +35,7 @@ App = {
 			App.upload.up(req,res);	
 		});
 		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
-		app.get('/report',function(req,res){
+		app.post('/report',function(req,res){
 			var html=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html','utf-8');
 			var card=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'card.template','utf-8');
 			var db=App.using('db');
