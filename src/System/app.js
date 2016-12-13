@@ -45,7 +45,7 @@ App = {
 			var yearplus=year+1;
 			var step=1;
 			var pages=4;
-			db.query('bpclight',db.sql("report",{agents:[614,511,321,433,121]}),function(e,r){
+			db.query('bpclight',db.sql("report",{agents:req.body.kage.split(',')}),function(e,r){
 				for (var i=0;i<r.length;i++) {
 					var item=r[i];
 					var cc=card;
