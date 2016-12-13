@@ -67,12 +67,12 @@ App = {
 						tpl.push('<div class="PAGE_BREAK"></div>');
 					} 
 				};
-				
-				html=html.replace('<template></template>',tpl.join(''));
-				//res.end(html);
-				require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'essai.html',html);
+				var shortid=App.using('shortid').generate();
+				html=html.replace('<template></template>',tpl.join(''));	require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+shortid+'.html',html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
-				wkhtmltopdf("http://127.0.0.1:3000/css/essai.html",{ pageSize: 'A4',dpi:390 }).pipe(res);
+				wkhtmltopdf("/css/"+shortid+".html",{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
+					console.log('....................')
+				});
 			});
 									
 		});
