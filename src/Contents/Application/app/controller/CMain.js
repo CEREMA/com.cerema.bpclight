@@ -134,9 +134,9 @@ App.controller.define('CMain', {
 				App.get('TPrincipal splitbutton#BtnExport').enable();
 				var url=response.responseText;
 				window.open(url,'_blank');
-				var iframe=document.createElement('iframe');
+				/*var iframe=document.createElement('iframe');
 				iframe.src=url;
-				document.getElementsByTagName('body')[0].appendChild(iframe);
+				document.getElementsByTagName('body')[0].appendChild(iframe);*/
 			}
 		});		
 	},
