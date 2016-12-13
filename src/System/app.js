@@ -72,7 +72,7 @@ App = {
 				require('fs').writeFileSync(tmp.path,html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
 				wkhtmltopdf('http://'+req.headers.host + '/' + tmp.url,{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
-					require('fs').unlinkSync(tmp.path);
+					//require('fs').unlinkSync(tmp.path);
 				});
 			});
 									
