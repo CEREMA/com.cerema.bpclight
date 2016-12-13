@@ -31,7 +31,9 @@ App.view.define('agent.VAutorisation',{
 				text: "Supprimer",
 				iconCls: "del",
 				handler: function(me) {
-					me.up('grid').getStore().insert(0, {}); 
+					var selection = me.up('grid').getSelectionModel().getSelection()[0];
+					me.up('grid').getStore().remove(selection);
+					me.up('grid').getStore().load();
 				}
 			}				
 			],
