@@ -70,7 +70,7 @@ App = {
 				var shortid=App.using('shortid').generate();
 				html=html.replace('<template></template>',tpl.join(''));	require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+shortid+'.html',html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
-				wkhtmltopdf(req.protocol+req.hostname+"/css/"+shortid+".html",{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
+				wkhtmltopdf(req.protocol+'://'+req.hostname+':'+req.port+"/css/"+shortid+".html",{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
 					console.log('....................')
 				});
 			});
