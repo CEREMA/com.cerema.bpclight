@@ -55,7 +55,11 @@ App = {
 					cc=cc.replace('#CAT_PERMIS',item.CatPerm);
 					cc=cc.replace('#PERMIS',item.NumPie);
 					cc=cc.replace('#PREFECTURE',item.SignPie);
-					cc=cc.replace('#DATE_PERMIS',item.DatPie.toString('dd/MM/yyyy'));
+					try {
+						cc=cc.replace('#DATE_PERMIS',item.DatPie.toString('dd/MM/yyyy'));
+					} catch(e) {
+						cc=cc.replace('#DATE_PERMIS',"");	
+					};
 					cc=cc.replace('#DATE_DEBUT','01/01/'+yearplus);
 					cc=cc.replace('#DATE_FIN','31/12/'+yearplus);
 					step++;
