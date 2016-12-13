@@ -26,7 +26,14 @@ App.view.define('agent.VAutorisation',{
 				handler: function(me) {
 					me.up('grid').getStore().insert(0, {}); 
 				}
-			}
+			},
+			{
+				text: "Supprimer",
+				iconCls: "del",
+				handler: function(me) {
+					me.up('grid').getStore().insert(0, {}); 
+				}
+			}				
 			],
 			columns: [
 			{	
