@@ -60,7 +60,7 @@ App = {
 					cc=cc.replace('#DATE_FIN','31/12/'+yearplus);
 					step++;
 					tpl.push(cc);
-					if (step>=pages) {
+					if (step>pages) {
 						step=1;
 						tpl.push('<div class="PAGE_BREAK"></div>');
 					} 
