@@ -74,9 +74,7 @@ App = {
 				var out=App.temp('pdf');
 				var stream = wkhtmltopdf(fs.createReadStream(out.path));
 				wkhtmltopdf(req.protocol+'://'+req.headers.host + tmp.url,{ pageSize: 'A4',dpi:390 }).pipe(stream).on('finish',function() {
-					res.end(JSON.stringify({
-						url: out.url
-					}));
+					res.end(out.url);
 				});
 			});
 									
