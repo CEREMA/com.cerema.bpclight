@@ -136,7 +136,7 @@ App.controller.define('CAgent', {
 			"TAutorisation grid": {
 				edit: function(me,store) {
 					var record=store.record;
-					record.data.Kage=store.grid.up('window')..agent.Kage;
+					record.data.Kage=store.grid.up('window').agent.Kage;
 					App.DB.post("bpclight://agepiece",record.data,function(){
 						store.grid.getStore().load();
 					});
