@@ -57,8 +57,9 @@ App = {
 					cc=cc.replace('#DATE_DEBUT','01/01/'+yearplus);
 					cc=cc.replace('#DATE_FIN','31/12/'+yearplus);
 					tpl.push(cc);
+					tpl.push(cc);
 				};
-				console.log(tpl);
+				
 				html=html.replace('<template></template>',tpl.join(''));
 				//res.end(html);
 				require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'essai.html',html);
