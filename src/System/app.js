@@ -67,10 +67,11 @@ App = {
 						tpl.push('<div class="PAGE_BREAK"></div>');
 					} 
 				};
-				var shortid=App.using('shortid').generate();
-				html=html.replace('<template></template>',tpl.join(''));	require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+shortid+'.html',html);
+				html=html.replace('<template></template>',tpl.join(''));
+				var tmp=App.temp('html');
+				require('fs').writeFileSync(tmp.path,html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
-				wkhtmltopdf(req.protocol+'://'+req.hostname+':'+req.app.settings.port+"/css/"+shortid+".html",{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
+				wkhtmltopdf(tmp.url,{ pageSize: 'A4',dpi:390 }).pipe(res).on('finish',function() {
 					console.log('....................')
 				});
 			});
