@@ -85,7 +85,7 @@
     "packages": [
         "msexcel-builder",
         "mssql",
-        "jsreports"
+        "wkhtmltopdf"
     ],
     "icon": {
         "background": "#FFFFFF",

@@ -60,7 +60,8 @@ App = {
 				};
 				console.log(tpl);
 				html=html.replace('<template></template>',tpl.join(''));
-				res.end(html);
+				//res.end(html);
+				wkhtmltopdf(html).pipe(res);
 			});
 									
 		});
