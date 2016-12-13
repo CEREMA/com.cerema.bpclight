@@ -137,6 +137,7 @@ App.controller.define('CAgent', {
 				edit: function(me,store) {
 					var record=store.record;
 					record.data.Kage=store.grid.up('window').agent.Kage;
+					record.data.TypPie=1;
 					App.DB.post("bpclight://agepiece",record.data,function(){
 						store.grid.getStore().load();
 					});
