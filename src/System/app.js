@@ -62,7 +62,7 @@ App = {
 				html=html.replace('<template></template>',tpl.join(''));
 				//res.end(html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
-				wkhtmltopdf(html).pipe(res);
+				wkhtmltopdf("http://www.google.com/").pipe(res);
 			});
 									
 		});
