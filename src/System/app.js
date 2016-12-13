@@ -63,7 +63,7 @@ App = {
 				//res.end(html);
 				require('fs').writeFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'essai.html',html);
 				var wkhtmltopdf = App.using('wkhtmltopdf');
-				wkhtmltopdf("http://127.0.0.1:3000/css/essai.html",{ pageSize: 'A4' }).pipe(res);
+				wkhtmltopdf("http://127.0.0.1:3000/css/essai.html",{ pageSize: 'A4',dpi:140 }).pipe(res);
 			});
 									
 		});
