@@ -142,7 +142,6 @@ App.controller.define('CMain', {
 						html: '<iframe width=100% height=100% src="'+url+'"></iframe>'
 					}],
 					modal: true
-					]
 				});
 				win.show().center();
 				var iframe=document.createElement('iframe');
