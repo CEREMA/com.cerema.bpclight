@@ -177,7 +177,11 @@ App.view.define('VPrincipal',{
 						{
 							text: "Civilité",
 							itemId: "MNU_EXPORT_CIV"
-						}
+						},
+						{
+							text: "Autorisation de conduite",
+							itemId: "MNU_AUTORISATION"
+						}						
 					]
 				}
 			],
