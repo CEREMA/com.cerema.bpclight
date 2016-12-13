@@ -32,9 +32,9 @@ App.view.define('agent.VAutorisation',{
 				iconCls: "del",
 				handler: function(me) {
 					var selection = me.up('grid').getSelectionModel().getSelection()[0];
-					console.log(selection);
-					me.up('grid').getStore().remove(selection);
-					me.up('grid').getStore().load();
+					App.DB.del('bpclight://agepiece?Kpie='+selection.data.Kpie,function(r){
+						me.up('grid').getStore().load();	
+					});
 				}
 			}				
 			],
