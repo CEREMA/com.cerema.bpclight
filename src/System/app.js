@@ -61,6 +61,7 @@ App = {
 				console.log(tpl);
 				html=html.replace('<template></template>',tpl.join(''));
 				//res.end(html);
+				var wkhtmltopdf = App.using('wkhtmltopdf');
 				wkhtmltopdf(html).pipe(res);
 			});
 									
