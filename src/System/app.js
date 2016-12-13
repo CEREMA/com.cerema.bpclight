@@ -72,12 +72,13 @@ App = {
 				html=html.replace('<template></template>',tpl.join(''));
 				var tmp=App.temp('html');
 				require('fs').writeFileSync(tmp.path,html); 
-				var wkhtmltopdf = App.using('wkhtmltopdf');
+				res.end(req.protocol+'://'+req.headers.host + tmp.url);
+				/*var wkhtmltopdf = App.using('wkhtmltopdf');
 				var out=App.temp('pdf');
 				var stream=require('fs').createWriteStream(out.path);
 				wkhtmltopdf(req.protocol+'://'+req.headers.host + tmp.url,{ pageSize: 'A4',dpi:390 }).pipe(stream).on('finish',function() {
 					res.end(out.url);
-				});
+				});*/
 			});
 									
 		});

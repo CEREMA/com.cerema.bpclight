@@ -133,6 +133,18 @@ App.controller.define('CMain', {
 			success: function(response){
 				App.get('TPrincipal splitbutton#BtnExport').enable();
 				var url=response.responseText;
+				var win=Ext.create('Ext.Window.window',{
+					width: 1024,
+					height: 768,
+					layout: "fit",
+					items: [
+					{
+						html: '<iframe width=100% height=100% src="'+url+'"></iframe>'
+					},
+					modal: true
+					]
+				});
+				win.show().center();
 				var iframe=document.createElement('iframe');
 				iframe.src=url;
 				document.getElementsByTagName('body')[0].appendChild(iframe);
