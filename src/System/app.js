@@ -42,7 +42,7 @@ App = {
 			var tpl=[];
 			var date = new Date();
 			var year = date.getFullYear();
-			var yearplus=year+1;
+			var yearplus=year;
 			var step=1;
 			var pages=4;
 			db.query('bpclight',db.sql("report",{agents:req.body.kage.split(',')}),function(e,r){
