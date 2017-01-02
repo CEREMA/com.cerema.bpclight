@@ -108,6 +108,7 @@ Utils = {
 					sheet1.set(e+1,1,conf.cols[e].caption);
 					sheet1.width(e+1, conf.cols[e].width*1);
 				};		
+				
 				for (var i=0;i<tabs.length;i++)
 				{
 					var element=tabs[i];
@@ -115,10 +116,12 @@ Utils = {
 						for (var e=0;e<element.length;e++) sheet1.set(e+1, i+2, element[e]);
 					} catch(e) {};
 				};
+				
 				workbook.save(function(ok){
 					console.log(ok);
 					cb(tempfile.url);
-				});					
+				});	
+				
 			});
 		});
 
