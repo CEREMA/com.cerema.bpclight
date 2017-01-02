@@ -1,6 +1,7 @@
 html
 {
 	-webkit-print-color-adjust:exact;
+	zoom:135%; 
 }
 
 Body
