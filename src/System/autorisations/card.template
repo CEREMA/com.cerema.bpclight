@@ -6,28 +6,28 @@
 		<div class="panel">
 			<table width=100%>
 				<tr>
-					<td width=250>M. Mme :</td>
-					<td width=250>#NOMPRENOM</td>
+					<td width=260>M. Mme :</td>
+					<td width=260>#NOMPRENOM</td>
 				</tr>
 				<tr>
-					<td width=250>Affectation :</td>
-					<td width=250>#AFFECTATION</td>
+					<td width=260>Affectation :</td>
+					<td width=260>#AFFECTATION</td>
 				</tr>
 				<tr>
-					<td width=250>Titulaire du permis de conduire n°</td>
-					<td width=250>#PERMIS</td>
+					<td width=260>Titulaire du permis de conduire n°</td>
+					<td width=260>#PERMIS</td>
 				</tr>
 				<tr>
-					<td width=250>Catégorie :</td>
-					<td width=250>#CAT_PERMIS</td>
+					<td width=260>Catégorie :</td>
+					<td width=260>#CAT_PERMIS</td>
 				</tr>
 				<tr>
-					<td width=250>délivré le :</td>
-					<td width=250>#DATE_PERMIS</td>
+					<td width=260>délivré le :</td>
+					<td width=260>#DATE_PERMIS</td>
 				</tr>
 				<tr>
-					<td width=250>par la préfecture de :</td>
-					<td width=250>#PREFECTURE</td>
+					<td width=260>par la préfecture de :</td>
+					<td width=260>#PREFECTURE</td>
 				</tr>
 			</table>
 		</div>
