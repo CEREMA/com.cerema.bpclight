@@ -75,6 +75,14 @@ App.view.define('VMedicRDV',{
 						store: App.store.create("bpclight://vm_resultats",{autoLoad:true}),
 						displayField:'resultat',
 						valueField:'kvm_resultats'						
+					},{
+						xtype: 'datetimefield',
+						itemId:'EdVMNextDate',
+						width: 140,
+						fieldLabel: 'Prochain RDV',
+						renderer:Ext.util.Format.dateRenderer('d/m/Y'),
+						labelAlign:'top',
+						padding:5						
 					}
 				]
 		},{
