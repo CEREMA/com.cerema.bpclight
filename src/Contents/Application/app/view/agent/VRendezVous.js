@@ -97,7 +97,17 @@ App.view.define('agent.VRendezVous', {
                         };
                     },                    
                     flex: 1
-                }
+                },                
+				{
+                    header: "Prochaine visite",
+					dataIndex: "NextDate",
+                    width: 100,
+                    renderer:Ext.util.Format.dateRenderer('d/m/Y')
+					/*editor: {
+                        xtype: 'datetimefield',
+                        allowBlank: false					
+					}*/
+                },
             ],
             store: App.store.create({fields:[],data:[]})
         }
