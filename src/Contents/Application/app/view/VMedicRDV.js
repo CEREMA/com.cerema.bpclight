@@ -25,6 +25,7 @@ App.view.define('VMedicRDV',{
 						commentaires: App.get('textarea#EdVMCommentaires').getValue()
 					};
 					if (me.up('window').dta.rdv_id) request.rdv_id=me.up('window').dta.rdv_id;
+					console.log(request);
 					App.DB.post('bpclight://medic_rdv',request,function(r){
 						App.get('TRendezVous grid').getStore().load();
 						me.up('window').close();
