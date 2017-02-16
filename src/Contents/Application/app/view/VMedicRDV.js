@@ -20,6 +20,7 @@ App.view.define('VMedicRDV',{
 						kage: me.up('window').dta.kage,
 						nature: App.get('combo#EdVMNature').getValue(),
 						StartDate: App.get('datetimefield#EdVMDate').getValue(),
+						NextDate: App.get('datetimefield#EdVMNextDate').getValue(),
 						resultat: App.get('combo#EdVMResultats').getValue(),
 						commentaires: App.get('textarea#EdVMCommentaires').getValue()
 					};
