@@ -22,7 +22,7 @@ Utils = {
 				AllAgents.push(r[i].Kage);
 				Agent[r[i].Kage]=r[i];	
 			};
-			db.query("bpclight",'SELECT agents.Kage,Nom,Prenom,libunic,libsubc,date_visite,resultat,commentaires,nature FROM bpclight.vm join bpclight.agents on bpclight.agents.kage=bpclight.vm.kage left join vm_resultats on vm_resultats.kvm_resultats=vm.resultats left join vm_natures on vm_natures.kvm_natures=vm.nature_visite join unites on unites.kuni=agents.kuni join subdis on subdis.ksub=agents.ksub where agents.actif=1 order by Nom,Prenom, date_visite desc;', function(err, rows) {
+			db.query("bpclight",'SELECT agents.Kage,Nom,Prenom,libunic,libsubc,StartDate date_visite,NextDate prochaine_visite,vm_resultats.resultat,commentaires,vm_natures.nature FROM bpclight.medic_rdv join bpclight.agents on bpclight.agents.kage=bpclight.medic_rdv.kage left join vm_resultats on vm_resultats.kvm_resultats=medic_rdv.resultat left join vm_natures on vm_natures.kvm_natures=medic_rdv.nature join unites on unites.kuni=agents.kuni join subdis on subdis.ksub=agents.ksub where agents.actif=1 order by Nom,Prenom, date_visite desc;', function(err, rows) {
 				for (var i=0;i<rows.length;i++) {
 					if (Agents.indexOf(rows[i].Kage)==-1) {
 						Agents.push(rows[i].Kage);
@@ -35,6 +35,9 @@ Utils = {
 					var item=[];
 					for (var el in VM[i]) {
 						if (el=="date_visite")
+						item.push(VM[i][el].ymd());
+						else
+						if (el=="prochaine_visite")
 						item.push(VM[i][el].ymd());
 						else
 						item.push(VM[i][el]);
