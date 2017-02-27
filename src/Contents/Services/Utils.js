@@ -22,8 +22,9 @@ Utils = {
 				AllAgents.push(r[i].Kage);
 				Agent[r[i].Kage]=r[i];	
 			};
-			db.query("bpclight",'SELECT agents.Kage,Nom,Prenom,libunic,libsubc,StartDate date_visite,NextDate prochaine_visite,vm_resultats.resultat,commentaires,vm_natures.nature FROM bpclight.medic_rdv join bpclight.agents on bpclight.agents.kage=bpclight.medic_rdv.kage left join vm_resultats on vm_resultats.kvm_resultats=medic_rdv.resultat left join vm_natures on vm_natures.kvm_natures=medic_rdv.nature join unites on unites.kuni=agents.kuni join subdis on subdis.ksub=agents.ksub where agents.actif=1 order by Nom,Prenom, date_visite desc;', function(err, rows) {
-				for (var i=0;i<rows.length;i++) {
+			db.query("bpclight",'SELECT agents.Kage,Nom,Prenom,libunic,libsubc,StartDate date_visite,NextDate date_prochaine_visite,vm_resultats.resultat,commentaires,vm_natures.nature FROM bpclight.medic_rdv join bpclight.agents on bpclight.agents.kage=bpclight.medic_rdv.kage left join vm_resultats on vm_resultats.kvm_resultats=medic_rdv.resultat left join vm_natures on vm_natures.kvm_natures=medic_rdv.nature join unites on unites.kuni=agents.kuni join subdis on subdis.ksub=agents.ksub where agents.actif=1 order by Nom,Prenom, date_visite desc;', function(err, rows) {
+//console.log(rows);		
+		for (var i=0;i<rows.length;i++) {
 					if (Agents.indexOf(rows[i].Kage)==-1) {
 						Agents.push(rows[i].Kage);
 						VM.push(rows[i]);
@@ -35,12 +36,17 @@ Utils = {
 					var item=[];
 					for (var el in VM[i]) {
 						if (el=="date_visite")
-						item.push(VM[i][el].ymd());
-						else
-						if (el=="prochaine_visite")
-						item.push(VM[i][el].ymd());
-						else
-						item.push(VM[i][el]);
+							item.push(VM[i][el].ymd());
+						else {
+							try {
+								if (el=="date_prochaine_visite")
+								item.push(VM[i][el].ymd());	
+								else
+								item.push(VM[i][el]);
+							} catch(e) {
+								item.push(VM[i][el]);
+							}
+						}
 					};
 					CSV.push(item);
 				};
@@ -88,6 +94,11 @@ Utils = {
 					width: 50								
 				},
 				{
+					caption: 'Prochaine visite',
+					type:'string',
+					width: 50								
+				},
+				{
 					caption: 'Résultat',
 					type:'string',
 					width: 100								
@@ -111,7 +122,6 @@ Utils = {
 					sheet1.set(e+1,1,conf.cols[e].caption);
 					sheet1.width(e+1, conf.cols[e].width*1);
 				};		
-				
 				for (var i=0;i<tabs.length;i++)
 				{
 					var element=tabs[i];
@@ -119,12 +129,10 @@ Utils = {
 						for (var e=0;e<element.length;e++) sheet1.set(e+1, i+2, element[e]);
 					} catch(e) {};
 				};
-				
 				workbook.save(function(ok){
 					console.log(ok);
 					cb(tempfile.url);
-				});	
-				
+				});					
 			});
 		});
 
