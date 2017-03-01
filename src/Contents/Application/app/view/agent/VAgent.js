@@ -103,7 +103,8 @@ App.view.define('agent.VAgent',{
 						top: 10
 					},
 					hidden: true
-				},				{
+				},				
+				{
 					layout: "hbox",
 					border: false,
 					width: "100%",
