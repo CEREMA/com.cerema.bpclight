@@ -1,3 +1,22 @@
+var UNIQUE_RETRIES = 9999;
+
+var generateUnique = function(previous) {
+  previous = previous || [];
+  var retries = 0;
+  var id;
+
+  // Try to generate a unique ID,
+  // i.e. one that isn't in the previous.
+  while(!id && retries < UNIQUE_RETRIES) {
+    id = generate();
+    if(previous.indexOf(id) !== -1) {
+      id = null;
+      retries++;
+    }
+  }
+
+  return id;
+};
 
 function GMap(l,m)
 {
@@ -77,9 +96,6 @@ App.controller.define('CMain', {
 			},
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
-			},
-			"createAgent grid#gridTPT": {
-				itemclick: "gridTPT_ondblclick",
 			},
 			"createAgent button#Exit": {
 				click: "tpt_exit"
@@ -198,10 +214,7 @@ App.controller.define('CMain', {
 	},
 	CA_onSearch: function(v)
 	{		
-		App.Temptation.search(v,function(o) {
-			App.get('grid#gridTPT').show();
-			App.get('grid#gridTPT').getStore().loadData(o);
-		});
+
 	},    
     grid_onclick: function(p, record, item, index)
 	{
@@ -308,12 +321,10 @@ App.controller.define('CMain', {
 	rdiona_change: function(radiogroup, radio)
 	{
 		if (radio.rb==3) {
-			App.get('panel#TCaGRA').show();
-			App.get('grid#gridTPT').show();			
+			App.get('panel#TCaGRA').show();		
 			this.CA_onSearch();
 		} else {
 			App.get('panel#TCaGRA').hide();
-			App.get('grid#gridTPT').hide();
 		}
 	},	
 	TCAEtablissement_onchange: function(p,record)
@@ -341,8 +352,7 @@ App.controller.define('CMain', {
 			o.Kgra=67;
 		};
 		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
-			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
-			o.Matri=t.matri;
+			o.Matri=generateUnique();
 			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
 			else
 			o.Kgra=App.get('createAgent combo#TCAGrade').getValue();
@@ -372,14 +382,6 @@ App.controller.define('CMain', {
 			});
 		}
 	},
-	gridTPT_ondblclick: function(p, record, item, index)
-	{		
-		var x=record.data.nompre.lastIndexOf(' ');
-		var prenom=record.data.nompre.substr(x+1,255);
-		var nom=record.data.nompre.substr(0,x);
-		App.get('createAgent textfield#TCANom').setValue(nom);
-		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
-	},	
 	TCADepartement_onchange: function(p,record)
 	{
 		App.get(p.up('window'),'combo#TCAService').setValue('');
