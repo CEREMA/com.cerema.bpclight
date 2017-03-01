@@ -349,7 +349,6 @@ App.controller.define('CMain', {
 	TCAClient_create: function(_p) 
 	{
 		_p.setDisabled(true);
-		return;
 		var err=[];
 		var o={
 			Kuni: App.get("combo#TCADepartement").getValue(),
