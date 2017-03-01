@@ -47,37 +47,6 @@ initComponent: function()
 				]
 			},
 			{
-				xtype: "grid",
-				itemId: "gridTPT",
-				margin: {
-					left: 40
-				},
-				padding: 0,
-				columns: [
-					{ text: 'Matricule',  dataIndex: 'matri',width: 70 },
-					{ text: 'Agent', dataIndex: 'nompre', flex: 1 },
-					{ 	text: 'Ouverture', 
-						dataIndex: 'datouv',
-						renderer: function(value) {
-							return value.split('T')[0].split('-')[2]+'/'+value.split('T')[0].split('-')[1]+'/'+value.split('T')[0].split('-')[0];
-						}					
-					}
-				],
-				store: App.store.create({
-					fields: [
-						"matri",
-						"nompre",
-						"datouv"
-					],
-					data: [
-					
-					]
-				}),
-				hidden: true,
-				width: 350,
-				height: 120
-			},
-			{
 				html: '<div style="font-weight: bold;margin-top:10px;padding:5px">2. Renseignements</div>',
 				border: false,
 				height: 40,
