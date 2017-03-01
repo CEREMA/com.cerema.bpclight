@@ -348,7 +348,7 @@ App.controller.define('CMain', {
 	},
 	TCAClient_create: function(_p) 
 	{
-		_p.disabled();
+		_p.setDisabled(true);
 		return;
 		var err=[];
 		var o={
@@ -382,13 +382,17 @@ App.controller.define('CMain', {
 			});
 		} else {
 			App.DB.post("bpclight://agents",o,function(r) {
-				if (!r.insertId) alert("L'enregistrement a échoué."); else {
+				if (!r.insertId) {
+					alert("L'enregistrement a échoué."); 
+					_p.setDisabled(false);
+				} else {
 					App.Agents.getOne(r.insertId,function(e,m) {
 						console.log(m);
 						App.view.create('VAgentPanel',{
 							agent: m.result[0],
 							modal: true
 						}).show();
+						_p.setDisabled(false);
 						_p.up('window').close();
 					});
 				};
