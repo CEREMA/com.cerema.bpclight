@@ -1,21 +1,32 @@
 var UNIQUE_RETRIES = 9999;
 
 var generateUnique = function(previous) {
-  previous = previous || [];
-  var retries = 0;
-  var id;
+	var ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  // Try to generate a unique ID,
-  // i.e. one that isn't in the previous.
-  while(!id && retries < UNIQUE_RETRIES) {
-    id = generate();
-    if(previous.indexOf(id) !== -1) {
-      id = null;
-      retries++;
-    }
-  }
+	var ID_LENGTH = 8;
 
-  return id;
+	var generate = function() {
+	  var rtn = '';
+	  for (var i = 0; i < ID_LENGTH; i++) {
+		rtn += ALPHABET.charAt(Math.floor(Math.random() * ALPHABET.length));
+	  }
+	  return rtn;
+	};	
+  	previous = previous || [];
+  	var retries = 0;
+  	var id;
+
+  	// Try to generate a unique ID,
+  	// i.e. one that isn't in the previous.
+  	while(!id && retries < UNIQUE_RETRIES) {
+    	id = generate();
+    	if(previous.indexOf(id) !== -1) {
+      		id = null;
+      		retries++;
+    	}
+  	};
+
+  	return id;
 };
 
 function GMap(l,m)
