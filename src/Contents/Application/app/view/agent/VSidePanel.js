@@ -57,6 +57,7 @@ App.view.define('agent.VSidePanel',{
 						xtype: "label",
 						text: "Matricule :",
 						border: false,
+						hidden: true,
 						padding: 5
 					},
 					{
