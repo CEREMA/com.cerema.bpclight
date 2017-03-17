@@ -63,7 +63,7 @@ App.view.define('agent.VVisit', {
 				},
 				{
 					text: "Imprimer",
-					iconCls: "ico_print",
+					iconCls: "printer",
 					handler: function(me) {
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
