@@ -5,7 +5,7 @@ Medical={
 	},
 	printme: function(o,cb)
 	{
-		Medical.using('db').query('bpclight','select medic_dossiers.*,medic_type.*,medic_cat.*,agents.* from medic_dossiers left join medic_type on medic_type.id=medic_dossiers.type left join medic_cat on medic_cat.id=medic_dossiers.cat left join agents on agents.kage=medic_dossiers.kage where medic_dossiers.id='+o.kid+' order by medic_dossiers.date desc',function(e,r){
+		Medical.using('db').query('bpclight','select medic_dossiers.*,medic_type.*,medic_cat.*,agents.* from medic_dossiers left join medic_type on medic_type.id=medic_dossiers.type left join medic_cat on medic_cat.id=medic_dossiers.cat left join medic_gen on medic_gen.kage=medic_dossiers.kage left join agents on agents.kage=medic_dossiers.kage where medic_dossiers.id='+o.kid+' order by medic_dossiers.date desc',function(e,r){
 			console.log(e);
 			console.log(r);
 			if (r.length==0) {
@@ -19,12 +19,15 @@ Medical={
 				"</head>",
 				"<body>"
 				];
+				html.push('<h1>'+r.Nom+" "+r.Prenom+'<h1>');
+				html.push('<h2>Antécédents personnels<h2><hr noshade>');
+				html.push('<div class="commentaire">'+r.gen+'</div>');
+				html.push('<h2>Antécédents familiaux<h2><hr noshade>');
 				html.push('</body></html>');
 				html=html.join('');
 				var tmp=App.temp('html');
 				require('fs').writeFileSync(tmp.path,html); 
 				
-				//res.end(req.protocol+'://'+req.headers.host + tmp.url);
 				var wkhtmltopdf = Medical.using('wkhtmltopdf');
 				var out=App.temp('pdf');
 				var stream=require('fs').createWriteStream(out.path);
