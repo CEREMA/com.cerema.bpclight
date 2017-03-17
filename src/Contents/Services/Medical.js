@@ -46,7 +46,7 @@ Medical={
 				html.push('<div class="commentaire">'+r.traitements+'</div>');
 				html.push('<h2>Traitements actuels</h2>');
 				html.push('<div class="commentaire">'+r.traitements+'</div>');
-				html.push('<br>');
+				html.push('<h2>Divers</h2>');
 				html.push('<div class="commentaire">Tabac : '+tabac[r.tabac]+'</div>');
 				html.push('<div class="commentaire">Alcool : '+alcool[r.alcool]+'</div>');
 				html.push('<div class="commentaire">Sport : '+sport[r.sport]+'</div>');				
@@ -55,7 +55,7 @@ Medical={
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 2/3</div>');
 				
-				
+				html.push('');
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
