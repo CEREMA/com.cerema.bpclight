@@ -23,6 +23,7 @@ Medical={
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
 				html.push('<div class="commentaire">Catégorie : '+r.cat+'</div>');
+				html.push('<div class="commentaire">Date : '+r.date+'</div>');
 				html.push('<h2>Poste actuel</h2><hr noshade>');
 				html.push('<div class="commentaire">'+r.poste_actuel+'</div>');
 				html.push('<h2>Antécédents personnels</h2><hr noshade>');
