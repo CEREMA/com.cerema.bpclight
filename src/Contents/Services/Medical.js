@@ -28,7 +28,7 @@ Medical={
 				];
 				var tabac=["Non fumeur","< 10 cigarettes/jour","> 10 cigarettes/jour","> 1 paquet/jour","Fumeur repenti"];
 				var alcool=["Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
-				var sport=[];
+				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 1/3</div>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
@@ -49,7 +49,7 @@ Medical={
 				html.push('<br>');
 				html.push('<div class="commentaire">Tabac : '+tabac[r.tabac]+'</div>');
 				html.push('<div class="commentaire">Alcool : '+alcool[r.alcool]+'</div>');
-				html.push('<div class="commentaire">Sport : '+r.sport+'</div>');				
+				html.push('<div class="commentaire">Sport : '+sport[r.sport]+'</div>');				
 				html.push('<div style="page-break-after: always;"></div>');
 				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
