@@ -78,13 +78,34 @@ Medical={
 				html.push('<tr><td><div class="mesure">TA</div></td><td><div class="mesure">'+r.TA+'</div></td></tr>');
 				html.push('<tr><td><div class="mesure">Taille</div></td><td><div class="mesure">'+r.Taille+'</div></td></tr>');				
 				html.push('</table>');
-				html.push('<h2>Renseignements généraux</h2>');
+				html.push('<h2>Test EFR</h2>');
 				html.push('<table width=100%>');
-				html.push('<tr><td><div class="mesure">Poids</div></td><td><div class="mesure">'+r.Poids+'</div></td></tr>');
-				html.push('<tr><td><div class="mesure">Pouls</div></td><td><div class="mesure">'+r.Pouls+'</div></td></tr>');
-				html.push('<tr><td><div class="mesure">TA</div></td><td><div class="mesure">'+r.TA+'</div></td></tr>');
-				html.push('<tr><td><div class="mesure">Taille</div></td><td><div class="mesure">'+r.Taille+'</div></td></tr>');				
+				html.push('<tr><td><div class="mesure">CVF</div></td><td><div class="mesure">'+r.CVF+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">DEMM</div></td><td><div class="mesure">'+r.DEMM+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">VEFS</div></td><td><div class="mesure">'+r.VEFS+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">VEMS/CVF</div></td><td><div class="mesure">'+r.VEMS_CVF+'</div></td></tr>');				
 				html.push('</table>');
+				html.push('<h2>Test urinaire</h2>');
+				html.push('<table width=100%>');
+				html.push('<tr><td><div class="mesure">Résultat</div></td><td><div class="mesure">'+r.TU_RESULT	+'</div></td></tr>');		
+				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">'+r.TU+'</div></td></tr>');
+				html.push('</table>');
+				
+				html.push('<h2>Test visuel</h2>');
+				html.push('<table width=100%>');
+				html.push('<tr><td><div class="mesure">Anomalie</div></td><td><div class="mesure">'+r.TV_ANOMALIE	+'</div></td></tr>');		
+				html.push('<tr><td><div class="mesure">Astigmatie</div></td><td><div class="mesure">'+r.TV_STIGM+'</div></td></tr>');	
+				html.push('<tr><td><div class="mesure">Correction</div></td><td><div class="mesure">'+r.TV_CORRECTION+'</div></td></tr>');		
+				html.push('<tr><td><div class="mesure">OD/OG</div></td><td><div class="mesure">'+r.TV_OD+'/'+r.TV_OG+'</div></td></tr>');	
+				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">'+r.TV_RQ+'</div></td></tr>');				
+				html.push('</table>');
+				
+				html.push('<h2>Test auditif</h2>');
+				html.push('<table width=100%>');
+				html.push('<tr><td><div class="mesure">Correction</div></td><td><div class="mesure">'+r.TA_CORRECTION	+'</div></td></tr>');				
+				html.push('<tr><td><div class="mesure">OD/OG</div></td><td><div class="mesure">'+r.TA_ORD+'/'+r.TA_ORG+'</div></td></tr>');	
+				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">'+r.TA_RQ+'</div></td></tr>');				
+				html.push('</table>');				
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
