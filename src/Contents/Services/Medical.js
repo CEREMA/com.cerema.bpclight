@@ -17,8 +17,9 @@ Medical={
 				"<head>",
 				"<style>",
 				"html{-webkit-print-color-adjust:exact;zoom:255%;}",
-				"h1{font-family:tahoma;font-size:14px;border-bottom:2px solid black;background-color:yellow}",
-				"h2{font-family:tahoma;font-size:12px;border-bottom:1px dashed black;background-color:white}",
+				"h1{font-family:tahoma;font-size:20px;border-bottom:2px solid black;background-color:yellow}",
+				"h2{font-family:tahoma;font-size:16px;border-bottom:1px dashed black;background-color:white}",
+				".commentaire{font-family:tahoma;font-size:12px}",
 				"</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>",
@@ -28,13 +29,13 @@ Medical={
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
 				html.push('<div class="commentaire">Catégorie : '+r.cat+'</div>');
 				html.push('<div class="commentaire">Date : '+r.date+'</div>');
-				html.push('<h2>Poste actuel</h2><hr noshade>');
+				html.push('<h2>Poste actuel</h2>');
 				html.push('<div class="commentaire">'+r.poste_actuel+'</div>');
-				html.push('<h2>Antécédents personnels</h2><hr noshade>');
+				html.push('<h2>Antécédents personnels</h2>');
 				html.push('<div class="commentaire">'+r.gen_perso+'</div>');
-				html.push('<h2>Antécédents familiaux</h2><hr noshade>');
+				html.push('<h2>Antécédents familiaux</h2>');
 				html.push('<div class="commentaire">'+r.gen_family+'</div>');
-				html.push('<h2>Commentaires</h2><hr noshade>');
+				html.push('<h2>Commentaires</h2>');
 				html.push('<div class="commentaire">'+r.commentaires+'</div>');
 				html.push('<div style="page-break-after: always;"></div>');
 				
