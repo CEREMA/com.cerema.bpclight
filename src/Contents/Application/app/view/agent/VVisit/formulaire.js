@@ -10,18 +10,7 @@ App.view.define('agent.VVisit.formulaire', {
         this.layout = {
             type: 'fit'
         };
-		this.tbar=[
-		'->',
-		{
-			text: "Imprimer",
-			handler: function(me) {
-				console.log(me.up('window').agent);
-				App.Medical.printme({kid:me.up('window')._id},function(){
-					
-				});
-			}
-		}
-		];
+
         this.bbar = [
 			{
 				text: "<",
