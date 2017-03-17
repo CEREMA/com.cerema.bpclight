@@ -61,9 +61,9 @@ Medical={
 				html.push('<h2>Antécédents cliniques</h2>');
 				
 				html.push('<h2>Orientations</h2>');
-				html.push('<div class="commentaire">'+getOrientations(r.orientations)+'</div>');
+				html.push('<div class="commentaire">'+getOrientations(r.orientations-1)+'</div>');
 				html.push('<h2>Conclusion</h2>');
-				html.push('<div class="commentaire">'+conclusion[r.conclusions]+'</div>');	
+				html.push('<div class="commentaire">'+conclusion[r.conclusions-1]+'</div>');	
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
