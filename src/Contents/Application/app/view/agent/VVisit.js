@@ -65,9 +65,11 @@ App.view.define('agent.VVisit', {
 					text: "Imprimer",
 					iconCls: "printer",
 					handler: function(me) {
+						me.setDisabled(true);
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
 						App.Medical.printme({kid:sel.items[0].data.id},function(url){
+							me.setDisabled(false);
 							var win = window.open(url, '_blank');
 							win.focus();
 						});
