@@ -26,9 +26,9 @@ Medical={
 				"</head>",
 				"<body><br><br>"
 				];
-				var tabac=["-","Non fumeur","< 10 cigarettes/jour","> 10 cigarettes/jour","> 1 paquet/jour","Fumeur repenti"];
-				var alcool=["-","Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
-				var sport=["-","Pas de sport","Occasionnel","Régulier","Compétition"];
+				var tabac=["Non fumeur","< 10 cigarettes/jour","> 10 cigarettes/jour","> 1 paquet/jour","Fumeur repenti"];
+				var alcool=["Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
+				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
 				var conclusion=["-","Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
 				var orientations=["-","Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
 				function getOrientations(tab) {
