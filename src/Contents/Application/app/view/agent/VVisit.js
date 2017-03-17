@@ -67,7 +67,9 @@ App.view.define('agent.VVisit', {
 					handler: function(me) {
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
-						App.Medical.printme({kid:sel.items[0].data.id},function(){
+						App.Medical.printme({kid:sel.items[0].data.id},function(url){
+							var win = window.open(url, '_blank');
+							win.focus();
 						});
 					}
 				}
