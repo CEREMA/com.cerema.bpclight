@@ -31,7 +31,7 @@ Medical={
 				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
 				var conclusion=["-","Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
 				var orientations=["-","Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
-				var antecedents=["Cardio","Locomoteur","Neurologique","Digestif","Psychisme","Autres"];
+				var clinique=["Cardio","Locomoteur","Neurologique","Digestif","Psychisme","Autres"];
 				function getOrientations(tab) {
 					tab=JSON.parse(tab);
 					var str=[];
