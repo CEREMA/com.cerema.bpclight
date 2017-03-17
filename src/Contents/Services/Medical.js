@@ -20,12 +20,14 @@ Medical={
 				"h1{font-family:tahoma;font-size:20px;border-bottom:2px solid black;background-color:yellow}",
 				"h2{font-family:tahoma;font-size:16px;border-bottom:1px dashed black;background-color:white}",
 				".commentaire{font-family:tahoma;font-size:12px}",
+				".page{font-family:tahoma;font-size:10px;text-align:right;width:100%}",
 				"</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>",
 				"<body><br><br>"
 				];
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
+				html.push('<div class=page>Page 1/3</div>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
 				html.push('<div class="commentaire">Catégorie : '+r.cat+'</div>');
 				html.push('<div class="commentaire">Date : '+r.date+'</div>');
@@ -39,7 +41,8 @@ Medical={
 				html.push('<div class="commentaire">'+r.commentaires+'</div>');
 				html.push('<div style="page-break-after: always;"></div>');
 				
-				html.push('')
+				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
+				html.push('<div class=page>Page 1/3</div>');
 				
 				html.push('</body></html>');
 				html=html.join('');
