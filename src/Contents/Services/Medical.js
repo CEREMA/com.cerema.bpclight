@@ -20,7 +20,7 @@ Medical={
 				"h1{font-family:tahoma;font-size:20px;border-bottom:2px solid black;background-color:yellow}",
 				"h2{font-family:tahoma;font-size:16px;border-bottom:1px dashed black;background-color:white}",
 				".commentaire{font-family:tahoma;font-size:12px}",
-				".mesure{font-family:tahoma;font-size:14px}",
+				".mesure{font-family:tahoma;font-size:14px;border:1px dashed black}",
 				".page{font-family:tahoma;font-size:10px;text-align:right;width:100%}",
 				"</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
