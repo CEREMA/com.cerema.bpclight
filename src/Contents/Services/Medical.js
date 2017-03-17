@@ -113,14 +113,14 @@ Medical={
 				html.push('<tr><td><div class="mesure">Astigmatie</div></td><td><div class="mesure">'+r.TV_STIGM+'</div></td></tr>');	
 				html.push('<tr><td><div class="mesure">Correction</div></td><td><div class="mesure">'+r.TV_CORRECTION+'</div></td></tr>');		
 				html.push('<tr><td><div class="mesure">OD/OG</div></td><td><div class="mesure">'+r.TV_OD+'/'+r.TV_OG+'</div></td></tr>');	
-				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">'+r.TV_RQ+'</div></td></tr>');				
+				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">&nbsp;'+r.TV_RQ+'</div></td></tr>');				
 				html.push('</table>');
 				
 				html.push('<h2>Test auditif</h2>');
 				html.push('<table width=100%>');
 				html.push('<tr><td><div class="mesure">Correction</div></td><td><div class="mesure">'+r.TA_CORRECTION	+'</div></td></tr>');				
 				html.push('<tr><td><div class="mesure">OD/OG</div></td><td><div class="mesure">'+r.TA_ORD+'/'+r.TA_ORG+'</div></td></tr>');	
-				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">'+r.TA_RQ+'</div></td></tr>');				
+				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">&nbsp;'+r.TA_RQ+'</div></td></tr>');				
 				html.push('</table>');				
 				
 				html.push('<div style="page-break-after: always;"></div>');
