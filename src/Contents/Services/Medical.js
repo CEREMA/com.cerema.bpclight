@@ -123,11 +123,6 @@ Medical={
 				html.push('<tr><td><div class="mesure">Rq</div></td><td><div class="mesure">&nbsp;'+r.TA_RQ+'</div></td></tr>');				
 				html.push('</table>');				
 				
-				html.push('<div style="page-break-after: always;"></div>');
-				
-				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
-				html.push('<div class=page>Page 3/3</div>');
-				
 
 				
 				html.push('</body></html>');
