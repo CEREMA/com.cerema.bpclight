@@ -16,7 +16,7 @@ App.view.define('agent.VVisit.formulaire', {
 			text: "Imprimer",
 			handler: function(me) {
 				console.log(me.up('window').agent);
-				App.Medical.printme({kage:me.up('window')._id},function(){
+				App.Medical.printme({kid:me.up('window')._id},function(){
 					
 				});
 			}
