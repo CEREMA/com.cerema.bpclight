@@ -68,6 +68,11 @@ App.view.define('agent.VVisit', {
 						me.setDisabled(true);
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
+						if (!sel) {
+							alert('Veuillez sélectionner une fiche.');
+							me.setDisabled(false);
+							return;	
+						};
 						App.Medical.printme({kid:sel.items[0].data.id},function(url){
 							me.setDisabled(false);
 							var win = window.open(url, '_blank');
