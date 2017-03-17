@@ -23,7 +23,7 @@ Medical={
 				html=html.join('');
 				var tmp=App.temp('html');
 				require('fs').writeFileSync(tmp.path,html); 
-				console.log(tmp.path);
+				console.log(tmp.url);
 				//res.end(req.protocol+'://'+req.headers.host + tmp.url);
 				/*var wkhtmltopdf = Medical.using('wkhtmltopdf');
 				var out=App.temp('pdf');
