@@ -77,8 +77,7 @@ Medical={
 				html.push('<tr><td><div class="mesure">Pouls</div></td><td><div class="mesure">'+r.Pouls+'</div></td></tr>');
 				html.push('<tr><td><div class="mesure">TA</div></td><td><div class="mesure">'+r.TA+'</div></td></tr>');
 				html.push('<tr><td><div class="mesure">Taille</div></td><td><div class="mesure">'+r.Taille+'</div></td></tr>');				
-				html.push('</table>'):
-				html.push('');
+				html.push('</table>');
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
