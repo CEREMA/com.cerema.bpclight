@@ -27,7 +27,7 @@ Medical={
 				var wkhtmltopdf = Medical.using('wkhtmltopdf');
 				var out=App.temp('pdf');
 				var stream=require('fs').createWriteStream(out.path);
-				wkhtmltopdf(req.protocol+'://'+req.headers.host + tmp.url,{ pageSize: 'A4',zoom: 1.33  }).pipe(stream).on('finish',function() {
+				wkhtmltopdf('http://127.0.0.1:3000/' + tmp.url,{ pageSize: 'A4',zoom: 1.33  }).pipe(stream).on('finish',function() {
 					res.end(out.url);
 				});				
 			}
