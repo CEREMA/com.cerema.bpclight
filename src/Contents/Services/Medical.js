@@ -15,7 +15,11 @@ Medical={
 				var html=[
 				"<html>",
 				"<head>",
-				"<style>html{-webkit-print-color-adjust:exact;zoom:255%;}</style>",
+				"<style>",
+				"html{-webkit-print-color-adjust:exact;zoom:255%;}",
+				"h1{font-family:tahoma;font-size:14px;border-bottom:2px solid black;background-color:yellow}",
+				"h2{font-family:tahoma;font-size:12px;border-bottom:1px dashed black;background-color:white}",
+				"</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>",
 				"<body><br><br>"
@@ -32,6 +36,10 @@ Medical={
 				html.push('<div class="commentaire">'+r.gen_family+'</div>');
 				html.push('<h2>Commentaires</h2><hr noshade>');
 				html.push('<div class="commentaire">'+r.commentaires+'</div>');
+				html.push('<div style="page-break-after: always;"></div>');
+				
+				html.push('')
+				
 				html.push('</body></html>');
 				html=html.join('');
 				var tmp=App.temp('html');
