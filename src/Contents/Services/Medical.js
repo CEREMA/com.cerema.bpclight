@@ -26,11 +26,11 @@ Medical={
 				"</head>",
 				"<body><br><br>"
 				];
-				var tabac=["Non fumeur","< 10 cigarettes/jour","> 10 cigarettes/jour","> 1 paquet/jour","Fumeur repenti"];
-				var alcool=["Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
-				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
-				var conclusion=["Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
-				var orientations=["Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
+				var tabac=["-","Non fumeur","< 10 cigarettes/jour","> 10 cigarettes/jour","> 1 paquet/jour","Fumeur repenti"];
+				var alcool=["-","Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
+				var sport=["-","Pas de sport","Occasionnel","Régulier","Compétition"];
+				var conclusion=["-","Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
+				var orientations=["-","Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
 				function getOrientations(tab) {
 					tab=JSON.parse(tab);
 					var str=[];
@@ -61,9 +61,9 @@ Medical={
 				html.push('<h2>Antécédents cliniques</h2>');
 				
 				html.push('<h2>Orientations</h2>');
-				html.push('<div class="commentaire">'+getOrientations(r.orientations*1-1)+'</div>');
+				html.push('<div class="commentaire">'+getOrientations(r.orientations)+'</div>');
 				html.push('<h2>Conclusion</h2>');
-				html.push('<div class="commentaire">'+conclusion[r.conclusions*1-1]+'</div>');	
+				html.push('<div class="commentaire">'+conclusion[r.conclusions]+'</div>');	
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
