@@ -41,8 +41,16 @@ Medical={
 					};
 					return str.join(', ');
 				};
+				function getClinique(tab) {
+					tab=JSON.parse(tab);
+					var str=[];
+					for (var i=0;i<tab.length;i++) {
+						str.push(clinique[tab[i]]);
+					};
+					return str.join(', ');
+				};				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
-				html.push('<div class=page>Page 1/3</div>');
+				html.push('<div class=page>Page 1/2</div>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
 				html.push('<div class="commentaire">Catégorie : '+r.cat+'</div>');
 				html.push('<div class="commentaire">Date : '+r.date+'</div>');
@@ -61,16 +69,20 @@ Medical={
 				html.push('<div class="commentaire">Alcool : '+alcool[r.alcool]+'</div>');
 				html.push('<div class="commentaire">Sport : '+sport[r.sport]+'</div>');				
 				html.push('<h2>Antécédents cliniques</h2>');
-				html.push('<div class="commentaire">'+clinique[r._clinique]+'</div>');
+				html.push('<div class="commentaire">'+getClinique(r.clinique)+'</div>');
 				html.push('<h2>Orientations</h2>');
 				html.push('<div class="commentaire">'+getOrientations(r.orientations)+'</div>');
+				html.push('<h2>Vaccinations</h2>');
+				html.push('<div class="commentaire">'+r.vaccinations+'</div>');
+				html.push('<h2>Clinique</h2>');
+				html.push('<div class="commentaire">'+r._clinique+'</div>');
 				html.push('<h2>Conclusion</h2>');
 				html.push('<div class="commentaire">'+conclusion[r.conclusions]+'</div>');	
 				
 				html.push('<div style="page-break-after: always;"></div>');
 				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
-				html.push('<div class=page>Page 2/3</div>');
+				html.push('<div class=page>Page 2/2</div>');
 				html.push('<h2>Renseignements généraux</h2>');
 				html.push('<table width=100%>');
 				html.push('<tr><td><div class="mesure">Poids</div></td><td><div class="mesure">'+r.Poids+'</div></td></tr>');
@@ -112,7 +124,7 @@ Medical={
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 3/3</div>');
 				
-				html.push('<div style="page-break-after: always;"></div>');
+
 				
 				html.push('</body></html>');
 				html=html.join('');
