@@ -15,7 +15,7 @@ Medical={
 				var html=[
 				"<html>",
 				"<head>",
-				"<style>html{-webkit-print-color-adjust:exact;zoom:135%;}</style>",
+				"<style>html{-webkit-print-color-adjust:exact;zoom:255%;}</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>",
 				"<body>"
