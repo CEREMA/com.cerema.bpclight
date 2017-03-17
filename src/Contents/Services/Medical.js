@@ -20,7 +20,7 @@ Medical={
 				"h1{font-family:tahoma;font-size:20px;border-bottom:2px solid black;background-color:#EEEEEE}",
 				"h2{font-family:tahoma;font-size:16px;border-bottom:1px dashed black;background-color:white}",
 				".commentaire{font-family:tahoma;font-size:12px}",
-				".mesure{font-family:tahoma;font-size:14px;border-bottom:1px dashed black}",
+				".mesure{font-family:tahoma;font-size:14px;border-bottom:1px solid #DDDDDD}",
 				".page{font-family:tahoma;font-size:10px;text-align:right;width:100%}",
 				"</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
@@ -71,6 +71,13 @@ Medical={
 				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 2/3</div>');
+				html.push('<h2>Renseignements généraux</h2>');
+				html.push('<table width=100%>');
+				html.push('<tr><td><div class="mesure">Poids</div></td><td><div class="mesure">'+r.Poids+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">Pouls</div></td><td><div class="mesure">'+r.Pouls+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">TA</div></td><td><div class="mesure">'+r.TA+'</div></td></tr>');
+				html.push('<tr><td><div class="mesure">Taille</div></td><td><div class="mesure">'+r.Taille+'</div></td></tr>');				
+				html.push('</table>');
 				html.push('<h2>Renseignements généraux</h2>');
 				html.push('<table width=100%>');
 				html.push('<tr><td><div class="mesure">Poids</div></td><td><div class="mesure">'+r.Poids+'</div></td></tr>');
