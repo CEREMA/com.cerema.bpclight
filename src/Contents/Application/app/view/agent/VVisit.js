@@ -60,6 +60,17 @@ App.view.define('agent.VVisit', {
 					text: "Nouveau",
 					iconCls: "ico_new",
 					itemId: "medic_new"
+				},
+				{
+					text: "Imprimer",
+					iconCls: "ico_print",
+					handler: function(me) {
+						var grid= App.get(me.up('window'),'grid#grid_medic');
+						var sel=grid.getSelectionModel().getSelected();
+						console.log(sel);
+						App.Medical.printme({kid:sel._id},function(){
+						});
+					}
 				}
 			],
 			columns: [
