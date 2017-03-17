@@ -31,7 +31,7 @@ Medical={
 				wkhtmltopdf('http://127.0.0.1:3000' + tmp.url,{ pageSize: 'A4',zoom: 1.33  }).pipe(stream).on('finish',function() {
 					cb(out.url);
 				});	
-				cb('');
+				
 			}
 		});
 	}
