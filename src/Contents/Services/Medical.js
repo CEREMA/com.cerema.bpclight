@@ -18,7 +18,7 @@ Medical={
 				"<style>html{-webkit-print-color-adjust:exact;zoom:255%;}</style>",
 				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>",
-				"<body>"
+				"<body><br><br>"
 				];
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
