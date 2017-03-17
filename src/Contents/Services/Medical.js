@@ -31,6 +31,7 @@ Medical={
 				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
 				var conclusion=["-","Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
 				var orientations=["-","Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
+				var antecedents=["Cardio","Locomoteur","Neurologique","Digestif","Psychisme","Autres"];
 				function getOrientations(tab) {
 					tab=JSON.parse(tab);
 					var str=[];
@@ -59,7 +60,7 @@ Medical={
 				html.push('<div class="commentaire">Alcool : '+alcool[r.alcool]+'</div>');
 				html.push('<div class="commentaire">Sport : '+sport[r.sport]+'</div>');				
 				html.push('<h2>Antécédents cliniques</h2>');
-				
+				html.push('<div class="commentaire">'+clinique[r._clinique]+'</div>');
 				html.push('<h2>Orientations</h2>');
 				html.push('<div class="commentaire">'+getOrientations(r.orientations)+'</div>');
 				html.push('<h2>Conclusion</h2>');
