@@ -10,7 +10,7 @@ Medical={
 			var html=[
 				"<html>",
 				"<head>",
-				"<title>Dossier médical : "++"</title>",
+				"<title>Dossier médical : "+r.Nom+" "+r.Prenom+"</title>",
 				"</head>"
 				
 			]
