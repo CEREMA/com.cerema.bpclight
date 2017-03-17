@@ -68,8 +68,8 @@ App.view.define('agent.VVisit', {
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
 						console.log(sel);
-						/*App.Medical.printme({kid:sel._id},function(){
-						});*/
+						App.Medical.printme({kid:sel.items[0].data.id},function(){
+						});
 					}
 				}
 			],
