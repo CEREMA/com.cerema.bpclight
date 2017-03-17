@@ -68,7 +68,7 @@ App.view.define('agent.VVisit', {
 						me.setDisabled(true);
 						var grid= App.get(me.up('window'),'grid#grid_medic');
 						var sel=grid.getSelectionModel().getSelected();
-						if (!sel) {
+						if (sel.items.length==0) {
 							alert('Veuillez sélectionner une fiche.');
 							me.setDisabled(false);
 							return;	
