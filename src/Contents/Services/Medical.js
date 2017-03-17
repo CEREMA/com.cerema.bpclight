@@ -30,6 +30,15 @@ Medical={
 				var alcool=["Pas d'alcool","Occasionnel","1 à 2 verres/jour","> 2 verres/jour"];
 				var sport=["Pas de sport","Occasionnel","Régulier","Compétition"];
 				var conclusion=["Compatible","Compatible avec aménagement","Compatible avec restriction","Incompatibilité temporaire","Incompatibilité au poste","Incompatibilité à tous les postes","Pas d'avis ce jour"];
+				var orientations=["Médecin traitant","Cardiologue","Pneumologue","Dermatologue","ORL","Ophtalmologue","Gynécologue","Autres médecins","Assistance sociale","MDPH"];
+				function getOrientations(tab) {
+					tab=JSON.parse(tab);
+					var str=[];
+					for (var i=0;i<tab.length;i++) {
+						str.push(orientations[tab[i]]);
+					};
+					return str.join(', ');
+				};
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 1/3</div>');
 				html.push('<div class="commentaire">Type de visite : '+r.type+'</div>');
@@ -45,18 +54,18 @@ Medical={
 				html.push('<div class="commentaire">'+r.commentaires+'</div>');
 				html.push('<h2>Traitements actuels</h2>');
 				html.push('<div class="commentaire">'+r.traitements+'</div>');
-				html.push('<h2>Traitements actuels</h2>');
-				html.push('<div class="commentaire">'+r.traitements+'</div>');
 				html.push('<h2>Divers</h2>');
 				html.push('<div class="commentaire">Tabac : '+tabac[r.tabac]+'</div>');
 				html.push('<div class="commentaire">Alcool : '+alcool[r.alcool]+'</div>');
 				html.push('<div class="commentaire">Sport : '+sport[r.sport]+'</div>');				
-				html.push('<div style="page-break-after: always;"></div>');
 				html.push('<h2>Antécédents cliniques</h2>');
 				
 				html.push('<h2>Orientations</h2>');
+				html.push('<div class="commentaire">'+getOrientations(r.orientations)+'</div>');
 				html.push('<h2>Conclusion</h2>');
 				html.push('<div class="commentaire">'+conclusion[r.conclusions]+'</div>');	
+				
+				html.push('<div style="page-break-after: always;"></div>');
 				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 2/3</div>');
