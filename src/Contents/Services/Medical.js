@@ -42,12 +42,16 @@ Medical={
 					return str.join(', ');
 				};
 				function getClinique(tab) {
+					try {
 					tab=JSON.parse(tab);
 					var str=[];
 					for (var i=0;i<tab.length;i++) {
 						str.push(clinique[tab[i]]);
 					};
 					return str.join(', ');
+					} catch(e) {
+						return "";
+					}
 				};				
 				html.push('<h1>'+r.Nom+" "+r.Prenom+'</h1>');
 				html.push('<div class=page>Page 1/2</div>');
