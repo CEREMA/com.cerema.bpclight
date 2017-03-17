@@ -20,7 +20,16 @@ Medical={
 				"<body>"
 				];
 				html.push('</body></html>');
-				
+				html=html.join('');
+				var tmp=App.temp('html');
+				require('fs').writeFileSync(tmp.path,html); 
+				//res.end(req.protocol+'://'+req.headers.host + tmp.url);
+				var wkhtmltopdf = Medical.using('wkhtmltopdf');
+				var out=App.temp('pdf');
+				var stream=require('fs').createWriteStream(out.path);
+				wkhtmltopdf(req.protocol+'://'+req.headers.host + tmp.url,{ pageSize: 'A4',zoom: 1.33  }).pipe(stream).on('finish',function() {
+					res.end(out.url);
+				});				
 			}
 		});
 	}
