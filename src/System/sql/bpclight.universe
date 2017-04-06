@@ -1,4 +1,4 @@
-bpclight
+bpclight2
 SELECT DISTINCT
 	$_OBJECTS
 	FROM (
@@ -22,9 +22,9 @@ SELECT DISTINCT
 			LEFT OUTER JOIN bpclight.batiments batiments
             ON (agents.Kbat = batiments.Kbat)
 		)
-        LEFT OUTER JOIN bpclight.agerol agerol 
+        LEFT OUTER JOIN bpclight.agerol agerol
 		ON (agents.Kage = agerol.Kage)
 	)
-	LEFT OUTER JOIN bpclight.roles roles 
+	LEFT OUTER JOIN bpclight.roles roles
 	ON (agerol.Krol = roles.Krol)
 	$_WHERE
