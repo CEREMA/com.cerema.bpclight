@@ -249,7 +249,6 @@ App = {
 					where.push(str);
 				};		
 				var sql=db.get('bpclight',objs,where);
-				console.log(sql);
 				db.model('bpclight', sql ,function(err,result) {
 					res.end(JSON.stringify(result,null,4));
 				});			
@@ -271,7 +270,7 @@ App = {
 			};
 			if (req.body.kuni)
 			{
-				App.using('db').model('bpclight','SELECT batiments.LibBatC, unites.Kets KEts, batiments.GPS, agents.* FROM ((bpclight.agents agents LEFT OUTER JOIN bpclight.subdis subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN bpclight.unites unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and unites.kuni='+req.body.kuni+' order by nom,prenom',function(err,o) {
+				App.using('db').model('bpclight2','SELECT batiments.LibBatC, unites.Kets KEts, batiments.GPS, agents.* FROM ((bpclight.agents agents LEFT OUTER JOIN bpclight.subdis subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN bpclight.unites unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and unites.kuni='+req.body.kuni+' order by nom,prenom',function(err,o) {
 					res.end(JSON.stringify(o,null,4));
 				});
 				return;
