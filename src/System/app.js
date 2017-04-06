@@ -249,6 +249,7 @@ App = {
 					where.push(str);
 				};		
 				var sql=db.get('bpclight',objs,where);
+				console.log(sql);
 				db.model('bpclight', sql ,function(err,result) {
 					res.end(JSON.stringify(result,null,4));
 				});			
