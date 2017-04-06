@@ -230,6 +230,8 @@ App = {
 		});		
 		app.post('/agents',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
+			res.end('');
+			return;
 			if (req.body.quest) {
 				var o=JSON.parse(req.body.quest);
 				var db=App.using('db');
