@@ -231,8 +231,6 @@ App = {
 		app.post('/agents',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
 			if (req.body.quest) {
-			res.end('');
-			return;
 				var o=JSON.parse(req.body.quest);
 				var db=App.using('db');
 				var objs=[];
@@ -251,6 +249,7 @@ App = {
 					where.push(str);
 				};		
 				var sql=db.get('bpclight',objs,where);
+				console.log(sql);
 				db.model('bpclight', sql ,function(err,result) {
 					res.end(JSON.stringify(result,null,4));
 				});			
