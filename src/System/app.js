@@ -84,7 +84,7 @@ App = {
 		});
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
-			App.using('db').model('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+req.body.kage,function(err,o){
+			App.using('db').model('bpclight','SELECT roles.LibRol FROM (agerol INNER JOIN roles ON (agerol.Krol = roles.Krol)) INNER JOIN agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+req.body.kage,function(err,o){
 				res.end(JSON.stringify(o,null,4));
 			});
 		});
