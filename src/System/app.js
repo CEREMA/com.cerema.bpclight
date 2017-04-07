@@ -257,7 +257,7 @@ App = {
 			};
 			if (req.body.nom)
 			{
-				App.using('db').model('bpclight','SELECT batiments.LibBatC, batiments.GPS, agents.* FROM bpclight.agents agents LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat) WHERE actif=1 and nom like "'+req.body.nom+'" order by nom,prenom',function(err,o) {
+				App.using('db').model('bpclight','SELECT batiments.LibBatC, batiments.GPS, agents.* FROM agents LEFT OUTER JOIN batiments ON (agents.Kbat = batiments.Kbat) WHERE actif=1 and nom like "'+req.body.nom+'" order by nom,prenom',function(err,o) {
 					res.end(JSON.stringify(o,null,4));
 				});
 				return;			
