@@ -170,7 +170,7 @@ Agents = {
 		}),cb);	
 	},
 	getOne: function(id,cb) {
-		Agents.using('db').query('bpclight','SELECT batiments.LibBatC, batiments.GPS, agents.* FROM bpclight.agents agents LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat) WHERE kage='+id+' order by nom,prenom',cb);
+		Agents.using('db').query('bpclight','SELECT batiments.LibBatC, batiments.GPS, agents.* FROM agents LEFT OUTER JOIN batiments ON (agents.Kbat = batiments.Kbat) WHERE kage='+id+' order by nom,prenom',cb);
 	},
 };
 
