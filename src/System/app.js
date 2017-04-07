@@ -264,7 +264,7 @@ App = {
 			};			
 			if (req.body.ksub)
 			{
-				App.using('db').model('bpclight','SELECT batiments.LibBatC, unites.Kets KEts, batiments.GPS, agents.* FROM ((bpclight.agents agents LEFT OUTER JOIN bpclight.subdis subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN bpclight.unites unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and subdis.ksub='+req.body.ksub+' order by nom,prenom',function(err,o) {
+				App.using('db').model('bpclight','SELECT batiments.LibBatC, unites.Kets KEts, batiments.GPS, agents.* FROM ((agents LEFT OUTER JOIN subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and subdis.ksub='+req.body.ksub+' order by nom,prenom',function(err,o) {
 					res.end(JSON.stringify(o,null,4));
 				});
 				return;
@@ -278,7 +278,7 @@ App = {
 			};
 			if (req.body.kets)
 			{	
-				App.using('db').model('bpclight','SELECT unites.Kets KEts, batiments.LibBatC, agents.*, batiments.GPS FROM ((bpclight.agents agents LEFT OUTER JOIN bpclight.subdis subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN bpclight.batiments batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN bpclight.unites unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and unites.kuni in (select kuni from unites where kets='+req.body.kets+') order by nom,prenom',function(err,o) {
+				App.using('db').model('bpclight','SELECT unites.Kets KEts, batiments.LibBatC, agents.*, batiments.GPS FROM ((agents LEFT OUTER JOIN subdis ON (agents.Ksub = subdis.Ksub)) LEFT OUTER JOIN batiments ON (agents.Kbat = batiments.Kbat)) LEFT OUTER JOIN unites ON (agents.Kuni = unites.Kuni) WHERE actif=1 and unites.kuni in (select kuni from unites where kets='+req.body.kets+') order by nom,prenom',function(err,o) {
 					res.end(JSON.stringify(o,null,4));
 				});
 			};			
