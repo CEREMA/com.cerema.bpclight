@@ -1,4 +1,4 @@
-bpclight2
+bpclight
 SELECT DISTINCT
 	$_OBJECTS
 	FROM (
@@ -6,25 +6,25 @@ SELECT DISTINCT
 			(
 				(
 					(
-						( bpclight.unites unites
-							LEFT OUTER JOIN bpclight.etablissements etablissements
+						( unites
+							LEFT OUTER JOIN etablissements
 							ON (unites.Kets = etablissements.Kets)
 						)
-						RIGHT OUTER JOIN bpclight.agents agents
+						RIGHT OUTER JOIN agents
 						ON (agents.Kuni = unites.Kuni)
 					)
-					LEFT OUTER JOIN bpclight.subdis subdis
+					LEFT OUTER JOIN subdis
 					ON (agents.Ksub = subdis.Ksub)
 				)
-				LEFT OUTER JOIN bpclight.grades grades
+				LEFT OUTER JOIN grades
 				ON (agents.Kgra = grades.Kgra)
 			)
-			LEFT OUTER JOIN bpclight.batiments batiments
+			LEFT OUTER JOIN batiments
             ON (agents.Kbat = batiments.Kbat)
 		)
-        LEFT OUTER JOIN bpclight.agerol agerol
+        LEFT OUTER JOIN agerol
 		ON (agents.Kage = agerol.Kage)
 	)
-	LEFT OUTER JOIN bpclight.roles roles
+	LEFT OUTER JOIN roles
 	ON (agerol.Krol = roles.Krol)
 	$_WHERE
