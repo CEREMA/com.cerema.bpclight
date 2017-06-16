@@ -5,11 +5,14 @@ Utils = {
 	},
 	dumpVisites: function(o,cb) {
 		Date.prototype.ymd = function() {
-		  var mm = this.getMonth() + 1; // getMonth() is zero-based
-		  var dd = this.getDate();
-
+			function minTwoDigits(n) {
+  				return (n < 10 ? '0' : '') + n;
+			};
+		  	var mm = minTwoDigits(this.getMonth() + 1); // getMonth() is zero-based
+		  	var dd = minTwoDigits(this.getDate());
+		  
 		  //return [this.getFullYear(), !mm[1] && '0', mm, !dd[1] && '0', dd].join(''); // padding
-		  return this.getFullYear() + '-' + mm + '-' + dd;
+		  	return this.getFullYear() + '-' + mm + '-' + dd;
 		};		
 		var db=Utils.using('db');
 		var excelbuilder=App.using('msexcel-builder');
