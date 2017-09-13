@@ -1039,15 +1039,11 @@ App.controller.define('CAgent', {
 	},
 	TAgentPanel_onshow: function(p)
 	{	
-		
-		console.log(App.get('TAgentPanel tabpanel#tabs'));
-        if (Auth.User.profiles.indexOf('SII')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(5).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(5).hide();
-		
-		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).hide();
-        
-		if (Auth.User.profiles.indexOf('SRH')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(4).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(4).hide();
-		
 
+		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).hide();
+        if (Auth.User.profiles.indexOf('SRH')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(4).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(4).hide();
+		
+        if (Auth.User.profiles.indexOf('SII')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(6).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(6).hide();
 		
 		var _p=this;
 		if (p.agent==-1) {
