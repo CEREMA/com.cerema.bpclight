@@ -38,15 +38,7 @@ App.view.define('agent.VInformatique', {
 			],
 			columns: [
 			{	
-				header: "Permis N°",
-				dataIndex: "NumPie",
-				editor: {
-					xtype: 'textfield',
-                	allowBlank: false			
-				}
-			},
-			{	
-				header: "Type",
+				header: "Equipement",
 				dataIndex: "Kcpe",
 				renderer: function(value) {
 					if (value==1) return "Permis A";
@@ -58,7 +50,7 @@ App.view.define('agent.VInformatique', {
 				},
 				editor: {
                 	xtype: 'combo',
-					store: App.store.create('bpclight://catperm'),
+					store: App.store.create('bpclight://equipements'),
 					editable: false,
 					displayField: "CatPerm",
 					valueField: "Kcpe",
@@ -66,17 +58,7 @@ App.view.define('agent.VInformatique', {
 				}
 			},				
 			{
-				header: "Date",
-				dataIndex: "DatPie",
-				width: 150,
-				renderer:Ext.util.Format.dateRenderer('d/m/Y'),
-				editor: {
-                	xtype: 'datefield',
-                	allowBlank: false					
-				}
-			},
-			{
-				header: "Signature",
+				header: "Commentaires",
 				dataIndex: "SignPie",
 				flex: 1,
 				editor: {
