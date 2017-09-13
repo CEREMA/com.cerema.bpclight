@@ -65,6 +65,10 @@ App.view.define('VAgentPanel', {
 				{
 					xtype: "TAutorisation",
 					itemId: "tab_autorisation"
+				},
+				{
+					xtype: "TInformatique",
+					itemId: "tab_info"
 				}
 				]
             }			
