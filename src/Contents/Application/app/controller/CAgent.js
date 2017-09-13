@@ -124,6 +124,20 @@ App.controller.define('CAgent', {
 				itemclick: "Positions_click"
 			},
 			/*
+			TInformatique
+			*/
+			"TInformatique grid": {
+				edit: function(me,store) {
+					var record=store.record;
+					/*record.data.Kage=store.grid.up('window').agent.Kage;
+					record.data.TypPie=record.data.equip;
+					App.DB.post("bpclight://equipements",record.data,function(){
+						store.grid.getStore().load();
+					});*/
+					console.log(record);
+				}				
+			},
+			/*
 			TAutorisation
 			*/			
 			"TAutorisation": {
