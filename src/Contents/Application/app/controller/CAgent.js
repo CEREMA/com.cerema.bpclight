@@ -141,7 +141,6 @@ App.controller.define('CAgent', {
 						comments: store.record.data.comments
 					};
 					if (store.record.data.eid) data.eid=store.record.data.eid;
-					alert(store.record.data.eid);
 					App.DB.post("bpclight://agequip",data,function(){
 						store.grid.getStore().load();
 					});
