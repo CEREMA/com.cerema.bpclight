@@ -40,11 +40,6 @@ App.view.define('agent.VInformatique', {
 			{	
 				header: "Equipement",
 				dataIndex: "equip",
-				renderer: function(value,metadata,record) {
-					console.log(metadata);
-					console.log(record);
-					return 1;
-				},
 				editor: {
                 	xtype: 'combo',
 					store: App.store.create('bpclight://equipements',{autoLoad:true}),
