@@ -140,8 +140,8 @@ App.controller.define('CAgent', {
 						equip: store.record.data.equip,
 						comments: store.record.data.comments
 					};
-					if (store.record.data.id) data.id=store.record.data.id;
-					alert(store.record.data.id);
+					if (store.record.data.eid) data.id=store.record.data.eid;
+					alert(store.record.data.eid);
 					App.DB.post("bpclight://agequip",data,function(){
 						store.grid.getStore().load();
 					});
