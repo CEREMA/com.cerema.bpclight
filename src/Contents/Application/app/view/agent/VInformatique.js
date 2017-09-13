@@ -39,10 +39,10 @@ App.view.define('agent.VInformatique', {
 			columns: [
 			{	
 				header: "Equipement",
-				dataIndex: "Kcpe",
+				dataIndex: "equip",
 				renderer: function(value,metadata,record) {
 					console.log(metadata);
-					alert(record.data.equip);
+					console.log(record);
 					return 1;
 				},
 				editor: {
@@ -56,7 +56,7 @@ App.view.define('agent.VInformatique', {
 			},				
 			{
 				header: "Commentaires",
-				dataIndex: "SignPie",
+				dataIndex: "comments",
 				flex: 1,
 				editor: {
 					xtype: 'textfield',
