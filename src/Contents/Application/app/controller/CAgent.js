@@ -135,11 +135,14 @@ App.controller.define('CAgent', {
 			},
 			"TInformatique grid": {
 				edit: function(me,store) {
-					var record=store.record;
-					record.data.kage=store.grid.up('window').agent.Kage;
-					record.data.equip=record.data.equip;
-					record.data.comments=record.data.comments;
-					App.DB.post("bpclight://agequip",record.data,function(){
+					var data={
+						kage: store.grid.up('window').agent.Kage,
+						equip: store.record.data.equip,
+						comments: store.record.data.comments
+					};
+					if (store.record.data.id) data.id=store.record.data.id;
+					alert(store.record.data.id);
+					App.DB.post("bpclight://agequip",data,function(){
 						store.grid.getStore().load();
 					});
 					console.log(record);
