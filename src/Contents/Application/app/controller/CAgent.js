@@ -126,6 +126,13 @@ App.controller.define('CAgent', {
 			/*
 			TInformatique
 			*/
+			"TInformatique": {
+				show: function(p) {
+					var store=App.store.create('bpclight://agequip&kage='+p.up('window').agent.Kage);
+					App.get(p,'grid').bindStore(store);
+					store.load();					
+				}	
+			},
 			"TInformatique grid": {
 				edit: function(me,store) {
 					var record=store.record;
