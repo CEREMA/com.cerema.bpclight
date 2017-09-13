@@ -13,9 +13,11 @@ App.view.define('agent.VInformatique', {
 			width: "100%",
 			fieldLabel: "Permis",
 			labelAlign: "top",
-            plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
-                clicksToEdit : 1
-            })],
+            plugins: [
+				Ext.create('Ext.grid.plugin.CellEditing', {
+                	clicksToEdit : 1
+            	})
+			],
 			tbar: [
 			'->',
 			{
