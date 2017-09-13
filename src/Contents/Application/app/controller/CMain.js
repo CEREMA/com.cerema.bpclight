@@ -313,7 +313,7 @@ App.controller.define('CMain', {
             App.vm_natures=result.data;
         });
 
-		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+		App.loadAPI("http://maps.google.com/maps/api/js?key=AIzaSyDRhCbkSyv90RjTfpG9u59zFFq0-2_W0i8&sensor=false&callback=GMap");
         
 		// update
 		App.Update.actif(function(err,response) {
