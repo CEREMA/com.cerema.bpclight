@@ -97,7 +97,7 @@
         "file": "app.png"
     },
     "server": {
-        "port": 3000
+        "port": 3002
     },
     "livereload": {
         "port": 3030
