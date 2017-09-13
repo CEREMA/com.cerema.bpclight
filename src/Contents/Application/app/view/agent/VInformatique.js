@@ -5,7 +5,7 @@ App.view.define('agent.VInformatique', {
         this.title = "Informatique";
         this.layout = "vbox";
         this.border = false;
-        this.height=800;
+        this.height=700;
 		this.items=[
 		{
 			xtype: "grid",
