@@ -32,7 +32,7 @@ App.view.define('agent.VInformatique', {
 				iconCls: "del",
 				handler: function(me) {
 					var selection = me.up('grid').getSelectionModel().getSelection()[0];
-					App.DB.del('bpclight://agepiece?Kpie='+selection.data.Kpie,function(r){
+					App.DB.del('bpclight://agequip?eid='+selection.data.eid,function(r){
 						me.up('grid').getStore().load();	
 					});
 				}
