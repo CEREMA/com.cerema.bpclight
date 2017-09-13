@@ -62,6 +62,10 @@ App.view.define('agent.VInformatique', {
 			}
 			],
 			store: App.store.create({fields:[],data:[]})
+		},
+		{
+			flex: 1,
+			baseCls: "cinema"
 		}
 		];
 		this.callParent();
