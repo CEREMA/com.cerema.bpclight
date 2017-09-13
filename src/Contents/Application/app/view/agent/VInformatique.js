@@ -41,12 +41,7 @@ App.view.define('agent.VInformatique', {
 				header: "Equipement",
 				dataIndex: "Kcpe",
 				renderer: function(value) {
-					if (value==1) return "Permis A";
-					if (value==2) return "Permis B";
-					if (value==3) return "Permis C";
-					if (value==4) return "Permis D";
-					if (value==5) return "Permis E";
-					if (value==6) return "Permis EB";
+
 				},
 				editor: {
                 	xtype: 'combo',
