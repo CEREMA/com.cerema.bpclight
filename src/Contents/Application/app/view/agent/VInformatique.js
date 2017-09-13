@@ -67,9 +67,7 @@ App.view.define('agent.VInformatique', {
 			flex: 1,
 			html: "dfskjflskkjf",
 			width: "100%",
-			bodyCfg: {
-				cls: "cinema"	
-			}
+			bodyCls: "cinema"
 		}
 		];
 		this.callParent();
