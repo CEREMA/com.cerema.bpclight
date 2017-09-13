@@ -129,11 +129,12 @@ App.controller.define('CAgent', {
 			"TInformatique grid": {
 				edit: function(me,store) {
 					var record=store.record;
-					/*record.data.Kage=store.grid.up('window').agent.Kage;
-					record.data.TypPie=record.data.equip;
-					App.DB.post("bpclight://equipements",record.data,function(){
+					record.data.kage=store.grid.up('window').agent.Kage;
+					record.data.equip=record.data.equip;
+					record.data.comments=record.data.comments;
+					App.DB.post("bpclight://agequip",record.data,function(){
 						store.grid.getStore().load();
-					});*/
+					});
 					console.log(record);
 				}				
 			},
