@@ -1039,7 +1039,8 @@ App.controller.define('CAgent', {
 	},
 	TAgentPanel_onshow: function(p)
 	{	
-		alert(Auth.User.profiles.indexOf('SII'));
+		
+		console.log(App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(6));
         if (Auth.User.profiles.indexOf('SII')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(5).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(5).hide();
 		
 		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).hide();
