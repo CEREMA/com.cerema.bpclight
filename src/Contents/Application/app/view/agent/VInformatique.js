@@ -50,7 +50,7 @@ App.view.define('agent.VInformatique', {
 					store: App.store.create('bpclight://equipements',{autoLoad:true}),
 					editable: false,
 					displayField: "equip",
-					valueField: "id",
+					valueField: "equip",
                 	allowBlank: false					
 				}
 			},				
