@@ -142,3 +142,12 @@
 	width: 16px;
 	height: 16px;	
 }
+
+.cinema
+{
+	background-image: url(webapp/printer.png);
+	background-size:auto auto;
+	background-repeat:no-repeat;
+	width: 100%;
+	height: 100%;	
+}
