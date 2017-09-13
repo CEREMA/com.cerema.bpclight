@@ -42,7 +42,7 @@ App.view.define('agent.VInformatique', {
 				dataIndex: "Kcpe",
 				renderer: function(value,metadata,record) {
 					console.log(metadata);
-					console.log(record);
+					alert(record.data.equip);
 					return 1;
 				},
 				editor: {
