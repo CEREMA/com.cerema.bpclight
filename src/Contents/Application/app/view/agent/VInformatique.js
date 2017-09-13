@@ -50,10 +50,10 @@ App.view.define('agent.VInformatique', {
 				},
 				editor: {
                 	xtype: 'combo',
-					store: App.store.create('bpclight://equipements'),
+					store: App.store.create('bpclight://equipements',{autoLoad:true}),
 					editable: false,
-					displayField: "CatPerm",
-					valueField: "Kcpe",
+					displayField: "equip",
+					valueField: "id",
                 	allowBlank: false					
 				}
 			},				
