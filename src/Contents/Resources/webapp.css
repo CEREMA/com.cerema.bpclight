@@ -152,3 +152,15 @@
 	width: 100%;
 	height: 100%;	
 }
+
+.button_passport.letmein
+{
+	background-color            : #EEEEEE;
+	color                       : black;
+	background-image            : url(webapp/cerema.png);
+}
+
+.button_passport.letmein:hover
+{
+	background-color            : white;
+}
