@@ -40,8 +40,10 @@ App.view.define('agent.VInformatique', {
 			{	
 				header: "Equipement",
 				dataIndex: "Kcpe",
-				renderer: function(value) {
-
+				renderer: function(value,metadata,record) {
+					console.log(metadata);
+					console.log(record);
+					return 1;
 				},
 				editor: {
                 	xtype: 'combo',
