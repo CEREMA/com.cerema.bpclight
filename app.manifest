@@ -3,10 +3,7 @@
     "git": "https://github.com/CEREMA/com.cerema.bpclight.git",
     "title": "BPCLight",
     "description": "Base du personnel centralisée",
-    "platform": "desktop",
-    "targets": [
-        "webapp"
-    ],
+    "platform": "webapp",
     "uid": "e404d3a0-cc1d-418b-bd68-1ffef1b06551",
     "version": "1.3.0",
     "build": 170,

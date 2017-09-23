@@ -34,6 +34,11 @@ App = {
 		app.post('/',app.upload.any(),function(req,res,next) {
 			App.upload.up(req,res);	
 		});
+		
+		app.get('/info',function(req,res) {
+			var d = new Date();
+			res.end(d.toMySQL());
+		});
 		app.use('/css',server.static(__dirname+require('path').sep+'autorisations'+require('path').sep));
 		app.post('/report',function(req,res){
 			var html=require('fs').readFileSync(__dirname+require('path').sep+'autorisations'+require('path').sep+'index.html','utf-8');
