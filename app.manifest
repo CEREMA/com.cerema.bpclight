@@ -22,6 +22,16 @@
         "en",
         "fr"
     ],
+	"paths": {
+		"@omneedia": "http://cdn.omneedia.com",
+		"@cloudflare": "https://cdnjs.cloudflare.com",
+		"Contents": "Contents/Application/app", 
+		"Lib": "Contents/Application/app/libraries",
+		"Ext": "@omneedia/omneedia/modules/Ext",
+		"Ext.ux": "@omneedia/omneedia/modules/Ext/ux",
+		"Ext.plugin": "@omneedia/omneedia/modules/Ext/plugin",
+		"Ext.util": "@omneedia/omneedia/modules/Ext/util"
+	},	
     "frameworks": [	
         {
             "name": "EXTJS",
@@ -62,16 +72,6 @@
         "CEREMA",
         "CERBERE"
     ],
-	"paths": {
-		"@omneedia": "/cdn",
-		"@cloudflare": "https://cdnjs.cloudflare.com",
-		"Contents": "Contents/Application/app", 
-		"Lib": "Contents/Application/app/libraries",
-		"Ext": "@omneedia/omneedia/modules/Ext/classic",
-		"Ext.ux": "@omneedia/omneedia/modules/Ext/ux/",
-		"Ext.plugin": "@omneedia/omneedia/modules/Ext/plugin",
-		"Ext.util": "@omneedia/omneedia/modules/Ext/util"
-	},
     "controllers": [
         "CMain",
         "CAgent"
