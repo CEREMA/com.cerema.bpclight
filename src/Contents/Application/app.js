@@ -9,37 +9,29 @@ Ext.Loader.setConfig({
 Manifest = function()
 {
 
-	Ext.application({
-
+	return Ext.application({
 		name: APP_NAMESPACE,
-		
 		appFolder: Ext.Loader.getPath('Contents'),	
 		autoCreateViewport: false,
-
 		controllers: Settings.CONTROLLERS,
-		
 		launch: function () 
 		{
-Ext.enableAriaButtons = false;
- Ext.enableAriaPanels = false; 
-		}
-		
+			Ext.enableAriaButtons = false;
+			Ext.enableAriaPanels = false; 
+		}		
 	});
 	
 };
 
 function __loader__(i) {
 	if (!i) var i=0;
-	if (i<Settings.MODULES.length) {
-		Ext.require(Settings.MODULES[i],function() {
-			__loader__(i+1);
-		});
-	} else {
-		for (var i=0;i<Settings.API.length;i++)
-		{
-			App.using(Settings.API[i]);
-		};
-		App.load();	
-	}
+	if (!Settings.MODULES[i]) {
+		for (var i=0;i<Settings.API.length;i++) App.using(Settings.API[i]);
+		return App.load();
+	};
+	App.require(Settings.MODULES[i],function() {
+		__loader__(i+1);
+	});
 };
+
 __loader__();

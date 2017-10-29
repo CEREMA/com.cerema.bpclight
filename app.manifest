@@ -22,32 +22,56 @@
         "en",
         "fr"
     ],
-    "frameworks": [
+    "frameworks": [	
         {
             "name": "EXTJS",
-            "type": "desktop",
             "version": "6.2.0",
             "theme": "classic",
             "style": "classic",
             "src": [
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/ext-all-debug.js",
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/{theme}/theme-{style}/theme-{style}-debug.js"
+                "@cloudflare/ajax/libs/extjs/{version}/ext-all-debug.js",
+                "@cloudflare/ajax/libs/extjs/{version}/{theme}/theme-{style}/theme-{style}-debug.js"
             ],
             "res": [
-                "https://cdnjs.cloudflare.com/ajax/libs/extjs/{version}/{theme}/theme-{style}/resources/theme-{style}-all-debug.css"
+                "@cloudflare/ajax/libs/extjs/{version}/{theme}/theme-{style}/resources/theme-{style}-all-debug.css"
+            ],
+            "i18n": [
+                "@cloudflare/ajax/libs/extjs/{version}/classic/locale/locale-{lang}.js"
             ]
         },
-        {
-            "name": "JQUERY",
-            "version": "3.2.1",
-            "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
-        }
-    ],
+		{
+			"name": "OMNEEDIA",
+			"version": "0.9.0",
+			"src": [
+				"@cloudflare/ajax/libs/socket.io/2.0.3/socket.io.js",
+				"@omneedia/omneedia/{version}/utils.modules.js",
+				"@omneedia/omneedia/{version}/app.js",
+				"@omneedia/omneedia/{version}/app.modules.js"
+			],
+			"res": [
+				"@cloudflare/ajax/libs/animate.css/3.5.2/animate.css",
+				"@omneedia/omneedia/{version}/res/webapp.css",
+				"Contents/Resources/webapp.css"
+			],
+			"i18n": [
+				"@omneedia/omneedia/{version}/libs/Date/Date-{lang}.js"
+			]
+		}
+	],
     "auth": [
         "CEREMA",
         "CERBERE"
     ],
-    "paths": {},
+	"paths": {
+		"@omneedia": "/cdn",
+		"@cloudflare": "https://cdnjs.cloudflare.com",
+		"Contents": "Contents/Application/app", 
+		"Lib": "Contents/Application/app/libraries",
+		"Ext": "@omneedia/omneedia/modules/Ext/classic",
+		"Ext.ux": "@omneedia/omneedia/modules/Ext/ux/",
+		"Ext.plugin": "@omneedia/omneedia/modules/Ext/plugin",
+		"Ext.util": "@omneedia/omneedia/modules/Ext/util"
+	},
     "controllers": [
         "CMain",
         "CAgent"
@@ -96,9 +120,6 @@
         "file": "app.png"
     },
     "server": {
-        "port": 3002
-    },
-    "livereload": {
-        "port": 3030
+        "port": 3000
     }
 }
