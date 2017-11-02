@@ -64,7 +64,8 @@
 				"Contents/Resources/webapp.css"
 			],
 			"i18n": [
-				"@omneedia/omneedia/{version}/libs/Date/Date-{lang}.js"
+				"@omneedia/omneedia/{version}/libs/Date/Date-{lang}.js",
+				"@omneedia/omneedia/{version}/i18n/{lang}.json"
 			]
 		}
 	],
