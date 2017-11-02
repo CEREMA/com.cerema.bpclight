@@ -1,3 +1,3 @@
-i18n['en'] = {	
-	region  			: "Hello World!"
-};
+{	
+"region"  			: "Hello World!"
+}
