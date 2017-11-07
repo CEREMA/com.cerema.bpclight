@@ -24,7 +24,7 @@
     ],
 	"paths": {
 		"@omneedia": "http://cdn.omneedia.com",
-		"@cloudflare": "https://cdnjs.cloudflare.com",
+		"@cloudflare": "http://cdn.omneedia.com",
 		"Contents": "Contents/Application/app", 
 		"Lib": "Contents/Application/app/libraries",
 		"Ext": "@omneedia/omneedia/modules/Ext",
