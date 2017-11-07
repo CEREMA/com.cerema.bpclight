@@ -23,7 +23,7 @@
         "fr"
     ],
 	"paths": {
-		"@omneedia": "http://cdn.omneedia.com",
+		"@omneedia": "/cdn",
 		"@cloudflare": "http://cdn.omneedia.com",
 		"Contents": "Contents/Application/app", 
 		"Lib": "Contents/Application/app/libraries",
