@@ -3,35 +3,33 @@ LANGS = Settings.LANGS;
 
 Ext.Loader.setConfig({
     enabled: true,
-	paths: Settings.PATHS
+    paths: Settings.PATHS
 });
 
-Manifest = function()
-{
+Manifest = function() {
 
-	return Ext.application({
-		name: APP_NAMESPACE,
-		appFolder: Ext.Loader.getPath('Contents'),	
-		autoCreateViewport: false,
-		controllers: Settings.CONTROLLERS,
-		launch: function () 
-		{
-			Ext.enableAriaButtons = false;
-			Ext.enableAriaPanels = false; 
-		}		
-	});
-	
+    return Ext.application({
+        name: APP_NAMESPACE,
+        appFolder: Ext.Loader.getPath('Contents'),
+        autoCreateViewport: false,
+        controllers: Settings.CONTROLLERS,
+        launch: function() {
+            Ext.enableAriaButtons = false;
+            Ext.enableAriaPanels = false;
+        }
+    });
+
 };
 
 function __loader__(i) {
-	if (!i) var i=0;
-	if (!Settings.MODULES[i]) {
-		for (var i=0;i<Settings.API.length;i++) App.using(Settings.API[i]);
-		return App.load();
-	};
-	App.require(Settings.MODULES[i],function() {
-		__loader__(i+1);
-	});
+    if (!i) var i = 0;
+    if (!Settings.MODULES[i]) {
+        for (var i = 0; i < Settings.API.length; i++) App.using(Settings.API[i]);
+        return App.load();
+    };
+    App.require(Settings.MODULES[i], function() {
+        __loader__(i + 1);
+    });
 };
 
 __loader__();

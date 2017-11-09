@@ -4,7 +4,7 @@
     "title": "BPCLight",
     "description": "Base du personnel centralisée",
     "platform": "webapp",
-    "uid": "e404d3a0-cc1d-418b-bd68-1ffef1b06551",
+    "uid": "FJfQ5fHaW",
     "version": "1.3.0",
     "build": 170,
     "copyright": "Copyright (c) 2016 By CEREMA",
@@ -19,12 +19,11 @@
         "tester": []
     },
     "langs": [
-        "en",
-        "fr"
+        "en-US",
+        "fr-FR"
     ],
 	"paths": {
-		"@omneedia": "/cdn",
-		"@cloudflare": "http://cdn.omneedia.com",
+		"@omneedia": "http://cdn.omneedia.com",
 		"Contents": "Contents/Application/app", 
 		"Lib": "Contents/Application/app/libraries",
 		"Ext": "@omneedia/omneedia/modules/Ext",
@@ -39,27 +38,27 @@
             "theme": "classic",
             "style": "classic",
             "src": [
-                "@cloudflare/ajax/libs/extjs/{version}/ext-all-debug.js",
-                "@cloudflare/ajax/libs/extjs/{version}/{theme}/theme-{style}/theme-{style}-debug.js"
+                "@omneedia/ajax/libs/extjs/{version}/ext-all-debug.js",
+                "@omneedia/ajax/libs/extjs/{version}/{theme}/theme-{style}/theme-{style}-debug.js"
             ],
             "res": [
-                "@cloudflare/ajax/libs/extjs/{version}/{theme}/theme-{style}/resources/theme-{style}-all-debug.css"
+                "@omneedia/ajax/libs/extjs/{version}/{theme}/theme-{style}/resources/theme-{style}-all-debug.css"
             ],
             "i18n": [
-                "@cloudflare/ajax/libs/extjs/{version}/classic/locale/locale-{lang}.js"
+                "@omneedia/ajax/libs/extjs/{version}/classic/locale/locale-{lang}.js"
             ]
         },
 		{
 			"name": "OMNEEDIA",
 			"version": "0.9.0",
 			"src": [
-				"@cloudflare/ajax/libs/socket.io/2.0.3/socket.io.js",
+				"@omneedia/ajax/libs/socket.io/2.0.3/socket.io.js",
 				"@omneedia/omneedia/{version}/utils.modules.js",
 				"@omneedia/omneedia/{version}/app.js",
 				"@omneedia/omneedia/{version}/app.modules.js"
 			],
 			"res": [
-				"@cloudflare/ajax/libs/animate.css/3.5.2/animate.css",
+				"@omneedia/ajax/libs/animate.css/3.5.2/animate.css",
 				"@omneedia/omneedia/{version}/res/webapp.css",
 				"Contents/Resources/webapp.css"
 			],
@@ -68,7 +67,7 @@
 				"@omneedia/omneedia/{version}/i18n/{lang}.json"
 			]
 		}
-	],
+    ],
     "auth": [
         "CEREMA",
         "CERBERE"

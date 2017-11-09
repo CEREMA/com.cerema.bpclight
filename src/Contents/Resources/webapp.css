@@ -24,6 +24,17 @@
     background-image: url(webapp/Preferences.png);
 }
 
+.OACardIcon {
+    background-image: url(webapp/ico.png);
+    width: 16px;
+    height: 16px;
+    display: inline;
+    float: left;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .IPhoto {
     border: 1px solid #AAAAAA;
     background-color: #EEEEEE;
@@ -45,7 +56,7 @@
 
 .CPhoto {
     border: 1px solid black;
-    background-image: url(webapp/User.png);
+    background-image: none;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 120px;
